@@ -11,8 +11,9 @@ function getMyGuideScript() {
     var configPath = guideMe.baseUrl + 'config.js';
     if(typeof GmCXt === 'undefined'){
         if (configPath) {
-            if (document.readyState === 'complete' || document.readyState === 'interactive') {
-                console.log("document.readyState..." + document.readyState);
+            console.log("document.readyState...111" + document.readyState);
+            if (document.readyState === 'complete') {
+                console.log("document.readyState...222" + document.readyState);
                 let el = document.createElement('script');
                 el.onload = getMyGuideScriptCB;
                 el.src = configPath;
