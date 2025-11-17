@@ -3,7 +3,7 @@ if (typeof guideMe === 'undefined') {
     guideMe = {};
 }
 if (!guideMe.baseUrl) {
-    guideMe.baseUrl = "https://cdn-qa.cmnetwork.co/guideme-player/ent/";
+    guideMe.baseUrl = "https://cdn.guideme.io/guideme-player/sumtotal/";
 } 
 
 function getMyGuideScript() {
@@ -43,9 +43,9 @@ function getMyGuideScriptCB() {
 
     function loadGuideMeClientFiles() {
         if (window.self === window.top) {
-            a.src = GmCXt.conf.baseUrl + 'gm_client_1763322947788.js';
+            a.src = GmCXt.conf.baseUrl + 'gm_client_1763366575977.js';
         } else {
-            a.src = GmCXt.conf.baseUrl + 'gm_client_iframe_1763322947788.js';
+            a.src = GmCXt.conf.baseUrl + 'gm_client_iframe_1763366575977.js';
         }
         document.head.appendChild(a);
     }

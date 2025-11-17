@@ -6,12 +6,17 @@
     --mg-primary-btn-focus: #0069d9;
     --mg-primary-btn-active: #0062cc;
     --mg-border-color: #eeeeee;
+    --mg-anchor-tag-hover: #5b64dd;
+}
+
+wmgPlayerJSProd_ wmgPlayerJSProd_ {
+    font-family: Arial, sans-serif !important;
 }
 
 wmgPlayerJSProd_ {
     display: block;
     font-family: Arial, sans-serif;
-    color: #666;
+    color: #26273B;
     float: none;
     box-sizing: border-box;
     text-align: left;
@@ -25,21 +30,31 @@ wmgPlayerJSProd_ {
     min-width: 0px;
     font-size: 13px;
     word-wrap: break-word;
+    letter-spacing: initial !important;
 }
+
+wmgPlayerJSProd_ p {
+    margin: 0;
+    padding: 0;
+}
+
 
 wmgPlayerJSProd_ b {
     font-weight: bold !important;
 }
 
-wmgPlayerJSProd_ a,
-wmgPlayerJSProd_ a:hover,
-wmgPlayerJSProd_ a:visited {
-    color: #0078d4;
+wmgPlayerJSProd_ a {
+    color: var(--mg-primary);
     text-decoration: underline;
     font-family: Arial, sans-serif;
     font-weight: normal;
     line-height: initial;
     font-size: inherit;
+}
+
+wmgPlayerJSProd_ a:hover,
+wmgPlayerJSProd_ a:visited {
+    color: var(--mg-anchor-tag-hover) !important;
 }
 
 wmgPlayerJSProd_ font a {
@@ -56,6 +71,20 @@ wmgPlayerJSProd_ a img {
     min-width: 0px;
     display: block;
     box-sizing: border-box;
+    transform: none;
+    position: static;
+    max-width: none;
+    min-width: none;
+    max-height: none;
+}
+
+wmgPlayerJSProd_ svg {
+    display: inline;
+    vertical-align: baseline;
+}
+
+wmgPlayerJSProd_[contenteditable='false'] {
+    display: none;
 }
 
 .mgPlayerJSProd_beacon-icon {
@@ -321,9 +350,9 @@ wmgPlayerJSProd_ a img {
     vertical-align: middle;
 }
 
-.mgPlayerJSProd_element-class-id span{
-    font-size: 14px;
-    color: #881180;
+.mgPlayerJSProd_element-class-id .mgPlayerJSProd_span {
+    font-size: 14px !important;
+    color: #881180 !important;
 }
 
 .mgPlayerJSProd_element-size{
@@ -362,7 +391,7 @@ wmgPlayerJSProd_ a img {
     color: #666666;
 }
 
-wmgPlayerJSProd_.smarttip-guidance-msg.top-left:after {
+wmgPlayerJSProd_.mgPlayerJSProd_smarttip-guidance-msg.top-left:after {
     border-top: 8px solid;
     border-top-color: inherit !important;
     border-left: 6px solid transparent;
@@ -374,7 +403,7 @@ wmgPlayerJSProd_.smarttip-guidance-msg.top-left:after {
     transform: translate(0, 0);
 }
 
-wmgPlayerJSProd_.smarttip-guidance-msg.top-left:before {
+wmgPlayerJSProd_.mgPlayerJSProd_smarttip-guidance-msg.top-left:before {
     border-top: 8px solid #ffffff;
     border-left: 6px solid transparent;
     border-right: 6px solid transparent;
@@ -386,7 +415,7 @@ wmgPlayerJSProd_.smarttip-guidance-msg.top-left:before {
     z-index: 2;
 }
 
-wmgPlayerJSProd_.smarttip-guidance-msg.top-middle:after {
+wmgPlayerJSProd_.mgPlayerJSProd_smarttip-guidance-msg.top-middle:after {
     border-top: 8px solid;
     border-top-color: inherit !important;
     border-left: 6px solid transparent;
@@ -398,7 +427,7 @@ wmgPlayerJSProd_.smarttip-guidance-msg.top-middle:after {
     transform: translate(-50%, 0);
 }
 
-wmgPlayerJSProd_.smarttip-guidance-msg.top-middle:before {
+wmgPlayerJSProd_.mgPlayerJSProd_smarttip-guidance-msg.top-middle:before {
     border-top: 8px solid #ffffff;
     border-left: 6px solid transparent;
     border-right: 6px solid transparent;
@@ -410,7 +439,7 @@ wmgPlayerJSProd_.smarttip-guidance-msg.top-middle:before {
     z-index: 2;
 }
 
-wmgPlayerJSProd_.smarttip-guidance-msg.top-right:after {
+wmgPlayerJSProd_.mgPlayerJSProd_smarttip-guidance-msg.top-right:after {
     border-top: 8px solid;
     border-top-color: inherit !important;
     border-left: 6px solid transparent;
@@ -422,7 +451,7 @@ wmgPlayerJSProd_.smarttip-guidance-msg.top-right:after {
     transform: translate(0, 0);
 }
 
-wmgPlayerJSProd_.smarttip-guidance-msg.top-right:before {
+wmgPlayerJSProd_.mgPlayerJSProd_smarttip-guidance-msg.top-right:before {
     border-top: 8px solid #ffffff;
     border-left: 6px solid transparent;
     border-right: 6px solid transparent;
@@ -434,7 +463,7 @@ wmgPlayerJSProd_.smarttip-guidance-msg.top-right:before {
     z-index: 2;
 }
 
-wmgPlayerJSProd_.smarttip-guidance-msg.left-top:after {
+wmgPlayerJSProd_.mgPlayerJSProd_smarttip-guidance-msg.left-top:after {
     transform: translate(0, 0px) !important;
     content: "";
     position: absolute;
@@ -446,7 +475,7 @@ wmgPlayerJSProd_.smarttip-guidance-msg.left-top:after {
     border-bottom: 6px solid transparent;
 }
 
-wmgPlayerJSProd_.smarttip-guidance-msg.left-top:before {
+wmgPlayerJSProd_.mgPlayerJSProd_smarttip-guidance-msg.left-top:before {
     transform: translate(0, 0px) !important;
     content: "";
     position: absolute;
@@ -458,7 +487,7 @@ wmgPlayerJSProd_.smarttip-guidance-msg.left-top:before {
     z-index: 2;
 }
 
-wmgPlayerJSProd_.smarttip-guidance-msg.left-middle:after {
+wmgPlayerJSProd_.mgPlayerJSProd_smarttip-guidance-msg.left-middle:after {
     transform: translate(0, -50%) !important;
     content: "";
     position: absolute;
@@ -470,7 +499,7 @@ wmgPlayerJSProd_.smarttip-guidance-msg.left-middle:after {
     border-bottom: 6px solid transparent;
 }
 
-wmgPlayerJSProd_.smarttip-guidance-msg.left-middle:before {
+wmgPlayerJSProd_.mgPlayerJSProd_smarttip-guidance-msg.left-middle:before {
     transform: translate(0, -50%) !important;
     content: "";
     position: absolute;
@@ -482,7 +511,7 @@ wmgPlayerJSProd_.smarttip-guidance-msg.left-middle:before {
     z-index: 2;
 }
 
-wmgPlayerJSProd_.smarttip-guidance-msg.left-bottom:after {
+wmgPlayerJSProd_.mgPlayerJSProd_smarttip-guidance-msg.left-bottom:after {
     transform: translate(0, 0px) !important;
     content: "";
     position: absolute;
@@ -494,7 +523,7 @@ wmgPlayerJSProd_.smarttip-guidance-msg.left-bottom:after {
     border-bottom: 6px solid transparent;
 }
 
-wmgPlayerJSProd_.smarttip-guidance-msg.left-bottom:before {
+wmgPlayerJSProd_.mgPlayerJSProd_smarttip-guidance-msg.left-bottom:before {
     transform: translate(0, 0px) !important;
     content: "";
     position: absolute;
@@ -506,7 +535,7 @@ wmgPlayerJSProd_.smarttip-guidance-msg.left-bottom:before {
     z-index: 2;
 }
 
-wmgPlayerJSProd_.smarttip-guidance-msg.bottom-left:after {
+wmgPlayerJSProd_.mgPlayerJSProd_smarttip-guidance-msg.bottom-left:after {
     border-bottom: 8px solid;
     border-bottom-color: inherit !important;
     border-left: 6px solid transparent;
@@ -518,7 +547,7 @@ wmgPlayerJSProd_.smarttip-guidance-msg.bottom-left:after {
     transform: translate(0, 0);
 }
 
-wmgPlayerJSProd_.smarttip-guidance-msg.bottom-left:before {
+wmgPlayerJSProd_.mgPlayerJSProd_smarttip-guidance-msg.bottom-left:before {
     border-bottom: 8px solid #ffffff;
     border-left: 6px solid transparent;
     border-right: 6px solid transparent;
@@ -530,7 +559,7 @@ wmgPlayerJSProd_.smarttip-guidance-msg.bottom-left:before {
     z-index: 2;
 }
 
-wmgPlayerJSProd_.smarttip-guidance-msg.bottom-middle:after {
+wmgPlayerJSProd_.mgPlayerJSProd_smarttip-guidance-msg.bottom-middle:after {
     border-bottom: 8px solid;
     border-bottom-color: inherit !important;
     border-left: 6px solid transparent;
@@ -542,7 +571,7 @@ wmgPlayerJSProd_.smarttip-guidance-msg.bottom-middle:after {
     transform: translate(-50%, 0);
 }
 
-wmgPlayerJSProd_.smarttip-guidance-msg.bottom-middle:before {
+wmgPlayerJSProd_.mgPlayerJSProd_smarttip-guidance-msg.bottom-middle:before {
     border-bottom: 8px solid #ffffff;
     border-left: 6px solid transparent;
     border-right: 6px solid transparent;
@@ -554,7 +583,7 @@ wmgPlayerJSProd_.smarttip-guidance-msg.bottom-middle:before {
     z-index: 2;
 }
 
-wmgPlayerJSProd_.smarttip-guidance-msg.bottom-right:after {
+wmgPlayerJSProd_.mgPlayerJSProd_smarttip-guidance-msg.bottom-right:after {
     border-bottom: 8px solid;
     border-bottom-color: inherit !important;
     border-left: 6px solid transparent;
@@ -566,7 +595,7 @@ wmgPlayerJSProd_.smarttip-guidance-msg.bottom-right:after {
     transform: translate(0, 0);
 }
 
-wmgPlayerJSProd_.smarttip-guidance-msg.bottom-right:before {
+wmgPlayerJSProd_.mgPlayerJSProd_smarttip-guidance-msg.bottom-right:before {
     border-bottom: 8px solid #ffffff;
     border-left: 6px solid transparent;
     border-right: 6px solid transparent;
@@ -578,7 +607,7 @@ wmgPlayerJSProd_.smarttip-guidance-msg.bottom-right:before {
     z-index: 2;
 }
 
-wmgPlayerJSProd_.smarttip-guidance-msg.right-top:after {
+wmgPlayerJSProd_.mgPlayerJSProd_smarttip-guidance-msg.right-top:after {
     transform: translate(0, 0px) !important;
     content: "";
     position: absolute;
@@ -590,7 +619,7 @@ wmgPlayerJSProd_.smarttip-guidance-msg.right-top:after {
     border-bottom: 6px solid transparent;
 }
 
-wmgPlayerJSProd_.smarttip-guidance-msg.right-top:before {
+wmgPlayerJSProd_.mgPlayerJSProd_smarttip-guidance-msg.right-top:before {
     transform: translate(0, 0px) !important;
     content: "";
     position: absolute;
@@ -602,7 +631,7 @@ wmgPlayerJSProd_.smarttip-guidance-msg.right-top:before {
     z-index: 2;
 }
 
-wmgPlayerJSProd_.smarttip-guidance-msg.right-middle:after {
+wmgPlayerJSProd_.mgPlayerJSProd_smarttip-guidance-msg.right-middle:after {
     transform: translate(0, -50%) !important;
     content: "";
     position: absolute;
@@ -614,7 +643,7 @@ wmgPlayerJSProd_.smarttip-guidance-msg.right-middle:after {
     border-bottom: 6px solid transparent;
 }
 
-wmgPlayerJSProd_.smarttip-guidance-msg.right-middle:before {
+wmgPlayerJSProd_.mgPlayerJSProd_smarttip-guidance-msg.right-middle:before {
     transform: translate(0, -50%) !important;
     content: "";
     position: absolute;
@@ -626,7 +655,7 @@ wmgPlayerJSProd_.smarttip-guidance-msg.right-middle:before {
     z-index: 2;
 }
 
-wmgPlayerJSProd_.smarttip-guidance-msg.right-bottom:after {
+wmgPlayerJSProd_.mgPlayerJSProd_smarttip-guidance-msg.right-bottom:after {
     transform: translate(0, 0px) !important;
     content: "";
     position: absolute;
@@ -638,7 +667,7 @@ wmgPlayerJSProd_.smarttip-guidance-msg.right-bottom:after {
     border-bottom: 6px solid transparent;
 }
 
-wmgPlayerJSProd_.smarttip-guidance-msg.right-bottom:before {
+wmgPlayerJSProd_.mgPlayerJSProd_smarttip-guidance-msg.right-bottom:before {
     transform: translate(0, 0px) !important;
     content: "";
     position: absolute;
@@ -717,8 +746,8 @@ wmgPlayerJSProd_.mg-smarttip-icon img {
 }
 
 .mgPlayerJSProd_tooltip-embed-url{
-    text-decoration: underline;
-    color: rgb(0, 120, 212);
+    text-decoration: underline !important;
+    color: rgb(0, 120, 212) !important;
 }
 
 .mgPlayerJSProd_smarttip-icon img {
@@ -727,7 +756,7 @@ wmgPlayerJSProd_.mg-smarttip-icon img {
     padding: 0;
 }
 
-wmgPlayerJSProd_.smarttip-guidance-msg {
+wmgPlayerJSProd_.mgPlayerJSProd_smarttip-guidance-msg {
     position: absolute;
     z-index: 2147483642;
     border: 1px solid #005BF0 !important;
@@ -739,13 +768,13 @@ wmgPlayerJSProd_.smarttip-guidance-msg {
     box-sizing: initial;
 }
 
-wmgPlayerJSProd_.smarttip-guidance-msg img {
+wmgPlayerJSProd_.mgPlayerJSProd_smarttip-guidance-msg img {
     width: auto !important;
     max-width: 100% !important;
     max-height: 100% !important;
 }
 
-wmgPlayerJSProd_.smarttip-guidance-msg p {
+wmgPlayerJSProd_.mgPlayerJSProd_smarttip-guidance-msg p {
     margin: 0px;
 }
 
@@ -770,7 +799,7 @@ wmgPlayerJSProd_.smarttip-guidance-msg p {
     word-wrap: break-word !important;
 }
 
-wmgPlayerJSProd_.smarttip-msg-inner {
+wmgPlayerJSProd_.mgPlayerJSProd_smarttip-msg-inner {
     max-width: 500px;
     max-height: 500px;
     padding: 5px !important;
@@ -784,36 +813,36 @@ wmgPlayerJSProd_.smarttip-msg-inner {
     box-sizing: initial !important;
 }
 
-wmgPlayerJSProd_.smarttip-msg-inner ul,
-wmgPlayerJSProd_.smarttip-msg-inner ol {
+wmgPlayerJSProd_.mgPlayerJSProd_smarttip-msg-inner ul,
+wmgPlayerJSProd_.mgPlayerJSProd_smarttip-msg-inner ol {
     white-space: normal !important;
     margin: 0px !important;
     padding: 0px !important;
 }
 
-wmgPlayerJSProd_.smarttip-msg-inner::-webkit-scrollbar-track {
+wmgPlayerJSProd_.mgPlayerJSProd_smarttip-msg-inner::-webkit-scrollbar-track {
     -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3) !important;
     border-radius: 10px !important;
     background-color: #F5F5F5 !important;
 }
 
-wmgPlayerJSProd_.smarttip-msg-inner::-webkit-scrollbar {
+wmgPlayerJSProd_.mgPlayerJSProd_smarttip-msg-inner::-webkit-scrollbar {
     width: 6px !important;
     background-color: #F5F5F5 !important;
 }
 
-wmgPlayerJSProd_.smarttip-msg-inner::-webkit-scrollbar-thumb {
+wmgPlayerJSProd_.mgPlayerJSProd_smarttip-msg-inner::-webkit-scrollbar-thumb {
     border-radius: 10px !important;
     -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3) !important;
     background-color: #cccccc !important;
 }
 
-wmgPlayerJSProd_.smarttip-guidance-msg wmgPlayerJSProd_.mgPlayerJSProd_smarttip-popup-footer {
+wmgPlayerJSProd_.mgPlayerJSProd_smarttip-guidance-msg wmgPlayerJSProd_.mgPlayerJSProd_smarttip-popup-footer {
     height: 50px;
     padding: 0 15px;
 }
 
-wmgPlayerJSProd_.smarttip-guidance-msg wmgPlayerJSProd_.mgPlayerJSProd_smarttip-popup-footer .mgPlayerJSProd_custom-image {
+wmgPlayerJSProd_.mgPlayerJSProd_smarttip-guidance-msg wmgPlayerJSProd_.mgPlayerJSProd_smarttip-popup-footer .mgPlayerJSProd_custom-image {
     width: auto !important;
     max-width: 100px !important;
     max-height: 25px !important;
@@ -848,7 +877,7 @@ wmgPlayerJSProd_.mgPlayerJSProd_smarttip-valid {
 }
 
 @supports (-ms-ime-align: auto) {
-    wmgPlayerJSProd_.smarttip-guidance-msg {
+    wmgPlayerJSProd_.mgPlayerJSProd_smarttip-guidance-msg {
         min-width: 200px;
     }
 
@@ -866,22 +895,22 @@ wmgPlayerJSProd_.mgPlayerJSProd_smarttip-valid {
         overflow: visible;
     }
 
-    wmgPlayerJSProd_.smarttip-msg-inner {
+    wmgPlayerJSProd_.mgPlayerJSProd_smarttip-msg-inner {
         min-width: 200px;
     }
 
-    wmgPlayerJSProd_.smarttip-guidance-msg-top,
-    wmgPlayerJSProd_.smarttip-guidance-msg-custom {
+    wmgPlayerJSProd_.mgPlayerJSProd_smarttip-guidance-msg-top,
+    wmgPlayerJSProd_.mgPlayerJSProd_smarttip-guidance-msg-custom {
         top: -10px !important;
         transform: translate(-50%, -100%) !important;
     }
 
-    wmgPlayerJSProd_.smarttip-guidance-msg-bottom {
+    wmgPlayerJSProd_.mgPlayerJSProd_smarttip-guidance-msg-bottom {
         bottom: -10px !important;
         transform: translate(-50%, 100%) !important;
     }
 
-    wmgPlayerJSProd_.smarttip-guidance-msg-left {
+    wmgPlayerJSProd_.mgPlayerJSProd_smarttip-guidance-msg-left {
         left: -15px;
         transform: translate(-100%, -50%) !important;
     }
@@ -892,33 +921,33 @@ wmgPlayerJSProd_.mgPlayerJSProd_smarttip-valid {
     }
 }
 
-wmgPlayerJSProd_.smarttip-guidance-msg::-webkit-scrollbar-track {
+wmgPlayerJSProd_.mgPlayerJSProd_smarttip-guidance-msg::-webkit-scrollbar-track {
     -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3) !important;
     border-radius: 10px !important;
     background-color: #F5F5F5 !important;
 }
 
-wmgPlayerJSProd_.smarttip-guidance-msg::-webkit-scrollbar {
+wmgPlayerJSProd_.mgPlayerJSProd_smarttip-guidance-msg::-webkit-scrollbar {
     width: 6px !important;
     background-color: #F5F5F5 !important;
 }
 
-wmgPlayerJSProd_.smarttip-guidance-msg::-webkit-scrollbar-thumb {
+wmgPlayerJSProd_.mgPlayerJSProd_smarttip-guidance-msg::-webkit-scrollbar-thumb {
     border-radius: 10px !important;
     -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3) !important;
     background-color: #cccccc !important;
 }
 
-.mgPlayerJSProd_smarttip-icon:hover wmgPlayerJSProd_.smarttip-guidance-msg {
+.mgPlayerJSProd_smarttip-icon:hover wmgPlayerJSProd_.mgPlayerJSProd_smarttip-guidance-msg {
     opacity: 1;
     visibility: visible;
 }
-wmgPlayerJSProd_.mg-smarttip-icon:hover wmgPlayerJSProd_.smarttip-guidance-msg {
+wmgPlayerJSProd_.mg-smarttip-icon:hover wmgPlayerJSProd_.mgPlayerJSProd_smarttip-guidance-msg {
     opacity: 1;
     visibility: visible;
 }
 
-wmgPlayerJSProd_.smarttip-guidance-msg-right {
+wmgPlayerJSProd_.mgPlayerJSProd_smarttip-guidance-msg-right {
     position: absolute;
     left: 100%;
     top: 50%;
@@ -931,7 +960,7 @@ wmgPlayerJSProd_.smarttip-guidance-msg-right {
     transform: translate(10px, -50%) !important;
 }
 
-wmgPlayerJSProd_.smarttip-guidance-msg-right:before {
+wmgPlayerJSProd_.mgPlayerJSProd_smarttip-guidance-msg-right:before {
     position: absolute;
     top: 50%;
     left: -7px;
@@ -943,7 +972,7 @@ wmgPlayerJSProd_.smarttip-guidance-msg-right:before {
     z-index: 2;
 }
 
-wmgPlayerJSProd_.smarttip-guidance-msg-right:after {
+wmgPlayerJSProd_.mgPlayerJSProd_smarttip-guidance-msg-right:after {
     position: absolute;
     top: 50%;
     left: -9px;
@@ -955,7 +984,7 @@ wmgPlayerJSProd_.smarttip-guidance-msg-right:after {
     transform: translate(0, -50%);
 }
 
-wmgPlayerJSProd_.smarttip-guidance-msg-bottom {
+wmgPlayerJSProd_.mgPlayerJSProd_smarttip-guidance-msg-bottom {
     position: absolute;
     left: 50%;
     bottom: 0%;
@@ -971,7 +1000,7 @@ wmgPlayerJSProd_.mgPlayerJSProd_smarttip-valid-bottom {
     margin: 0px !important;
 }
 
-wmgPlayerJSProd_.smarttip-guidance-msg-bottom:before {
+wmgPlayerJSProd_.mgPlayerJSProd_smarttip-guidance-msg-bottom:before {
     position: absolute;
     top: -7px;
     left: 50%;
@@ -983,7 +1012,7 @@ wmgPlayerJSProd_.smarttip-guidance-msg-bottom:before {
     z-index: 2;
 }
 
-wmgPlayerJSProd_.smarttip-guidance-msg-bottom:after {
+wmgPlayerJSProd_.mgPlayerJSProd_smarttip-guidance-msg-bottom:after {
     position: absolute;
     top: -9px;
     left: 50%;
@@ -996,7 +1025,7 @@ wmgPlayerJSProd_.smarttip-guidance-msg-bottom:after {
     transform: translate(-50%, 0);
 }
 
-wmgPlayerJSProd_.smarttip-guidance-msg-left {
+wmgPlayerJSProd_.mgPlayerJSProd_smarttip-guidance-msg-left {
     position: absolute;
     left: : 0px;
     top: 50%;
@@ -1010,7 +1039,7 @@ wmgPlayerJSProd_.smarttip-guidance-msg-left {
     right: initial !important;
 }
 
-wmgPlayerJSProd_.smarttip-guidance-msg-left:before {
+wmgPlayerJSProd_.mgPlayerJSProd_smarttip-guidance-msg-left:before {
     position: absolute;
     top: 50%;
     right: -7px;
@@ -1022,7 +1051,7 @@ wmgPlayerJSProd_.smarttip-guidance-msg-left:before {
     z-index: 2;
 }
 
-wmgPlayerJSProd_.smarttip-guidance-msg-left:after {
+wmgPlayerJSProd_.mgPlayerJSProd_smarttip-guidance-msg-left:after {
     position: absolute;
     top: 50%;
     right: -9px;
@@ -1034,8 +1063,8 @@ wmgPlayerJSProd_.smarttip-guidance-msg-left:after {
     transform: translate(0, -50%);
 }
 
-wmgPlayerJSProd_.smarttip-guidance-msg-top,
-wmgPlayerJSProd_.smarttip-guidance-msg-custom {
+wmgPlayerJSProd_.mgPlayerJSProd_smarttip-guidance-msg-top,
+wmgPlayerJSProd_.mgPlayerJSProd_smarttip-guidance-msg-custom {
     position: absolute;
     top: 0%;
     left: 50%;
@@ -1045,7 +1074,7 @@ wmgPlayerJSProd_.smarttip-guidance-msg-custom {
 
 }
 
-wmgPlayerJSProd_.smarttip-guidance-msg-top:before {
+wmgPlayerJSProd_.mgPlayerJSProd_smarttip-guidance-msg-top:before {
     position: absolute;
     bottom: -8px;
     left: 50%;
@@ -1057,7 +1086,7 @@ wmgPlayerJSProd_.smarttip-guidance-msg-top:before {
     z-index: 2;
 }
 
-wmgPlayerJSProd_.smarttip-guidance-msg-top:after {
+wmgPlayerJSProd_.mgPlayerJSProd_smarttip-guidance-msg-top:after {
     position: absolute;
     bottom: -9px;
     left: 50%;
@@ -1069,7 +1098,7 @@ wmgPlayerJSProd_.smarttip-guidance-msg-top:after {
     transform: translate(-50%, 0);
 }
 
-wmgPlayerJSProd_.smarttip-guidance-msg-custom:before {
+wmgPlayerJSProd_.mgPlayerJSProd_smarttip-guidance-msg-custom:before {
     border-top: 8px solid #ffffff;
     border-left: 6px solid transparent;
     border-right: 6px solid transparent;
@@ -1081,7 +1110,7 @@ wmgPlayerJSProd_.smarttip-guidance-msg-custom:before {
     z-index: 2;
 }
 
-wmgPlayerJSProd_.smarttip-guidance-msg-custom:after {
+wmgPlayerJSProd_.mgPlayerJSProd_smarttip-guidance-msg-custom:after {
     border-top: 8px solid;
     border-top-color: inherit !important;
     border-left: 6px solid transparent;
@@ -1093,7 +1122,7 @@ wmgPlayerJSProd_.smarttip-guidance-msg-custom:after {
     transform: translate(-50%, 0);
 }
 
-wmgPlayerJSProd_.smarttip-guidance-msg-center {
+wmgPlayerJSProd_.mgPlayerJSProd_smarttip-guidance-msg-center {
     position: absolute;
     right: 100%;
     top: 50%;
@@ -1107,7 +1136,7 @@ wmgPlayerJSProd_.smarttip-guidance-msg-center {
     right: initial !important;
 }
 
-wmgPlayerJSProd_.smarttip-guidance-msg-center:before {
+wmgPlayerJSProd_.mgPlayerJSProd_smarttip-guidance-msg-center:before {
     position: absolute;
     top: 50%;
     right: -7px;
@@ -1119,7 +1148,7 @@ wmgPlayerJSProd_.smarttip-guidance-msg-center:before {
     z-index: 2;
 }
 
-wmgPlayerJSProd_.smarttip-guidance-msg-center:after {
+wmgPlayerJSProd_.mgPlayerJSProd_smarttip-guidance-msg-center:after {
     position: absolute;
     top: 50%;
     right: -9px;

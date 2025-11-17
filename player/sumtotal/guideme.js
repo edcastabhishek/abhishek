@@ -1,71 +1,73 @@
-var configPath = null;
+/*global GmCXt,guideMe*/ 
 if (typeof guideMe === 'undefined') {
-	guideMe = {};
+    guideMe = {};
 }
 if (!guideMe.baseUrl) {
-	guideMe.baseUrl = "https://edcastabhishek.github.io/abhishek/player/sumtotal/";
+    guideMe.baseUrl = "https://edcastabhishek.github.io/abhishek/player/sumtotal/";
+} 
+
+function getMyGuideScript() {
+    var configPath = guideMe.baseUrl + 'config.js';
+    if(typeof GmCXt === 'undefined'){
+        if (configPath) {
+            let el = document.createElement('script');
+            el.onload = getMyGuideScriptCB;
+            el.src = configPath;
+            document.head.appendChild(el);
+        } else {
+            console.log("Invalid config path");
+        }
+    }
 }
-configPath = guideMe.baseUrl + 'config.js';
-var playerExtImgUrl = "";
 
-function getScript(source, callback) {
-	if (source) {
-		var el = document.createElement('script');
-		el.onload = callback;
-		el.src = source;
+function getMyGuideScriptCB() {
 
-		document.head.appendChild(el);
-	} else {
-		console.log("Invalid config path");
-	}
-}
+    GmCXt.conf.baseUrl = guideMe.baseUrl;
+    let a = document.createElement('script');
 
-function getScriptCB() {
+    if (GmCXt.conf.allowedDomains && GmCXt.conf.allowedDomains.length && window.location.hostname.length > 0) {
+        let foundDomain = false;
+        for (let i = 0; i < GmCXt.conf.allowedDomains.length; i++) {
+            if (window.location.hostname.indexOf(GmCXt.conf.allowedDomains[i]) >= 0) {
+                foundDomain = true;
+                break;
+            }
+        }
 
-	GmCXt.conf.baseUrl = guideMe.baseUrl;
-	var a = document.createElement('script');
+        if (foundDomain) {
+            loadGuideMeClientFiles();
+        }
+    } else {
+        loadGuideMeClientFiles();
+    }
 
-	if (GmCXt.conf.allowedDomains && GmCXt.conf.allowedDomains.length && window.location.hostname.length > 0) {
-		var foundDomain = false;
-		for (var i = 0; i < GmCXt.conf.allowedDomains.length; i++) {
-			if (window.location.hostname.indexOf(GmCXt.conf.allowedDomains[i]) >= 0) {
-				foundDomain = true;
-				break;
-			}
-		}
-
-		if (foundDomain) {
-			loadGuideMeClientFiles();
-		}
-	} else {
-		loadGuideMeClientFiles();
-	}
-
-	function loadGuideMeClientFiles() {
-		if (window.self === window.top) {
-			a.src = GmCXt.conf.baseUrl + 'gm_client_1763366090959.js';
-		} else {
-			a.src = GmCXt.conf.baseUrl + 'gm_client_iframe_1763366090959.js';
-		}
-		document.head.appendChild(a);
-	}
+    function loadGuideMeClientFiles() {
+        if (window.self === window.top) {
+            a.src = GmCXt.conf.baseUrl + 'gm_client_1763381438284.js';
+        } else {
+            a.src = GmCXt.conf.baseUrl + 'gm_client_iframe_1763381438284.js';
+        }
+        document.head.appendChild(a);
+    }
 };
 
-function detectExtension() {
-	if(playerExtImgUrl){
-		var img;
-	    img = new Image();
-	    img.src = playerExtImgUrl;
-	    img.onload = function() {
-	        console.log("MyGuide player Extension installed, Skiping client JS load.");
-	    };
-	    img.onerror = function() {
-	        getScript(configPath, getScriptCB );
-	    };
-	} else{
-		getScript(configPath, getScriptCB );
-	}
-    
+function detectMyGuideExtension() {
+    setTimeout(function() {
+        let playerExtImgUrl = "";
+        if(playerExtImgUrl){
+            let img;
+            img = new Image();
+            img.src = playerExtImgUrl;
+            img.onload = function() {
+                console.log("MyGuide player Extension installed, Skiping client JS load.");
+            };
+            img.onerror = function() {
+                getMyGuideScript();
+            };
+        } else{
+            getMyGuideScript();
+        }
+    }, 0 );
 }
 
-detectExtension();
+detectMyGuideExtension();
