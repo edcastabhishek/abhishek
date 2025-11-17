@@ -13,18 +13,22 @@ function getMyGuideScript() {
         if (configPath) {
             console.log("document.readyState...111" + document.readyState);
             if (document.readyState === 'complete') {
-                console.log("document.readyState...222" + document.readyState);
-                let el = document.createElement('script');
-                el.onload = getMyGuideScriptCB;
-                el.src = configPath;
-                document.head.appendChild(el);
-            } else {
-                window.addEventListener('load', function() {
-                    console.log("document load event.....");
+                setTimeout(function() {
+                    console.log("document.readyState...222" + document.readyState);
                     let el = document.createElement('script');
                     el.onload = getMyGuideScriptCB;
                     el.src = configPath;
                     document.head.appendChild(el);
+                }, 1000 );
+            } else {
+                window.addEventListener('load', function() {
+                    setTimeout(function() {
+                        console.log("document load event.....");
+                        let el = document.createElement('script');
+                        el.onload = getMyGuideScriptCB;
+                        el.src = configPath;
+                        document.head.appendChild(el);
+                    }, 1000 );
                 });
             }
         } else {
@@ -65,7 +69,7 @@ function getMyGuideScriptCB() {
 };
 
 function detectMyGuideExtension() {
-    setTimeout(function() {
+   // setTimeout(function() {
         let playerExtImgUrl = "";
         if(playerExtImgUrl){
             let img;
@@ -80,7 +84,7 @@ function detectMyGuideExtension() {
         } else{
             getMyGuideScript();
         }
-    }, 1000 );
+  //  }, 1000 );
 }
 
 detectMyGuideExtension();
