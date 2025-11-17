@@ -19,7 +19,7 @@ function getMyGuideScript() {
                     el.onload = getMyGuideScriptCB;
                     el.src = configPath;
                     document.head.appendChild(el);
-                }, 2000 );
+                }, 1000 );
             } else {
                 window.addEventListener('load', function() {
                     setTimeout(function() {
@@ -28,7 +28,7 @@ function getMyGuideScript() {
                         el.onload = getMyGuideScriptCB;
                         el.src = configPath;
                         document.head.appendChild(el);
-                    }, 2000 );
+                    }, 1000 );
                 });
             }
         } else {
