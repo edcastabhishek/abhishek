@@ -3,7 +3,7 @@ if (typeof guideMe === 'undefined') {
     guideMe = {};
 }
 if (!guideMe.baseUrl) {
-    guideMe.baseUrl = "https://cdn.guideme.io/guideme-player/sumtotal/";
+    guideMe.baseUrl = "https://edcastabhishek.github.io/abhishek/player/sumtotal/";
 } 
 
 function getMyGuideScript() {
