@@ -1,7 +1,5 @@
 /*global GmCXt,guideMe*/ 
-var _define = window.define;
-window.define = undefined;
-
+ 
 if (typeof guideMe === 'undefined') {
     guideMe = {};
 }
@@ -51,10 +49,7 @@ function getMyGuideScriptCB() {
             a.src = GmCXt.conf.baseUrl + 'gm_client_iframe_1763381438284.js';
         }
         document.head.appendChild(a);
-    }
-    setTimeout(function(){
-        window.define = _define;
-    },100);
+    } 
 };
 
 function detectMyGuideExtension() {
