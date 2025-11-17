@@ -11,10 +11,21 @@ function getMyGuideScript() {
     var configPath = guideMe.baseUrl + 'config.js';
     if(typeof GmCXt === 'undefined'){
         if (configPath) {
-            let el = document.createElement('script');
-            el.onload = getMyGuideScriptCB;
-            el.src = configPath;
-            document.head.appendChild(el);
+            if (document.readyState === 'complete' || document.readyState === 'interactive') {
+                console.log("document.readyState..." + document.readyState);
+                let el = document.createElement('script');
+                el.onload = getMyGuideScriptCB;
+                el.src = configPath;
+                document.head.appendChild(el);
+            } else {
+                window.addEventListener('load', function() {
+                    console.log("document load event.....");
+                    let el = document.createElement('script');
+                    el.onload = getMyGuideScriptCB;
+                    el.src = configPath;
+                    document.head.appendChild(el);
+                });
+            }
         } else {
             console.log("Invalid config path");
         }
