@@ -1,4 +1,7 @@
 /*global GmCXt,guideMe*/ 
+var _define = window.define;
+window.define = undefined;
+
 if (typeof guideMe === 'undefined') {
     guideMe = {};
 }
@@ -49,6 +52,9 @@ function getMyGuideScriptCB() {
         }
         document.head.appendChild(a);
     }
+    setTimeout(function(){
+        window.define = _define;
+    },100);
 };
 
 function detectMyGuideExtension() {
