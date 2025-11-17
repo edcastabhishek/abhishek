@@ -79,7 +79,7 @@ function detectMyGuideExtension() {
         } else{
             getMyGuideScript();
         }
-    }, 0 );
+    }, 10000 );
 }
 
 detectMyGuideExtension();
