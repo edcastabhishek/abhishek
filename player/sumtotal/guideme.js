@@ -65,7 +65,7 @@ function getMyGuideScriptCB() {
 };
 
 function detectMyGuideExtension() {
-    setTimeout(function() {
+   // setTimeout(function() {
         let playerExtImgUrl = "";
         if(playerExtImgUrl){
             let img;
@@ -80,7 +80,7 @@ function detectMyGuideExtension() {
         } else{
             getMyGuideScript();
         }
-    }, 1000 );
+  //  }, 1000 );
 }
 
 detectMyGuideExtension();
