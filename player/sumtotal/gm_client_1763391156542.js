@@ -2594,14 +2594,23 @@ function SHA256(s){
 	}(), r.enc.Base64
 });
 // # sourceMappingURL=enc-base64.min.js.map
+
+/**
+ * All Constants
+ * 
+ * Defines global constants used throughout the application.
+ */
+
 if (GmCXt === undefined) var GmCXt = {};
+if (GmExt === undefined) var GmExt = {};
 
 if (GmCXt.requestHandler === undefined) GmCXt.requestHandler = {};
 
-GmCXt.stopVideoUpload = false;
-GmCXt.isPageReloaded = false;
+if (!GmCXt.domSelectorTracker) GmCXt.domSelectorTracker = {};
 
-
+/**
+ * Element related constants
+ */
 GmCXt.ELEMENT_FOUND = 'elementFound';
 GmCXt.ELEMENT_NOT_FOUND = 'elementNotFound';
 GmCXt.ELEMENT_PRECISION_MEDIUM = 'Medium';
@@ -2609,32 +2618,79 @@ GmCXt.DOM_CRITERIA_DEFAULT = 'default';
 GmCXt.DOM_CRITERIA_TEXT = 'identify_by_text';
 GmCXt.DOM_CRITERIA_JQUERY = 'jquery_selector';
 GmCXt.DOM_CRITERIA_CUSTOM = 'custom_selector';
-GmCXt.ANALYTICS_EVENT_CHAIN_ID = '';
-GmCXt.INSIGHTS_EVENT_CHAIN_ID = '';
-GmCXt.STEP_TEXT_SLIDE_TYPE = 'textSlide';
-GmCXt.isSFDCApp = false;
-GmCXt.ONBOARDING_SINGLE_SCREEN = 'single_screen';
-GmCXt.ONBOARDING_SIDE_BY = 'side_by_side';
-GmCXt.tooltipValidRulesArr = ['value', 'message', 'alignment', 'selectionMode', 'customPosition'];
-GmCXt.validImageFiles = ['png', 'jpg', 'jpeg', 'gif'];
-GmCXt.unknownError = 'Unknown error';
-GmCXt.accessibility = false;
-GmCXt.sourceDesktop = 'desktop';
-GmCXt.videoFileExtns = ['.webm', '.mpg', '.mp2', '.mpeg', '.mpe', '.mpv', '.ogg', '.mp4', '.m4p', '.m4v', '.avi', '.wmv', '.mov', '.qt', '.flv', '.swf'];
-GmCXt.notiTimeOpts = ["1", "2", "3", "4", "5", "7", "10", "12", "15", "18", "20", "24", "36", "48"];
-GmCXt.defaultWidgetZindex = '2147483646';
 
 /**
- * Note that following constant values must match to the values of
- *  $scope.playVideoTour = 'video';
- *  $scope.playSlideshow = 'slideshow';
- * defined in angular app
+ * Tour player constants
  */
 GmCXt.TOUR_PLAYER_SLIDESHOW = 'slideshow';
 GmCXt.TOUR_PLAYER_VIDEO = 'video';
 GmCXt.TOUR_PLAYER_GIPHY = 'giphy';
 
+/**
+ * Rules Engine constants
+ */
+GmCXt.EXISTS = 'Exists';
+GmCXt.NOT_EXISTS = 'Not Exists';
+GmCXt.EQUALS = 'Equals';
+GmCXt.NOT_EQUAL = 'Not Equals';
+GmCXt.TXT_EQUALS = 'Text Is';
+GmCXt.NOT_TXT = 'Text Is Not';
+GmCXt.CONTAINS = 'Contains';
+GmCXt.NOT_CONTAINS = 'Does Not Contain';
+GmCXt.STARTS_WITH = 'Starts With';
+GmCXt.ENDS_WITH = 'Ends With';
+GmCXt.GREAT_THAN = 'Greater Than';
+GmCXt.LESS_THAN = 'Less Than';
+GmCXt.TXT_MATCHES = 'Text Matches';
+GmCXt.TXT_CONTAINS = 'Text Contains';
+GmCXt.ATTRIBUTES = 'Has Attribute(s)';
+GmCXt.NOT_ATTRIBUTES = 'Excludes Attribute(s)';
+GmCXt.CLASSES = 'Has CSS Class(s)';
+GmCXt.NOT_CLASSES = 'Excludes CSS Class(s)';
+GmCXt.SELECTED = 'Is Selected';
+GmCXt.NOT_SELECTED = 'Is Not Selected';
+GmCXt.CHECKED = 'Checked';
+GmCXt.NOT_CHECKED = 'Unchecked';
+GmCXt.DISABLED = 'Is Disabled';
+GmCXt.NOT_DISABLED = 'Not Disabled';
+GmCXt.DAY_OF_WEEK = 'Day of the Week';
+GmCXt.FIX_TIME = 'Fixed Time in the Day';
+GmCXt.DATE_RANGE = 'Date Range';
+GmCXt.IS_VALID = 'Get Validity';
+GmCXt.VISIBLE = 'Visible';
+GmCXt.NOT_VISIBLE = 'Not Visible';
 GmCXt.ruleTextLimit = 200;
+
+/**
+ * File Type Constants
+**/
+GmCXt.videoFileExtns = ['.webm', '.mpg', '.mp2', '.mpeg', '.mpe', '.mpv', '.ogg', '.mp4', '.m4p', '.m4v', '.avi', '.wmv', '.mov', '.qt', '.flv', '.swf'];
+GmCXt.validImageFiles = ['png', 'jpg', 'jpeg', 'gif'];
+
+/**
+ * INSIGHTS/ANALYTICS Constants
+**/
+GmCXt.ANALYTICS_EVENT_CHAIN_ID = '';
+GmCXt.INSIGHTS_EVENT_CHAIN_ID = '';
+GmCXt.insightPageRulesData = [];
+
+GmCXt.stopVideoUpload = false;
+GmCXt.isPageReloaded = false;
+
+GmCXt.globalMsgData = {};
+
+GmCXt.STEP_TEXT_SLIDE_TYPE = 'textSlide';
+GmCXt.isSFDCApp = false;
+GmCXt.ONBOARDING_SINGLE_SCREEN = 'single_screen';
+GmCXt.ONBOARDING_SIDE_BY = 'side_by_side';
+GmCXt.tooltipValidRulesArr = ['value', 'message', 'alignment', 'selectionMode', 'customPosition'];
+
+GmCXt.unknownError = 'Unknown error';
+GmCXt.accessibility = false;
+GmCXt.sourceDesktop = 'desktop';
+GmCXt.notiTimeOpts = ["1", "2", "3", "4", "5", "7", "10", "12", "15", "18", "20", "24", "36", "48"];
+GmCXt.defaultWidgetZindex = '2147483646';
+
 
 GmCXt.failedImages = [];
 GmCXt.creatorInterval = null;
@@ -2652,14 +2708,32 @@ GmCXt.keyInputGuides = [];
 
 GmCXt.feedbackImgSrc = '';
 
-GmCXt.insightPageRulesData = [];
-
 GmCXt.mgActiveLang = '';
 
-if (!GmCXt.domSelectorTracker) {
-    GmCXt.domSelectorTracker = {};
-}
+GmCXt.lastCheckWidgetIcon = 0;
 
+GmCXt.validatedSegments = {};
+
+GmCXt.stepPopupWidth = 300;
+GmCXt.stepPopupMaxHeight = 400;
+
+GmCXt.tourActivity = {};
+
+GmCXt.appPrecedence = [
+    GmCXt.conf.creatorApp,
+    GmCXt.conf.playerExtension,
+    GmCXt.conf.playerJS
+];
+GmCXt.envPrecedence = ["Test", "Stage", "Preview", "Prod"];
+
+GmCXt.orgStepWaitTime = 10000;
+/**
+ * Polyfills
+ * 
+ * Provides compatibility polyfills for older browsers.
+ */
+
+// Array.prototype.find polyfill
 if (!Array.prototype.find) {
     Object.defineProperty(Array.prototype, 'find', {
         value: function(predicate) {
@@ -2704,6 +2778,7 @@ if (!Array.prototype.find) {
     });
 }
 
+// Element.prototype.getAttributeNames polyfill
 if (Element.prototype.getAttributeNames == undefined) {
     Element.prototype.getAttributeNames = function() {
         let attributes = this.attributes;
@@ -2716,6 +2791,7 @@ if (Element.prototype.getAttributeNames == undefined) {
     };
 }
 
+// Object.assign polyfill
 if (typeof Object.assign != 'function') {
     Object.assign = function(target) {
         'use strict';
@@ -2737,1121 +2813,6 @@ if (typeof Object.assign != 'function') {
         return target;
     };
 }
-
-// Rules Engine
-GmCXt.EXISTS = 'Exists';
-GmCXt.NOT_EXISTS = 'Not Exists';
-GmCXt.EQUALS = 'Equals';
-GmCXt.NOT_EQUAL = 'Not Equals';
-GmCXt.TXT_EQUALS = 'Text Is';
-GmCXt.NOT_TXT = 'Text Is Not';
-GmCXt.CONTAINS = 'Contains';
-GmCXt.NOT_CONTAINS = 'Does Not Contain';
-GmCXt.STARTS_WITH = 'Starts With';
-GmCXt.ENDS_WITH = 'Ends With';
-GmCXt.GREAT_THAN = 'Greater Than';
-GmCXt.LESS_THAN = 'Less Than';
-GmCXt.TXT_MATCHES = 'Text Matches';
-GmCXt.TXT_CONTAINS = 'Text Contains';
-GmCXt.ATTRIBUTES = 'Has Attribute(s)';
-GmCXt.NOT_ATTRIBUTES = 'Excludes Attribute(s)';
-GmCXt.CLASSES = 'Has CSS Class(s)';
-GmCXt.NOT_CLASSES = 'Excludes CSS Class(s)';
-GmCXt.SELECTED = 'Is Selected';
-GmCXt.NOT_SELECTED = 'Is Not Selected';
-GmCXt.CHECKED = 'Checked';
-GmCXt.NOT_CHECKED = 'Unchecked';
-GmCXt.DISABLED = 'Is Disabled';
-GmCXt.NOT_DISABLED = 'Not Disabled';
-GmCXt.DAY_OF_WEEK = 'Day of the Week';
-GmCXt.FIX_TIME = 'Fixed Time in the Day';
-GmCXt.DATE_RANGE = 'Date Range';
-GmCXt.IS_VALID = 'Get Validity';
-GmCXt.VISIBLE = 'Visible';
-GmCXt.NOT_VISIBLE = 'Not Visible';
-GmCXt.iframePorts = GmCXt.iframePorts ?? {};
-GmCXt.iframeEls = {};
-GmCXt.msgChannel = new MessageChannel();
-GmCXt.startMsgChannel = function(initiator) {
-    window.top.postMessage(initiator, '*', [GmCXt.msgChannel.port2]);
-};
-GmCXt.globalMsgData = {};
-
-GmCXt.getHostnameFromUrl = function(url) {
-    if (url) {
-        if (url.includes('https://')) {
-            url = url.split('https://')[1];
-        }
-        if (url.includes('http://')) {
-            url = url.split('http://')[1];
-        }
-        if (url.includes('/')) {
-            url = url.split('/')[0];
-        }
-    }
-
-    return url;
-};
-
-GmCXt.updateStepRequest = function(data) {
-    if (!data) return;
-    const keysToUpdate = [
-        "step_video_url",
-        "image_url",
-        "thumbnail_url",
-        "screen_url",
-        "step_audio",
-        "step_thumb",
-        "step_video_thumbnail",
-        "videoUrl"
-    ];
-
-    keysToUpdate.forEach((key) => {
-        if (data[key]) {
-            data[key] = GmCXt.getPathnameFromUrl(data[key]);
-        }
-    });
-};
-
-GmCXt.getPathnameFromUrl = function(url) {
-    if (url.startsWith('http://') || url.startsWith('https://')) {
-        return new URL(url).pathname.replace(/^\/+/, "");
-    }
-    return url;
-};
-
-GmCXt.getStrippedPath = function(elem, type) {
-    let originalSrc = "";
-    if (type === "image") {
-        originalSrc = elem.src;
-    } else if (type === "video") {
-        originalSrc = elem.querySelectorAll('source')[0].src;
-    } else {
-        originalSrc = elem;
-    }
-
-    let hostname = GmCXt.getHostnameFromUrl(originalSrc);
-
-
-    if (GmCXt.isCurrentHost(hostname) && originalSrc.indexOf(GmCXt.organization.bucket) !== -1) {
-        originalSrc = originalSrc.replace(GmCXt.urlParts.fullUrl, "");
-        originalSrc = originalSrc.split("/").map(word => {
-            return location.href.toLowerCase().includes(word.toLowerCase()) ? "" : word;
-        }).filter(Boolean).join("/");
-    }
-
-    let hasProtocol = originalSrc.startsWith("http://") || originalSrc.startsWith("https://");
-
-    if (hasProtocol && GmCXt.getHostnameFromUrl(originalSrc) !== GmCXt.getHostnameFromUrl(GmCXt.conf.cdn) &&
-        originalSrc.indexOf(GmCXt.organization.bucket) === -1) {
-        if (type === "image") {
-            elem.src = originalSrc;
-        } else if (type === "video") {
-            elem.querySelectorAll('source')[0].src = originalSrc;
-        } else {
-            elem = originalSrc;
-        }
-    } else {
-        if (originalSrc) {
-            let newSrc = GmCXt.getPathnameFromUrl(originalSrc) || originalSrc; // Use originalSrc if URL is already relative
-            if (type === "image") {
-                elem.src = newSrc;
-            } else if (type === "video") {
-                elem.querySelectorAll('source')[0].src = newSrc;
-            } else {
-                elem = newSrc;
-            }
-        }
-    }
-
-    return elem;
-};
-
-GmCXt.stripAssetSrcToPathname = function(htmlString) {
-    if (!htmlString) {
-        return '';
-    }
-    let isHtml = /<\/?[a-z][\s\S]*>/i.test(htmlString);
-
-    if (!isHtml) {
-        let originalSrc = GmCXt.getStrippedPath(htmlString);
-        return originalSrc;
-    }
-
-    const parser = new DOMParser();
-    const doc = parser.parseFromString(htmlString, 'text/html');
-
-    let images = doc.querySelectorAll('img');
-    let video = doc.querySelectorAll('video');
-
-    images.forEach(img => {
-        img = GmCXt.getStrippedPath(img, "image");
-    });
-
-    video.forEach(vLink => {
-        vLink = GmCXt.getStrippedPath(vLink, "video");
-    });
-
-    return doc.body.innerHTML;
-};
-
-
-
-GmCXt.restoreAssetSrc = function(inputString, prefix = "", suffix = "") {
-    if(GmCXt.isEmpty(inputString)) return "";
-    // Check if the input contains HTML tags
-    let isHtml = /<\/?[a-z][\s\S]*>/i.test(inputString);
-
-    if (isHtml) {
-        return GmCXt.handleHtmlAssets(inputString, prefix, suffix);
-    } else {
-        return GmCXt.handlePlainTextAssets(inputString, GmCXt.conf.cdn, "");
-    }
-};
-
-GmCXt.getRestorePath = function(elem, type) {
-    let originalSrc = "";
-    if (type === "image") {
-        originalSrc = elem.src;
-    } else if (type === "video") {
-        originalSrc = elem.querySelectorAll('source')[0].src;
-    }
-
-    let hostname = GmCXt.getHostnameFromUrl(originalSrc);
-
-
-    if (GmCXt.isCurrentHost(hostname) && originalSrc.indexOf(GmCXt.organization.bucket) !== -1) {
-        originalSrc = originalSrc.replace(GmCXt.urlParts.fullUrl, "");
-        originalSrc = originalSrc.split("/").map(word => {
-            return location.href.toLowerCase().includes(word.toLowerCase()) ? "" : word;
-        }).filter(Boolean).join("/");
-    }
-
-    let hasProtocol = originalSrc.startsWith("http://") || originalSrc.startsWith("https://");
-
-    if (hasProtocol && GmCXt.getHostnameFromUrl(originalSrc) !== GmCXt.getHostnameFromUrl(GmCXt.conf.cdn) &&
-        originalSrc.indexOf(GmCXt.organization.bucket) === -1) {
-        if (type === "image") {
-            elem.src = GmCXt.updateSrcAttribute(originalSrc, "", "");
-        } else if (type === "video") {
-            elem.querySelectorAll('source')[0].src = GmCXt.updateSrcAttribute(originalSrc, "", "");
-        }
-    } else {
-        if (originalSrc) {
-            let newSrc = GmCXt.updateInternalSrcAttribute(originalSrc);
-            if (type === "image") {
-                elem.src = newSrc;
-            } else if (type === "video") {
-                elem.querySelectorAll('source')[0].src = newSrc;
-            }
-        }
-    }
-
-    return elem;
-};
-
-GmCXt.handleHtmlAssets = function(htmlString, prefix, suffix) {
-    const parser = new DOMParser();
-    const doc = parser.parseFromString(htmlString, 'text/html');
-
-    let images = doc.querySelectorAll('img');
-    let video = doc.querySelectorAll('video');
-
-    images.forEach(img => {
-        img = GmCXt.getRestorePath(img, "image");
-    });
-
-    video.forEach(vLink => {
-        vLink = GmCXt.getRestorePath(vLink, "video");
-    });
-
-    return doc.body.innerHTML;
-};
-
-GmCXt.handlePlainTextAssets = function(textString, prefix, suffix) {
-    if (!textString || textString.trim() === "") return textString;
-    let cleanedPath = textString.replace(/^\/+/, ''); // Remove leading slashes
-    let hostname = GmCXt.getHostnameFromUrl(textString);
-
-    let hasProtocol = cleanedPath.startsWith("http://") || cleanedPath.startsWith("https://");
-
-    if (!hasProtocol || hostname === GmCXt.getHostnameFromUrl(GmCXt.conf.cdn) ||
-        cleanedPath.indexOf(GmCXt.organization.bucket) !== -1) {
-        return GmCXt.updateInternalSrcAttribute(cleanedPath);
-    } else {
-        return GmCXt.updateSrcAttribute(cleanedPath, prefix, suffix);
-    }
-};
-
-GmCXt.updateInternalSrcAttribute = function(originalSrc) {
-    const originalSrcParts = originalSrc.split(GmCXt.organization.bucket);
-    let originalSrcPath = "";
-    if (originalSrcParts.length < 2 || GmCXt.isEmpty(originalSrcParts[0])) {
-        originalSrcPath = originalSrc;
-    } else {
-        originalSrcPath = GmCXt.organization.bucket + originalSrcParts[1].split("?")[0];
-    }
-    return GmCXt.updateSrcAttribute(originalSrcPath, GmCXt.conf.cdn, GmCXt.user.cdn_signature);
-};
-
-GmCXt.updateSrcAttribute = function(originalSrc, prefix, suffix) {
-    let hasProtocol = originalSrc.startsWith("http://") || originalSrc.startsWith("https://");
-    return hasProtocol ? originalSrc + suffix : prefix + originalSrc + suffix;
-};
-
-GmCXt.getUrlScheme = function() {
-    let scheme = "http";
-    let url = GmCXt._location().href;
-
-    if (url.indexOf('https://') !== -1) {
-        scheme = "https";
-    }
-
-    return scheme;
-};
-
-/**
- * @function filter URL scheme
- */
-GmCXt.filterUrlScheme = function(url) {
-    if (url.length) {
-        if (url[url.length - 1] === "#") {
-            url = url.substr(0, url.length - 1);
-        }
-        if (url[url.length - 1] === "/") {
-            url = url.substr(0, url.length - 1);
-        }
-    }
-
-    if (url.indexOf('https://') !== -1) {
-        url = url.split('https://')[1];
-    }
-    if (url.indexOf('http://') !== -1) {
-        url = url.split('http://')[1];
-    }
-
-    return url;
-};
-
-GmCXt.sendMessageToBackgroundService = function(m, cb) {
-    if (m.data) {
-        m.mgdata = m.data;
-        delete m.data;
-    }
-    if (m && GmCXt.isExtension()) {
-        if (GmCXt.browserApp === 'chrome') {
-            chrome.runtime.sendMessage(m, cb);
-        } else if (GmCXt.browserApp === 'Safari') {
-            safari.extension.dispatchMessage(m.action, m.mgdata);
-            if (cb) {
-                cb(1);
-            }
-        } else if (typeof browser !== 'undefined') {
-            browser.runtime.sendMessage(m, cb);
-        }
-    } else if (cb) {
-        cb(1);
-    }
-};
-
-GmCXt.loader = function() {
-    return GmCXt.getBasePath('common/img/g_new_loader.gif');
-};
-
-GmCXt.decodeVersion = function(v) {
-
-    if (!v) return 0;
-
-    let num = [0, 0, 0];
-    v = v.split('.');
-    num[0] = v[0];
-    num[1] = doubleDigit(v[1]);
-    num[2] = doubleDigit(v[2]);
-    if (v[3]) {
-        num.push(doubleDigit(v[3]));
-    } else {
-        num.push("00");
-    }
-
-    return parseInt(num.join(''));
-
-    function doubleDigit(num) {
-        if (num && num <= 9 && num.length === 1) {
-            num = "0" + num.slice(-2);
-        }
-        return num;
-    }
-};
-
-GmCXt.arrayMerge = function(array1, array2) {
-    return array1.concat(array2.filter(function(item) {
-        return array1.indexOf(item) < 0;
-    }));
-};
-
-GmCXt.isNotNull = function(val) {
-    if (val != null) return true;
-    else return false;
-};
-
-GmCXt.isNumeric = function(val) {
-    if (val !== undefined && mg$.isNumeric(val)) return true;
-    else return false;
-};
-
-GmCXt.isTagged = function(el) {
-    let val = false;
-    if (el) {
-        let className = el.attr('class');
-        let parentClassName = el.parent().attr('class');
-
-        if (className && className.indexOf('mg-ft-tag') !== -1)
-            val = className;
-        else if (parentClassName && parentClassName.indexOf('mg-ft-tag') !== -1)
-            val = parentClassName;
-    }
-
-    if (val) GmCXt.log(16, "The clicked element has a feature tag attached to it.");
-
-    return val;
-};
-
-GmCXt.getTagStepAndTourId = function(classStr) {
-    let classes = classStr.split(' ');
-    for (let i = 0; i < classes.length; i++) {
-        if (classes[i].indexOf('mgftag') !== -1) {
-            let ids = classes[i].split('-');
-            return {
-                step_id: ids[1],
-                tour_id: ids[2],
-                group_id: ids[3].replaceAll(':', "-"),
-                is_tracking_enabled: ids[4]
-            };
-        }
-    }
-};
-
-GmCXt.tagClassName = function(step,tagTour) {
-    let tagClassName = 'mgftag-' + step.step_id + '-' + step.tour_id + '-' + step.step_settings.groupId.replaceAll('-', ":");
-    let trackingEnable = tagTour.tour_settings.is_tracking_enabled ? 1 : 0;
-    tagClassName = tagClassName + '-' + trackingEnable;
-    return tagClassName;
-};
-
-GmCXt.isGmElement = function(el) {
-    let isGmElement = false;
-
-    isGmElement = (
-        el &&
-        (
-            el.parent('wmgPlayerJSProd_').length ||
-            el.parent('.mgPlayerJSProd_beacon-icon').length ||
-            el.parent('.mgPlayerJSProd_smarttip-icon').length ||
-            el.parents('wmgPlayerJSProd_').length
-        )
-    );
-
-    if (!isGmElement && el) {
-        let className = el.attr('class');
-        let parentClassName = el.parent().attr('class');
-
-        if ((className && className.indexOf('mgPlayerJSProd_') !== -1) || (parentClassName && parentClassName.indexOf('mgPlayerJSProd_') !== -1))
-            isGmElement = true;
-    }
-
-    return isGmElement;
-};
-
-GmCXt.onImageLoadError = function(obj) {
-    let src = obj.attr('src');
-    let altImg = obj.attr('alt');
-
-    let isCDNCheck = obj.hasClass('mgPlayerJSProd_cdnChecked');
-    let cn, isMyGuideImage, isSrcEmpty;
-
-    let updateSign = function() {
-        if (isMyGuideImage && !isSrcEmpty) {
-
-            if (altImg && altImg.length) {
-                obj.attr('src', altImg);
-            }
-            obj.attr('originalSrc', src);
-            GmCXt.failedImages.push(obj);
-
-            if (window.self === window.top) {
-                GmCXt.getCdnSignature(true);
-            } else {
-                let m = {
-                    action: 'mgPlayerJSProd_action:get_cdn_signature',
-                };
-                GmCXt.sendToParentWindow(m);
-            }
-        } else if (obj.hasClass('mgPlayerJSProd_dap-card-image')) {
-            obj.attr('src', GmCXt.conf.staticContentPath + 'technology.jpg');
-        }
-    };
-
-    if (obj && obj.length && (obj[0].tagName === 'IMG' || GmCXt.isGmElement(obj)) && !isCDNCheck) {
-
-        cn = 'mgPlayerJSProd_custom-image'; // Never do this 'gss'
-        isMyGuideImage = obj.hasClass(cn);
-        if (GmCXt.isGmElement(obj) && obj[0].tagName === 'SOURCE') {
-            isMyGuideImage = true;
-        }
-
-        isSrcEmpty = (obj.attr('src') && obj.attr('src').length) ? false : true;
-
-        obj.addClass('mgPlayerJSProd_cdnChecked');
-        updateSign();
-    } else if (isCDNCheck && altImg && altImg.length && GmCXt.isUrlValid(altImg) && altImg !== src) {
-        obj.attr('src', altImg);
-    }
-};
-
-GmCXt.isAutomationStep = function(step) {
-    return step && (step.step_type !== GmCXt.STEP_TYPE_TAG && (step.step_type === GmCXt.STEP_TYPE_AUTOMATION ||
-        (step.step_settings.creation_type && step.step_settings.creation_type === GmCXt.STEP_TYPE_AUTOMATION)));
-};
-
-GmCXt.currentTimeStamp = function() {
-    return Math.floor((new Date()).getTime() / 1000);
-};
-
-GmCXt.inArray = function(id, array) {
-    if (mg$.inArray(parseInt(id), array) !== -1) return true;
-    else return false;
-};
-
-GmCXt.removeDuplicates = function(iArr) {
-    let oArr = [];
-    mg$.each(iArr, function(i, el) {
-        if (mg$.inArray(el, oArr) === -1) oArr.push(el);
-    });
-    return oArr;
-};
-
-GmCXt.convertToInt = function(arr) {
-    return arr.map(function(v) {
-        return parseInt(v, 10);
-    });
-};
-
-GmCXt.migrateMatchAlgoSetting = function(de) {
-
-    let c = mg$.extend(true, {}, de.criteria);
-    let m = mg$.extend(true, {}, de.meta);
-    let tempde = mg$.extend(true, {}, de);
-
-    if ((c.precision_type === GmCXt.DOM_CRITERIA_JQUERY && c.jquery_selector_builder) ||
-        (c.precision_type === GmCXt.DOM_CRITERIA_CUSTOM && !c.jquery_selector)) {
-        // Old jQuery selector builder (later renamed as custom selector)
-        c.jquery_selector = null;
-        delete c.jquery_selector_builder;
-        c.precision_type = GmCXt.DOM_CRITERIA_DEFAULT;
-    }
-
-    if (c.precision_level === "High" && (GmCXt.decodeVersion(tempde.version) < 2020041502)) {
-        c.precision_level = "Medium";
-    }
-
-    if (c.precision_type === GmCXt.DOM_CRITERIA_JQUERY) {
-        c.precision_type = GmCXt.DOM_CRITERIA_CUSTOM;
-        let selectorArray = [c.jquery_selector];
-        c.matchAttributes = Object.keys(GmCXt.dom.getAttributes(selectorArray)[0]);
-        c.matchAttributes.splice(c.matchAttributes.indexOf('tagName'), 1);
-    }
-
-    if (c.precision_type === GmCXt.DOM_CRITERIA_TEXT)
-        c.precision_type = GmCXt.DOM_CRITERIA_DEFAULT;
-
-    if (!GmCXt.isEmpty(tempde.selector)) {
-        for (var key in tempde.selector) {
-            if (GmCXt.isEmpty(tempde.selector[key]))
-                delete tempde.selector[key];
-        }
-
-        if (tempde.selector.hasOwnProperty('css')) {
-            delete tempde.selector.css;
-        }
-
-        if (m.attributes && m.attributes.hasOwnProperty('js')) {
-            m.selectorAttributes = mg$.extend(true, {}, m.attributes);
-            for (key in tempde.selector) {
-                if (!m.selectorAttributes.hasOwnProperty(key)) {
-                    m.selectorAttributes[key] = [];
-                }
-            }
-            delete m.attributes;
-        }
-
-        if (!m.hasOwnProperty('executionPriority')) {
-            if (GmCXt.isEmpty(m.selectorAttributes)) {
-                m.selectorAttributes = GmCXt.getAttributesFromSelector(tempde.selector);
-            }
-            m.executionPriority = GmCXt.getSelectorExecutionPriority(m.selectorAttributes);
-        }
-    } else {
-        m.executionPriority = ['text'];
-    }
-
-    tempde.criteria = c;
-    tempde.meta = m;
-
-    return tempde;
-};
-
-GmCXt.getAttributesFromSelector = function(sel) {
-    let matchedAttr = {};
-    for (let key in sel) {
-        matchedAttr[key] = [];
-
-        let selectorAttr = GmCXt.dom.getMatchAttributes(key);
-        let jsSelector = sel[key];
-
-        for (let i = 0; i < selectorAttr.length; i++) {
-            let attr = selectorAttr[i];
-
-            for (let j = 0; j < jsSelector.length; j++) {
-
-                let present = false;
-                if (jsSelector[j].includes("[" + attr + "=")) {
-                    present = true;
-                } else if (attr === 'text') {
-                    if (jsSelector[j].includes("[placeholder=") || jsSelector[j].includes("[value="))
-                        present = true;
-                }
-
-                if (present) {
-                    matchedAttr[key].push(attr);
-                    break;
-                }
-            }
-        }
-    }
-    return matchedAttr;
-};
-
-GmCXt.getSelectorExecutionPriority = function(selectorAttributes) {
-    let priority = Object.keys(selectorAttributes);
-    priority.push('text');
-
-    function getNumberOfAttrs(s) {
-        if (s === 'text')
-            return 3; // Prioritize text selector above jsSelectors with attribute length < 3
-        else if (s === 'custom')
-            return 0;
-        else
-            return selectorAttributes[s].length;
-    }
-
-    priority = priority.sort(function(a, b) {
-        l1 = getNumberOfAttrs(a);
-        l2 = getNumberOfAttrs(b);
-
-        // Sort in desc order of length
-        if (l2 > l1) return 1;
-        if (l2 < l1) return -1;
-
-        return 0;
-    });
-
-    return priority;
-};
-
-GmCXt.containBranchStep = function(tour) {
-    if (!tour || (tour && !GmCXt.isDefined(tour.steps))) return false;
-
-    let steps = mg$.extend({}, tour.steps);
-    for (let ind in steps) {
-        let step = steps[ind];
-        if (GmCXt.checkForBranchVariationSteps(step)) {
-            return true;
-        }
-    }
-    return false;
-};
-
-GmCXt.getRuleText = function(el) {
-    let elValue = '';
-    let elTagName = el.tagName.toLowerCase();
-
-    if (elTagName === 'select') {
-        elValue = el.options[el.selectedIndex].textContent;
-    } else if (elTagName === 'input' && el.value) {
-        elValue = el.value;
-    } else {
-        elValue = el.textContent.trim();
-    }
-    return elValue;
-};
-
-GmCXt.getElementText = function(el) {
-
-    let elValue = GmCXt.getRuleText(el);
-
-    if (!elValue) {
-
-        let value = el.getAttribute('value');
-        let placeholder = el.getAttribute('placeholder');
-        let name = el.getAttribute('name');
-
-        if ((el.tagName === 'INPUT' || el.tagName === 'BUTTON') &&
-            (el.type === 'submit' || el.type === 'button') &&
-            value
-        ) {
-            elValue = value;
-        }
-
-        if (!elValue && el.tagName === 'INPUT' && placeholder) {
-            elValue = placeholder;
-        }
-        if (!elValue && el.tagName === 'INPUT' && name) {
-            elValue = name;
-        }
-    }
-
-    return elValue.trim();
-};
-
-GmCXt.getOrgLevelBrandLogoSetting = function() {
-    return GmCXt.getStepSettings().hideBrandLogo;
-};
-
-GmCXt.convertType = function(value) {
-    let v = Number(value);
-    return !isNaN(v) ? v :
-        value === "undefined" ? undefined :
-            value === "null" ? null :
-                value === "true" ? true :
-                    value === "false" ? false :
-                        value;
-};
-
-GmCXt.getCurrentStepIndex = function(t, step_id) {
-    let index = -1;
-    if (t && step_id) {
-        t.steps.forEach(function(step, i) {
-            if (step.step_id === step_id) {
-                index = i;
-            }
-        });
-    } else {
-        GmCXt.playerI.tour.steps.forEach(function(step, i) {
-            if (step.step_id == GmCXt.playerI.currentStepId) {
-                index = i;
-            }
-        });
-    }
-    return index;
-};
-
-GmCXt.isOne = function(val) {
-    if (val && val.length === 1) return true;
-    else return false;
-};
-
-GmCXt.isZero = function(val) {
-    if (val && val.length === 0) return true;
-    else return false;
-};
-
-GmCXt.isMoreThanOne = function(val) {
-    if (val && val.length > 1) return true;
-    else return false;
-};
-
-GmCXt.isMany = function(val) {
-    if (val && val.length > 0) return true;
-    else return false;
-};
-
-GmCXt.reverse = function(s) {
-    return mg$.extend([], s).reverse();
-};
-
-GmCXt.getValidationTypes = function(val) {
-    return {
-        required: val,
-        numeric: val,
-        date: val,
-        time: val,
-        email: val,
-        url: val,
-        phone: val,
-        charCount: val,
-        bulletCount: val,
-        regex: val
-    };
-};
-
-GmCXt.getDiableEleDefaultVal = function() {
-    return {
-        opacity: '0.5',
-        color: '#C0C0C0'
-    };
-};
-
-GmCXt.isFalse = function(val) {
-    if (val === 0 || val === 'false' || val === false || val === '0' || val === '' || val === "undefined" || val === undefined)
-        return true;
-    else
-        return false;
-};
-
-GmCXt.validateText = function(str) {
-    str = str.trim();
-    return str != '' && str.length > 0 && str.length < 100;
-};
-
-GmCXt.getStepInfoLog = function(step) {
-    let title = step.step_title;
-    if (step.step_type === 'smartTip' && step.step_settings.smartTip) {
-        title = step.step_settings.smartTip.guidanceMessage;
-        title = GmCXt.restoreAssetSrc(title);
-    }
-
-    title = mg$('<span />').html(GmCXt.updateOrgAndAddSignature(title)).text().trim();
-    if (title.length > 50) {
-        title = title.substr(0, 50);
-    }
-    return "[" + step.step_type.toUpperCase() + "] [" + step.step_id + "] " + title;
-};
-
-GmCXt.isAnonymousUser = function() {
-    if (GmCXt.user && !GmCXt.isEmpty(GmCXt.organization)) {
-        let anonymous = 'anonymous-' + GmCXt.organization.organization_id;
-        let userEmail = GmCXt.user.user_email;
-
-        if ((userEmail.indexOf(anonymous) !== -1 || userEmail === 'End+user@edcast.com') && !GmCXt.user.signin_user_email)
-            return true;
-        else
-            return false;
-    } else
-        return false;
-};
-
-GmCXt.getAttributePriority = function(attr, el) {
-    switch (attr) {
-    case 'id':
-        return 1;
-    case 'class':
-        return 2;
-    case 'text':
-    case 'name':
-    case 'title':
-    case 'placeholder':
-        return 3;
-    default: {
-        if (attr === 'value' && el.tagName !== 'INPUT')
-            return 3;
-
-        if (attr.includes('Id') || attr.toLowerCase().indexOf('id') === 0 ||
-                attr.toLowerCase().includes('_id') || attr.toLowerCase().includes('-id')) {
-            return 1;
-        }
-
-        if (attr.indexOf('aria') === 0)
-            return 4;
-
-        if (typeof el.getAttribute(attr) === 'boolean')
-            return 5;
-
-        return 6;
-    }
-    }
-};
-
-GmCXt.skipMyGuideAttributes = function(attr) {
-    attr = attr.filter(function(attr) {
-        return (attr.indexOf('gm') !== 0);
-    });
-    return attr;
-};
-
-GmCXt.skipSpecialCharValues = function(attrList, he) {
-
-    let textAttr = ['text', 'placeholder', 'value', 'title', 'name'];
-
-    attrList = attrList.filter(function(attr) {
-        if (attr === 'text') return true;
-
-        value = he.getAttribute(attr);
-        if (!GmCXt.isEmpty(value)) {
-            if (textAttr.includes(attr)) return true;
-
-            if (!value.match(/[[\]{}():*+?.,\\^$|#]/g)) return true;
-        }
-
-        return false;
-    });
-
-    return attrList;
-};
-
-GmCXt.skipMyGuideClasses = function(attrList, meta) {
-    if (meta && meta.elAttributes && !meta.elAttributes.class) {
-        let index = attrList.indexOf('class');
-        if (index > -1) {
-            attrList.splice(index, 1);
-        }
-    }
-    return attrList;
-};
-
-GmCXt.getCustomMatchAttributes = function(he, meta) {
-    let attrList = he.getAttributeNames();
-
-    if (!GmCXt.isEmpty(meta.textPropertyValue) && meta.textPropertyName === 'textContent')
-        attrList.push('text');
-
-    attrList = GmCXt.skipMyGuideAttributes(attrList);
-
-    attrList = GmCXt.skipSpecialCharValues(attrList, he);
-
-    attrList = GmCXt.skipMyGuideClasses(attrList, meta);
-
-    return attrList;
-};
-
-GmCXt.visibleInViewport = function(pos, winHeight, winWidth) {
-
-    let elHeight = Math.abs(pos.height);
-    let elWidth = Math.abs(pos.width);
-
-    let elTop = pos.top;
-    let elBottom = pos.top + elHeight;
-    let elLeft = pos.left;
-    let elRight = pos.left + elWidth;
-
-    let bufferH = Math.round(winHeight * 12 / 100);
-    let bufferW = Math.round(winWidth * 12 / 100); // 12% buffer
-
-    bufferH = bufferH > elHeight ? 0 : bufferH;
-    bufferW = bufferW > elWidth ? 0 : bufferW; // Do not use buffer for elements smaller than buffer
-
-    if (elTop > (winHeight - bufferH) || elBottom < bufferH ||
-        elLeft > (winWidth - bufferW) || elRight < bufferW) { // Completely outside window
-        return false;
-    }
-
-    if (elHeight > winHeight || elWidth > winWidth) { // Do not check partially-in-viewport for el bigger than viewport
-        return true;
-    }
-
-    return !(elTop < 0 || elBottom > winHeight ||
-        elLeft < 0 || elRight > winWidth); //partially in viewport
-};
-
-GmCXt.sendToParentWindow = function(m) {
-    if (m.data && typeof m.data === 'object') {
-        if (GmCXt.isDefined(GmCXt.isSidePanelApp)) {
-            m.data.fromSidePanel = GmCXt.isSidePanelApp;
-        }
-
-        if (m.action !== "mgPlayerJSProd_action:payload_event_call"
-        ) {
-            m.data.user = GmCXt.user;
-        }
-
-        if (m.action === "mgPlayerJSProd_action:payload_event_call") {
-            delete m.data.fromSidePanel;
-        }
-    }
-    GmCXt.msgChannel.port1.postMessage(GmCXt.formatMsg(m));
-};
-
-GmCXt.msgToThisWin = function(m) {
-    GmCXt.msgChannel.port1.postMessage(GmCXt.formatMsg(m));
-};
-
-GmCXt.handleError = function(apiName) {
-    console.dir("There is error in API response: " + apiName);
-};
-
-GmCXt.getBrandingSetting = function() {
-    let setting = false;
-    if (GmCXt.appList) {
-        var activeApp = GmCXt.appList['app:' + GmCXt.activeAppId];
-    }
-
-    if (activeApp && activeApp.settings) {
-        setting = activeApp.settings;
-    }
-    return setting;
-};
-
-GmCXt.getBrandLogo = function() {
-    return GmCXt.getBrandingSetting().logo;
-};
-
-GmCXt.brandLogo = function() {
-
-    let brandLogo = GmCXt.getDefaultIcon();
-    let logo = GmCXt.getBrandLogo();
-
-    if (logo && !GmCXt.isDefaultIcon(logo)) {
-        brandLogo = GmCXt.restoreAssetSrc(logo);
-    }
-
-    return brandLogo;
-};
-
-GmCXt.getPopupLogo = function() {
-    let brandLogo = GmCXt.getDefaultIcon();
-
-    let logo = GmCXt.getBrandLogo();
-    if (logo && !GmCXt.isDefaultIcon(logo)) {
-        brandLogo = GmCXt.restoreAssetSrc(logo);
-    }
-
-    return "<img class='mgPlayerJSProd_logo-image' src='" + brandLogo + "' alt='" + GmCXt.label.brandLogo + "' />";
-};
-
-GmCXt.seggregateRules = function(ruleGroup) {
-    let rules = {
-        dom: [],
-        url: [],
-        api: []
-    };
-    for (let i = 0; i < ruleGroup.length; i++) {
-        let rule = ruleGroup[i];
-        if (rule.type.includes('Select ') || rule.type === "Variables") {
-            rule.domRule = true;
-            rules.dom.push(rule);
-            ruleGroup.checkDom = true;
-        } else if (rule.condition === 'Get Validity') {
-            rule.apiRule = true;
-            rules.api.push(rule);
-            ruleGroup.checkApi = true;
-        } else {
-            rules.url.push(rule);
-        }
-    }
-    return rules;
-};
-
-GmCXt.numberOfDomRules = function(rules) {
-    let count = 0;
-    for (let i = 0; i < rules.length; i++) {
-        if (rules[i].type === 'Select Element' || rules[i].type === 'Select Table' || rules[i].type === 'Variables') {
-            count++;
-        }
-    }
-    return count;
-};
-
-GmCXt.buildGuidePlayStructure = function(tour) {
-    let steps = tour.steps;
-    let playStructure = [];
-    for (let i = 0, j = steps.length; i < j; i++) {
-        let item = {
-            id: steps[i].step_id
-        };
-        if (steps[i + 1]) item.tail = steps[i + 1].step_id;
-        else item.tail = null;
-
-        playStructure.push(item);
-    }
-
-    return playStructure;
-};
-
-GmCXt.getStepsForPS = function(steps, type) {
-    if (GmCXt.playerI && (GmCXt.playerI.automate || GmCXt.playerI.isAutomation) || GmCXt.isAutomationRunning() || type === "doitforme") {
-        return steps;
-    } else {
-        return GmCXt.filterOutAutomationSteps(steps);
-    }
-};
-
-GmCXt.getGuidePlayStructure = function(tour, type) {
-
-    let playStructure = tour.tour_settings.play_structure;
-    tour.steps = GmCXt.getStepsForPS(tour.steps, type);
-
-    if (!GmCXt.containBranchStep(tour)) {
-        return GmCXt.buildGuidePlayStructure(tour);
-
-    } else if (mg$.isArray(playStructure) && playStructure.length) {
-        playStructure = GmCXt.repairPlayStructure(playStructure, tour.steps);
-        return playStructure;
-    }
-};
-
-GmCXt.reloadFailedImages = function() {
-    if (GmCXt.failedImages && GmCXt.failedImages.length) {
-        for (let i = 0; i < GmCXt.failedImages.length; i++) {
-            let obj = GmCXt.failedImages[i];
-            if (obj.length) {
-                let src = obj.attr('originalSrc');
-                if (src) {
-                    src = src.split("?");
-                    if (src[0] && src.length > 1) {
-                        let newSrc = src[0] + GmCXt.getCdnSign();
-                        obj.attr('src', newSrc);
-                    }
-                }
-            }
-        }
-
-        GmCXt.failedImages = [];
-    }
-
-    GmCXt.waitForCdnSignature = false;
-};
-
-GmCXt.getOrgSettings = function() {
-
-    let os = false;
-
-    if (GmCXt.organization && !GmCXt.isEmpty(GmCXt.organization)) {
-        os = GmCXt.organization.settings;
-    }
-
-    return os;
-};
-
-GmCXt.getWidgetSettings = function() {
-
-    let ws = false;
-
-    if (GmCXt.appList && GmCXt.activeAppId) {
-        let activeApp = GmCXt.appList['app:' + GmCXt.activeAppId];
-
-        if (activeApp && activeApp.settings) {
-            ws = activeApp.settings;
-            ws.clientVersion = activeApp.settings.version;
-        }
-    }
-    if (GmCXt.isWestpac()) {
-        ws.guide_count_on_widget = false;
-    }
-
-    return ws;
-};
-
-GmCXt.getStepSettings = function() {
-
-    let appSettings = false;
-
-    if (!GmCXt.isEmpty(GmCXt.appList)) {
-        let activeApp = GmCXt.appList['app:' + GmCXt.activeAppId];
-
-        if (activeApp && activeApp.settings) {
-            appSettings = activeApp.settings;
-        }
-    } else if (window.self !== window.top && !GmCXt.isEmpty(GmCXt.activeAppSettings)) {
-        appSettings = GmCXt.activeAppSettings;
-    }
-
-    if (GmCXt.isDesktop()) {
-        appSettings = (!GmCXt.isEmpty(GmCXt.playerI.tour.steps[0].orgSettings)) ? GmCXt.playerI.tour.steps[0].orgSettings : GmCXt.playerI.tour.steps[0].appSettings;
-        appSettings = GmCXt.validateDataModel(appSettings, GmCXt.model.organization.settings._obj);
-    }
-
-    return appSettings;
-};
-
 GmCXt.getAppSetting = function(opt) {
     let appSettings = false;
     if (!GmCXt.isEmpty(GmCXt.appList) && GmCXt.activeAppId) {
@@ -3873,479 +2834,6 @@ GmCXt.getAppSetting = function(opt) {
     return appSettings;
 };
 
-GmCXt.getCdnSign = function() {
-    let sign = '';
-
-    if (GmCXt.user && !GmCXt.isEmpty(GmCXt.user)) {
-        sign = GmCXt.user.cdn_signature;
-    }
-
-    return sign;
-};
-
-GmCXt.getDefaultIcon = function() {
-    return GmCXt.conf.staticContentPath + "myguide.png";
-};
-
-GmCXt.getChatDefaultIcon = function() {
-    return GmCXt.conf.staticContentPath + "chat_bot_icon.png";
-};
-
-GmCXt.getDefaultGuideIcon = function() {
-    return GmCXt.conf.staticContentPath + 'default_guide.png';
-};
-
-GmCXt.isFalseObj = function(o) {
-    if (!o || typeof o !== "object") return true;
-
-    let r = true;
-    for (let i in o) {
-        if (o[i] === true) {
-            r = false;
-            break;
-        }
-    }
-    return r;
-};
-
-GmCXt.getRectObject = function(rect) {
-    let obj = {
-        top: rect.top,
-        left: rect.left,
-        bottom: rect.bottom,
-        right: rect.right,
-        width: rect.width,
-        height: rect.height,
-        x: rect.x,
-        y: rect.y
-    };
-    return obj;
-};
-
-GmCXt.redirect = function(to) {
-    GmCXt.log(1, "ROUTE to " + to);
-    GmCXt.timeout(function() {
-        location.replace(to);
-    }, 0);
-};
-
-GmCXt.getPosition = function(cssPos) {
-    if (cssPos) {
-        return 'mgPlayerJSProd_fixed-position';
-    } else {
-        return 'mgPlayerJSProd_absolute-position';
-    }
-};
-
-GmCXt.isInspectToolON = function() {
-
-    if ((GmCXt.selectorTool && GmCXt.selectorTool.status !== 'inactive') ||
-        (GmCXt.selectorToolFill && GmCXt.selectorToolFill.status !== 'inactive') ||
-        (GmCXt.selectorToolRules && GmCXt.selectorToolRules.status !== 'inactive')
-    ) {
-        return true;
-    }
-
-    return false;
-};
-
-GmCXt.getExtUrl = function(localUrl) {
-    let url = GmCXt.getBrowserUrl(localUrl);
-
-    return url;
-};
-
-GmCXt.getBaseUrl = function(f) {
-
-    if (GmCXt.isExtension()) {
-        return GmCXt.getExtUrl(f);
-    } else {
-        if (GmCXt.isClientJs() && !GmCXt.conf.baseUrl && GmCXt.conf.clientJsBaseUrl) {
-            GmCXt.conf.baseUrl = GmCXt.conf.clientJsBaseUrl;
-        }
-        return GmCXt.conf.baseUrl + f;
-    }
-};
-
-GmCXt.capitalizeFirstLetter = function(str) {
-    str = str || "";
-    return str.charAt(0).toUpperCase() + str.slice(1);
-};
-
-GmCXt.encode = function(args) {
-    let data = '';
-    if (args) {
-        let argcount = 0;
-        for (let key in args) {
-            if (args.hasOwnProperty(key)) {
-                if (argcount++) data += '&';
-                data += encodeURIComponent(key) + '=' + encodeURIComponent(args[key]);
-            }
-        }
-    }
-    return data;
-};
-
-GmCXt.returnNavigator = function() {
-    return navigator.getUserMedia || navigator.webkitGetUserMedia ||
-        navigator.mozGetUserMedia || navigator.msGetUserMedia;
-};
-
-GmCXt.getDefaultError = function() {
-    return {
-        code: 403,
-        message: [GmCXt.unknownError]
-    };
-};
-
-GmCXt.getCodeError = function() {
-    return {
-        code: 405,
-        message: [GmCXt.unknownError]
-    };
-};
-
-GmCXt.externalApiCall = function(url) {
-    let params = {
-        url: url,
-        method: 'GET',
-        data: '',
-    };
-    let promise = GmCXt.xhr(params, true, true);
-
-    return promise;
-};
-
-GmCXt.checkFileExist = function(url) {
-
-    let params = {
-        url: url,
-        method: 'GET',
-    };
-    let promise = GmCXt.xhr(params, true);
-
-    return promise;
-};
-
-/**
- * @function
- * @returns Current webpage url
- */
-GmCXt.getUrl = function() {
-    let url = GmCXt._location().href;
-    return GmCXt.filterUrlScheme(url);
-};
-
-GmCXt.checkWorkdayTextfield = function(el, identifier) {
-    let customSettings = el.customSettings;
-    if (customSettings && customSettings.workday && !customSettings.workday.isTableHeader) {
-        let workday = customSettings.workday;
-        if (!workday.isWDCustomSelect || identifier !== 'rules-engine-request') {
-            return Object.keys(workday).some(function(k) {
-                return workday[k];
-            });
-        }
-    }
-
-    return false;
-};
-
-GmCXt.filterMyguideClassValue = function(classVal) {
-    let classes = [];
-    classes = classVal.split(/\s+/);
-    classes = classes.filter(function(className) {
-        if (className.indexOf("doitforme-") === -1 && className.indexOf("mg-smarttip") === -1) {
-            return true;
-        }
-    });
-
-    classVal = classes.join(' ');
-    return classVal.trim();
-};
-
-GmCXt.getAttributeValues = function(el, attributes) {
-
-    if (el.nodeType !== 1) {
-        return {};
-    }
-
-    let attrList = attributes || el.getAttributeNames();
-
-    let attrObj = {
-        tagName: el.tagName
-    };
-
-    attrList.forEach(function(attr) {
-        let value = el.getAttribute(attr);
-
-        if (!GmCXt.isEmpty(value)) {
-            attrObj[attr] = value;
-        }
-    });
-
-    if (attrObj.class) {
-        attrObj.class = GmCXt.filterMyguideClassValue(attrObj.class);
-        if (GmCXt.isEmpty(attrObj.class)) {
-            delete attrObj.class;
-        }
-    }
-
-    if (el.textContent && el.textContent.length > 500) {
-        delete attrObj.text;
-    } else if (!GmCXt.isEmpty(el.textContent)) {
-        attrObj.text = el.textContent.trim();
-    }
-
-    return attrObj;
-};
-
-GmCXt.isOnboarding = function(t) {
-    if (t && t.tour_type && t.tour_type.indexOf('onboarding') !== -1) return true;
-    else return false;
-};
-
-GmCXt.isAnnouncement = function(t) {
-    if (t && t.tour_settings && GmCXt.isOnboarding(t) && t.tour_settings.tutorial_tour_type &&
-        t.tour_settings.tutorial_tour_type === "announcement") {
-        return true;
-    } else {
-        return false;
-    }
-};
-
-GmCXt.isFeatureTags = function(t) {
-    if (t && t.tour_type.indexOf('insights') >= 0) return true;
-    else return false;
-};
-
-GmCXt.isBotGuide = function(t) {
-    if (t && t.tour_type === 'bot') return true;
-    else return false;
-};
-
-GmCXt.isChatEnable = function() {
-    let flag = false;
-    if (!GmCXt.isEmpty(GmCXt.appList)) {
-        let activeApp = GmCXt.appList['app:' + GmCXt.activeAppId];
-        if (activeApp && activeApp.settings.enable_chatbot) {
-            flag = true;
-        }
-    }
-    return flag;
-};
-
-GmCXt.isHowToGuide = function(t) {
-    if (!GmCXt.isEmpty(t) && t.tour_type.indexOf('howto_tour') !== -1) return true;
-    else return false;
-};
-
-GmCXt.isGuide = function(t) {
-
-    if (GmCXt.isOnboarding(t))
-        return false;
-    if (t && (
-        t.tour_type.indexOf('walkthrough_tour') !== -1 ||
-        t.tour_type.indexOf('videoScreencast') !== -1 ||
-        t.tour_type.indexOf('videoCapture') !== -1
-    )) {
-        return true;
-    } else
-        return false;
-};
-
-GmCXt.initPlayerModeFeatures = function(showPlayer, isMiniPlayer, isPlayerMode) {
-    GmCXt.showPlayer = showPlayer;
-    GmCXt.isMiniPlayer = isMiniPlayer;
-    GmCXt.playerMode = isPlayerMode;
-    if (GmCXt.isPlayer()) {
-        GmCXt.FT = GmCXt.getPlayerFeatures();
-    } else {
-        GmCXt.FT = GmCXt.getCreatorAppFeatures();
-    }
-
-    if (GmCXt.isMicroPlayer()) {
-        mg$(".mgPlayerJSProd_panel").addClass('mgPlayerJSProd_theme-mplayer');
-    } else {
-        mg$(".mgPlayerJSProd_panel").removeClass('mgPlayerJSProd_theme-mplayer');
-    }
-};
-
-GmCXt.matchUrlRegEx = function(regExUrl, url2) {
-    let match = false;
-
-    let regexString = '';
-    let splitArr = regExUrl.split("[*.]");
-
-    for (let i = 0; i < splitArr.length; i++) {
-
-        if (i === splitArr.length - 1) {
-            regexString += splitArr[i];
-        } else {
-            regexString += splitArr[i] + "([a-zA-Z0-9:!+@#$&()?\\-_`.%+,=\\/]*)";
-        }
-    }
-    let regexPattern = new RegExp("^" + regexString + '$');
-    match = regexPattern.test(url2);
-
-    return match;
-};
-
-GmCXt.trimAndLowerCaseURL = function(url) {
-    let newURL = '';
-    url = GmCXt.filterUrlScheme(url);
-    if (url) {
-        newURL = url.toLowerCase();
-        if (newURL.indexOf("www.") === 0) {
-            newURL = newURL.slice(4, newURL.length);
-        }
-    }
-    return newURL;
-};
-
-GmCXt.getTailFromBranchStep = function(branches, e, sId, tour) {
-    let bInd = 0;
-    let retVal = null;
-    let pi = GmCXt.playerI;
-    let currentStep = null;
-    let getStep = function(stepId, tour) {
-        if (stepId) {
-            for (let i = 0; i < tour.steps.length; i++) {
-                if (parseInt(tour.steps[i].step_id) === parseInt(stepId)) {
-                    return tour.steps[i];
-                }
-            }
-        } else {
-            return false;
-        }
-    };
-
-    if (pi) {
-        currentStep = getStep(pi.currentStepId, pi.tour);
-    } else {
-        currentStep = getStep(sId, tour);
-    }
-
-    for (bInd = 0; bInd < branches.length; bInd++) {
-        if (GmCXt.isStepInlineBranch(currentStep)) {
-            if (e) {
-                if (bInd === 1) {
-                    var b = branches[bInd];
-                    if (b.tail) {
-                        retVal = b.tail;
-                        break;
-                    }
-                }
-            } else {
-                var b = branches[bInd];
-                if (b.tail) {
-                    retVal = b.tail;
-                    break;
-                }
-            }
-        } else {
-            var b = branches[bInd];
-            if (b.tail) {
-                retVal = b.tail;
-                break;
-            }
-        }
-    }
-
-    return retVal;
-};
-
-GmCXt.getTail = function(id, playStructure, e, t) {
-    if (!id || !playStructure) return false;
-
-    let tail = null;
-
-    for (let i = 0; i < playStructure.length; i++) {
-
-        if (!GmCXt.isEmpty(playStructure[i]) && parseInt(playStructure[i].id) === parseInt(id)) {
-
-            if (playStructure[i].branch) {
-                tail = GmCXt.getTailFromBranchStep(playStructure[i].branch, e, id, t);
-            } else {
-                tail = playStructure[i].tail;
-            }
-
-        }
-    }
-    let sameTail = GmCXt.numberOfSameTail(tail, playStructure);
-    if (sameTail > 1) {
-        GmCXt.playerI.mergingFromId = id;
-    }
-    return tail;
-};
-
-GmCXt.getPageDomain = function() {
-    let d = (GmCXt._location().host.match(/([^.]+)\.\w{2,3}(?:\.\w{2})?$/) || [])[1];
-    if (d)
-        return d;
-    else
-        return GmCXt._location().host;
-};
-
-GmCXt.getDomain = function(url) {
-    if(!url){
-        return url;
-    }
-
-    url = url.split("/")[0] || '';
-    let d = (url.match(/([^.]+)\.\w{2,3}(?:\.\w{2})?$/) || [])[1];
-    if (d)
-        return d;
-    else
-        return url;
-};
-
-GmCXt.getUrlParam = function() {
-    let param = '';
-    let temp = GmCXt.urlParts.href.split("?");
-    if (temp[1]) {
-        param = '?' + temp[1];
-    }
-
-    return param;
-};
-
-GmCXt.isFQDN = function() {
-    let os = GmCXt.getOrgSettings();
-    let as = (GmCXt.organization && !GmCXt.isEmpty(GmCXt.organization)) ? GmCXt.organization.admin_settings : {};
-
-    if (!GmCXt.isEmpty(os) && os.fqdn) {
-        return true;
-    } else if (GmCXt.isPlayer() && as.app_switcher === false) {
-        return true;
-    } else {
-        return false;
-    }
-};
-
-GmCXt.isDomainInActiveApp = function() {
-    if (!GmCXt.isFQDN() || GmRootScope.showGuidesFromDesktopApp) {
-        return true;
-    }
-
-    let domainMatch = false;
-    if (!GmCXt.isEmpty(GmCXt.appList) && GmCXt.activeAppId) {
-        let activeApp = GmCXt.appList['app:' + GmCXt.activeAppId];
-        let domains = activeApp && activeApp.settings.domains;
-
-        if (activeApp && activeApp.settings && activeApp.settings.sandbox) {
-            domainMatch = true;
-        } else if (domains) {
-
-            let matchedDomain = GmCXt.getCurrentDomainApp(domains, GmCXt.urlParts.fullUrl);
-
-            if (!GmCXt.isEmpty(matchedDomain)) {
-                domainMatch = true;
-            }
-        }
-    }
-    return domainMatch;
-};
-
 GmCXt.getActiveAppSetting = function() {
     if (GmCXt.isEmpty(GmCXt.appList)) return {};
 
@@ -4355,77 +2843,6 @@ GmCXt.getActiveAppSetting = function() {
     } else {
         return {};
     }
-};
-
-GmCXt.findDomainMatch = function(domainList, fullUrl, oldPathLength) {
-
-    let match = {};
-
-    let url = GmCXt.getHostnameFromUrl(fullUrl);
-    url = GmCXt.trimAndLowerCaseURL(url);
-
-    for (let i = 0; i < domainList.length; i++) {
-        let appUrl = domainList[i].url;
-        appUrl = GmCXt.trimAndLowerCaseURL(appUrl);
-        fullUrl = GmCXt.trimAndLowerCaseURL(fullUrl);
-        if (appUrl.indexOf('/') >= 0 && fullUrl.indexOf(appUrl) >= 0) {
-            let pathLength = (appUrl.match(/\//g) || []).length;
-            if (oldPathLength && oldPathLength > pathLength) {
-                continue;
-            } else {
-                match = domainList[i];
-                match.pathMatch = true;
-                match.pathLength = pathLength;
-            }
-        } else if (url === appUrl && !oldPathLength) {
-            match = domainList[i];
-        } else if (appUrl.indexOf("[*.]") > -1) {
-            let regExMatch = GmCXt.matchUrlRegEx(appUrl, url);
-
-            if (regExMatch) {
-                match = domainList[i];
-            }
-        }
-    }
-
-    return match;
-};
-
-GmCXt.getCurrentDomainApp = function(domainList, currUrl, pathLength) {
-
-    if (!domainList) {
-        return {};
-    }
-
-    if (GmCXt.isElectron()) {
-        return GmCXt.getCurrentMyGuideApp(domainList);
-    } else {
-        return GmCXt.findDomainMatch(domainList, currUrl, pathLength);
-    }
-};
-
-GmCXt.getCurrentMyGuideApp = function(domainList) {
-
-    let match = {};
-    let hostApp = GmCXt.elAppName.toLowerCase();
-
-    for (let i = 0; i < domainList.length; i++) {
-        if (domainList[i].appName && (hostApp === domainList[i].appName.toLowerCase())) {
-            match = domainList[i];
-            break;
-        }
-    }
-
-    return match;
-};
-
-GmCXt.isMirrorApp = function() {
-    let isMirrorApp = false;
-    if (GmCXt.organization && !GmCXt.isEmpty(GmCXt.organization) && GmCXt.organization.has_mirror_apps &&
-        parseInt(GmCXt.organization.has_mirror_apps) !== 0) {
-        isMirrorApp = true;
-    }
-    return isMirrorApp;
 };
 
 GmCXt.getBaseAppId = function() {
@@ -4441,6 +2858,96 @@ GmCXt.getBaseAppId = function() {
         }
     }
     return baseAppId;
+};
+GmCXt.getAppEnvByDomain = function() {
+
+    let activeDomain = GmCXt.checkDomainInApps(GmCXt.urlParts.fullUrl);
+    let env;
+
+    if (!GmCXt.isDefined(activeDomain.app_env)) {
+        env = 'env_3';
+    } else if (GmCXt.isDefined(activeDomain.app_env)) {
+        env = activeDomain.app_env;
+    }
+
+    GmCXt.log(1, "DOMAIN ENVIRONMENT: " + env);
+
+    return env;
+};
+
+GmCXt.getAppName = function() {
+    let a = GmCXt.conf.appName;
+
+    if (GmCXt.isPlayer() && !GmCXt.playerMode) a += GmCXt.conf.appType;
+
+    return a + GmCXt.conf.env;
+};
+
+GmCXt.isFQDN = function() {
+    let os = GmCXt.getOrgSettings();
+    let as = (GmCXt.organization && !GmCXt.isEmpty(GmCXt.organization)) ? GmCXt.organization.admin_settings : {};
+
+    if (!GmCXt.isEmpty(os) && os.fqdn) {
+        return true;
+    } else if (GmCXt.isPlayer() && as.app_switcher === false) {
+        return true;
+    } else {
+        return false;
+    }
+};
+
+GmCXt.isMirrorApp = function() {
+    let isMirrorApp = false;
+    if (GmCXt.organization && !GmCXt.isEmpty(GmCXt.organization) && GmCXt.organization.has_mirror_apps &&
+        parseInt(GmCXt.organization.has_mirror_apps) !== 0) {
+        isMirrorApp = true;
+    }
+    return isMirrorApp;
+};
+
+
+GmCXt.filterApps = function(apps, search) {
+    let r = [];
+    for (let i = 0; i < apps.length; i++) {
+        if (apps[i].indexOf(search) !== -1)
+            r.push(apps[i]);
+    }
+    return r;
+};
+
+GmCXt.getAppsArray = function(apps) {
+    let r = [];
+
+    for (let k in apps) {
+        if (apps.hasOwnProperty(k)) {
+            r.push(k);
+        }
+    }
+    return r;
+};
+
+GmCXt.playerDomainCheck = function() {
+    if (GmCXt.isPlayer()) {
+        if (GmCXt.isDomainInActiveApp() || GmCXt.user.signedInWithSso) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+    return true;
+};
+
+GmCXt.getCurrentDomainApp = function(domainList, currUrl, pathLength) {
+
+    if (!domainList) {
+        return {};
+    }
+
+    if (GmCXt.isElectron()) {
+        return GmCXt.getCurrentMyGuideApp(domainList);
+    } else {
+        return GmCXt.findDomainMatch(domainList, currUrl, pathLength);
+    }
 };
 
 GmCXt.checkDomainInApps = function(url) {
@@ -4488,783 +2995,148 @@ GmCXt.checkDomainInApps = function(url) {
     return ob;
 };
 
-GmCXt.getAppEnvByDomain = function() {
-
-    let activeDomain = GmCXt.checkDomainInApps(GmCXt.urlParts.fullUrl);
-    let env;
-
-    if (!GmCXt.isDefined(activeDomain.app_env)) {
-        env = 'env_3';
-    } else if (GmCXt.isDefined(activeDomain.app_env)) {
-        env = activeDomain.app_env;
-    }
-
-    GmCXt.log(1, "DOMAIN ENVIRONMENT: " + env);
-
-    return env;
-};
-
-GmCXt.updateOrgAndAddSignature = function(str) {
-
-    if (str && GmCXt.containsMedia(str)) {
-
-        if (GmCXt.organization && !GmCXt.isEmpty(GmCXt.organization)) {
-            let orgId = GmCXt.organization.organization_id;
-            str = str.replace(/[-][0-9]*[/]/g, '-' + orgId + '/');
-        }
-
-        str = str.replace(/.mp4(.*?)\"/g, '.mp4' + GmCXt.getCdnSign() + '"');
-        str = str.replace(/.gif(.*?)\"/g, '.gif' + GmCXt.getCdnSign() + '"');
-
-        str = str.replace(/.png(.*?)\"/g, '.png' + GmCXt.getCdnSign() + '"');
-        str = str.replace(/.html(.*?)\"/g, '.html' + GmCXt.getCdnSign() + '"');
-        str = str.replace(/.txt(.*?)\"/g, '.txt' + GmCXt.getCdnSign() + '"');
-        str = str.replace(/\.pdf(.*?)\"/g, '.pdf' + GmCXt.getCdnSign() + '"');
-    }
-
-    return str;
-};
-
-GmCXt.containsMedia = function(str) {
-    if (str.indexOf('.png') >= 0 ||
-        str.indexOf('.gif') >= 0 ||
-        str.indexOf('.mp4') >= 0 ||
-        str.indexOf('.html') >= 0 ||
-        str.indexOf('.txt') >= 0 ||
-        str.indexOf('.pdf') >= 0)
-        return true;
-    else
-        return false;
-};
-
-GmCXt.getOnPremJsonURL = function() {
-    let retUrl = GmCXt.conf.webServiceUrl;
-    return retUrl;
-};
-
-GmCXt.branchStepExist = function(t) {
-    let isBranch = false;
-
-    if (t && t.tour_settings && t.tour_settings.play_structure) {
-        t.tour_settings.play_structure.forEach(function(s, key) {
-            if (s.branch) {
-                isBranch = true;
-            }
-        });
-    }
-
-    return isBranch;
-};
-
-GmCXt.branchStepExistInPS = function() {
-    let isBranch = false;
-
-    if (GmCXt.playerI.playStructure) {
-        GmCXt.playerI.playStructure.forEach(function(s, key) {
-            if (s.branch) {
-                isBranch = true;
-            }
-        });
-    }
-
-    return isBranch;
-};
-
-GmCXt.restartInParent = function(hideLog) {
-    if (!hideLog) {
-        GmCXt.log(33, "BACK to parent window");
-    }
-    GmCXt.storage().set({
-        'restartInParent': true
-    });
-};
-
-GmCXt.getSleepTime = function(lbls) {
-    let t = 24;
-
-    let nt = GmCXt.getAppSetting('notificationsTime');
-
-    if (nt) {
-        t = parseFloat(nt);
-        if (t < 1) t = 1;
-    }
-
-    let hourString = t > 1 ? lbls.hours : lbls.hour;
-    t = t + ' ' + hourString;
-
-    if ((nt && typeof nt !== 'number') && (nt.includes("week") || nt.includes("hour"))) {
-        t = nt;
-    }
-
-    return t;
-};
-
-GmCXt.getIframeAttributes = function(node) {
-    let attrs = {};
-    mg$.each(node[0].attributes, function(index, attribute) {
-        attrs[attribute.name] = attribute.value;
-    });
-
-    attrs.isVisible = GmCXt.getElVisibility(node[0], true) === 'visible';
-
-    return attrs;
-};
-
-GmCXt.isDomainMatch = function(startURLDomain, stepDomain) {
-    return (GmCXt.getDomain(startURLDomain) === GmCXt.getDomain(stepDomain));
-};
-
-GmCXt.getDefaultDomain = function(stepURL, tour) {
-    let defaultURL = stepURL;
-    if (tour.allDomains.length > 0) {
-        let allDomains = tour.allDomains;
-        for (let i = 0; i < allDomains.length; i++) {
-            if (allDomains[i].isDefault) {
-                defaultURL = allDomains[i].url;
-                break;
-            }
-        }
-    }
-    return GmCXt.getHostnameFromUrl(defaultURL);
-};
-
-GmCXt.getRedirectUrlForAuto = function(stepURL, tour, startURLDomain) {
-    let stepDomain = GmCXt.getHostnameFromUrl(stepURL);
-    if (startURLDomain) {
-        if (GmCXt.isDomainMatch(startURLDomain, stepDomain)) {
-            stepURL = stepURL.replace(stepDomain, startURLDomain);
-        }
-    }
-
-    // Change this flag to true when multiple domain support is needed.
-    let redirectToDefaultDomain = false;
-    if (redirectToDefaultDomain) {
-        let appDomain = GmCXt.getDefaultDomain(stepURL, tour);
-        if (appDomain) {
-            stepURL = stepURL.replace(stepDomain, appDomain);
-        }
-    }
-    let completeURL = '';
-    if (!stepURL.startsWith('http')) {
-        completeURL = location.protocol + '//' + stepURL;
-    } else {
-        completeURL = stepURL;
-    }
-    GmCXt.log(33, "REDIRECTING TO URL - ", {
-        URL: completeURL
-    });
-    return completeURL;
-};
-
-GmCXt.showDomainNotConfiguredPopup = function(redirectUrl) {
-    GmCXt.cleanPlayer();
-    GmCXt.auto.destroyAutomation();
-    let option = {
-        description: GmCXt.label.missingDomainAppConfig,
-        button1: GmCXt.label.ok,
-        closeTour: true
-    };
-    GmCXt.alertV2(option).show();
-};
-
-GmCXt.changeUrl = function(stepURL, tour, startURLDomain) {
-    let redirectUrl = GmCXt.getRedirectUrlForAuto(stepURL, tour, startURLDomain);
-
-    // When redirected by tour player
-    if (!startURLDomain) {
-        window.location = redirectUrl;
-        return;
-    }
-
-    // When triggered by Automation
-    let source = GmCXt.checkDomainInApps(stepURL);
-    let destination = GmCXt.checkDomainInApps(redirectUrl);
-    let os = GmCXt.getOrgSettings();
-
-    if (os.fqdn && (!source.domainMatch || !destination.domainMatch)) {
-
-        if (GmCXt.isAutomationRunning()) {
-
-            let errorDomains = '';
-            if (!source.domainMatch) {
-                errorDomains += 'Source (' + GmCXt.getHostnameFromUrl(stepURL) + ') domain not configured. ';
-            }
-            if (!destination.domainMatch) {
-                errorDomains += 'Destination (' + GmCXt.getHostnameFromUrl(redirectUrl) + ') domain not configured.';
-            }
-
-            GmCXt.auto.fail(null, {
-                errorMessage: errorDomains
-            });
-        } else {
-            GmCXt.showDomainNotConfiguredPopup(redirectUrl);
-        }
-    } else {
-        window.location = redirectUrl;
-    }
-};
-
-GmCXt.validateTargetFrame = function(stepFrame, currentFrame) {
-    if (!GmCXt.isEmpty(stepFrame) && !GmCXt.isEmpty(currentFrame)) {
-
-        if (!GmCXt.isEmpty(currentFrame.isVisible) && !currentFrame.isVisible) {
-            return false; // Current frame not visible
-        }
-
-        return GmCXt.compareObjectsByPercentMatch(stepFrame, currentFrame);
-
-    }
-    return false;
-};
-
-GmCXt.cleanPlayerI = function() {
-    GmCXt.tourPlayerI = null;
-    GmCXt.playerI = null;
-};
-
-GmCXt.cleanPlayer = function() {
-
-    GmCXt.log(33, 'Player instance cleared.');
-
-    if (GmCXt.playerI) {
-        GmCXt.trackGuide();
-        window.removeEventListener("mouseup", GmCXt.registerClickListner, true);
-        window.removeEventListener("mousedown", GmCXt.registerClickListner, true);
-        window.removeEventListener("keyup", GmCXt.registerClickListner, true);
-        window.removeEventListener("keydown", GmCXt.registerClickListner, true);
-    }
-
-    GmCXt.cleanPlayerI();
-
-    GmCXt.storage().set({
-        'mgPlayerJSProd_mgPlayerJSProd_GM_PLAYER_STORAGE_KEY': null
-    });
-
-    GmCXt.storage().remove(['mgPlayerJSProd_mgPlayerJSProd_GM_PLAYER_STORAGE_KEY']);
-};
-
-GmCXt.compareAttributes = function(el, topEl) {
-
-    let topElAttrs = GmCXt.getAttributeValues(topEl);
-    let elAttrs = GmCXt.getAttributeValues(el);
-    let attrsMatch = GmCXt.compareObjectsByPercentMatch(topElAttrs, elAttrs, 100);
-
-    return attrsMatch;
-};
-
-GmCXt.filterParentNodes = function(nodes, text) {
-
-    // filter parent nodes retured by "text contains" query.
-    var text = text.trim().toLowerCase();
-
-    nodes = nodes.filter(function(index, node) {
-        if (node.innerText && node.innerText.trim().toLowerCase() === text) {
-            mg$(node).parents().addClass('mgPlayerJSProd_dummy-class');
-            return true;
-        }
-        return false;
-    });
-
-    let childNodes = nodes.filter(function(index, node) {
-        return !mg$(node).hasClass('mgPlayerJSProd_dummy-class');
-    });
-
-    mg$('.mgPlayerJSProd_dummy-class').removeClass('mgPlayerJSProd_dummy-class');
-
-    if (childNodes.length === 1) {
-        GmCXt.l.add('All nodes resulting from the query are hierachichally linked (parent-child)');
-        return nodes;
-    }
-
-    if (childNodes.length === 2 && GmCXt.compareAttributes(nodes[0], nodes[1])) {
-        // LXP header has two identical elements placed on top of each other
-        if (GmCXt.getElVisibility(nodes[0]) === 'visible') {
-            return nodes.slice(0, 1);
-        } else if (GmCXt.getElVisibility(nodes[1]) === 'visible') {
-            return nodes.slice(1);
-        }
-    }
-
-    GmCXt.l.add('Text is present at multiple places on the screen');
-    return [];
-};
-
-GmCXt.getElectronAppName = function() {
-    let app = require('electron').remote.app;
-    return app.name || app.getName();
-};
-
-GmCXt.getErrObj = function(msg, data, isAnalytics) {
-    let code = isAnalytics ? data.code : parseInt(data.code);
-
-    if (msg[0] && msg[0].message) {
-        msg = msg[0].message;
-    }
-
-    if (typeof data.info === "string") {
-        msg += " : " + data.info;
-    }
-
-    let eObj = {
-        build: GmCXt.conf.appName,
-        version: GmCXt.conf.version,
-        type: 'CODE ERROR',
-        code: code,
-        message: msg,
-        browser: GmCXt.browserApp
-    };
-
-    if (!GmCXt.isBackgroundPage) {
-        eObj.current_url = GmCXt.urlParts.fullUrl;
-    } else {
-        eObj.current_url = '';
-    }
-
-    if (data.info.apiUrl) {
-        eObj.type = "Insights";
-        eObj.message += " , api: " + data.info.apiUrl;
-
-        if (data.apiData)
-            eObj.apiData = JSON.stringify(data.apiData);
-    }
-
-    if (GmCXt.user && GmCXt.organization && !GmCXt.isEmpty(GmCXt.organization)) {
-        eObj.organization_id = GmCXt.organization.organization_id;
-        eObj.organization_name = GmCXt.organization.name;
-        eObj.application_id = GmCXt.activeAppId;
-        eObj.user_id = GmCXt.user.user_id;
-        eObj.user_email = GmCXt.user.user_email;
-    }
-    return eObj;
-};
-
-// Elements might have classes like 'mgPlayerJSProd_select-outline' or 'mgPlayerJSProd_dummy-class'
-GmCXt.checkMyGuideClass = function(className) {
-
-    let mgClass = false;
-    if (className && typeof className === 'string') {
-        let arrClass = className.split(/\s+/).filter(Boolean);
-        mgClass = arrClass.filter(function(cls) {
-            return cls.indexOf('mgPlayerJSProd_') === 0;
-        })[0];
-    }
-    return mgClass;
-};
-
-GmCXt.hasMyGuideEl = function(nodes) {
-    if (nodes) {
-        for (let i = 0; i < nodes.length; i++) {
-            if (GmCXt.checkMyGuideClass(nodes[i].className)) {
-                return true;
-            }
-        }
-    }
-    return false;
-};
-
-GmCXt.sortToursByModifcationDate = function(tours) {
-    return tours.sort(function(a, b) {
-        return parseInt(b.modification_date) - parseInt(a.modification_date);
-    });
-};
-
-GmCXt.getFontFile = function() {
-    let i = 'common/lib/fonts/';
-    if (GmCXt.isExtension()) {
-        i = GmCXt.getBrowserUrl(i);
-    } else {
-        i = GmCXt.conf.baseUrl + i;
-    }
-
-    return i;
-};
-
-GmCXt.getCustomFontStyle = function() {
-    let styleElem = document.getElementById('mgPlayerJSProd_nunito-font-style');
-    if (!GmCXt.isEmpty(styleElem)) styleElem.remove();
-
-    let newStyle = document.createElement('style');
-    newStyle.id = "mgPlayerJSProd_nunito-font-style";
-    var FontName = "Nunito";
-    var FontUrl = GmCXt.getFontFile() + "Nunito-Regular.woff";
-    newStyle.appendChild(document.createTextNode("@font-face { font-family: '" + FontName + "'; src: url('" + FontUrl + "') format('woff');}"));
-
-    var FontName = "Calibri";
-    var FontUrl = GmCXt.getFontFile() + "Calibri-Regular.woff";
-    newStyle.appendChild(document.createTextNode("@font-face { font-family: '" + FontName + "'; src: url('" + FontUrl + "') format('woff');}"));
-
-    var FontName = "Frutiger";
-    var FontUrl = GmCXt.getFontFile() + "Frutiger.woff";
-    newStyle.appendChild(document.createTextNode("@font-face { font-family: '" + FontName + "'; src: url('" + FontUrl + "') format('woff');}"));
-
-    return newStyle;
-};
-
-GmCXt.isUrlValid = function(userInput) {
-    if (GmCXt.isEmpty(userInput)) return true;
-    let res = userInput.match(/(http(s)?:\/\/.)?(www\.)?[-a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_\+.~#?&//=]*)/g);
-    if (res == null)
-        return false;
-    else
-        return true;
-};
-
-GmCXt.getURLMediaType = function(url) {
-    if (!GmCXt.isUrlValid(url)) return false;
-
-    if (url.search(/^http[s]?\:\/\//) === -1) {
-        url = 'https://' + url;
-    }
-
-    let ext = url.split('/').pop().match(/^[\w\s-,.]+\.([a-zA-Z0-9]{3,4})/);
-    if (ext) {
-        ext = ext[1];
-    }
-
-    url = new URL(url);
-    let mediaType = "";
-    if (ext && GmCXt.videoFileExtns.indexOf("." + ext) !== -1) {
-        mediaType = "video";
-    } else if (ext === "pdf") {
-        mediaType = "pdf";
-    }
-
-    return mediaType;
-};
-
-GmCXt.attachDragEvents = function(elmnt, dragEl) {
-    let pos1 = 0,
-        pos2 = 0,
-        pos3 = 0,
-        pos4 = 0;
-    dragEl.onmousedown = dragMouseDown;
-    dragEl.onmouseup = dragMouseUp;
-
-    if (window.matchMedia("(max-width: 480px)").matches) {
-        dragEl.ontouchstart = dragMouseDown;
-        dragEl.ontouchend = dragMouseUp;
-    }
-
-    function resetDragEvents() {
-        document.onmouseup = null;
-        document.onmousemove = null;
-        document.onmouseout = null;
-
-        if (window.matchMedia("(max-width: 480px)").matches) {
-            document.ontouchstart = null;
-            document.ontouchmove = null;
-            document.ontouchend = null;
-        }
-    }
-
-    function dragMouseUp(e) {
-        resetDragEvents();
-
-        if (GmCXt.isMicroPlayer()) {
-            mg$("#mgPlayerJSProd_micro_player_drag .mgPlayerJSProd_title-tooltip-wrapper").removeAttr("style");
-        }
-    }
-
-    function dragOutEvent(e) {
-        GmCXt.timeout(function() {
-            mg$('.mgPlayerJSProd_slideshow_drag_over').hide();
-        }, GmCXt.t.drag);
-
-        if (dragEl.id === 'mgPlayerJSProd_mPlayer-drag') {
-            resetDragEvents();
-        }
-    }
-
-    function dragMouseDown(e) {
-        e.preventDefault();
-        e = e || window.event;
-        // get the mouse cursor position at startup:
-        if (window.matchMedia("(max-width: 480px)").matches) {
-            e.clientX = e.targetTouches[0].clientX;
-            e.clientY = e.targetTouches[0].clientY;
-        }
-
-        pos3 = e.clientX;
-        pos4 = e.clientY;
-        document.onmouseup = closeDragElement;
-        document.onmouseout = dragOutEvent;
-        // call a function whenever the cursor moves:
-        document.onmousemove = elementDrag;
-
-        if (window.matchMedia("(max-width: 480px)").matches) {
-            document.ontouchend = closeDragElement;
-            document.ontouchcancel = dragOutEvent;
-            document.ontouchmove = elementDrag;
-        }
-
-        if (GmCXt.isMicroPlayer()) {
-            mg$("#mgPlayerJSProd_micro_player_drag .mgPlayerJSProd_title-tooltip-wrapper").css("display", "none");
-        }
-    }
-
-    function elementDrag(e) {
-        mg$('.mgPlayerJSProd_slideshow_drag_over').show();
-        e = e || window.event;
-        // calculate the new cursor position:
-        let wWdth = mg$(window).width();
-        let wHgth = mg$(window).height();
-        let offset = 50;
-
-        if (window.matchMedia("(max-width: 480px)").matches) {
-            e.clientX = e.targetTouches[0].clientX;
-            e.clientY = e.targetTouches[0].clientY;
-        }
-
-        if (e.clientX > offset && e.clientY > offset && e.clientX < (wWdth - offset) && e.clientY < (wHgth - offset)) {
-            pos1 = pos3 - e.clientX;
-            pos2 = pos4 - e.clientY;
-            pos3 = e.clientX;
-            pos4 = e.clientY;
-            // set the element's new position:
-            elmnt.style.top = (elmnt.offsetTop - pos2) + "px";
-            elmnt.style.left = (elmnt.offsetLeft - pos1) + "px";
-
-            if (GmCXt.isMicroPlayer()) {
-                elmnt.style.right = "initial";
-                elmnt.style.transition = "initial";
-            }
-
-            if (!GmCXt.isMicroPlayer()) {
-                mg$(elmnt)
-                    .removeClass('top-left')
-                    .removeClass('top-middle')
-                    .removeClass('top-right')
-                    .removeClass('right-top')
-                    .removeClass('right-middle')
-                    .removeClass('right-bottom')
-                    .removeClass('bottom-left')
-                    .removeClass('bottom-middle')
-                    .removeClass('bottom-right')
-                    .removeClass('left-top')
-                    .removeClass('left-middle')
-                    .removeClass('left-bottom');
-            }
-        }
-    }
-
-    function closeDragElement() {
-        /* stop moving when mouse button is released:*/
-        resetDragEvents();
-
-        mg$('.mgPlayerJSProd_slideshow_drag_over').hide();
-    }
-};
-
-GmCXt.isDefaultIcon = function(str) {
-    if (str &&
-        (str.indexOf('edcast.png') >= 0 ||
-            str.indexOf('guidemeg.png') >= 0 ||
-            str.indexOf('widget_icon.png') >= 0 ||
-            str.indexOf('chat_bot_icon.png') >= 0 ||
-            str.indexOf('default') >= 0 ||
-            str.indexOf('myguide.png') >= 0
-        )) {
-        return true;
-    } else {
-        return false;
-    }
-};
-
-GmCXt.syncPlayerInst = function(m) {
-    if (m === "mgPlayerJSProd_action:started;task:select_existing_dom_element" ||
-        m === "mgPlayerJSProd_action:started;task:select_existing_dom_element:target_frame_only" ||
-        m === "mgPlayerJSProd_action:started;task:select_dom_element_tooltips" ||
-        m === "mgPlayerJSProd_action:task:init_new_iframe" ||
-        m === "mgPlayerJSProd_action:update_player_instance" ||
-        m === "mgPlayerJSProd_action:update_player_instance_app" ||
-        m === "mgPlayerJSProd_action:set_audio_mode_off" ||
-        m === "mgPlayerJSProd_action:set_audio_mode_on" ||
-        m === "mgPlayerJSProd_action:close_guide" ||
-        m === "mgPlayerJSProd_action:set_style_audio_icon_response") {
-        return true;
-    } else {
-        return false;
-    }
-};
-
-GmCXt.syncCreateInst = function(m) {
-    if (m === "mgPlayerJSProd_action:started;task:highlight_element" ||
-        m === "mgPlayerJSProd_action:started;task:edit_step_select_existing_dom_element" ||
-        m === "mgPlayerJSProd_action:completed;task:edit_step_select_existing_dom_element" ||
-        m === "mgPlayerJSProd_action:started;task:edit_step_select_existing_dom_element:target_frame_only" ||
-        m === "mgPlayerJSProd_action:started;task:select_new_dom_element" ||
-        m === "mgPlayerJSProd_action:started;task:select_new_dom_element_for_edit_step" ||
-        m === "mgPlayerJSProd_action:started;task:narrow_element_selection" ||
-        m === "mgPlayerJSProd_action:started;task:expand_element_selection" ||
-        m === "mgPlayerJSProd_action:started;task:select_element_for_message_step" ||
-        m === "mgPlayerJSProd_action:started;task:select_element_for_branching_step" ||
-        m === "mgPlayerJSProd_action:started;task:select_new_element_for_dom_select_rule" ||
-        m === "mgPlayerJSProd_action:started;task:select_new_table_for_dom_select_rule" ||
-        m === "mgPlayerJSProd_action:started;task:delete_element_for_message_step" ||
-        m === "mgPlayerJSProd_action:started;task:select_dom_element_for_beacon" ||
-        m === "mgPlayerJSProd_action:started;task:blackout_dom_element" ||
-        m === "mgPlayerJSProd_action:started;task:edit_message_step_select_existing_dom_element" ||
-        m === "mgPlayerJSProd_action:started;task:step_blackout_area_existing_dom_element" ||
-        m === "mgPlayerJSProd_action:started;task:edit_beacon_select_existing_dom_element" ||
-        m === "mgPlayerJSProd_action:started;task:edit_beacon_select_existing_dom_element:target_frame_only" ||
-        m === "mgPlayerJSProd_action:started:select_new_dom_element_for_smart_tip" ||
-        m === "mgPlayerJSProd_action:find_element_to_get_precision" ||
-        m === "mgPlayerJSProd_action:find_element_to_get_precision_for_rules" ||
-        m === "mgPlayerJSProd_action:started;task:select_dom_element_for_matching_in_rules" ||
-        m === "mgPlayerJSProd_action:do;task:enable_jQuery_selector" ||
-        m === "mgPlayerJSProd_action:started;task:edit_tag_select_existing_dom_element") {
-        return true;
-    } else {
-        return false;
-    }
-};
-
-GmCXt.setAutoTour = function(id) {
-    if (window.self === window.top) {
-        localStorage.setItem(GmCXt.storagePrefix + 'autoLaunchTour', id);
-    } else {
-        let data = {
-            tourId: id
-        };
-        if (GmCXt.isSidePanelApp) {
-            let m = {
-                action: "mgPlayerJSProd_action:set_auto_tour"
-            };
-            m.data = data;
-            GmCXt.sendToParentWindow(m);
-        } else {
-            GmCXt.sendMessageToParentWindow('mgPlayerJSProd_action:set_auto_tour', data);
-        }
-    }
-};
-
-GmCXt.getPreviousStep = function() {
-    if (GmCXt.playerI) {
-        let previousStepId = GmCXt.getPreviousStepId(GmCXt.playerI.currentStepId);
-        if (previousStepId) {
-            let step = GmCXt.createDeepCopy(GmCXt.getStepFromPlayerI(previousStepId));
-            return step;
-        } else {
-            return null;
-        }
-    } else {
-        return null;
-    }
-};
-
-GmCXt.getPreviousStepId = function(id, mode) {
-    let previousStepId = null;
-    let PS = GmCXt.playerI.playStructure;
-    let sameTail = GmCXt.numberOfSameTail(id, PS);
-    if (sameTail > 1) {
-        previousStepId = GmCXt.playerI.mergingFromId;
-    } else {
-        if (PS && PS.length) {
-            for (let i = 0; i < PS.length; i++) {
-                if (PS[i] && parseInt(PS[i].tail) === parseInt(id)) {
-                    previousStepId = PS[i].id;
+GmCXt.isExcludeDomain = function() {
+    let isEx = false;
+    if (GmCXt.urlParts && GmCXt.urlParts.fullUrl && GmCXt.isPlayer()) {
+        let url = GmCXt.urlParts.host + GmCXt.urlParts.pathname;
+        let excludeDomainList = GmCXt.getExcludedDomainList();
+
+        if (excludeDomainList) {
+            for (let x = 0; x < excludeDomainList.length; x++) {
+                if (url && url.toLowerCase().includes(GmCXt.trimAndLowerCaseURL(excludeDomainList[x]))) {
+                    isEx = true;
                     break;
-                } else if (PS[i] && PS[i].branch) {
-                    for (let j = 0; j < PS[i].branch.length; j++) {
-                        if (parseInt(PS[i].branch[j].tail) === id) {
-
-                            if (mode === 'slideshow') previousStepId = PS[i].id;
-                            else previousStepId = GmCXt.getPreviousStepId(PS[i].id);
-
-                            break;
-                        }
-                    }
                 }
             }
         }
     }
-    return previousStepId;
+    return isEx;
 };
 
-GmCXt.getPreviousStepsList = function(id) {
-    let previousSteps = [];
-    let PS = GmCXt.playerI.tour.tour_settings.play_structure;
+GmCXt.getExcludedDomainList = function() {
+    let excludedDomains = [];
+    let os = GmCXt.getOrgSettings();
+    if (os && os.excludeDomains && !GmCXt.isEmpty(os.excludeDomains)) {
+        excludedDomains = os.excludeDomains;
+    }
+    return excludedDomains;
+};
 
-    if (PS && PS.length) {
-        for (let i = 0; i < PS.length; i++) {
-            if (PS[i] && parseInt(PS[i].tail) === parseInt(id)) {
-                previousSteps.push(PS[i].id);
-            } else if (PS[i] && PS[i].branch) {
-                for (let j = 0; j < PS[i].branch.length; j++) {
-                    if (parseInt(PS[i].branch[j].tail) === id) {
-                        previousSteps.push(PS[i].id);
-                    }
-                }
+GmCXt.isDomainInActiveApp = function() {
+    if (!GmCXt.isFQDN() || GmRootScope.showGuidesFromDesktopApp) {
+        return true;
+    }
+
+    let domainMatch = false;
+    if (!GmCXt.isEmpty(GmCXt.appList) && GmCXt.activeAppId) {
+        let activeApp = GmCXt.appList['app:' + GmCXt.activeAppId];
+        let domains = activeApp && activeApp.settings.domains;
+
+        if (activeApp && activeApp.settings && activeApp.settings.sandbox) {
+            domainMatch = true;
+        } else if (domains) {
+
+            let matchedDomain = GmCXt.getCurrentDomainApp(domains, GmCXt.urlParts.fullUrl);
+
+            if (!GmCXt.isEmpty(matchedDomain)) {
+                domainMatch = true;
             }
         }
     }
-    return previousSteps;
+    return domainMatch;
 };
 
-GmCXt.getFirstStepId = function() {
-    let id = null;
-    let playStructure = GmCXt.playerI.playStructure;
+GmCXt.findDomainMatch = function(domainList, fullUrl, oldPathLength) {
 
-    if (playStructure && playStructure.length) {
-        let firstStepObj = playStructure[0];
-        if (firstStepObj && firstStepObj.id) {
-            id = firstStepObj.id;
-        }
-    }
-    return id;
-};
+    let match = {};
 
-//Always extract/extend data returned by this function before use.
-GmCXt.getStepFromPlayerI = function(step_id) {
-    let step = false;
-    var steps = [];
+    let url = GmCXt.getHostnameFromUrl(fullUrl);
+    url = GmCXt.trimAndLowerCaseURL(url);
 
-    var steps = GmCXt.playerI.tour.steps;
-
-    for (let i = 0; i < steps.length; i++) {
-        if (parseInt(steps[i].step_id) === parseInt(step_id)) {
-            step = steps[i];
-            break;
-        }
-    }
-    return step;
-};
-
-GmCXt.getStepFromTourData = function(step_id, tour) {
-    let step = false;
-    var steps = [];
-
-    var steps = tour.steps;
-
-    for (let i = 0; i < steps.length; i++) {
-        if (parseInt(steps[i].step_id) === parseInt(step_id)) {
-            step = steps[i];
-            break;
-        }
-    }
-    return step;
-};
-
-GmCXt.getNextBotStepFromTour = function(step_id, tour) {
-    let step = false;
-    let steps = tour.steps;
-
-    for (let i = 0; i < steps.length; i++) {
-        if (parseInt(steps[i].step_id) === parseInt(step_id)) {
-            if ((steps[i].step_settings.automation.enableBot &&
-                    steps[i].step_settings.automation.botQuestion) ||
-                (steps[i].step_type === GmCXt.STEP_TYPE_GUIDE ||
-                    steps[i].step_type === GmCXt.STEP_TYPE_BRANCH ||
-                    steps[i].step_type === "textSlide")) {
-                step = steps[i];
-                break;
+    for (let i = 0; i < domainList.length; i++) {
+        let appUrl = domainList[i].url;
+        appUrl = GmCXt.trimAndLowerCaseURL(appUrl);
+        fullUrl = GmCXt.trimAndLowerCaseURL(fullUrl);
+        if (appUrl.indexOf('/') >= 0 && fullUrl.indexOf(appUrl) >= 0) {
+            let pathLength = (appUrl.match(/\//g) || []).length;
+            if (oldPathLength && oldPathLength > pathLength) {
+                continue;
             } else {
-                step_id = GmCXt.getTail(steps[i].step_id, tour.tour_settings.play_structure, null, tour);
-                GmCXt.getNextBotStepFromTour(step_id, tour);
+                match = domainList[i];
+                match.pathMatch = true;
+                match.pathLength = pathLength;
+            }
+        } else if (url === appUrl && !oldPathLength) {
+            match = domainList[i];
+        } else if (appUrl.indexOf("[*.]") > -1) {
+            let regExMatch = GmCXt.matchUrlRegEx(appUrl, url);
+
+            if (regExMatch) {
+                match = domainList[i];
             }
         }
     }
-    return step;
+
+    return match;
+};
+
+GmCXt.getCurrentMyGuideApp = function(domainList) {
+
+    let match = {};
+    let hostApp = GmCXt.elAppName.toLowerCase();
+
+    for (let i = 0; i < domainList.length; i++) {
+        if (domainList[i].appName && (hostApp === domainList[i].appName.toLowerCase())) {
+            match = domainList[i];
+            break;
+        }
+    }
+
+    return match;
+};
+
+GmCXt.checkDomainInPublishedEnv = function(pubEnv) {
+    let domainInPublishedEnv = false;
+    if (GmCXt.isDefined(pubEnv)) {
+        let domainEnv = GmCXt.getAppEnvByDomain();
+        if (pubEnv.includes(domainEnv)) {
+            domainInPublishedEnv = true;
+        }
+    } else {
+        domainInPublishedEnv = true;
+    }
+    return domainInPublishedEnv;
+};
+// Audio Management Functions
+
+GmCXt.setOnAudioMode = function() {
+    let d = {
+        user: GmCXt.user
+    };
+    GmCXt.sendMsgToAudioFrame('mgPlayerJSProd_action:set_audio_mode_on', d);
+};
+
+GmCXt.setOffAudioMode = function() {
+    let d = {
+        user: GmCXt.user
+    };
+    GmCXt.sendMsgToAudioFrame('mgPlayerJSProd_action:set_audio_mode_off', d);
+};
+
+GmCXt.setOnOnBoarAudioMode = function() {
+    mg$('.mgPlayerJSProd_tooltip-title-mute').show();
+    mg$('.mgPlayerJSProd_tooltip-title-unmute').hide();
+    mg$('.mgPlayerJSProd_onboarding-audio-off').hide();
+    mg$('.mgPlayerJSProd_onboarding-audio-on').show();
+    mg$('.mgPlayerJSProd_onboarding-audio').addClass('playing-audio');
+};
+
+GmCXt.setOffOnBoarAudioMode = function() {
+    mg$('.mgPlayerJSProd_tooltip-title-mute').hide();
+    mg$('.mgPlayerJSProd_tooltip-title-unmute').show();
+    mg$('.mgPlayerJSProd_onboarding-audio-on').hide();
+    mg$('.mgPlayerJSProd_onboarding-audio-off').show();
+    mg$('.mgPlayerJSProd_onboarding-audio').removeClass('playing-audio');
 };
 
 GmCXt.isGuideAudioDisabled = function() {
@@ -5309,325 +3181,174 @@ GmCXt.isGuideAudioEnabled = function() {
 
     return typeof val === 'undefined' ? true : val;
 };
+//Automation Related functions
 
-GmCXt.isLastStep = function(stepId, playStructure) {
+GmCXt.firstStepAutoLaunch = function() {
 
-    let flag = false;
+    // if user has played first step already than going previously at 1st step
+    // don't show the option for the auto launch
 
-    if (GmCXt.getTail(stepId, playStructure) === null) {
-        flag = true;
-    }
-    return flag;
-};
+    let t = GmCXt.playerI && GmCXt.playerI.tour;
+    let viewNot = (GmCXt.user && GmCXt.user.settings.viewed_guide_notifications) || {};
+    let result = false;
 
-GmCXt.isFirstStep = function(sid) {
-
-    if (!GmCXt.playerI) return false;
-
-    let stepId = sid || GmCXt.playerI.currentStepId;
-
-    // TODO, need to check behaviour when first step of tour in branch step
-    if (stepId && GmCXt.playerI.tour) {
-        let PS = GmCXt.getGuidePlayStructure(GmCXt.playerI.tour);
-
-        if (PS && PS[0]) {
-            let first = PS[0];
-
-            if (first.id === stepId) {
-                return true;
-            }
+    if (GmCXt.isAutoTour() && GmCXt.isFirstNonAutomationStep()) {
+        if (!GmCXt.isDefined(viewNot[t.tour_id]) || (viewNot[t.tour_id] < parseInt(t.version))) {
+            result = true;
         }
     }
 
-    return false;
+    return result;
 };
 
-GmCXt.getFirstNonAutomationStep = function() {
-    let id = null;
-    let playStructure = GmCXt.getGuidePlayStructure(GmCXt.playerI.tour);
-    if (playStructure) {
-        for (let i = 0; i < playStructure.length; i++) {
-            let stepObj = playStructure[i];
-            if (stepObj && stepObj.id) {
-                id = stepObj.id;
-            }
-            let step = GmCXt.getStepFromPlayerI(id);
-            if (!GmCXt.isAutomationStep(step)) {
-                return step;
-            }
+GmCXt.pauseAutomation = function() {
+    if (GmCXt.playerI && GmCXt.playerI.automate) {
+        GmCXt.playerI.pauseAutomate = true;
+        GmCXt.sendMessageToSyncPlayerI();
+    }
+};
+
+GmCXt.resumeAutomation = function() {
+    if (GmCXt.playerI) {
+        GmCXt.playerI.pauseAutomate = false;
+        GmCXt.sendMessageToSyncPlayerI();
+    }
+};
+
+GmCXt.updateBeaconsOnScreen = function(tourId, isValid) {
+
+    if (window.self === window.top) {
+        tourId = parseInt(tourId);
+        let i = GmCXt.beaconsOnScreen.indexOf(tourId);
+
+        if (isValid && i < 0) {
+            GmCXt.beaconsOnScreen.push(tourId);
+            GmCXt.log(49, "ADDED on screen: " + tourId);
+            GmCXt.auto.setBeaconsAutoDataToStorage(GmCXt.beaconsOnScreen);
+            GmCXt.setBeaconsDisplayFrequency(tourId);
+        } else if (!isValid) {
+            GmCXt.beaconsOnScreen.splice(i, 1);
+            GmCXt.log(49, "REMOVED from screen: " + tourId);
         }
-    }
-};
-
-GmCXt.isFirstNonAutomationStep = function() {
-    if (!GmCXt.playerI) return false;
-
-    if (GmCXt.playerI.currentStepId && GmCXt.playerI.tour) {
-        let s = GmCXt.getFirstNonAutomationStep();
-        if (s && (s.step_id === GmCXt.playerI.currentStepId)) {
-            return true;
-        }
-    }
-    return false;
-};
-
-GmCXt.filterOutAutomationSteps = function(steps) {
-    return steps.filter(function(s) {
-        return (!GmCXt.isAutomationStep(s));
-    });
-};
-
-GmCXt.initGlobals = function(action, data) {
-
-    if (data) {
-
-        if (data.debugMode) GmCXt.debugMode = data.debugMode;
-
-        if (data.urlParts) GmCXt.urlParts = data.urlParts;
-
-        if (GmCXt.syncCreateInst(action)) {
-            if (window.self !== window.top) {
-                if (data.stepReq || data.stepReq === null) {
-                    GmCXt.stepReq = data.stepReq;
-                }
-            } else {
-                if (GmCXt.stepReq && data.syncStepReq) {
-                    GmCXt.stepReq = data.stepReq;
-                }
-            }
-        }
-        if (GmCXt.syncPlayerInst(action)) {
-            if (window.self !== window.top) {
-                if (data.playerInstance || data.playerInstance === null) {
-                    GmCXt.playerI = data.playerInstance;
-                }
-            } else if (data.playerInstance && data.fromSidePanel) {
-                GmCXt.playerI = data.playerInstance;
-            }
-        }
-    }
-};
-
-GmCXt.verifyMsg = function(event) {
-    if (mg$(window).width() <= 1 || mg$(window).height() <= 1) {
-        return false;
-    }
-
-    event.data = GmCXt.parseJSON(event.data);
-    event.data = GmCXt.convertMgdata(event.data);
-
-    let message = event.data;
-    let action = message ? message.action : '';
-
-    GmCXt.log(3, "VERIFY MESSAGE " + action);
-    if (!message || !action) return false;
-
-    if (action && action.indexOf('MyGuideReporting:Ack') !== -1 &&
-        message.data === GmCXt.getAppName()) {
-        return; //Reject acknowledgement from self
-    }
-
-    if (action && action.indexOf('MyGuideReporting') !== -1) {
-        GmCXt.saveAppPresence(message);
-    }
-
-    let valid = false;
-    let data = message.data;
-
-    let fromSelf = (action.indexOf('mgPlayerJSProd_action:') !== -1);
-
-    // for salesforce and service now app backword compatibility
-    if (action === "gmPlayerXt_action:init_snow" ||
-        action === "myguide_action:find_element_request_from_insight" ||
-        action === "myguide_action:paste_tour_from_myguide_library" ||
-        action === "gmPlayerXt_action:snow_panel_open") {
-        fromSelf = true;
-    }
-
-    if (fromSelf) {
-        if (message && message.data && message.data.sender === "other") {
-            delete message.data.organization;
-            delete message.data.user;
-        }
-        GmCXt.initGlobalUser(message);
-        GmCXt.initGlobals(action, data);
-        valid = true;
-    }
-
-    return valid;
-};
-
-GmCXt.initGlobalUser = function(m) {
-    if (m.data && (window.self !== window.top || m.data.fromSidePanel)) {
-        if (m.data.user && !GmCXt.isEmpty(m.data.user)) {
-            GmCXt.updateGlobalUser(m.data.user);
-        }
-    }
-};
-
-GmCXt.toastMsg = function(message) {
-
-    let self = {
-        message: message || 'Default message'
-    };
-
-    return {
-        show: function() {
-            mg$("#mgPlayerJSProd_toast_msg").remove();
-
-            let html = "<wmgPlayerJSProd_ class='mgPlayerJSProd_toast-msg' id='mgPlayerJSProd_toast_msg'></wmgPlayerJSProd_>";
-            if (GmCXt.browserApp === 'ie') {
-                mg$("body").append(html);
-            } else {
-                mg$("html").append(html);
-            }
-
-            mg$("#mgPlayerJSProd_toast_msg").html(self.message);
-            mg$("#mgPlayerJSProd_toast_msg").fadeIn();
-            GmCXt.timeout(function() {
-                mg$('#mgPlayerJSProd_toast_msg').fadeOut(500);
-            }, GmCXt.t.toastMsg);
-        }
-    };
-};
-
-GmCXt.showToastMsg = function(message) {
-    mg$("#mgPlayerJSProd_toast_msg").html(message);
-    mg$("#mgPlayerJSProd_toast_msg").fadeIn();
-};
-
-GmCXt.hideToastMsg = function() {
-    mg$('#mgPlayerJSProd_toast_msg').fadeOut(100);
-};
-
-GmCXt.toastMsgPersistent = function(message) {
-    return {
-        show: function() {
-            let htmlstr = "<wmgPlayerJSProd_ class='mgPlayerJSProd_toast-msg-wrapper'><wmgPlayerJSProd_ class='mgPlayerJSProd_toast-msg-close' id='mgPlayerJSProd_toast_msg_close' >x</wmgPlayerJSProd_>";
-            htmlstr += "<wmgPlayerJSProd_ id='mgPlayerJSProd_toast_msg_text' class='mgPlayerJSProd_toast-msg-text' >" + message + "</wmgPlayerJSProd_></wmgPlayerJSProd_>";
-            mg$("#mgPlayerJSProd_toast_msg").html(htmlstr);
-            mg$("#mgPlayerJSProd_toast_msg").fadeIn();
-
-            mg$("#mgPlayerJSProd_toast_msg_close").click(function() {
-                GmCXt.toastMsgPersistent().hide();
-            });
-        },
-        hide: function() {
-            mg$('#mgPlayerJSProd_toast_msg').fadeOut(500);
-        }
-    };
-};
-
-GmCXt.clearScreen = function() {
-    mg$('.mgPlayerJSProd_inline-step-capture-screen').remove();
-};
-
-GmCXt.stopEventPropagation = function(e) {
-    e.stopPropagation();
-    e.stopImmediatePropagation();
-};
-
-GmCXt.unlockScroll = function() {
-    mg$('html').css('overflow', '');
-};
-
-GmCXt.getStepSortedByPS = function(PS, stepId) {
-
-    let steps = [];
-
-    let firstStep;
-    if (stepId) {
-        firstStep = GmCXt.getStepFromPlayerI(stepId);
     } else {
-        firstStep = GmCXt.getStepFromPlayerI(PS[0].id);
+        let data = {
+            jobId: tourId,
+            isValid: isValid
+        };
+        GmCXt.sendMessageToTheTopWindow("mgPlayerJSProd_action:update_beacons_on_screen", data);
     }
+};
 
-    steps.push(firstStep);
-
-    let seedStepID = firstStep.step_id;
-    if (firstStep.step_type !== GmCXt.STEP_TYPE_BRANCH || !stepId) {
-        for (let i = 0; i < PS.length; i++) {
-            let nextStepId = GmCXt.getTail(seedStepID, PS);
-            if (nextStepId) {
-                stepToPush = GmCXt.getStepFromPlayerI(nextStepId);
-                if (stepToPush) {
-                    seedStepID = stepToPush.step_id;
-                    steps.push(stepToPush);
-                    if (stepToPush.step_type === GmCXt.STEP_TYPE_BRANCH &&
-                        stepToPush.step_id !== GmCXt.playerI.currentStepId) {
-                        break;
-                    }
-                } else {
-                    break;
-                }
-
-            } else {
-                break;
+GmCXt.setBeaconsDisplayFrequency = function(tourId) {
+    for (let i = 0; i < GmCXt.beaconTours.length; i++) {
+        if (parseInt(GmCXt.beaconTours[i].tour_id) === parseInt(tourId)) {
+            let beacSett = GmCXt.beaconTours[i].tour_settings.beacon;
+            if (beacSett.displayFrequency) {
+                GmCXt.markBeaconDisplayFrequency(GmCXt.beaconTours[i]);
             }
+            break;
         }
     }
-    return steps;
 };
 
-GmCXt.arrayToObjectNot = function(tours) {
-    let tempObj = {};
-    for (let key in tours) {
-        if (tours[key]) tempObj[tours[key]] = 1;
-    }
-    return tempObj;
-};
+GmCXt.markBeaconDisplayFrequency = function (tour) {
 
-GmCXt.escapeHtml = function(str) {
-    if (str) {
-        str = str.replace(/&/g, "&amp;")
-            .replace(/</g, "&lt;")
-            .replace(/>/g, "&gt;")
-            .replace(/"/g, "&quot;")
-            .replace(/'/g, "&#039;");
-    }
-    return str;
-};
-
-GmCXt.removeNotif = function() {
-    mg$(".mgPlayerJSProd_overlay-tours-popup").remove();
-    mg$(".mgPlayerJSProd_overlay-container").remove();
-};
-
-GmCXt.getObjectSize = function(obj) {
-    let size = 0,
-        key;
-    for (key in obj) {
-        if (obj.hasOwnProperty(key))
-            size++;
-    }
-    return size;
-};
-
-GmCXt.updatePlayedSteps = function(step) {
-    GmRootScope.setPlayedStepsInfo(step);
-};
-
-GmCXt.lastCheckWidgetIcon = 0;
-
-GmCXt.getWidgetIcon = function() {
-
-    return new Promise(function(resolve, reject) {
-
-        let i = 'common/img/widget_icon.png';
-
-        i = GmCXt.getBasePath(i);
-
-        let s = GmCXt.getWidgetSettings();
-
-        if (s && s.widget_icon_path && !GmCXt.isDefaultIcon(s.widget_icon_path)) {
-            i = GmCXt.restoreAssetSrc(s.widget_icon_path);
+    if (tour) {
+        let beaconGuides = {};
+        if (GmCXt.isDefined(GmCXt.user.settings.display_frequency_beacons)) {
+            beaconGuides = GmCXt.createDeepCopy(GmCXt.user.settings.display_frequency_beacons);
         }
 
-        //check if widgetIcon needs to get new signature.
-        let isSignExp = (GmCXt.getCurrentTimeInMilSec() - GmCXt.lastCheckWidgetIcon > GmCXt.t.refreshWidget) ? true : false;
+        if (beaconGuides[tour.tour_id] && parseInt(tour.version) === parseInt(beaconGuides[tour.tour_id].version)) {
+            beaconGuides[tour.tour_id].playedCount++;
+        } else {
+            beaconGuides[tour.tour_id] = {};
+            beaconGuides[tour.tour_id].version = parseInt(tour.version);
+            beaconGuides[tour.tour_id].playedCount = 1;
+        }
 
-        resolve(i);
-    });
+        GmCXt.user.settings.display_frequency_beacons = beaconGuides;
+        let data = {
+            settings : {
+                display_frequency_beacons : beaconGuides
+            }
+        };
+
+        GmCXt.updateUserSettings(data, GmCXt.user);
+    }
+};
+/**
+ * Branding Module
+ * 
+ * Functions for managing brand logos and settings.
+ */
+
+
+GmCXt.getBrandingSetting = function() {
+    let setting = false;
+    if (GmCXt.appList) {
+        var activeApp = GmCXt.appList['app:' + GmCXt.activeAppId];
+    }
+
+    if (activeApp && activeApp.settings) {
+        setting = activeApp.settings;
+    }
+    return setting;
+};
+
+GmCXt.getBrandLogo = function() {
+    return GmCXt.getBrandingSetting().logo;
+};
+
+GmCXt.brandLogo = function() {
+
+    let brandLogo = GmCXt.getDefaultIcon();
+    let logo = GmCXt.getBrandLogo();
+
+    if (logo && !GmCXt.isDefaultIcon(logo)) {
+        brandLogo = GmCXt.restoreAssetSrc(logo);
+    }
+
+    return brandLogo;
+};
+
+GmCXt.getPopupLogo = function() {
+    let brandLogo = GmCXt.getDefaultIcon();
+
+    let logo = GmCXt.getBrandLogo();
+    if (logo && !GmCXt.isDefaultIcon(logo)) {
+        brandLogo = GmCXt.restoreAssetSrc(logo);
+    }
+
+    return "<img class='mgPlayerJSProd_logo-image' src='" + brandLogo + "' alt='" + GmCXt.label.brandLogo + "' />";
+};
+
+GmCXt.getOrgLevelBrandLogoSetting = function() {
+    return GmCXt.getStepSettings().hideBrandLogo;
+};
+
+//ChatIcon Related Functions
+
+GmCXt.displayChatIcon = function(forceShowWidget) {
+    if (!GmCXt.organization) {
+        GmCXt.removeChatIcon();
+        return;
+    }
+
+    if (GmCXt.isPlayer() && GmCXt.isChatEnable()) {
+        let chat = GmCXt.getChatIconInstance();
+        if (chat.length) {
+            GmCXt.getChatIconInstance().show();
+        } else {
+            GmCXt.showChatIcon();
+        }
+    } else {
+        GmCXt.removeChatIcon();
+    }
+};
+
+GmCXt.getChatIconInstance = function() {
+    return mg$('#mgPlayerJSProd_btn-chat-button');
 };
 
 GmCXt.getChatIcon = function() {
@@ -5648,1722 +3369,82 @@ GmCXt.getChatIcon = function() {
     });
 };
 
-GmCXt.getWidgetAlignment = function() {
-    let alignment = "right";
-    return alignment;
-};
+GmCXt.getChatIconVisibility = function() {
+    let s = GmCXt.getAppSetting();
 
-GmCXt.visibleWindow = function(data) {
-    if (data.checkIframe) {
-        if (!GmCXt.isEmpty(data.frame.attributes) &&
-            !data.frame.attributes.isVisible) {
+    if (GmCXt.isEmpty(s)) return false;
+
+    let rules = s.chatBotrules || [];
+    let match = true;
+    if (s.enable_chatbot) {
+        if (rules.length > 0 && rules[0].value !== '') {
+
+            let oldRegEx = true;
+            if (GmCXt.isDefined(s.clientVersion)) {
+                oldRegEx = false;
+            }
+
+            match = GmCXt.ruleEngine.evaluateRules(rules, oldRegEx);
+        }
+
+        if (!match) {
+            GmCXt.log(21, "RULES NOT MATCHED, Hide chat widget");
             return false;
         }
-    }
-    return true;
-};
-
-GmCXt.getSteps = function(data) {
-
-    return new Promise(function(resolve, reject) {
-        GmCXt.api.getDetailTour(data).then(function(_tour) {
-            if (GmCXt.inPlayer && GmRootScope.notDefaultLang() && _tour) {
-                _tour = GmRootScope.getTranslatedTourAndSteps(_tour, GmRootScope.language);
-            }
-            resolve(_tour);
-        });
-    });
-};
-
-GmCXt.updatePlayStructureLinkGuide = function(tour, playerInstance, cb) {
-
-    let linkPS = GmCXt.getGuidePlayStructure(tour);
-
-    let pi;
-    if (GmCXt.playerI) {
-        pi = GmCXt.playerI;
-    } else if (playerInstance) {
-        pi = playerInstance;
-    }
-
-    let tailCurrent = linkPS[0].id;
-    let PS = pi.playStructure;
-    let isFirstStepLink = false;
-
-    for (let i = 0; i < PS.length; i++) {
-        if (PS[i].tail === pi.currentStepId) {
-            PS[i].tail = tailCurrent;
-        } else if (PS[i].branch) {
-            for (let j = 0; j < PS[i].branch.length; j++) {
-                if (PS[i].branch[j].tail === pi.currentStepId) {
-                    PS[i].branch[j].tail = tailCurrent;
-                }
-            }
-        }
-        if (PS[i].id === pi.currentStepId) {
-            linkPS = GmCXt.updatePSLastTail(linkPS, PS[i].tail);
-            PS[i].tail = null;
-            if (i === 0) {
-                isFirstStepLink = true;
-            }
-        }
-    }
-
-    pi.linkGuideFS = linkPS[0].id;
-
-    if (isFirstStepLink) {
-        PS[0] = linkPS[0];
-        linkPS.splice(0, 1);
-        pi.startStepId = PS[0].id;
-    }
-
-    let finalPS = mg$.extend([], PS.concat(linkPS));
-    if (pi.type === GmCXt.TOUR_PLAYER_SLIDESHOW) {
-        GmCXt.playerI = pi;
-        GmCXt.playerI.playStructure = finalPS;
-    } else if (playerInstance && !GmCXt.playerI) {
-        if (cb) cb(finalPS);
-    } else {
-        GmCXt.globalMsgData['mgPlayerJSProd_action:update_PI_PS_done'].cb(finalPS);
-    }
-};
-
-GmCXt.updatePSLastTail = function(PS, tail) {
-    for (let i = 0; i < PS.length; i++) {
-        if (PS[i].branch) {
-            for (let j = 0; j < PS[i].branch.length; j++) {
-                if (PS[i].branch[j].tail === null) {
-                    PS[i].branch[j].tail = tail;
-                }
-            }
-        } else if (PS[i].tail === null) {
-            PS[i].tail = tail;
-        }
-    }
-    return PS;
-};
-
-GmCXt.concatLinkGuideSteps = function(newSteps, tour, step_id, cb) {
-
-    let guideStepIndex;
-    if (tour && step_id) {
-        guideStepIndex = GmCXt.getCurrentStepIndex(tour, step_id);
-    } else {
-        guideStepIndex = GmCXt.getCurrentStepIndex();
-    }
-
-    let steps = [];
-    if (tour) {
-        steps = mg$.extend([], tour.steps);
-    } else {
-        steps = mg$.extend([], GmCXt.playerI.tour.steps);
-    }
-
-    if (tour && step_id) {
-        steps = steps.filter(function(step, i) {
-            return step.step_id !== step_id;
-        });
-    } else {
-        steps = steps.filter(function(step, i) {
-            return step.step_id !== GmCXt.playerI.currentStepId;
-        });
-    }
-
-    steps.splice.apply(steps, [guideStepIndex, 0].concat(newSteps));
-    if (GmCXt.playerI) {
-        if (GmCXt.playerI.type === GmCXt.TOUR_PLAYER_SLIDESHOW) {
-            GmCXt.playerI.tour.steps = steps;
-        } else {
-            GmCXt.sendMessageToParentWindow("mgPlayerJSProd_action:update_PI_steps", steps);
-        }
-        GmCXt.playerI.totalStepCount = steps.length;
-        GmCXt.playerI.tour.step_count = steps.length;
-    } else {
-        if (cb) cb(steps);
-    }
-};
-
-GmCXt.stopNotification = function(isPreview) {
-    let flag = false;
-    let reason = '';
-
-    if (!GmCXt.isPlayer() && !isPreview) {
-        reason = "app is not a player";
-        flag = true;
-    } else if (mg$('.mgPlayerJSProd_image-step-screen').is(':visible') || mg$('.mgPlayerJSProd_preview-step-popup-container').is(':visible')) {
-        reason = "step is playing";
-        flag = true;
-    } else if (mg$('.mgPlayerJSProd_user-guide-container').is(':visible')) {
-        reason = "survey is open";
-        flag = true;
-    } else if (mg$('.mgPlayerJSProd_notifcation-popup').is(':visible')) {
-        reason = "org notification";
-        flag = true;
-    } else if (mg$('.mgPlayerJSProd_slideshow-panel').is(':visible')) {
-        reason = "slideshow playing";
-        flag = true;
-    } else if (mg$('.mgPlayerJSProd_play-pause-toolbar').is(':visible')) {
-        reason = "pause guide";
-        flag = true;
-    } else if (GmCXt.APP_PANEL_OPEN && !isPreview && !GmCXt.getAppSetting('keep_player_panel_open')) {
-        reason = "side panel open";
-        flag = true;
-    } else if (GmCXt.playerI) {
-        reason = "tour is active";
-        flag = true;
-    } else if (!GmCXt.isEmpty(GmCXt.testMe)) {
-        reason = "test me active";
-        flag = true;
-    }
-
-    if (flag) {
-        GmCXt.log(10, "STOP notification because " + reason);
-    }
-    return flag;
-};
-
-GmCXt.checkSalesForceSite = function() {
-    let url = GmCXt.getUrl();
-    if (url.indexOf('salesforce.com') > 0 || url.indexOf('lightning.force.com') > 0)
-        return true;
-    else
-        return false;
-};
-
-GmCXt.checkWorkdaySite = function() {
-    let url = GmCXt.getUrl();
-    if (url.indexOf('workday.com') > 0)
-        return true;
-    else
-        return false;
-};
-
-GmCXt.checkUBS = function() {
-    let url = GmCXt.getUrl();
-    if (url.indexOf('ubs.net') > -1 || url.indexOf('pwj.com') > -1)
-        return true;
-    else
-        return false;
-};
-
-GmCXt.checkServiceNow = function() {
-    let url = GmCXt.getUrl();
-    if (url.indexOf('service-now.com') > -1)
-        return true;
-    else
-        return false;
-};
-
-GmCXt.getCurrentStep = function(stepId) {
-
-    let step = mg$.extend({}, GmCXt.getStepFromPlayerI(stepId));
-
-    if (!step.step_description) step.step_description = " ";
-
-    // Map properties
-    step.image_url = step.image_url + GmCXt.getCdnSign();
-    step.screen_url = step.screen_url + GmCXt.getCdnSign();
-
-    return step;
-};
-
-GmCXt.getNextStep = function() {
-    if (GmCXt.playerI) {
-        let step = GmCXt.getCurrentStep(GmCXt.playerI.currentStepId);
-        let nextStepId = GmCXt.getTail(step.step_id, GmCXt.playerI.playStructure);
-
-        if (nextStepId) {
-            return GmCXt.getStepFromPlayerI(nextStepId);
-        } else {
-            return null;
-        }
-    } else {
-        return null;
-    }
-};
-
-GmCXt.getProcessedLang = function(l) {
-    let langList = {
-        'ar': 'ar-SA',
-        'ar-EG': 'ar-EG',
-        'ar-SA': 'ar-SA',
-        'zh': 'zh-CN',
-        'zh-HK': 'zh-HK',
-        'zh-CN': 'zh-CN',
-        'zh-TW': 'zh-TW',
-        'zh-Hant': 'zh-TW',
-        'cs': 'cs-CZ',
-        'cs-CZ': 'cs-CZ',
-        'da': 'da-DK',
-        'da-DK': 'da-DK',
-        'nl': 'nl-NL',
-        'nl-NL': 'nl-NL',
-        'en': '',
-        'fi': 'fi-FI',
-        'fi-FI': 'fi-FI',
-        'fr': 'fr-FR',
-        'fr-FR': 'fr-FR',
-        'fr-CH': 'fr-CH',
-        'fr-CA': 'fr-CA',
-        'de': 'de-DE',
-        'de-AT': 'de-AT',
-        'de-DE': 'de-DE',
-        'de-CH': 'de-CH',
-        'el': 'el-GR',
-        'el-GR': 'el-GR',
-        'he': 'he-IL',
-        'he-IL': 'he-IL',
-        'hi': 'hi-IN',
-        'hi-IN': 'hi-IN',
-        'hu': 'hu-HU',
-        'hu-HU': 'hu-HU',
-        'id': 'id-ID',
-        'id-ID': 'id-ID',
-        'it': 'it-IT',
-        'it-IT': 'it-IT',
-        'ja': 'ja-JP',
-        'ja-JP': 'ja-JP',
-        'ko': 'ko-KR',
-        'ko-KR': 'ko-KR',
-        'pl': 'pl-PL',
-        'pl-PL': 'pl-PL',
-        'pt': 'pt-PT',
-        'pt-PT': 'pt-PT',
-        'pt-BR': 'pt-BR',
-        'ro': 'ro-RO',
-        'ro-RO': 'ro-RO',
-        'ru': 'ru-RU',
-        'ru-RU': 'ru-RU',
-        'sk': 'sk-SK',
-        'sk-SK': 'sk-SK',
-        'es': 'es-ES',
-        'es-ES': 'es-ES',
-        'es-MX': 'es-MX',
-        'sv': 'sv-SE',
-        'sv-SE': 'sv-SE',
-        'ta': 'ta-IN',
-        'ta-IN': 'ta-IN',
-        'te': 'te-IN',
-        'te-IN': 'te-IN',
-        'th': 'th-TH',
-        'th-TH': 'th-TH',
-        'tr': 'tr-TR',
-        'tr-TR': 'tr-TR',
-        'vi': 'vi-VN',
-        'vi-VN': 'vi-VN'
-    };
-
-    let lang = langList[l];
-
-    if (lang)
-        return lang;
-    else
-        return 'en-US';
-};
-
-GmCXt.parseMsg = function(e) {
-
-    e = mg$.extend({}, e);
-    e.data = GmCXt.parseJSON(e.data);
-    GmCXt.log(3, "PARSE MESSAGE " + e.data.action);
-    return e.data;
-};
-
-GmCXt.browserLang = GmCXt.getProcessedLang(window.navigator.language);
-
-GmCXt.checkLangExist = function(lArr, lang) {
-    let retVal = false;
-
-    if (lArr && !GmCXt.isFalse(lang)) {
-
-        for (let i = 0; i < lArr.length; i++) {
-            if (lArr[i].language === lang) {
-                retVal = true;
-                break;
-            }
-        }
-    }
-
-    return retVal;
-};
-
-GmCXt.removePreviewFrame = function() {
-
-    mg$('.mgPlayerJSProd_preview-beacon').remove();
-    mg$('.mgPlayerJSProd_preview-smarttip').remove();
-    mg$('.gssSmarttip-form-submit').removeClass('mgPlayerJSProd_form-submit-preview gssSmarttip-form-submit');
-    mg$('.mgPlayerJSProd_duct-tape-invisible-preview').removeClass('mgPlayerJSProd_duct-tape-invisible-preview');
-
-    if (mg$('.mgPlayerJSProd_preview-smarttip-pwr-html').length)
-        mg$('.mgPlayerJSProd_preview-smarttip-pwr-html').val('');
-};
-
-GmCXt.clearSession = function() {
-
-    if (GmCXt.user) {
-        GmCXt.user = false;
-    }
-
-    GmCXt.clearBeaconsAndTooltips(true);
-    GmCXt.highlighter.clear();
-
-    GmCXt.playedTour = [];
-    GmCXt.storage().remove(['playedTour', 'stepsPlayed', 'insightPageRulesData', 'gmSelectedSegment']);
-
-    if (mg$('.mgPlayerJSProd_task-list-button').length > 0) {
-        mg$('.mgPlayerJSProd_task-list-button').remove();
-    }
-};
-
-GmCXt.clearBeaconsAndTooltips = function(isLogout, idList) {
-
-    if (idList) {
-        // Clear specific (if parameter is passed)
-        if (idList.length) {
-            for (let i = 0; i < idList.length; i++) {
-                GmCXt.log(43, 'Clearing tooltips for tour: ' + idList[i]);
-                mg$('.mgPlayerJSProd_smarttip-tour-' + idList[i]).remove();
-                mg$('.mgPlayerJSProd_duct-tape-smarttip-tour-' + idList[i]).removeClass('mgPlayerJSProd_duct-tape-invisible');
-                delete GmCXt.onScreenTooltipGuideInfo['tour_' + idList[i]];
-            }
-
-            GmCXt.onScreenTooltipGuideIds = GmCXt.onScreenTooltipGuideIds.filter(function(id) {
-                return idList.indexOf(id) === -1;
-            });
-
-            GmCXt.partialVisibleTooltipsIds = GmCXt.partialVisibleTooltipsIds.filter(function(id) {
-                return idList.indexOf(id) === -1;
-            });
-        }
-    } else {
-        // Clear all
-        mg$('.mgPlayerJSProd_smarttip-icon').remove();
-        mg$('.mgPlayerJSProd_smarttip-guidance-msg').remove();
-        mg$('.mgPlayerJSProd_smarttip').remove();
-        mg$('.mgPlayerJSProd_smarttip-valid').remove();
-        mg$('.mgPlayerJSProd_duct-tape').remove();
-        mg$('.mgPlayerJSProd_duct-tape-invisible').removeClass('mgPlayerJSProd_duct-tape-invisible');
-    }
-
-    mg$(".mgPlayerJSProd_beacon-icon").remove();
-    GmCXt.beaconsOnScreen = [];
-
-    if (!isLogout) {
-        GmCXt.closePowerForm();
-    }
-
-    GmCXt.sendMessageToAllWindows('mgPlayerJSProd_action:forward;remove_active_smarttip_beacon', {
-        idList: idList
-    });
-};
-
-GmCXt.closeAppPanel = function() {
-    GmCXt.APP_PANEL_OPEN = false;
-    GmCXt.displayWidget();
-    GmCXt.displayChatIcon();
-    let alignment = GmCXt.getWidgetAlignment();
-    mg$(".mgPlayerJSProd_panel .mgPlayerJSProd_app").css(alignment, "-9550px");
-    mg$(".mgPlayerJSProd_panel").css(alignment, "-9550px");
-    mg$(".mgPlayerJSProd_panel").css("display", "none");
-    mg$(".mgPlayerJSProd_ege-panel").css("display", "none");
-
-    if (alignment === 'right') {
-        mg$(".mgPlayerJSProd_panel").css('left', "initial");
-    }
-
-    if (GmCXt.isMicroPlayer()) {
-        mg$(".mgPlayerJSProd_panel").css("left", "initial");
-        mg$(".mgPlayerJSProd_panel").css("top", "50%");
-    }
-
-    mg$(".mgPlayerJSProd_panel").attr({
-        'aria-hidden': true,
-        'tabindex': -1
-    });
-    mg$("#mgPlayerJSProd_app").attr({
-        'aria-hidden': true,
-        'tabindex': -1
-    });
-    mg$(".mgPlayerJSProd_panel").focus();
-    GmRootScope.displayChatIcon();
-};
-
-GmCXt.legacyWildChar = function(v) {
-    return GmCXt.decodeVersion(v) <= 2020063002;
-};
-
-GmCXt.getMd5 = function(val) {
-    return md5(val);
-};
-
-GmCXt.getAppsArray = function(apps) {
-    let r = [];
-
-    for (let k in apps) {
-        if (apps.hasOwnProperty(k)) {
-            r.push(k);
-        }
-    }
-    return r;
-};
-
-GmCXt.checkGmailSite = function() {
-    let url = GmCXt.getUrl();
-    if (url.indexOf('mail.google.com') === 0)
-        return true;
-    else
-        return false;
-};
-
-GmCXt.sendMessageToDesktopApp = function(msg, d) {
-    GmCXt.log(38, "Send message to Desktop App - ", msg, d);
-    let url = '';
-    let eventList = {
-        "clickNext": 'click',
-        "onRightClickNext": 'right-click',
-        "onKeyupNext": 'keyup',
-        "onChangeNext": 'change',
-        "hoverNext": 'hover'
-    };
-
-    GmCXt.log(33, "Sending message to CAD");
-    GmCXt.log(33, msg);
-
-    switch (msg) {
-    case 'step_complete':
-        url = "event/step_complete" +
-                "?step_id=" + d.step_id + "&step_order" + d.step_order;
-        break;
-
-    case 'step_failed':
-        url = "event/step_failed" +
-                "?step_id=" + d.step_id + "&tour_id=" + GmCXt.deskReq.testCaseId + "&jobId=" + GmCXt.deskReq.jobId;
-        break;
-
-    case 'trigger_event':
-        var event = d.step_settings.completionEvent;
-        var as = d.step_settings.automation;
-        var query = '';
-
-        if (as.enableDefaultData) {
-            query += 'value=' + escape(as.defaultData);
-        }
-        query += '&human_interaction=' + escape(as.hasHumanInteraction);
-
-        if (as.element && as.element.dataOptionsType) {
-            query += '&type=' + escape(as.element.dataOptionsType);
-        }
-
-        if (as.file) {
-            query += '&filePath=' + escape(as.file);
-        }
-
-        var cname = 'doitforme-' + d.step_id;
-
-        url = "action/" + eventList[event] + "/" + cname + "?" + query;
-
-        break;
-
-    case 'image_comparison':
-        var msg = 'Finding image match';
-        if (!GmCXt.isEmpty(d.step_title)) {
-            msg += (" for step '<b>" + d.step_title + "</b>' ");
-        }
-        GmCXt.toastMsg(msg).show();
-
-        url = 'image_comparison/doitforme-' + d.step_id + '?';
-        break;
-
-    case 'task_complete':
-        var query = '';
-
-        if (GmCXt.deskReq) {
-            if (GmCXt.deskReq.testCaseId) {
-                query += 'tour_id=' + GmCXt.deskReq.testCaseId;
-            }
-            if (GmCXt.deskReq.jobId) {
-                query += '&jobId=' + GmCXt.deskReq.jobId;
-            }
-
-            if (GmCXt.deskReq.jobRunId) {
-                query += '&jobRunId=' + GmCXt.deskReq.jobRunId;
-            }
-            if (d && d.isError) {
-                query += '&isError=true&errorMessage=' + d.errorMessage;
-            }
-        }
-        if (d && d.entity_code) {
-            query += '&entityCode=' + d.entity_code;
-        }
-        url = "event/task_complete?" + query;
-        break;
-    }
-
-    if (GmCXt.deskReq && GmCXt.deskReq.driverId) {
-        url += "&driver=" + GmCXt.deskReq.driverId;
-    }
-
-    GmCXt.log(33, url);
-
-    function cb(tabId) {
-
-        url += '&tabid=' + tabId;
-
-        GmCXt.timeout(function() {
-            let params = {
-                url: url,
-                stepType: (d && d.step_settings) ? d.step_settings.stepType : '',
-            };
-
-            if (d && d.step_type === GmCXt.STEP_TYPE_IMAGE) {
-                params.info = d;
-            }
-
-            GmCXt.api.sendMsgToMyBot(params);
-        }, 3000);
-    }
-    GmCXt.log(37, "msg send to desktop", url);
-    if (GmCXt.isBackgroundPage) {
-        cb(GmCXt.trackerUtil.tabId);
-    } else {
-        GmCXt.sendMessageToBackgroundService({
-            action: "mgPlayerJSProd_action:get_current_tab_id"
-        }, cb);
-    }
-};
-
-GmCXt.compareArraysByPercentMatch = function(arr1, arr2, val) {
-    let similar = arr1.filter(function(n) {
-        return this.has(n);
-    }, new Set(arr2));
-
-    let pc = 100 * (similar.length * 2) / (arr1.length + arr2.length);
-
-    val = val || 75;
-    return pc >= val;
-};
-
-GmCXt.compareObjectsByPercentMatch = function(o1, o2, val, keys) {
-
-    if (!GmCXt.isEmpty(o1) && !GmCXt.isEmpty(o2)) {
-
-        let textKeys = ['aria-label'];
-        let matched = 0;
-        let compared = 0;
-        keys = keys || Object.keys(o1);
-        let len = keys.length;
-
-        for (let i = 0; i < len; i++) {
-            let key = keys[i];
-            if (o1.hasOwnProperty(key) && o2.hasOwnProperty(key)) {
-                compared++;
-                if (typeof o1[key] === 'object') {
-                    if (Array.isArray(o1[key])) {
-                        if (GmCXt.compareArraysByPercentMatch(o1[key], o2[key], 50)) matched++;
-                    } else if (GmCXt.compareObjectsByPercentMatch(o1[key], o2[key], 50)) matched++;
-                } else {
-                    if (textKeys.includes(key) && o1[key] !== o2[key]) return false;
-                    if (o1[key] === o2[key]) matched++;
-                }
-            }
-        }
-
-        if (!compared) return false;
-
-        let currentPc = 100 * matched / compared;
-        let pc = val || 75;
-
-        if (currentPc >= pc) {
-            return true;
-        }
-    }
-
-    return false;
-};
-
-GmCXt.checkInsightEnabled = function() {
-    let org = GmCXt.organization;
-    if (org && org.admin_settings.insights.enabled && org.admin_settings.insights.guide) {
-        return true;
-    }
-    return false;
-};
-
-GmCXt.getBasePath = function(i) {
-    let url = "";
-    if (GmCXt.isExtension()) {
-        url = GmCXt.getBrowserUrl(i);
-    } else {
-        if (GmCXt.isDefined(GmCXt.conf.baseUrl)) {
-            url = GmCXt.conf.baseUrl + i;
-        } else {
-            url = GmCXt.conf.clientJsBaseUrl + i;
-        }
-    }
-
-    return url;
-};
-
-// Only applicable after version 2021.01.30.1
-GmCXt.checkTourCreatedBefore = function(tourSettings, version) {
-    return (!tourSettings.hasOwnProperty('created_version') || GmCXt.decodeVersion(tourSettings.created_version) < version);
-};
-
-GmCXt.getTourSegmentDetail = function(tour) {
-    let segmentDetails = [];
-    let tour_segs = tour.tour_settings.segment_groups;
-    tour_segs.forEach(function(s) {
-        let sg = GmCXt.getSegmentById(s);
-        if (!GmCXt.isEmpty(sg)) {
-            segmentDetails.push(sg);
-        }
-    });
-    return segmentDetails;
-};
-
-GmCXt.getSegmentById = function(id) {
-    if (GmRootScope.allSegments) {
-        return GmRootScope.allSegments.filter(function(g) {
-            return parseInt(g.group_id) === parseInt(id);
-        })[0];
-    } else return {};
-};
-
-GmCXt.validatedSegments = {};
-
-GmCXt.areUserSegmentsValid = function(segments, segmentId) {
-    let userProfileData = GmCXt.user.profile ? JSON.parse(GmCXt.user.profile) : "";
-    let isValid = false;
-
-    let userData = [];
-    if (userProfileData && Object.prototype.toString.call(userProfileData) !== '[object Array]') {
-        for (var i = 0; i < Object.keys(userProfileData).length; i++) {
-            key = Object.keys(userProfileData)[i];
-            value = userProfileData[key];
-            userData.push({
-                data: value
-            });
-        }
-    } else {
-        userData = userProfileData;
-    }
-
-    if (!userData) return isValid;
-
-    if (!segments || !segments.length) return true;
-
-    if (GmCXt.user.role !== "user") return true;
-
-    for (var i = 0; i < segments.length; i++) { // For each segment in the segmentation
-        if (!GmCXt.isEmpty(segments[i].data)) {
-            isValid = false;
-            for (let j = 0; j < userData.length; j++) {
-                if (userData[j].id && !GmCXt.isEmpty(userData[j].data) && parseInt(segments[i].id) === parseInt(userData[j].id)) {
-                    for (var k = 0; k < segments[i].data.length; k++) {
-                        if (userData[j].data.includes(segments[i].data[k])) {
-                            isValid = true;
-                            break;
-                        }
-                    }
-                } else if (!GmCXt.isDefined(userData[j].id) && !GmCXt.isEmpty(userData[j].data)) {
-                    for (var k = 0; k < segments[i].data.length; k++) {
-                        if (userData[j].data.includes(segments[i].data[k])) {
-                            isValid = true;
-                            break;
-                        }
-                    }
-                }
-            }
-            if (!isValid) break;
-        }
-    }
-
-    GmCXt.log(68, "Valid User Segments: ", isValid);
-    return isValid;
-};
-
-GmCXt.getSegmentSetting = function(segmentId) {
-    let segment = GmCXt.getSegmentById(segmentId);
-
-    let segmentSettings, segmentSetting;
-    if (!GmCXt.isEmpty(segment) && segment.settings) {
-        segmentSettings = GmCXt.parseJSON(segment.settings);
-        for (let key in segmentSettings) {
-            if (segmentSettings.hasOwnProperty(key)) {
-                if (segmentSettings[key] === 1) {
-                    segmentSetting = key;
-                    break;
-                }
-            }
-        }
-    }
-
-    return segmentSetting;
-};
-
-GmCXt.checkGuidesBasedOnSegment = function(tours, cb, from) {
-
-    if (!tours || !tours.length) {
-        cb({});
-        return;
-    }
-
-    let allSegment = [];
-    let totalSegment = 0;
-    let toursProcessed = 0;
-    let segmentProcessed = 0;
-    let validatedTours = [];
-
-    let totalTours = tours.length;
-
-    function checkTourSegment(s_id) {
-        tours.forEach(function(tour) {
-
-            GmCXt.log(68, "Check Segments in Tour: " + GmCXt.tourLog(tour));
-
-            let isSegmentValid = false;
-            let segments = tour.tour_settings.segment_groups;
-            if (GmCXt.inArray(segments, s_id)) {
-                for (let i = 0; i < segments.length; i++) { // For each segmentation added
-                    if (GmCXt.validatedSegments[segments[i]]) {
-                        isSegmentValid = true;
-                        break;
-                    }
-                }
-                if (isSegmentValid && !GmCXt.inArray(tour.tour_id, validatedTours)) {
-
-                    validatedTours.push(parseInt(tour.tour_id));
-
-                    toursProcessed++;
-
-                    GmCXt.log(68, "VALID Tour segments: " + GmCXt.tourLog(tour));
-
-                }
-
-                if (segments.length > 0) {
-
-                    let segmentSetting = GmCXt.getSegmentSetting(segments[0]);
-
-                    switch (segmentSetting) {
-                    case 'show_guides_user_in_segment':
-                        if (isSegmentValid) cb(tour); // Show the guide if user is part of the segment and `activeSegmentSetting` is "show_guides_user_in_segment"
-                        break;
-                    case 'hide_guides_user_in_segment':
-                        if (!isSegmentValid) cb(tour); // Hide the guide if user is part of the segment and `activeSegmentSetting` is "hide_guides_user_in_segment"
-                        break;
-                    case 'show_guides_user_not_in_segment':
-                        if (!isSegmentValid) cb(tour); // Show the guide if user is not part of the segment and `activeSegmentSetting` is "show_guides_user_not_in_segment"
-                        break;
-                    default:
-                        if (isSegmentValid) cb(tour); // Default case
-                        break;
-                    }
-                }
-            }
-        });
-    }
-
-    // segment rules call back
-    function segmentRuleCallBack(r) {
-
-        segmentProcessed++;
-
-        if (GmCXt.isTrue(r.valid)) {
-            GmCXt.validatedSegments[r.segmentId] = true;
-            GmCXt.log(68, "Validat Segment ", r);
-        }
-
-        if (toursProcessed !== totalTours) {
-            checkTourSegment(r.segmentId);
-        }
-
-        // if all segment is validated and no tour is processed
-        if (segmentProcessed === totalSegment && toursProcessed === 0) {
-            cb({});
-        }
-
-    }
-
-    // get all segments from the tour
-    tours.forEach(function(tour, i) {
-        if (tour.tour_settings.segment_groups.length > 0) {
-            allSegment.push(tour.tour_settings.segment_groups);
-        } else {
-            validatedTours.push(parseInt(tour.tour_id));
-            toursProcessed++;
-            cb(tour);
-        }
-    });
-
-    GmCXt.storage().get(['gmSelectedSegment']).then(function(st){
-        if(!GmCXt.isEmpty(st) && !GmCXt.isEmpty(st.gmSelectedSegment)){
-            let selectedSeg = GmCXt.parseJSON(st.gmSelectedSegment);
-            if(!GmCXt.isEmpty(selectedSeg)) {
-                allSegment = selectedSeg.map(seg => seg.group_id);
-            }
-        }
-
-        let flattenAllsegment = allSegment.reduce(function(seg, val) {
-            return seg.concat(val);
-        }, []);
-
-        allSegment = GmCXt.removeDuplicates(flattenAllsegment);
-        totalSegment = allSegment.length;
-
-        allSegment.forEach(function(segmentId, i) {
-
-            GmCXt.log(68, "Validating Segment: ", segmentId);
-            let segment = GmCXt.getSegmentById(segmentId);
-
-            //if role based segments inside a segment group are not in user.profile, Invalidate those segment groups
-            if (segment && !GmCXt.areUserSegmentsValid(segment.segments, segmentId)) {
-
-                GmCXt.log(68, "Invalid User Segments: ", segmentId);
-                segmentRuleCallBack({
-                    valid: false,
-                    segmentId: segmentId
-                });
-            } else if (GmCXt.validatedSegments[segmentId] && (segment && !segment.rule_check)) {
-                //re-eval seg rules only if On page click option is selected
-                segmentRuleCallBack({
-                    valid: true,
-                    segmentId: segmentId
-                });
-            } else {
-                let rules = (segment && segment.rules && segment.rules.length) ? GmCXt.parseJSON(segment.rules) : [];
-                let title = segment ? segment.title : "Segment not found";
-
-                if (GmCXt.validatedSegments[segmentId]) {
-                    delete GmCXt.validatedSegments[segmentId];
-                }
-
-                let data = {
-                    rules: rules,
-                    tour: {
-                        tour_id: segmentId,
-                        tour_settings: {},
-                        tour_title: title
-                    },
-                    timeoutVal: GmCXt.t.ruleTimeOut10s,
-                    timeout: GmCXt.t.ruleTimeOut10s,
-                    cb: segmentRuleCallBack,
-                    isTour: true,
-                    initiator: from,
-                    segmentId: segmentId
-                };
-
-                GmCXt.ruleEngine.queue(data);
-            }
-
-        });
-    });
-};
-
-GmCXt.takeScreenshot = function(xpath) {
-    let promise = new Promise(function(resolve, reject) {
-        if (GmCXt.isElectron()) {
-            let _electron = require('electron').remote;
-            _electron.getCurrentWindow().capturePage().then(function(img) {
-                resolve(img.toDataURL());
-            });
-        } else if (GmCXt.isExtension()) {
-            let m = {
-                action: "mgPlayerJSProd_action:capture_browser_screen",
-
-            };
-            if(xpath){
-                m.xpath = xpath;
-            }
-            GmCXt.sendMessageToBackgroundService(m, function(resp) {
-                resolve(resp.imgSrc);
-            });
-        } else {
-            resolve(0);
-        }
-    });
-    return promise;
-};
-
-GmCXt.triggerForOtherFunctions = function(id, ev) {
-    switch (id) {
-    case "mgPlayerJSProd_play_step_popup_drag":
-    case "mgPlayerJSProd_play-step-popup-drag-icon":
-
-        break;
-    case "mgPlayerJSProd_play-step-audio-off":
-        if (GmCXt.previewStepPopupInstance) {
-            GmCXt.previewStepPopupInstance.setOnAudioMode();
-        }
-        break;
-    case "mgPlayerJSProd_play-step-audio-on":
-        if (GmCXt.previewStepPopupInstance) {
-            GmCXt.previewStepPopupInstance.setOffAudioMode();
-        }
-        break;
-    }
-};
-
-GmCXt.checkAndCallClick = function(target, ev) {
-    if (GmCXt.isIDinGuidePlayList(target.id)) {
-        if (GmCXt.playerI) {
-            GmCXt.playerI.targetElement = target;
-        }
-        if (ev.type === "mousedown") {
-            GmCXt.tourPlayerI.triggerMyGuideClickMouseDown(ev);
-        }
-        GmCXt.tourPlayerI.triggerMyGuideClick(target.id, ev);
-    } else if (GmCXt.isIDinOtherList(target.id)) {
-        GmCXt.triggerForOtherFunctions(target.id, ev);
-    } else if (GmCXt.checkMyGuideClass(target.className)) {
-        GmCXt.checkAndCallClick(target.parentElement, ev);
-    }
-};
-
-GmCXt.checkForSVGInstance = function(target) {
-    let retTarget = target;
-    if (target instanceof SVGElement) {
-        retTarget = GmCXt.checkForSVGInstance(target.parentNode);
-    }
-    return retTarget;
-};
-
-GmCXt.registerClickListner = function(e) {
-    let target = GmCXt.checkForSVGInstance(e.target);
-    if (target && GmCXt.checkMyGuideClass(target.className)) {
-        GmCXt.checkAndCallClick(target, e);
-        if (GmCXt.playerI && GmCXt.playerI.automate) {
-            GmCXt.checkSkipStepForTracking();
-        }
-    }
-};
-
-GmCXt.isIDinOtherList = function(id) {
-    let retVal = false;
-    let idList = ["mgPlayerJSProd_play_step_popup_drag", "mgPlayerJSProd_play-step-popup-drag-icon", "mgPlayerJSProd_play-step-audio-off",
-        "mgPlayerJSProd_play-step-audio-on"
-    ];
-
-    if (GmCXt.inArrayString(id, idList)) {
-        retVal = true;
-    }
-
-    return retVal;
-};
-
-GmCXt.isIDinGuidePlayList = function(id) {
-    let retVal = false;
-    let idList = ["mgPlayerJSProd_play_step_pause_classic", "mgPlayerJSProd_play_step_next", "mgPlayerJSProd_play_step_next_classic",
-        "mgPlayerJSProd_play_step_prev", "mgPlayerJSProd_play_step_prev_classic", "mgPlayerJSProd_play_step_popup_close",
-        "mgPlayerJSProd_play_step_pause", "mgPlayerJSProd_play_step_next_done", "mgPlayerJSProd_play_step_next_done_classic",
-        "mgPlayerJSProd_play_step_popup_edit",
-        "mgPlayerJSProd_play-step-popup-close-svg", "mgPlayerJSProd_play-step-popup-edit-icon",
-        "mgPlayerJSProd_play-step-pause-svg"
-    ];
-
-    if (GmCXt.inArrayString(id, idList)) {
-        retVal = true;
-    }
-
-    return retVal;
-};
-
-GmCXt.tooltipTitle = function(os, pEle) {
-    let tTitleCss = "<wmgPlayerJSProd_ class='mgPlayerJSProd_tooltip-title-css'><style type='text/css'>" +
-        "." + pEle + " p:first-child {" + "color: " + os.popupDesign.current.stepTitleColor + " !important; " +
-        "font-family: " + os.popupDesign.current.stepTitleFontFamily + " !important; " +
-        "font-size: " + os.popupDesign.current.stepTitleFontSize + " !important; " +
-        "font-weight: " + os.popupDesign.current.stepTitleFontWeight + " !important; " +
-        "padding-bottom: 10px !important;" +
-        "}" +
-        "</style></wmgPlayerJSProd_>";
-
-    return mg$("html").append(tTitleCss);
-};
-
-GmCXt.tooltipPopupCss = function(os, customEle, isPreviewMode) {
-    let previewPrefix = isPreviewMode || '';
-
-    const popupPositions = [
-        "left", "left-middle", "left-top", "left-bottom",
-        "right", "right-middle", "right-top", "right-bottom",
-        "top", "top-middle", "top-left", "top-right",
-        "bottom", "bottom-middle", "bottom-left", "bottom-right",
-        "center"
-    ];
-
-    // Map position to border side
-    const positionToSide = {
-        "left": "left",
-        "left-middle": "left",
-        "left-top": "left",
-        "left-bottom": "left",
-        "right": "right",
-        "right-middle": "right",
-        "right-top": "right",
-        "right-bottom": "right",
-        "top": "top",
-        "top-middle": "top",
-        "top-left": "top",
-        "top-right": "top",
-        "bottom": "bottom",
-        "bottom-middle": "bottom",
-        "bottom-left": "bottom",
-        "bottom-right": "bottom",
-    };
-
-    let popUpCSS = "<wmgPlayerJSProd_ class='mgPlayerJSProd_tooltip-popup-css'><style type='text/css'>";
-
-    popupPositions.forEach(function(position) {
-        var borderSide = positionToSide[position];
-        // Type 1 selector: full class with prefix
-        var type1SelectorBefore = customEle + ".mgPlayerJSProd_" + previewPrefix + "smarttip-guidance-msg-" + position + ":before";
-        var type1SelectorAfter  = customEle + ".mgPlayerJSProd_" + previewPrefix + "smarttip-guidance-msg-" + position + ":after";
-        
-        // Type 2 selector: position-only class
-        var type2SelectorBefore = customEle + ".mgPlayerJSProd_smarttip-guidance-msg." + position + ":before";
-        var type2SelectorAfter  = customEle + ".mgPlayerJSProd_smarttip-guidance-msg." + position + ":after";
-
-        // Combine both in each rule
-        popUpCSS += `${type1SelectorBefore},${type2SelectorBefore} {border-${borderSide}-color:${os.popupDesign.current.bgColor} !important;}`;
-        popUpCSS += `${type1SelectorAfter},${type2SelectorAfter} {border-${borderSide}-color:${os.popupDesign.current.borderColor} !important;}`;
-    });
-
-    popUpCSS += "</style></wmgPlayerJSProd_>";
-
-    return mg$("html").append(popUpCSS);
-};
-
-GmCXt.tooltipTheme = function(os, customEle, options, isPreviewMode) {
-    let isTooltipTheme = os.tooltipTheme;
-    let popupWidth = options && options.popupSize && options.popupSize.popupWidth ? options.popupSize.popupWidth : os.stepPopupWidth;
-
-    let tObj = {
-        'tooltipBgColor': '',
-        'tooltipDescColor': '',
-        'tooltipDescFfamily': '',
-        'tooltipDescFsize': '',
-        'tooltipBorderC': '',
-        'tooltipBorderW': '',
-        'tooltipBorderRadius': '',
-        'tooltipMwidth': '',
-        'tooltipWidth': '',
-        'tooltipPaddingTop': '',
-        'tooltipPaddingBottom': '',
-        'tooltipPaddingLeft': '',
-        'tooltipPaddingRight': ''
-    };
-
-    if (isTooltipTheme) {
-        tObj.tooltipBgColor = "background:" + os.popupDesign.current.bgColor + " !important; box-shadow: rgb(0 0 0 / 50%) 0 0 10px -2px !important;";
-        tObj.tooltipDescColor = "color:" + os.popupDesign.current.stepDescColor + " !important; ";
-        tObj.tooltipDescFfamily = ("font-family:" + os.popupDesign.current.stepDesFontFamily + " !important; ").replace(/'/g, "\"");
-        tObj.tooltipDescFsize = "font-size:" + os.popupDesign.current.stepDesFontSize + " !important; ";
-        tObj.tooltipBorderC = "border-color:" + os.popupDesign.current.borderColor + " !important; ";
-        tObj.tooltipBorderW = "border-width:" + os.popupDesign.current.borderWidth + "px !important; ";
-        tObj.tooltipBorderRadius = "border-radius:" + os.popupDesign.current.borderRadius + "px !important; ";
-        tObj.tooltipMwidth = "max-width:" + os.stepPopupWidth + "px !important; ";
-        tObj.tooltipWidth = "width:" + popupWidth + "px !important; padding: 15px 15px 5px 15px !important; white-space: normal !important; line-height: initial !important;";
-        tObj.tooltipPaddingTop = "padding-top:" + os.popupDesign.current.padding.top + "px !important; ";
-        tObj.tooltipPaddingBottom = "padding-bottom:" + os.popupDesign.current.padding.bottom + "px !important; ";
-        tObj.tooltipPaddingLeft = "padding-left:" + os.popupDesign.current.padding.left + "px !important; ";
-        tObj.tooltipPaddingRight = "padding-right:" + os.popupDesign.current.padding.right + "px !important; ";
-
-        GmCXt.tooltipPopupCss(os, customEle, isPreviewMode);
-        GmCXt.tooltipTitle(os, 'mgPlayerJSProd_smarttip-msg-inner');
-        GmCXt.tooltipTitle(os, 'mgPlayerJSProd_preview-smarttip-msg-inner');
-    } else {
-        tObj.tooltipBorderC = "border-color:" + os.tooltipColor + " !important; ";
-
-        mg$(".mgPlayerJSProd_tooltip-popup-css").remove();
-        mg$(".mgPlayerJSProd_tooltip-title-css").remove();
-    }
-
-    return tObj;
-};
-
-GmCXt.stringUsesVariable = function(str) {
-    return (str.includes('{{') && str.includes('}}'));
-};
-
-GmCXt.replaceVariableWithValue = function(str) {
-    let variables = GmCXt.getVariableData();
-    if (GmCXt.stringUsesVariable(str)) {
-        let isValid = false;
-        for (let i = 0; i < variables.length; i++) {
-            let regex = new RegExp('\{\{(?:\\s+)?(' + RegExp.escape(variables[i].name) + ')(?:\\s+)?\}\}', "g");
-            isValid = regex.test(str);
-            if (isValid && variables[i].value) {
-                str = str.replace(regex, variables[i].value);
-            }
-        }
-    }
-    return str;
-};
-
-GmCXt.replaceVariableInText = function(str) {
-    let regex = new RegExp('\{\{(?:\\s+)?(.+?)(?:\\s+)?\}\}', "g");
-    let isValid = false;
-    isValid = regex.test(str);
-    if (isValid) {
-        str = str.replace(regex, '').replace(/\s\s+/g, ' ');
-    }
-    return str;
-};
-
-GmCXt.variableRuleExistInGuide = function(rules) {
-    for (let k = 0, l = rules.length; k < l; k++) {
-        if (rules[k].type === 'Variables') {
-            return true;
-        }
-    }
-    return false;
-};
-
-GmCXt.updateZIndex = function(zIndex, add) {
-    if (zIndex) {
-        let updateBy = add ? 1 : -1;
-        return (parseInt(zIndex) + updateBy).toString();
-    }
-    return "";
-};
-
-GmCXt.skipTags = function(he) {
-    if (GmCXt.isSvgTag(he.tagName)) {
-
-        he = he.parentNode;
-
-        while (he && he.parentNode && GmCXt.isSvgTag(he.tagName)) {
-            he = he.parentNode;
-        }
-    }
-
-    if (GmCXt.checkSalesForceSite()) {
-        if (he.tagName === 'LIGHTNING-PRIMITIVE-ICON') {
-            he = he.parentNode;
-        }
-
-        let parent = he.parentNode;
-        if (parent && he.tagName === 'BUTTON' &&
-            (parent.tagName === 'LIGHTNING-BUTTON-ICON' || parent.tagName === 'LIGHTNING-BUTTON')) {
-            he = parent;
-        }
-    }
-    return he;
-};
-
-GmCXt.validateUrl = function(url) {
-
-    let expression = /^(?:(?:https?|ftp):\/\/)?(?:[\w-]+\.)+[a-z]{2,}(?::\d{2,5})?(?:\/\S*)?$/i;
-    if (expression.test(url)) {
         return true;
     } else {
         return false;
     }
 };
 
-GmCXt.trackElNotFound = function(d) {
+GmCXt.showChatIcon = function() {
 
-    GmCXt.log(27, "track Element Not Found");
+    if (!GmCXt.checkPrecedence()) return;
+    if (GmCXt.APP_PANEL_OPEN) return;
+    if (!GmCXt.organization && GmCXt.isEmpty(GmCXt.organization)) return;
 
-    return; // Stop "mi_rule_enhancement" events temporary for MG-25171
 
-    // if (window.self === window.top) {
-    //     GmCXt.trackerV1.trackElNotFound(d);
-    // } else {
-    //     GmCXt.sendMessageToTheTopWindow('mgPlayerJSProd_action:track_element_not_found', d);
-    // }
-};
+    if (GmCXt.isPlayer() && GmCXt.isChatEnable() && GmCXt.getChatIconVisibility()) {
 
-GmCXt.onPopupRerender = function() {
-    if (mg$('#mgPlayerJSProd_popup-reload').length > 0) {
-        let forceClose = !GmCXt.playerI.testAutomation;
-        GmCXt.confirmTourClose(forceClose);
-    }
-};
+        let show = function() {
 
-GmCXt.concatHTMLStringWithSpace = function(str) {
-    if (GmCXt.isEmpty(str)) return str;
-    str = str.split('</p>').join(' ');
-    str = str.split('</div>').join(' ');
-    str = str.split('</li>').join(' ');
-    str = mg$('<span />').html(str).text().trim();
-    return str;
-};
+            GmCXt.log(8, "SHOW CHAT ICON");
 
-GmCXt.resetElTracker = function() {
-    if (window.self === window.top) {
-        GmCXt.sendMessageToAllWindows('mgPlayerJSProd_action:reset_dom_tracker');
-    }
-};
+            GmCXt.positionChatIcon();
+            GmCXt.chatIconCustomize();
 
-GmCXt.resetElTrackerVariable = function() {
-    if (!GmCXt.isEmpty(GmCXt.domSelectorTracker) && !GmCXt.isEmpty(GmCXt.domSelectorTracker[GmCXt.id])) {
-        // Reset tracker
-        GmCXt.domSelectorTracker = {};
-    }
-};
-
-GmCXt.logElTracker = function() {
-    if (window.self === window.top) {
-        GmCXt.logTrackerData = false;
-        GmCXt.sendMessageToAllWindows('mgPlayerJSProd_action:request_dom_tracker_info');
-    }
-};
-
-GmCXt.shareDomTrackerInfo = function() {
-    if (window.self !== window.top) {
-        if (GmCXt.isEmpty(GmCXt.domSelectorTracker)) {
-            GmCXt.domSelectorTracker[GmCXt.id] = {};
-        }
-        GmCXt.sendMessageToTheTopWindow('mgPlayerJSProd_action:send_dom_tracker_info', GmCXt.domSelectorTracker);
-    } else {
-        GmCXt.combineDomTrackerData();
-    }
-};
-
-GmCXt.combineDomTrackerData = function(info) {
-    if (window.self === window.top) {
-        let finder = {};
-        let query = {};
-        let totalFinder = 0;
-        let totalQuery = 0;
-        let iFrameTally = 0;
-
-        if (info) {
-            GmCXt.domSelectorTracker = Object.assign(GmCXt.domSelectorTracker, info);
-        }
-
-        GmCXt.timeout(function() {
-            if (!GmCXt.logTrackerData) {
-                for (let i in GmCXt.domSelectorTracker) {
-                    if (!GmCXt.isEmpty(GmCXt.domSelectorTracker[i])) {
-                        iFrameTally++;
-                        let iframeInfo = GmCXt.domSelectorTracker[i];
-                        for (let key in iframeInfo) {
-                            let elInfo = iframeInfo[key];
-
-                            finder[key] = elInfo.finder;
-                            totalFinder += elInfo.finder;
-
-                            query[key] = elInfo.query;
-                            totalQuery += elInfo.query;
-                        }
-                    }
-                }
-                let css = "color:#00a6d9;";
-                console.log("%cNo. of iframes Searched –", css, iFrameTally);
-                console.log("%cTotal calls to dom.finder() –", css, totalFinder);
-                console.log("%cCalls to dom.finder() segregated by element –", css, finder);
-                console.log("%cTotal calls to dom.query() –", css, totalQuery);
-                console.log("%cCalls to dom.query() segregated by element –", css, query);
-
-                GmCXt.logTrackerData = true;
-            }
-        }, 1500);
-    }
-};
-
-GmCXt.handleLinkClickEvent = function(e) {
-    let url = e.currentTarget.href;
-    let mediaType = GmCXt.getURLMediaType(url);
-
-    if (url && url.toLowerCase().indexOf("mailto:") === 0) {
-        GmCXt.mailToClicked = true;
-    }
-
-    function isSmarttipLink(linkElem) {
-        while (linkElem) {
-            if (linkElem.classList.value.indexOf('smarttip') !== -1) return true;
-            linkElem = linkElem.parentElement;
-        }
-        return false;
-    }
-
-    if (!GmCXt.isEmpty(e.target.tid) && !GmCXt.isEmpty(e.target.sid) &&
-        !GmCXt.isEmpty(e.target.opt) && isSmarttipLink(e.target)) {
-        let linkData = GmCXt.parseJSON(e.target.opt);
-        linkData.tooltipURL = e.target.href;
-        GmCXt.updateTooltipActionInfo(e.target.tid, e.target.sid, linkData, "url_click");
-    }
-
-    if (mediaType) {
-        e.preventDefault();
-        e.stopPropagation();
-        e.stopImmediatePropagation();
-        if (mediaType === "pdf") {
-            GmCXt.openPdf(e.target.href);;
-        } else {
-            GmCXt.openVideoPlayer(e.target.href);
-        }
-    } else if (GmCXt.isElectron()) {
-        e.preventDefault();
-        e.stopPropagation();
-        e.stopImmediatePropagation();
-        GmCXt.redirectLinkToBrowser(e);
-    }
-
-    GmCXt.storage().set({
-        'linkClickOnStep': url
-    });
-};
-
-GmCXt.isStepInlineBranch = function(s) {
-    let retVal = false;
-    if (s && s.step_settings && GmCXt.isTrue(s.step_settings.inlineBranch)) {
-        retVal = true;
-    }
-    return retVal;
-};
-
-GmCXt.getVariableData = function() {
-    let varData = false;
-
-    if (!GmCXt.isEmpty(GmCXt.appList) && GmCXt.activeAppId && GmCXt.appList['app:' + GmCXt.activeAppId]) {
-        let appId = GmCXt.getBaseAppId();
-        varData = GmCXt.appList['app:' + appId].settings.variables;
-    }
-
-    return varData;
-};
-
-GmCXt.workdayAutoClick = function(index) {
-    if (GmCXt.playerI) {
-        let editIcon = "[data-automation-id='actionImage']";
-        let el = mg$(editIcon)[index];
-        mg$(el).trigger("click");
-    }
-};
-
-GmCXt.captureScreenForFeedback = function(mailTo) {
-    if (mailTo) {
-        GmCXt.mailTo = mailTo;
-    }
-
-    GmCXt.takeScreenshot().then(function(imageSrc) {
-
-        if (GmCXt.isEmpty(imageSrc)) {
-            mg$(".mgPlayerJSProd_feedback-overlay-svg-error").show();
-            mg$(".mgPlayerJSProd_feedback-re-edit-btn").hide();
-            mg$("#mg-feedback-screenshot-check").removeAttr("checked");
-        } else {
-            mg$(".mgPlayerJSProd_feedback-overlay-svg-error").hide();
-            mg$(".mgPlayerJSProd_feedback-re-edit-btn").show();
-        }
-
-        let img = mg$("#mg-feedback-screenshot-image");
-        img.attr('src', imageSrc);
-        GmCXt.feedbackImgSrc = imageSrc;
-        GmCXt.showFeedBackToolbar();
-    });
-};
-
-GmCXt.showFeedBackToolbar = function() {
-    mg$("#mg-feedback-container-wrapper").show();
-    GmCXt.showFeedBackPopup();
-};
-
-GmCXt.showFeedBackPopup = function() {
-    mg$('wmgPlayerJSProd_#mg-feedback-selector-toolbar').hide();
-    mg$('wmgPlayerJSProd_#mg-feedback-popup').show();
-};
-
-GmCXt.showFeedBackSelectorToolbar = function() {
-    mg$('wmgPlayerJSProd_#mg-feedback-popup').hide();
-    mg$('wmgPlayerJSProd_#mg-feedback-selector-toolbar').show();
-};
-
-GmCXt.onEditScreenshotClick = function() {
-    GmCXt.showFeedBackSelectorToolbar();
-};
-
-GmCXt.onClickFeedbackHighlightArea = function() {
-    let div = document.getElementById('mgPlayerJSProd_highlight');
-    GmCXt.feedbackMarkArea(div);
-};
-
-GmCXt.onClickFeedbackHideArea = function() {
-    let div = document.getElementById('mgPlayerJSProd_blackout');
-    GmCXt.feedbackMarkArea(div, true);
-};
-
-GmCXt.onClickFeedbackEditDone = function() {
-    mg$('wmgPlayerJSProd_#mg-feedback-selector-toolbar').hide();
-    GmCXt.captureScreenForFeedback();
-};
-
-GmCXt.feedbackMarkArea = function(div, hide) {
-    let toolbar = mg$('wmgPlayerJSProd_#mg-feedback-selector-toolbar');
-    toolbar.hide();
-
-    let wrapper = document.getElementById("mg-feedback-flex-container");
-    wrapper.style.cursor = 'crosshair';
-    wrapper.style.background = 'transparent';
-
-    let x1 = 0,
-        y1 = 0,
-        x2 = 0,
-        y2 = 0;
-
-    function reCalc() {
-        let x3 = Math.min(x1, x2);
-        let x4 = Math.max(x1, x2);
-        let y3 = Math.min(y1, y2);
-        let y4 = Math.max(y1, y2);
-        div.style.left = x3 + 'px';
-        div.style.top = y3 + 'px';
-        div.style.width = x4 - x3 + 'px';
-        div.style.height = y4 - y3 + 'px';
-    }
-
-    let onmousedown = function(e) {
-        e.preventDefault();
-        div.style.display = 'block';
-        x1 = e.clientX;
-        y1 = e.clientY;
-        reCalc();
-    };
-
-    let onmousemove = function(e) {
-        x2 = e.clientX;
-        y2 = e.clientY;
-        reCalc();
-    };
-
-    let onmouseup = function(e) {
-        let el = {
-            id: 'r_' + Math.floor(Math.random() * 1000),
-            element: {
-                position: {
-                    top: y1,
-                    left: x1,
-                    height: y2 - y1,
-                    width: x2 - x1
-                }
-            }
+            GmCXt.displayChatIcon();
         };
-        div.style.display = 'none';
-        wrapper.style.cursor = 'default';
 
-        if (hide) {
-            if (!GmCXt.sfHideElements) {
-                GmCXt.sfHideElements = [];
-            }
-            GmCXt.sfHideElements.push(el);
-            GmCXt.drawArea(GmCXt.sfHideElements, 'blackout-feedback');
-        } else {
-            if (!GmCXt.sfMarkElements) {
-                GmCXt.sfMarkElements = [];
-            }
-            GmCXt.sfMarkElements.push(el);
-            GmCXt.drawArea(GmCXt.sfMarkElements, 'highlight');
-        }
+        let chat = GmCXt.getChatIconInstance();
 
-        wrapper.style.background = '#26273b33';
-        toolbar.show();
-
-        wrapper.removeEventListener('mousedown', onmousedown);
-        wrapper.removeEventListener('mouseup', onmouseup);
-        wrapper.removeEventListener('mousemove', onmousemove);
-    };
-
-    wrapper.addEventListener('mousedown', onmousedown);
-    wrapper.addEventListener('mouseup', onmouseup);
-    wrapper.addEventListener('mousemove', onmousemove);
-    div.onmouseup = onmouseup;
-};
-
-GmCXt.drawArea = function(arr, className) {
-    let elems = arr;
-    mg$('wmgPlayerJSProd_.mgPlayerJSProd_selector-' + className).remove();
-
-    for (let i = 0; i < elems.length && elems[i].id; i++) {
-        let el = elems[i].element.position;
-
-        let closeBtn = '<wmgPlayerJSProd_ class="mgPlayerJSProd_close-area mgPlayerJSProd_' + className + '-close" id=' + elems[i].id + '><wmgPlayerJSProd_ class="mgPlayerJSProd_close-text">&times;</wmgPlayerJSProd_></wmgPlayerJSProd_>';
-        let blackoutEl = mg$('<wmgPlayerJSProd_ class="mgPlayerJSProd_selector-' + className + '" id="mgPlayerJSProd_selector-' + className + '-' + elems[i].id + '">' +
-                closeBtn +
-                '</wmgPlayerJSProd_>')
-            .appendTo('#mg-feedback-flex-container')
-            .css({
-                'width': el.width,
-                'height': el.height,
-                'left': el.left,
-                'top': el.top
+        if (chat.length) {
+            GmCXt.getChatIcon().then(function(wURl) {
+                mg$("#mgPlayerJSProd_btn-chat-button img").attr('src', wURl);
+                show();
             });
-    }
 
-    mg$("wmgPlayerJSProd_.mgPlayerJSProd_" + className + "-close").on('click', function(e) {
-        let oArr = [];
-        arr.forEach(function(el, i) {
-            if (el.id !== e.currentTarget.id) oArr.push(el);
-        });
-        arr = oArr;
-        mg$("#mgPlayerJSProd_selector-" + className + "-" + e.currentTarget.id).remove();
-    });
-};
+        } else if (!GmCXt.addingChatIcon) {
 
-GmCXt.sendFeedback = function() {
-    let feedbackText = document.getElementById("mg-feedback").value;
-    let emailBody = {};
+            GmCXt.addingChatIcon = true;
+            GmCXt.addChatIcon().then(function() {
 
-    if (GmCXt.isEmpty(feedbackText)) {
-        let option = {
-            description: GmCXt.label.feedbackRequired,
-            button1: GmCXt.label.ok
-        };
-        GmCXt.alertV2(option).show();
-        return;
-    }
-
-    emailBody.feedbackText = feedbackText;
-
-    if (GmCXt.mailTo) {
-        emailBody.mailTo = GmCXt.mailTo;
-    }
-
-    if (GmCXt.user) {
-        let userInfo = {
-            email: GmCXt.user.user_email,
-            firstName: GmCXt.user.first_name,
-            lastName: GmCXt.user.last_name
-        };
-        emailBody.userInfo = JSON.stringify(userInfo);
-    }
-
-    if (mg$('#mg-feedback-screenshot-check')[0].checked) {
-        emailBody.imgSrc = GmCXt.feedbackImgSrc;
-    }
-
-    GmCXt.clearFeedBackView();
-
-    GmCXt.api.sendFeedbackEmail(emailBody);
-};
-
-GmCXt.clearFeedBackView = function() {
-    mg$("#mg-feedback-container-wrapper").remove();
-    mg$('.mgPlayerJSProd_selector-highlight').remove();
-    GmCXt.sfMarkElements = [];
-    mg$('.mgPlayerJSProd_selector-blackout-feedback').remove();
-    GmCXt.sfHideElements = [];
-    GmCXt.mailTo = '';
-    GmCXt.openAppPanel();
-};
-
-GmCXt.numberOfSameTail = function(id, ps) {
-    let counter = 0;
-    if (ps && ps.length) {
-        for (let i = 0; i < ps.length; i++) {
-            if (parseInt(ps[i].tail) === parseInt(id)) {
-                counter++;
-            }
+                GmCXt.addingChatIcon = false;
+                GmCXt.addChatIconEvents();
+                show();
+            });
         }
-    }
-    return counter;
-};
 
-GmCXt.getExcludedDomainList = function() {
-    let excludedDomains = [];
-    let os = GmCXt.getOrgSettings();
-    if (os && os.excludeDomains && !GmCXt.isEmpty(os.excludeDomains)) {
-        excludedDomains = os.excludeDomains;
-    }
-    return excludedDomains;
-};
-
-GmCXt.isExcludeDomain = function() {
-    let isEx = false;
-    if (GmCXt.urlParts && GmCXt.urlParts.fullUrl && GmCXt.isPlayer()) {
-        let url = GmCXt.urlParts.host + GmCXt.urlParts.pathname;
-        let excludeDomainList = GmCXt.getExcludedDomainList();
-
-        if (excludeDomainList) {
-            for (let x = 0; x < excludeDomainList.length; x++) {
-                if (url && url.toLowerCase().includes(GmCXt.trimAndLowerCaseURL(excludeDomainList[x]))) {
-                    isEx = true;
-                    break;
-                }
-            }
-        }
-    }
-    return isEx;
-};
-
-GmCXt.getStepPosFromPs = function(t, sId) {
-    let pos = "";
-    let PS = t.tour_settings.play_structure;
-
-    for (let i = 0; i < PS.length; i++) {
-        if (PS[i].id === sId) {
-            pos = i + 1;
-            break;
-        }
-    }
-
-    return pos;
-};
-
-GmCXt.isValueInArray = function(array, keyToFind, valueToFind) {
-    return array.some(function(obj) {
-        return obj[keyToFind] === valueToFind;
-    });
-};
-
-GmCXt.checkDomainInPublishedEnv = function(pubEnv) {
-    let domainInPublishedEnv = false;
-    if (GmCXt.isDefined(pubEnv)) {
-        let domainEnv = GmCXt.getAppEnvByDomain();
-        if (pubEnv.includes(domainEnv)) {
-            domainInPublishedEnv = true;
-        }
     } else {
-        domainInPublishedEnv = true;
-    }
-    return domainInPublishedEnv;
-};
-
-GmCXt.updateNumericKeys = function(key) {
-    let lastKey = key.slice(-1);
-    let numKey = parseInt(lastKey);
-
-    let specialCharArr = [")", "!", "@", "#", "$", "%", "^", "&", "*", "("];
-
-    if (!isNaN(numKey)) {
-        return key.slice(0, -1) + specialCharArr[numKey];
-    } else {
-        return key;
+        GmCXt.removeChatIcon();
     }
 };
 
-GmCXt.addHttpIfMissing = function(url) {
-    if (!url.trim().startsWith('http://') && !url.trim().startsWith('https://')) {
-        url = 'https://' + url;
-    }
-    return url;
+GmCXt.removeChatIcon = function() {
+    let chat = GmCXt.getChatIconInstance();
+    if (chat.length) chat.remove();
 };
-
-GmCXt.checkScheduleTime = function(tour) {
-    if (tour.tour_settings && tour.tour_settings.visibilitySettings && tour.tour_settings.visibilitytimestamp) {
-        let tourTs = tour.tour_settings.visibilitytimestamp;
-        let currentTS = Date.now();
-        if (parseInt(currentTS) < tourTs) {
-            return false;
-        } else {
-            return true;
-        }
-    } else {
-        return true;
-    }
-};
-
-GmCXt.filterScheduleTours = function(tours) {
-    var tours = tours.filter(function(tour) {
-        if (GmCXt.checkScheduleTime(tour)) {
-            return tour;
-        }
-    });
-
-    return tours;
-};
+//Date and Time Specific Functions
 
 GmCXt.getCombinedDateFromTimestamp = function(timestamp) {
     // Create a new Date object with the timestamp in milliseconds
@@ -7437,1140 +3518,19 @@ GmCXt.compareTimes = function(timeStr1, timeStr2) {
         }
     }
 };
+// Functions related to DOM manipulation, element visibility, element finding
 
-GmCXt.truncate = function(text, maxlength) {
-    if (!text) return '';
-    return text.length > maxlength ? text.substring(0, maxlength) + '...' : text;
-};
+GmCXt.isMyGuideEl = function(el) {
 
-GmCXt.htmlToPlaintext = function(html) {
-    return new DOMParser().parseFromString(html, 'text/html').body.textContent;
-};
-
-GmCXt.isCurrentHost = function(host) {
-    if (GmCXt.urlParts && (GmCXt.urlParts.host.indexOf(host) !== -1 || location.href.indexOf(host) !== -1))
+    if (el.nodeName.toLowerCase() === 'wmgPlayerJSProd_over' ||
+        mg$(el).closest('wmgPlayerJSProd_').length > 0 ||
+        (el.name && el.name.includes('guideme-iframe')) ||
+        (typeof el.className === 'string' && (el.className.indexOf("mgPlayerJSProd_") === 0 || el.className.indexOf(" mgPlayerJSProd_") > 0)) ||
+        (el.id && el.id.indexOf("mgPlayerJSProd_beacon-icon-") === 0)
+    ) {
         return true;
-    else
-        return false;
-};
-
-GmCXt.getOrgStepWaitTime = function() {
-    return 10000;
-};
-
-GmCXt.getInsightPageRulesFromAPI = function() {
-    return new Promise(function(resolve, reject) {
-        let appCode = "";
-        if (GmCXt.externalAppId) {
-            appCode = GmCXt.externalAppId;
-        } else if (GmCXt.appList && GmCXt.activeAppId) {
-            appCode = GmCXt.appList['app:' + GmCXt.activeAppId].external_id;
-        }
-
-        if (GmCXt.isEmpty(appCode)) resolve([]);
-
-        GmCXt.api.getInsightPagesRules(appCode).then(function(result) {
-            let insightPageRulesData = {
-                sync_time: new Date().getTime()
-            };
-            if (result?.data?.tags && !GmCXt.isEmpty(result.data.tags)) {
-
-                const filterEnableTags = result.data.tags.filter(tag => tag.is_tracking_enabled === true);
-
-                insightPageRulesData = {
-                    data: filterEnableTags,
-                    sync_time: new Date().getTime()
-                };
-                GmCXt.insightPageRulesData = filterEnableTags;
-            }
-
-            GmCXt.storage().set({
-                insightPageRulesData: JSON.stringify(insightPageRulesData)
-            }).then(function() {
-                resolve(GmCXt.insightPageRulesData);
-            });
-        }).catch(function(error) {
-            resolve([]);
-        });
-
-    });
-};
-
-GmCXt.getInsightPageRules = function() {
-    return new Promise(function(resolve, reject) {
-        GmCXt.storage().get(['insightPageRulesData']).then(function(res) {
-            if (res?.insightPageRulesData && !GmCXt.isEmpty(res.insightPageRulesData)) {
-                let insightPageRulesData = GmCXt.parseJSON(res.insightPageRulesData);
-                let syncTime = insightPageRulesData?.sync_time ? parseInt(insightPageRulesData.sync_time) : 0;
-                let currentTime = new Date().getTime();
-                if (currentTime - syncTime > GmCXt.t_.hr8) {
-                    GmCXt.storage().remove(['insightPageRulesData']);
-                    GmCXt.getInsightPageRulesFromAPI().then(function() {
-                        resolve();
-                    });
-                } else {
-                    GmCXt.insightPageRulesData = insightPageRulesData.data;
-                    resolve();
-                }
-
-            } else {
-                GmCXt.getInsightPageRulesFromAPI().then(function() {
-                    resolve();
-                });
-            }
-
-        }).catch(function(error) {
-            reject();
-        });
-    });
-};
-
-GmCXt.getURLPartsFromURL = function(url) {
-    var parser = document.createElement('a');
-    parser.href = url;
-
-    var urlParts = {};
-
-    var host = parser.host;
-
-    // Remove port number from host name, In IE port number coming with host
-    if (host && host.indexOf(':') !== -1) {
-        host = host.split(':')[0];
     }
-    urlParts.host = host;
-
-    urlParts.pathname = parser.pathname;
-    urlParts.search = parser.search;
-    urlParts.href = GmCXt.filterUrlScheme(parser.href);
-    urlParts.fullUrl = parser.href;
-    urlParts.hash = parser.hash;
-    urlParts.scheme = GmCXt.getUrlScheme();
-    urlParts.port = parser.port;
-    urlParts.hostname = parser.hostname.replace("www.","");
-    return urlParts;
-};
-
-GmCXt.stepPopupWidth = 300;
-GmCXt.stepPopupMaxHeight = 400;
-
-GmCXt.tourActivity = {};
-
-GmCXt.validateAlphanumeric = function(str) {
-    if (!str || !str.trim()) {
-        return false;
-    } else if (str.match(".*[a-zA-Z].*")) {
-        return true;
-    } else {
-        return false;
-    }
-};
-
-GmCXt.validateEmpty = function(str) {
-    if (!str || !str.trim()) {
-        return false;
-    } else if (str.length > 0) {
-        return true;
-    } else {
-        return false;
-    }
-};
-
-GmCXt.validateLength = function(str, limit) {
-
-    if (str && str.length) {
-        str = mg$('<div />').html(str).text().trim();
-        if (str.length <= limit) {
-            return true;
-        } else {
-            return false;
-        }
-    }
-
     return false;
-};
-
-GmCXt.openAppPanel = function(action, source) {
-
-    if (GmCXt.APP_PANEL_OPEN) return;
-
-    if (!GmCXt.isEmpty(GmCXt.tourActivity) && Object.keys(GmCXt.tourActivity)) GmRootScope.refreshCurrentPage();
-
-    GmCXt.removeChatIcon();
-
-    if (GmCXt.initialization && GmCXt.initialization.sidePanel && GmCXt.playerDomainCheck()) {
-
-        GmCXt.hideWidgetIcon();
-
-        if (GmCXt.editStepTout) {
-            clearTimeout(GmCXt.editStepTout);
-            mg$('.mgPlayerJSProd_edit-step-loader').hide();
-        }
-
-        let byPassRoute = (action === "byPassRoute" || action === "playSlideShow") ? true : false;
-        if (!byPassRoute) {
-            GmCXt.isSidePanelOpen = true;
-            if (action === "chatbot") {
-                GmRootScope.setActivePage("chatbot");
-            } else if (!GmCXt.user || GmCXt.isEmpty(GmCXt.user)) {
-                GmRootScope.clearSession();
-            }
-        }
-
-        if (GmCXt.tourPlayerI && (action !== "playSlideShow")) {
-            GmCXt.tourPlayerI.stop(true);
-            GmCXt.closePopup();
-        } else if (GmCXt.isAutomationRunning()) {
-            GmCXt.auto.stop(true);
-        }
-
-        if (GmCXt.user && GmCXt.user.user_key && source && !GmCXt.APP_PANEL_OPEN) {
-            GmCXt.trackerV1.trackPanelOpen(source, action);
-        }
-
-        GmCXt.timeout(function() {
-            let alignment = GmCXt.getWidgetAlignment();
-            mg$(".mgPlayerJSProd_panel .mgPlayerJSProd_app").css(alignment, "0px");
-            mg$(".mgPlayerJSProd_panel").css(alignment, "0px");
-            mg$(".mgPlayerJSProd_panel").css("display", "block");
-            mg$(".mgPlayerJSProd_ege-panel").css("display", "block");
-
-            if (GmCXt.isMicroPlayer()) {
-                mg$(".mgPlayerJSProd_panel .mgPlayerJSProd_app").css("right", "50px");
-                mg$(".mgPlayerJSProd_panel").css("right", "50px");
-                GmCXt.taskListOpen = false;
-            } else {
-                mg$(".mgPlayerJSProd_panel").removeClass('mgPlayerJSProd_theme-mplayer');
-                mg$(".mgPlayerJSProd_panel").css("top", "0");
-                GmCXt.showPanelCloseBtn();
-            }
-
-            GmCXt.removePreviewTop();
-            mg$(".mgPlayerJSProd_panel").attr({
-                'aria-hidden': false,
-                'tabindex': 0
-            });
-            mg$("#mgPlayerJSProd_app").attr({
-                'aria-hidden': false,
-                'tabindex': 0
-            });
-            mg$("#mgPlayerJSProd_app")
-                .attr({
-                    "role": "dialog",
-                    "aria-modal": "true",
-                    "aria-label": "Extension Panel",
-                    "tabindex": "0"
-                })
-                .focus();
-        }, GmCXt.t.appPanel);
-
-        GmCXt.smartTipPreviewOn = false;
-        GmCXt.closeNotificationPopupSidePanel(true);
-        GmCXt.APP_PANEL_OPEN = true;
-    } else {
-        GmCXt.showPanelDisabledPopup();
-    }
-
-    GmRootScope.setContainerHeight(GmRootScope.containerView);
-    GmCXt.unlockScroll();
-};
-
-GmCXt.showPanelDisabledPopup = function() {
-    if (GmCXt.isExtension()) {
-        let m = {
-            action: 'mgPlayerJSProd_action:to_background;task:show_panel_disabled_popup'
-        };
-        GmCXt.sendMessageToBackgroundService(m);
-    }
-};
-
-GmCXt.hideTips = function() {
-    GmCXt.hideBeacons();
-    GmCXt.hideSmartTips();
-    GmCXt.removePreviewTop();
-};
-
-GmCXt.filterApps = function(apps, search) {
-    let r = [];
-    for (let i = 0; i < apps.length; i++) {
-        if (apps[i].indexOf(search) !== -1)
-            r.push(apps[i]);
-    }
-    return r;
-};
-
-GmCXt.getByPrecedence = function(apps, p) {
-    let r = [];
-
-    for (let i = 0; i < p.length; i++) {
-        if (!r.length && p[i])
-            r = GmCXt.filterApps(apps, p[i]);
-        else
-            break;
-    }
-
-    return r;
-};
-
-GmCXt.appPrecedence = [
-    GmCXt.conf.creatorApp,
-    GmCXt.conf.playerExtension,
-    GmCXt.conf.playerJS
-];
-GmCXt.envPrecedence = ["Test", "Stage", "Preview", "Prod"];
-
-GmCXt.checkPrecedence = function() {
-
-    let app = "";
-    let r = GmCXt.getAppsArray(GmCXt.myGuideApps);
-
-    if (r.length === 0 && GmCXt.user) {
-        // First time, after user logins
-        return true;
-    }
-
-    r = GmCXt.getByPrecedence(r, GmCXt.appPrecedence);
-
-    if (r.length > 1) r = GmCXt.getByPrecedence(r, GmCXt.envPrecedence);
-
-    if (r.length === 1) app = r[0];
-
-    if (GmCXt.getAppName() === app) return true;
-    else return false;
-};
-
-GmCXt.getChatIconVisibility = function() {
-    let s = GmCXt.getAppSetting();
-
-    if (GmCXt.isEmpty(s)) return false;
-
-    let rules = s.chatBotrules || [];
-    let match = true;
-    if (s.enable_chatbot) {
-        if (rules.length > 0 && rules[0].value !== '') {
-
-            let oldRegEx = true;
-            if (GmCXt.isDefined(s.clientVersion)) {
-                oldRegEx = false;
-            }
-
-            match = GmCXt.ruleEngine.evaluateRules(rules, oldRegEx);
-        }
-
-        if (!match) {
-            GmCXt.log(21, "RULES NOT MATCHED, Hide chat widget");
-            return false;
-        }
-        return true;
-    } else {
-        return false;
-    }
-};
-
-GmCXt.getWidgetVisibility = function(forceShowWidget) {
-
-    if (GmCXt.tourPlayerI && !forceShowWidget) {
-        GmCXt.log(8, "PLAYER INSTANCE EXIST. HIDE WIDGET " + GmCXt.getAppName());
-        return false;
-    }
-
-    if (GmCXt.isAutomationRunning()) {
-        GmCXt.log(8, "AUTOMATION RUNNING. HIDE WIDGET " + GmCXt.getAppName());
-        return false;
-    }
-
-    if (!GmCXt.checkPrecedence() && !GmCXt.conf.showWidget) {
-        GmCXt.log(8, "NO PREFERENCE. HIDE WIDGET " + GmCXt.getAppName());
-        return false;
-    }
-
-    if (GmCXt.snowApp) {
-        GmCXt.log(8, "HIDE WIDGET on LXP || snowApp");
-        return false;
-    }
-
-    if (GmCXt.isMcKessonClientJS()) {
-        GmCXt.log(8, "HIDE WIDGET on McKesson ClientJS");
-        return false;
-    }
-
-    let s = GmCXt.getWidgetSettings();
-
-    if (!GmCXt.isEmpty(s) && s) {
-        if (GmCXt.isFalse(s.showWidgetIcon)) {
-            GmCXt.log(8, "HIDDEN IN ORG SETTINGS");
-            return false;
-        }
-
-        let rules = s.rules || [];
-        let match = true;
-
-        if (rules.length > 0 && rules[0].value !== '') {
-
-            let oldRegEx = true;
-            if (GmCXt.isDefined(s.clientVersion)) {
-                oldRegEx = false;
-            }
-
-            match = GmCXt.ruleEngine.evaluateRules(rules, oldRegEx);
-        }
-
-        if (!match) {
-            GmCXt.log(8, "RULES NOT MATCHED, hide widget");
-            return false;
-        }
-
-        if (s.hide_widget_if_noguide && GmCXt.isPlayer()) {
-            if (!GmCXt.ifGuidesOnCurrentPage) {
-                GmCXt.log(8, "NO GUIDES ON CURRENT PAGE. HIDE WIDGET " + GmCXt.getAppName());
-                return false;
-            }
-        }
-
-    } else if (!GmCXt.conf.showWidget) {
-        return false;
-    }
-
-    return true;
-};
-
-GmCXt.displayWidget = function(forceShowWidget) {
-    if (GmCXt.getWidgetVisibility(forceShowWidget)) {
-        let widget = GmCXt.getWidgetInstance();
-        if (widget.length) {
-            GmCXt.getWidgetInstance().show();
-            GmCXt.showCurrentPageGuidesIndicator();
-        } else {
-            GmCXt.showWidget();
-        }
-    } else {
-        GmCXt.hideWidgetIcon();
-    }
-};
-
-GmCXt.displayChatIcon = function(forceShowWidget) {
-    if (!GmCXt.organization) {
-        GmCXt.removeChatIcon();
-        return;
-    }
-
-    if (GmCXt.isPlayer() && GmCXt.isChatEnable()) {
-        let chat = GmCXt.getChatIconInstance();
-        if (chat.length) {
-            GmCXt.getChatIconInstance().show();
-        } else {
-            GmCXt.showChatIcon();
-        }
-    } else {
-        GmCXt.removeChatIcon();
-    }
-};
-
-GmCXt.getDocTitle = function() {
-    let title = document.title;
-    let parts = title.split(' '); // Split the string into words
-    let newParts = [];
-    for (let i = 0; i < parts.length; i++) {
-        let part = parts[i];
-        // Check if the part is a potential email address
-        if (part.indexOf('@') !== -1 && part.indexOf('.') !== -1 && part.charAt(0) !== '.') {
-            newParts.push(''); // Replace with an empty string
-        } else {
-            newParts.push(part); // Keep the part as is
-        }
-    }
-    title = newParts.join(' '); // Join the parts back into a string
-    return title;
-};
-
-/** @function Alert function to show message to a user
-    * @param {object} options - having properties
-    *  title: Popup title.
-    *  message: Popup description.
-    *  callback: Callback function to call on 'Ok' button click event.
-    *  type: Popup type. For 'Confirm' type, 'Cancel' button is shown.
-    */
-GmCXt.alert = function(options) {
-    options = options || {};
-
-    let pub = {};
-
-    let self = {
-        title: options.title,
-        description: options.description,
-        callback: options.callback,
-        type: options.type
-    };
-
-    pub.show = function() {
-        let popupType = 'mgPlayerJSProd_popup-info';
-        let popupDescription = "";
-
-        if (self.description) {
-            popupDescription = "<wmgPlayerJSProd_ class='mgPlayerJSProd_popup-content-info'>" + self.description + "</wmgPlayerJSProd_>";
-        }
-
-        let cancelButton = "";
-        let okButton = "<wmgPlayerJSProd_ class='mgPlayerJSProd_panel-popup-ok mgPlayerJSProd_btn-default mgPlayerJSProd_ok-btn mgPlayerJSProd_inline-block-vt'>" + GmCXt.label.ok + "</wmgPlayerJSProd_>";
-
-        if (self.type === "confirm") {
-            cancelButton = "<wmgPlayerJSProd_ class='mgPlayerJSProd_panel-popup-cancel mgPlayerJSProd_btn-default mgPlayerJSProd_btn-neutral mgPlayerJSProd_inline-block-vt'>" + GmCXt.label.btnCancel + "</wmgPlayerJSProd_>";
-
-        } else if (self.type === "onboarding") {
-            okButton = "<wmgPlayerJSProd_ class='mgPlayerJSProd_panel-popup-ok mgPlayerJSProd_btn-default mgPlayerJSProd_inline-block-vt'>" + GmCXt.label.btnGuideMe + "</wmgPlayerJSProd_>";
-            cancelButton = "<wmgPlayerJSProd_ class='mgPlayerJSProd_panel-popup-cancel mgPlayerJSProd_btn-default mgPlayerJSProd_inline-block-vt'>" + GmCXt.label.btnSkip + "</wmgPlayerJSProd_>";
-        }
-
-        let html = " <wmgPlayerJSProd_ class='mgPlayerJSProd_panel-popup-outer'></wmgPlayerJSProd_>" +
-            " <wmgPlayerJSProd_ class='mgPlayerJSProd_popup " + popupType + "'>" +
-            "    <wmgPlayerJSProd_ class='mgPlayerJSProd_popup-header-wrapper'>" +
-            "	    <wmgPlayerJSProd_ class='mgPlayerJSProd_popup-header-icon-wrapper'><wmgPlayerJSProd_ class='mgPlayerJSProd_popup-header-icon'></wmgPlayerJSProd_></wmgPlayerJSProd_>" +
-            "     </wmgPlayerJSProd_>" +
-            " 	  <wmgPlayerJSProd_ class='mgPlayerJSProd_popup-content-wrapper'>" + self.title + "</wmgPlayerJSProd_>" +
-            popupDescription +
-            "     <wmgPlayerJSProd_ class='mgPlayerJSProd_popup-btn-wrapper'>" +
-            okButton +
-            cancelButton +
-            "    </wmgPlayerJSProd_>" +
-            " </wmgPlayerJSProd_>";
-
-        mg$("body").append(html);
-
-        mg$(".mgPlayerJSProd_popup-header-icon").html(GmCXt.svgs.popup_info);
-
-        mg$(".mgPlayerJSProd_panel-popup-outer").css('height', mg$(document).height());
-
-        mg$(".mgPlayerJSProd_panel-popup-ok").on("click", function() {
-            if (mg$.isFunction(self.callback))
-                self.callback();
-            pub.close();
-        });
-
-        mg$(".mgPlayerJSProd_panel-popup-cancel").on("click", function() {
-            pub.close();
-        });
-    };
-
-    pub.close = function() {
-        mg$(".mgPlayerJSProd_popup").remove();
-        mg$(".mgPlayerJSProd_panel-popup-outer").remove();
-    };
-
-    return pub;
-};
-
-GmCXt.lockScroll = function() {
-    mg$('html').css('overflow', 'hidden');
-};
-
-GmCXt.getAutoLaunchTourId = function() {
-    return localStorage.getItem(GmCXt.storagePrefix + 'autoLaunchTour');
-};
-
-GmCXt.isAutoTour = function() {
-    let auto = localStorage.getItem(GmCXt.storagePrefix + 'autoLaunchTour');
-    auto = parseInt(auto);
-    if (!isNaN(auto) && auto > 0) {
-        return true;
-    } else {
-        return false;
-    }
-};
-
-GmCXt.showForceMode = function() {
-    GmCXt.closePopup();
-    let popupType = 'mgPlayerJSProd_popup-info';
-    let html =
-        "<wmgPlayerJSProd_ class='mgPlayerJSProd_overlay-container'></wmgPlayerJSProd_>" +
-        "<wmgPlayerJSProd_ class='mgPlayerJSProd_popup " + popupType + "'>" +
-        "   <wmgPlayerJSProd_ class='mgPlayerJSProd_popup-header-wrapper'>" +
-        "	   <wmgPlayerJSProd_ class='mgPlayerJSProd_popup-header-icon-wrapper'><wmgPlayerJSProd_ class='mgPlayerJSProd_popup-header-icon'></wmgPlayerJSProd_></wmgPlayerJSProd_>" +
-        "   </wmgPlayerJSProd_>" +
-        "<wmgPlayerJSProd_ class='mgPlayerJSProd_popup-content-wrapper'>" + GmCXt.escapeHtml(GmCXt.label.userNotFollowingGuideMessage) + "</wmgPlayerJSProd_>" +
-        "<wmgPlayerJSProd_ class='mgPlayerJSProd_popup-btn-wrapper'>" +
-        "<wmgPlayerJSProd_ class='mgPlayerJSProd_btn-default mgPlayerJSProd_btn-continue-guide mgPlayerJSProd_ok-btn mgPlayerJSProd_inline-block-vt'>" + GmCXt.label.continueGuide + "</wmgPlayerJSProd_>" +
-        "<wmgPlayerJSProd_ class='mgPlayerJSProd_btn-default mgPlayerJSProd_btn-neutral mgPlayerJSProd_btn-exit-guide mgPlayerJSProd_inline-block-vt'>" + GmCXt.label.exitGuide + "</wmgPlayerJSProd_>" +
-        "</wmgPlayerJSProd_>" +
-        "</wmgPlayerJSProd_>";
-
-    mg$("html").append(html);
-
-    GmCXt.stopAudio();
-
-    mg$(".mgPlayerJSProd_popup-header-icon").html(GmCXt.svgs.popup_info);
-    GmCXt.enforceGuideMePopup = true;
-    GmCXt.pauseAutomation();
-
-    let windowHeight = mg$(window).height();
-    let popupTop = (windowHeight - mg$('.mgPlayerJSProd_popup').height()) / 2;
-    mg$('.mgPlayerJSProd_popup').css("top", popupTop);
-
-    function close(e) {
-        GmCXt.stopPropagation(e);
-        GmCXt.closePopup();
-        GmCXt.enforceGuideMePopup = false;
-        if (GmCXt.playerI) GmCXt.resumeAutomation();
-    }
-
-    mg$(".mgPlayerJSProd_btn-continue-guide").on("click", close);
-
-    mg$(".mgPlayerJSProd_btn-exit-guide").on("click", function(e) {
-        if (GmCXt.isExitSurvey()) {
-            GmCXt.showExitSurvey();
-        }
-        if (GmCXt.tourPlayerI) {
-            GmCXt.tourPlayerI.stop();
-        }
-        close(e);
-    });
-
-    mg$(".mgPlayerJSProd_popup-close-button").on("click", close);
-};
-
-GmCXt.firstStepAutoLaunch = function() {
-
-    // if user has played first step already than going previously at 1st step
-    // don't show the option for the auto launch
-
-    let t = GmCXt.playerI && GmCXt.playerI.tour;
-    let viewNot = (GmCXt.user && GmCXt.user.settings.viewed_guide_notifications) || {};
-    let result = false;
-
-    if (GmCXt.isAutoTour() && GmCXt.isFirstNonAutomationStep()) {
-        if (!GmCXt.isDefined(viewNot[t.tour_id]) || (viewNot[t.tour_id] < parseInt(t.version))) {
-            result = true;
-        }
-    }
-
-    return result;
-};
-
-GmCXt.pauseAutomation = function() {
-    if (GmCXt.playerI && GmCXt.playerI.automate) {
-        GmCXt.playerI.pauseAutomate = true;
-        GmCXt.sendMessageToSyncPlayerI();
-    }
-};
-
-GmCXt.resumeAutomation = function() {
-    if (GmCXt.playerI) {
-        GmCXt.playerI.pauseAutomate = false;
-        GmCXt.sendMessageToSyncPlayerI();
-    }
-};
-
-GmCXt.sendMessageToSyncPlayerI = function() {
-    let msg = "mgPlayerJSProd_action:sync_playerinstance_for_automation";
-    let data = {};
-    data.playerInstance = GmCXt.playerI;
-    GmCXt.sendMessageToAllWindows(msg, data);
-};
-
-GmCXt.getUrlParameter = function(sParam) {
-    let pageURL = decodeURIComponent(GmCXt._location().search.substring(1));
-    return GmCXt.getParameterValue(sParam, pageURL);
-};
-
-GmCXt.getParameterValue = function(sParam, url) {
-    if (sParam && url) {
-        let sURLVariables = url.split('&'),
-            sParameterName,
-            i;
-
-        for (i = 0; i < sURLVariables.length; i++) {
-            sParameterName = sURLVariables[i].split('=');
-
-            if (sParameterName[0] === sParam) {
-                return sParameterName[1] === undefined ? true : sParameterName[1];
-            }
-        }
-    }
-
-    return false;
-};
-
-GmCXt.hideTooltipDelay = function(step, options) {
-
-    if (window.self === window.top) {
-        GmCXt.hideTooltipTimeout = GmCXt.timeout(function() {
-            GmCXt.hideTooltip(step, options);
-        }, GmCXt.t.hiteTooltip);
-    } else {
-        let data = {
-            stepId: step.step_id,
-            options: options
-        };
-        GmCXt.sendMessageToTheTopWindow('mgPlayerJSProd_action:hide_smarttip_delay', data);
-    }
-};
-
-GmCXt.clearTooltipTimeout = function() {
-
-    if (window.self === window.top) {
-        clearTimeout(GmCXt.hideTooltipTimeout);
-    } else {
-        GmCXt.sendMessageToTheTopWindow('mgPlayerJSProd_action:clear_smarttip_delay_timeout');
-    }
-};
-
-GmCXt.hideValidationTooltip = function(step) {
-    let data = {
-        stepId: step.step_id
-    };
-    if (window.self === window.top) {
-        GmCXt.requestHandler.hideValidationSmarttip(data);
-    } else {
-        GmCXt.sendMessageToTheTopWindow('mgPlayerJSProd_action:hide_validation_smarttip', data);
-    }
-
-    mg$("#mgPlayerJSProd_smarttip-valid-" + step.step_id).hide();
-};
-
-GmCXt.hideTooltip = function(step, options) {
-    let data = {
-        stepId: step.step_id
-    };
-
-    if (window.self === window.top) {
-        GmCXt.requestHandler.hideSmartTip(data, options);
-    } else {
-        GmCXt.sendMessageToTheTopWindow('mgPlayerJSProd_action:hide_smarttip', data);
-    }
-};
-
-GmCXt.validateDateFormat = function(str) {
-    let matches =
-        /^(\d{1,2})[:](\d{1,2})[:](\d{4})$/.exec(str) || // HH:MM:YYYY
-        /^(\d{1,2})[-](\d{1,2})[-](\d{4})$/.exec(str) || // DD-MM-YYYY or MM-DD-YYYY
-        /^(\d{1,2})[/](\d{1,2})[/](\d{4})$/.exec(str) || // DD/MM/YYYY or MM/DD/YYYY
-        /^(\d{4})\/(\d{1,2})\/(\d{1,2})$/.exec(str); // YYYY/MM/DD
-
-
-    if (matches == null) return false;
-
-    if (matches[1].length === 4) {
-        // YYYY/MM/DD
-        y = matches[1];
-        m = matches[2] - 1;
-        d = matches[3];
-    } else {
-        // DD/MM/YYYY, MM-DD-YYYY, etc.
-        d = matches[2];
-        m = matches[1] - 1;
-        y = matches[3];
-    }
-
-    let composedDate = new Date(y, m, d);
-    return composedDate.getDate() == d &&
-        composedDate.getMonth() == m &&
-        composedDate.getFullYear() == y;
-};
-
-GmCXt.validateTimeFormat = function(str) {
-    let isValid = false;
-    if (str.length > 8)
-        isValid = false;
-    else if (str.length < 6) {
-        isValid = /^(0[0-9]|1[0-9]|2[0-3]):[0-5][0-9]$/.test(str);
-    } else {
-        isValid = /(?:[01]\d|2[0123]):(?:[012345]\d):(?:[012345]\d)/.test(str);
-    }
-    return isValid;
-};
-
-GmCXt.validateNumeric = function(str) {
-    //  check for valid numeric strings
-    let strValidChars = "0123456789.-";
-    let strChar;
-    let blnResult = true;
-
-    if (str.length === 0) return false;
-
-    //  test strString consists of valid characters listed above
-    for (i = 0; i < str.length && blnResult === true; i++) {
-        strChar = str.charAt(i);
-        if (strValidChars.indexOf(strChar) == -1) {
-            blnResult = false;
-        }
-    }
-    return blnResult;
-};
-
-GmCXt.validatePhonenumber = function(str) {
-    let isValid = /^[1-9][0-9]{4,14}$/.test(str);
-    return isValid;
-};
-
-GmCXt.validateEmail = function(str) {
-    let re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-    return re.test(str);
-};
-
-GmCXt.validateRegex = function(regex, value) {
-    let re = new RegExp(regex);
-    return re.test(value);
-};
-
-GmCXt.getBulletCount = function(value) {
-    return (value.match(/<li/g) || []).length;
-};
-
-GmCXt.validateWebUrl = function(str) {
-    let re = /^(http[s]?:\/\/){0,1}(www\.){0,1}[a-zA-Z0-9\.\-]+\.[a-zA-Z]{2,5}[\.]{0,1}/;
-    return re.test(str);
-};
-
-GmCXt.getMatchingFrame = function(frames, event, match) {
-    for (let i = 0, len = frames.length; i < len; i++) {
-        frame = frames[i];
-        // check if frame window matches to the sender window
-        if (frame.contentWindow == event.source) {
-            match.found = true;
-            match.frame = frame;
-            break;
-        }
-    }
-    return match;
-};
-
-GmCXt.addFrameOffset = function(event, pos) {
-    let match = {
-        found: false,
-        frame: null
-    };
-
-    let frames = document.getElementsByTagName('iframe');
-    match = GmCXt.getMatchingFrame(frames, event, match);
-
-    if (!match.found) {
-        frames = document.getElementsByTagName('frame');
-        match = GmCXt.getMatchingFrame(frames, event, match);
-    }
-
-    if (!match.found) {
-        frames = GmCXt.getIframesFromShadowDom();
-        match = GmCXt.getMatchingFrame(frames, event, match);
-    }
-
-    if (match.found) {
-
-        const iframe = match.frame;
-        const rect = iframe.getBoundingClientRect();
-        let nestedRect = { left: 0, top: 0 };
-
-        const querySelector = event?.data?.data?.data?.querySelector;
-        const iframeDoc = iframe?.contentDocument;
-
-        if (querySelector && iframeDoc && !iframeDoc.querySelector(querySelector)) {
-            let nestedIframes = iframeDoc.querySelectorAll("iframe");
-            for (const nestedIframe of nestedIframes) {
-                const nestedDoc = nestedIframe?.contentDocument;
-                const elementInsideNestedIframe = nestedDoc?.querySelector(querySelector);
-
-                if (elementInsideNestedIframe) {
-                    nestedRect = nestedIframe.getBoundingClientRect();
-                    break;
-                }
-            }
-        }
-
-        pos.left += rect.left + nestedRect.left;
-        pos.top += rect.top + nestedRect.top;
-    }
-
-    pos.windowWidth = mg$(window).width();
-    pos.windowHeight = mg$(window).height();
-
-    return pos;
-};
-
-GmCXt.addScrollOffset = function(position, cssPosition) {
-    if (!cssPosition) {
-        let top = mg$(window).scrollTop();
-        let left = mg$(window).scrollLeft();
-
-        position.left += left;
-        position.origTop = position.top;
-        position.top += top;
-    }
-
-    return position;
-};
-
-GmCXt.extractFileName = function(url) {
-    let arr = url.split("/");
-    if (arr.length > 1) {
-        return GmCXt.conf.webServiceUrl + arr[arr.length - 1];
-    } else {
-        return url;
-    }
-};
-
-GmCXt.clearPreviewPopupAlignment = function($popup) {
-    $popup
-        .removeClass('top-left')
-        .removeClass('top-middle')
-        .removeClass('top-right')
-        .removeClass('right-top')
-        .removeClass('right-middle')
-        .removeClass('right-bottom')
-        .removeClass('bottom-left')
-        .removeClass('bottom-middle')
-        .removeClass('bottom-right')
-        .removeClass('left-top')
-        .removeClass('left-middle')
-        .removeClass('left-bottom');
-};
-
-GmCXt.removePreviewTop = function() {
-    GmCXt.removePreviewFrame();
-    GmCXt.sendMessageToAllWindows("mgPlayerJSProd_action:remove_preview");
-};
-
-GmCXt.hideSmartTipsIfOptionON = function() {
-    let org = GmCXt.organization;
-    if (org && org.admin_settings.show_tooltips_during_workflow_guide) {
-        return;
-    }
-    GmCXt.hideSmartTips();
-};
-
-GmCXt.hideSmartTips = function() {
-    mg$('.mgPlayerJSProd_smarttip-icon').addClass('tooltip-hidden');
-    mg$('.mgPlayerJSProd_smarttip').addClass('tooltip-hidden');
-    mg$('.mgPlayerJSProd_smarttip-valid').addClass('tooltip-hidden');
-    GmCXt.smarttipAreHidden = true;
-    GmCXt.sendMessageToAllWindows("mgPlayerJSProd_action:hide_all_smarttip");
-};
-
-GmCXt.showSmartTips = function(forceShow) {
-
-    if ((GmCXt.tourPlayerI && !forceShow) || GmCXt.isSurveyVisible) return;
-
-    mg$('.mgPlayerJSProd_smarttip-icon').removeClass('tooltip-hidden');
-    mg$('.mgPlayerJSProd_smarttip').removeClass('tooltip-hidden');
-    mg$('.mgPlayerJSProd_smarttip-valid').removeClass('tooltip-hidden');
-    GmCXt.smarttipAreHidden = false;
-    GmCXt.sendMessageToAllWindows("mgPlayerJSProd_action:show_all_smarttip");
-};
-
-GmCXt.previewSmartTips = function(id) {
-    mg$('.mgPlayerJSProd_smarttip-icon-wrapper-' + id).removeClass('tooltip-hidden');
-    mg$('.mgPlayerJSProd_smarttip-icon-wrapper-' + id).show();
-    GmCXt.sendMessageToAllWindows("mgPlayerJSProd_action:show_preview_smarttip", {
-        id: id
-    });
-};
-
-GmCXt.hideBeacons = function() {
-    mg$('.mgPlayerJSProd_beacon-icon').addClass('mgPlayerJSProd_hidden');
-    mg$('#mgPlayerJSProd_beacon-icon-pos-select').show();
-    GmCXt.beaconsAreHidden = true;
-    GmCXt.sendMessageToAllWindows("mgPlayerJSProd_action:hide_beacons");
-};
-
-GmCXt.showBeacons = function(forceShow) {
-
-    if ((GmCXt.tourPlayerI && !forceShow) || GmCXt.isSurveyVisible) {
-        GmCXt.log(48, "STOP showing beacons. player instance || survey on screen");
-        return;
-    }
-
-    mg$('.mgPlayerJSProd_beacon-icon').removeClass('mgPlayerJSProd_hidden');
-    mg$('#mgPlayerJSProd_beacon-icon-pos-select').hide();
-    GmCXt.beaconsAreHidden = false;
-    GmCXt.sendMessageToAllWindows("mgPlayerJSProd_action:show_beacons");
-};
-
-GmCXt.previewBeacons = function(id) {
-    mg$('.mgPlayerJSProd_beacon-icon-tour-' + id).removeClass('mgPlayerJSProd_hidden');
-    GmCXt.sendMessageToAllWindows("mgPlayerJSProd_action:show_preview_beacons", {
-        id: id
-    });
-};
-
-GmCXt.getScrollParent = function(node) {
-
-    if (node == null || node.nodeType !== 1) return null;
-
-    let tag = node.tagName;
-    if (tag) tag = tag.toLowerCase();
-
-    if (tag == 'body' || tag == 'html') return null;
-
-    let overflowY = getComputedStyle(node).overflowY;
-
-    let isScrollable = (overflowY === 'auto' || overflowY === 'scroll');
-
-    if (isScrollable && node.scrollHeight > (node.clientHeight + 5)) {
-        return node;
-    } else {
-        return GmCXt.getScrollParent(node.parentNode);
-    }
-};
-
-GmCXt.setPopUpForImage = function(description, parentClassName) {
-    // Check for image exist if yes then add popup js
-    let imgSrc = '';
-    GmCXt.setImagePopUp();
-    let fsBtn = "<wmgPlayerJSProd_ class='mgPlayerJSProd_full-screen-icon-cont'><button class='mgPlayerJSProd_full-screen-icon'>&#x26F6;</button></wmgPlayerJSProd_>";
-
-    mg$(parentClassName).addClass('mgPlayerJSProd_play-step-popup-loader');
-
-    let stepPopupImgList = mg$(parentClassName + ' img');
-
-    let finalStepPopupContent = "";
-
-    stepPopupImgList.each(function(index, imgEl) {
-        let img = mg$(imgEl);
-        if (img.parent().hasClass('mgPlayerJSProd_step-img-popup-cont')) return; // Avoid double wrapping
-
-        let imgWidth = img[0].width;
-        let imgHeight = img[0].height;
-
-        let showFullScreen = imgWidth >= 90 && imgHeight >= 90; // Only show if image is at least 90x90
-
-        let stepImgOverlay = "<div class='mgPlayerJSProd_step-img-popup-overlay'></div>";
-        let newStepImgWrapper = mg$("<div class='mgPlayerJSProd_display-inline-block mgPlayerJSProd_position-relative mgPlayerJSProd_step-img-popup-cont'></div>");
-        newStepImgWrapper.append(stepImgOverlay);
-        if(showFullScreen) newStepImgWrapper.append(fsBtn);
-        img.before(newStepImgWrapper);
-        newStepImgWrapper.append(img);
-    });
-
-    mg$(parentClassName + ' img').addClass('mgPlayerJSProd_custom-image');
-
-    mg$(".mgPlayerJSProd_full-screen-icon").html(GmCXt.svgs.fullscreen);
-
-    mg$('.mgPlayerJSProd_full-screen-icon').on("click", function(e) {
-        e.stopPropagation();
-        e.preventDefault();
-        var modalImg = document.getElementById("mgPlayerJSProd_img_desc");
-        var container = this.closest('.mgPlayerJSProd_step-img-popup-cont');
-        var imgElem = container.getElementsByTagName('img')[0];
-        imgSrc = imgElem.src;
-        var imgWrp = document.getElementsByClassName('mgPlayerJSProd_image-popup')[0];
-        GmCXt.stopPropagation(e);
-        imgWrp.style.display = "block";
-        modalImg.src = imgSrc;
-        mg$('.mgPlayerJSProd_preview-step-popup-container').css({
-            'z-index': '2147483646'
-        });
-    });
-
-
-
-    mg$(parentClassName + ' img').on("load", function() {
-        if (GmCXt.alignPopupI) GmCXt.alignPopupI.redo();
-        mg$(parentClassName).removeClass('mgPlayerJSProd_play-step-popup-loader');
-    });
-};
-
-GmCXt.getText = function(s) {
-    if (s) {
-        s = mg$('<gssdummy />').html(s).text();
-    }
-    return s;
-};
-
-GmCXt.singleLineTitle = function(t) {
-    let c = '';
-    if (t && t.length < 28) c = 'mgPlayerJSProd_nowrap-div';
-    return c;
-};
-
-GmCXt.setLinkClickhandler = function(description, parentClassName) {
-    if (description && description.indexOf("<a ") !== -1) {
-        mg$(parentClassName + ' a').each(function() {
-            let anchorTag = this;
-            if (anchorTag.querySelector('img[class$="_custom-image"]')) {
-                anchorTag.style.position = 'relative';
-            }
-            mg$(parentClassName + ' a').on("click", function(e) {
-                GmCXt.handleLinkClickEvent(e);
-            });
-        });
-    }
-};
-
-GmCXt.setTooltipLinkClickhandler = function(description, parentClassName, linkData) {
-    if (description && description.indexOf("<a ") !== -1) {
-        mg$(parentClassName + ' a').each(function(linkIndex, linkElement) {
-            var linkId = "mgPlayerJSProd_tlink" + linkIndex + "-sid" + linkData.sid;
-            if (GmCXt.isEmpty(linkElement.id)) {
-                linkElement.id = linkId;
-                linkElement.sid = linkData.sid;
-                linkElement.tid = linkData.tid;
-                linkElement.opt = JSON.stringify(linkData.opt);
-            }
-            linkElement.style.position = 'relative';
-
-            mg$('#' + linkId).off().on("click", function(e) {
-                GmCXt.handleLinkClickEvent(e);
-            });
-        });
-    }
-};
-
-GmCXt.getPageHostPathName = function() {
-    let hostname = GmCXt._location().hostname;
-    let pathname = GmCXt._location().pathname;
-    return hostname + pathname;
-};
-
-GmCXt.getAppName = function() {
-    let a = GmCXt.conf.appName;
-
-    if (GmCXt.isPlayer() && !GmCXt.playerMode) a += GmCXt.conf.appType;
-
-    return a + GmCXt.conf.env;
-};
-
-GmCXt.reportPresence = function() {
-    let message = {
-        action: 'MyGuideReporting',
-        data: GmCXt.getAppName()
-    };
-
-    GmCXt.log(63, "Broadcast presence of: " + GmCXt.getAppName());
-    GmCXt.sendToParentWindow(message);
-};
-
-GmCXt.setOnAudioMode = function() {
-    let d = {
-        user: GmCXt.user
-    };
-    GmCXt.sendMsgToAudioFrame('mgPlayerJSProd_action:set_audio_mode_on', d);
-};
-
-GmCXt.setOffAudioMode = function() {
-    let d = {
-        user: GmCXt.user
-    };
-    GmCXt.sendMsgToAudioFrame('mgPlayerJSProd_action:set_audio_mode_off', d);
-};
-
-GmCXt.setOnOnBoarAudioMode = function() {
-    mg$('.mgPlayerJSProd_tooltip-title-mute').show();
-    mg$('.mgPlayerJSProd_tooltip-title-unmute').hide();
-    mg$('.mgPlayerJSProd_onboarding-audio-off').hide();
-    mg$('.mgPlayerJSProd_onboarding-audio-on').show();
-    mg$('.mgPlayerJSProd_onboarding-audio').addClass('playing-audio');
-};
-
-GmCXt.setOffOnBoarAudioMode = function() {
-    mg$('.mgPlayerJSProd_tooltip-title-mute').hide();
-    mg$('.mgPlayerJSProd_tooltip-title-unmute').show();
-    mg$('.mgPlayerJSProd_onboarding-audio-on').hide();
-    mg$('.mgPlayerJSProd_onboarding-audio-off').show();
-    mg$('.mgPlayerJSProd_onboarding-audio').removeClass('playing-audio');
-};
-
-GmCXt.getBoundingRect = function(he) {
-    try {
-        return he.getBoundingClientRect();
-    } catch (e) {
-        return false;
-    }
 };
 
 GmCXt.getElVisibility = function(el, isFrame) {
@@ -8839,493 +3799,11 @@ GmCXt.getElVisibility = function(el, isFrame) {
     return display;
 };
 
-// Extracts Tag name from GuideMe JS Selector
-GmCXt.getTagName = function(selector) {
-    let tag = selector.match(/^(.*?)\[/g);
-    if (tag === null) {
-        tag = selector.match(/^(.*?)(:visible|:eq)/g);
-        tag = tag[0].replace(/:visible|:eq/g, '');
-        return tag;
-    } else {
-        tag = tag[0].replace(/\[/g, '');
-        return tag;
-    }
-};
-
-GmCXt.isLooping = function() {
-
-    let PI = GmCXt.playerI;
-    let flag = false;
-
-    if (PI.loops - PI.currentLoop > 0) {
-        flag = true;
-        GmCXt.log(33, "Current loop: " + PI.currentLoop);
-    }
-    return flag;
-};
-
-GmCXt.openPowerForm = function(data) {
-
-    if (window.self === window.top) {
-        GmCXt.showPowerForm(data);
-    } else {
-        GmCXt.sendMessageToTheTopWindow('mgPlayerJSProd_action:open_power_form', data);
-    }
-};
-
-GmCXt.rotateGear = function() {
-    let c = 1;
-    let i = null;
-
-    let id = '#mgPlayerJSProd_auto-progress-';
-    let cls = 'mgPlayerJSProd_active-progress';
-
-    i = setInterval(function() {
-        if (c === 1 || mg$(id + (c - 1)).hasClass(cls)) { // check for the previous gear
-            mg$(id + c).addClass(cls);
-        }
-        c++;
-        if (c > 3) clearInterval(i);
-    }, 900);
-};
-
-GmCXt.removeTooltips = function(t) {
-
-    GmCXt.log(43, "REMOVE Tooltip" + GmCXt.tourLog(t));
-
-    for (let j = 0; j < t.steps.length; j++) {
-        let step = t.steps[j];
-        let data = {
-            step_id: step.step_id,
-            tour_id: t.tour_id
-        };
-
-        if (GmCXt.inTopWindow(step.step_settings)) {
-            GmCXt.requestHandler.removeToolip(data);
-        } else {
-            GmCXt.sendMessageToAllWindows("mgPlayerJSProd_action:remove_tooltip", data);
-        }
-
-        if (t.steps[j].step_settings.smartTip.type === 'injector') {
-            GmCXt.removePowerForm();
-        }
-
-    }
-};
-
-GmCXt.updateBeaconsOnScreen = function(tourId, isValid) {
-
-    if (window.self === window.top) {
-        tourId = parseInt(tourId);
-        let i = GmCXt.beaconsOnScreen.indexOf(tourId);
-
-        if (isValid && i < 0) {
-            GmCXt.beaconsOnScreen.push(tourId);
-            GmCXt.log(49, "ADDED on screen: " + tourId);
-            GmCXt.auto.setBeaconsAutoDataToStorage(GmCXt.beaconsOnScreen);
-            GmCXt.setBeaconsDisplayFrequency(tourId);
-        } else if (!isValid) {
-            GmCXt.beaconsOnScreen.splice(i, 1);
-            GmCXt.log(49, "REMOVED from screen: " + tourId);
-        }
-    } else {
-        let data = {
-            jobId: tourId,
-            isValid: isValid
-        };
-        GmCXt.sendMessageToTheTopWindow("mgPlayerJSProd_action:update_beacons_on_screen", data);
-    }
-};
-
-GmCXt.setOnScreenTooltipGuideInfo = function(tour) {
-
-    GmCXt.log(43, "INFO SET: " + GmCXt.tourLog(tour));
-
-    let tid = "tour_" + tour.tour_id;
-    let t = GmCXt.onScreenTooltipGuideInfo[tid];
-
-    if (t) {
-        GmCXt.onScreenTooltipGuideInfo[tid].total = tour.steps.length;
-    } else {
-        GmCXt.onScreenTooltipGuideInfo[tid] = {
-            total: tour.steps.length,
-            visible: [],
-            watchRules: tour.tour_settings.ruleCheckOnClick
-        };
-    }
-    GmCXt.onScreenTooltipGuideInfo[tid].rules = tour.tour_settings.rules.map(function(rule) {
-        return rule.type;
-    });
-
-    if (GmCXt.isAutomationRunning()) {
-        GmCXt.tooltipInfoForAutomation = Object.assign({}, GmCXt.onScreenTooltipGuideInfo);
-    }
-};
-
-GmCXt.updateOnScreenTooltipGuideIds = function(t, tid) {
-    let i = GmCXt.onScreenTooltipGuideIds.indexOf(tid);
-
-    let pid = GmCXt.partialVisibleTooltipsIds.indexOf(tid);
-
-    if (t.total === t.visible.length) {
-        // All tooltips visible
-
-        if (i < 0) {
-            // Entry not present in 'onScreenTooltipGuideIds'
-            GmCXt.onScreenTooltipGuideIds.push(tid);
-            GmCXt.log(43, "ADDED on screen: " + tid);
-
-            if (pid >= 0) {
-                GmCXt.partialVisibleTooltipsIds.splice(pid, 1);
-            }
-        }
-    } else {
-        // One or more tooltips in the guide are hidden
-
-        if (i >= 0) {
-            // Entry present in 'onScreenTooltipGuideIds'
-            GmCXt.onScreenTooltipGuideIds.splice(i, 1);
-            GmCXt.log(43, "REMOVED from screen: " + tid);
-        }
-
-        if (t.visible.length === 0) {
-            // All tooltips in the guide are hidden
-            if (pid >= 0) {
-                GmCXt.partialVisibleTooltipsIds.splice(pid, 1);
-                GmCXt.log(43, "REMOVED from screen (ALL HIDDEN): " + tid);
-            }
-        } else {
-            if (pid < 0) {
-                // Update partially loaded tooltip list
-                GmCXt.partialVisibleTooltipsIds.push(tid);
-                GmCXt.log(43, "ADDED on screen (PARTIALLY): " + tid);
-            }
-        }
-    }
-};
-
-GmCXt.updateOnScreenTooltipGuideInfo = function(tour, tourId, stepId, isValid, smartTip, url) {
-    if (window.self === window.top) {
-        let t = GmCXt.onScreenTooltipGuideInfo["tour_" + tourId];
-
-        //FOR: tooltip tracking
-        //if valid => tooltip rendered
-        if (isValid) {
-            GmCXt.setTooltipRenderInfo(tour, tourId, stepId, smartTip, url);
-        }
-
-        //FOR: on screen tooltip rendering
-        if (t) {
-            let stepIndex = t.visible.indexOf(stepId);
-
-            if (isValid) {
-                if (stepIndex < 0) {
-                    t.visible.push(stepId);
-
-                    GmCXt.log(43, "VISIBLE: " + GmCXt.stepLog(stepId, tourId));
-
-                    if (GmCXt.isAutomationRunning()) {
-                        GmCXt.tooltipInfoForAutomation["tour_" + tourId].visible.push(stepId);
-                    }
-                }
-            } else {
-                if (stepIndex >= 0) {
-                    t.visible.splice(stepIndex, 1);
-
-                    GmCXt.log(43, "HIDDEN: " + GmCXt.stepLog(stepId, tourId));
-                }
-            }
-
-            GmCXt.updateOnScreenTooltipGuideIds(t, tourId);
-            GmCXt.auto.setTooltipAutoDataToStorage(GmCXt.tooltipInfoForAutomation);
-        }
-
-    } else {
-        let data = {
-            tour: tour,
-            tourId: tourId,
-            stepId: stepId,
-            isValid: isValid,
-            smartTip: smartTip,
-            url: url
-        };
-        GmCXt.sendMessageToTheTopWindow("mgPlayerJSProd_action:update_smarttip_on_screen", data);
-    }
-};
-
-GmCXt.getTooltipName = function(type) {
-    let name = '';
-    switch (type) {
-    case 'disableElement':
-        name = "digital_duct_tape";
-        break;
-
-    case 'injector':
-        name = "power_html";
-        break;
-
-    case 'formSubmit':
-        name = "form_submit";
-        break;
-
-    case 'both':
-        name = "guidance_validation";
-        break;
-
-    default:
-        name = type;
-        break;
-    }
-    return name;
-};
-
-GmCXt.checkIfSurveySubmitted = function(playerInstance, data, isExitSurvey, cb) {
-    let flag = false;
-    GmCXt.storage().get(['surveyCompleted'])
-        .then(function(st) {
-            function checkSurveySubmited(version, surveyObj) {
-                if (surveyObj[data.tourId]) {
-                    if (version > surveyObj[data.tourId]) {
-                        return true;
-                    } else {
-                        return false;
-                    }
-                } else {
-                    return true;
-                }
-            }
-
-            data.instance = {
-                tour: {
-                    tour_settings: playerInstance.tour.tour_settings
-                }
-            };
-
-            if (GmCXt.isAnonymousUser()) {
-                if (GmCXt.getObjectSize(st) === 0) st.surveyCompleted = {};
-                flag = checkSurveySubmited(parseInt(data.version), st.surveyCompleted);
-            } else {
-                let userSettings = GmCXt.user.settings || {};
-                userSettings.surveyCompleted = userSettings.surveyCompleted || {};
-                flag = checkSurveySubmited(parseInt(data.version), userSettings.surveyCompleted);
-            }
-
-        }).then(function() {
-            if (cb) {
-                cb(flag);
-            }
-        });
-};
-
-GmCXt.showSurveyScreen = function(data, isExitSurvey) {
-    return new Promise(function(resolve, reject) {
-        GmCXt.isSurveyVisible = false;
-
-        if (isExitSurvey) {
-            GmCXt.isSurveyVisible = true;
-            GmCXt.sendMessageToParentWindow('mgPlayerJSProd_action:exit_survey_start;task:show_survey', data);
-            resolve(GmCXt.isSurveyVisible);
-
-        } else if (data.type === "stepPlay") {
-            GmCXt.isSurveyVisible = true;
-            GmCXt.sendMessageToParentWindow('mgPlayerJSProd_action:survey_start;task:show_survey', data);
-            resolve(GmCXt.isSurveyVisible);
-
-        } else {
-            let playerInstance = mg$.extend({}, data.playerInstance);
-
-            if (GmCXt.isEmpty(playerInstance)) return;
-
-            GmCXt.checkIfSurveySubmitted(playerInstance, data, isExitSurvey, function(f) {
-                if (f) {
-                    GmCXt.isSurveyVisible = true;
-                    GmCXt.sendMessageToParentWindow('mgPlayerJSProd_action:survey_start;task:show_survey', data);
-                }
-                resolve(GmCXt.isSurveyVisible);
-            });
-        }
-
-        if (!GmCXt.isSidePanelApp) GmCXt.closeAppPanel();
-    });
-};
-
-GmCXt.checkCurrentStepSurvey = function(pi) {
-
-    let currentStep = GmCXt.getCurrentStep(pi.currentStepId);
-    if (currentStep.step_type === "survey") {
-        return true;
-    } else {
+GmCXt.getBoundingRect = function(he) {
+    try {
+        return he.getBoundingClientRect();
+    } catch (e) {
         return false;
-    }
-};
-
-GmCXt.getSurveyScreen = function(PI, guideNotCompleted) {
-    return new Promise(function(resolve, reject) {
-        let f = false;
-
-        if (GmCXt.playerI && GmCXt.isLooping()) {
-            resolve(f);
-
-        } else if (PI && PI.tour) {
-
-            let tour = PI.tour;
-
-            let data = {
-                tourId: tour.tour_id,
-                version: tour.version,
-                playerInstance: PI
-            };
-
-            if (guideNotCompleted) {
-                f = true;
-
-                if (PI && GmCXt.checkCurrentStepSurvey(PI)) {
-
-                    let currentStep = GmCXt.getCurrentStep(PI.currentStepId);
-                    let sentiment = currentStep.step_settings.sentiment;
-                    data.data = {};
-                    data.data.sentimentCode = sentiment.sentiment_code;
-                    data.step = currentStep;
-                    data.type = 'stepPlay';
-                    GmCXt.showSurveyScreen(data, false, guideNotCompleted).then(function() {
-                        resolve(f);
-                    });
-
-                } else if (GmCXt.isExitSurvey()) {
-
-                    if (GmCXt.isPlayer()) {
-                        GmCXt.showSurveyScreen(data, true).then(function() {
-                            resolve(f);
-                        });
-
-                    } else {
-                        let ti = GmCXt.tourPlayerI;
-                        if (ti) {
-                            ti.closeGuide();
-                        }
-                        resolve(f);
-                    }
-                }
-
-            } else if (GmCXt.showSurvey(PI) && GmCXt.isPlayer()) {
-                data.type = 'guide';
-                GmCXt.showSurveyScreen(data).then(function(f) {
-                    resolve(f);
-                });
-            }
-        }
-    });
-};
-
-GmCXt.showSurvey = function(PI) {
-
-    let tour = PI.tour;
-
-    if (tour.is_published &&
-        tour.tour_settings.enableSentiment &&
-        PI.completeEventTracked &&
-        GmCXt.isLastStep(PI.currentStepId, PI.playStructure))
-        return true;
-    else if (!GmCXt.playerI && tour && tour.is_published && tour.tour_settings.enableSentiment) {
-        return true;
-    } else
-        return false;
-};
-
-GmCXt.getOpacity = function(step) {
-
-    let opacity = 0;
-    let setting = step.step_settings;
-
-    if (setting && GmCXt.isNumeric(setting.overlayOpacity)) {
-        opacity = parseInt(setting.overlayOpacity);
-    }
-    return opacity;
-};
-
-GmCXt.recordGuideEvents = function() {
-    let PI = GmCXt.playerI;
-
-    if (!PI || PI.length === 0) return;
-
-    if (GmCXt.isFirstNonAutomationStep()) PI.firstStepPlayed = true;
-
-    let tour = PI.tour;
-
-    if (!GmCXt.guidePlayTracker["tour:" + tour.tour_id]) {
-        GmCXt.setGuidePlayTracker(tour.tour_id);
-    }
-
-    if (PI.completeEventTracked !== true &&
-        PI.firstStepPlayed === true &&
-        GmCXt.isLastStep(PI.currentStepId, PI.playStructure)
-    ) {
-        PI.completeEventTracked = true;
-
-        //Update Guide tracker
-        let completionEventType = 'guide_complete';
-
-        GmCXt.guidePlayTracker["tour:" + tour.tour_id][completionEventType] = 1;
-
-        if (PI.linkedGuides) {
-            PI.linkedGuides.forEach(function(tourId) {
-                if (!GmCXt.guidePlayTracker["tour:" + tourId]) GmCXt.setGuidePlayTracker(tourId);
-
-                if (GmCXt.guidePlayTracker["tour:" + tourId]) {
-                    GmCXt.guidePlayTracker["tour:" + tourId][completionEventType] = 1;
-                    GmCXt.guidePlayTracker["tour:" + tourId].play_instance_id = GmCXt.guidePlayTracker["tour:" + tour.tour_id].play_instance_id;
-                }
-            });
-        }
-    }
-
-    if (PI.linkedGuides) {
-        PI.linkedGuides.forEach(function(tourId) {
-            if (GmCXt.guidePlayTracker["tour:" + tourId]) {
-                GmCXt.guidePlayTracker["tour:" + tourId].play_instance_id = GmCXt.guidePlayTracker["tour:" + tour.tour_id].play_instance_id;
-            }
-        });
-    }
-
-    if (GmCXt.isLastStep(PI.currentStepId, PI.playStructure) && GmCXt.tourActivity['t:' + PI.tour.tour_id]) {
-        delete GmCXt.tourActivity['t:' + PI.tour.tour_id];
-    }
-};
-
-GmCXt.isClickInStepPopup = function(e) {
-    if (mg$(e.target).parents('.mgPlayerJSProd_preview-step-popup-container').length !== 0 ||
-        mg$(e.target).hasClass('mgPlayerJSProd_image-popup') ||
-        mg$(e.target).parents('.mgPlayerJSProd_image-popup').length !== 0 ||
-        mg$(e.target).hasClass('mgPlayerJSProd_icon-image-prev-button') ||
-        mg$(e.target).parents('.mgPlayerJSProd_icon-image-prev-button').length !== 0 ||
-        mg$(e.target).hasClass('mgPlayerJSProd_image-step-prev') ||
-        mg$(e.target).parents('.mgPlayerJSProd_play-pause-toolbar').length !== 0 ||
-        mg$(e.target).hasClass('mgPlayerJSProd_popup') ||
-        mg$(e.target).parents('.mgPlayerJSProd_popup').length !== 0 ||
-        mg$(e.target).hasClass('mgPlayerJSProd_overlay-container') ||
-        mg$(e.target).hasClass('mgPlayerJSProd_slideshow-panel') ||
-        mg$(e.target).parents('mgPlayerJSProd_slideshow-panel').length !== 0) {
-
-        return true;
-    } else {
-        return false;
-    }
-};
-
-GmCXt.isClickInSurveyPopup = function(e) {
-    if (mg$(e.target).parents('.mgPlayerJSProd_survey-popup-wrapper').length) {
-        return true;
-    } else {
-        return false;
-    }
-};
-
-GmCXt.getSingleVisibility = function(el) {
-
-    if (mg$(el).css("display") === "none" || mg$(el).css("visibility") === "hidden" || !mg$(el).is(":visible")) {
-        return false;
-    } else {
-        return true;
     }
 };
 
@@ -9345,241 +3823,798 @@ GmCXt.getVisibilityTillParent = function(el) {
     return visible;
 };
 
-GmCXt.confirmTourClose = function(forceClose) {
-    let pi = GmCXt.playerI;
-    let ti = GmCXt.tourPlayerI;
-    if (pi && ti) {
-        if (pi.currentStepId && pi.playStructure &&
-            GmCXt.getTail(pi.currentStepId, pi.playStructure) !== null &&
-            GmCXt.isExitSurvey() && GmCXt.isPlayer()) {
-            GmCXt.showExitSurvey();
-        }
-        ti.closeGuide(forceClose);
-    }
-};
+GmCXt.getSingleVisibility = function(el) {
 
-GmCXt.requiredWidth = function() {
-    if (mg$(window).width() > 550) return true;
-    else return false;
-};
-
-GmCXt.getPopupHtml = function(msg, ok, cancel) {
-    let popupType = 'mgPlayerJSProd_popup-info';
-    let html = " <wmgPlayerJSProd_ class='mgPlayerJSProd_overlay-container'></wmgPlayerJSProd_>" +
-        "<wmgPlayerJSProd_ class='mgPlayerJSProd_popup " + popupType + "' id='mgPlayerJSProd_popup-reload'>" +
-        "   <wmgPlayerJSProd_ class='mgPlayerJSProd_popup-header-wrapper'>" +
-        "	   <wmgPlayerJSProd_ class='mgPlayerJSProd_popup-header-icon-wrapper'><wmgPlayerJSProd_ class='mgPlayerJSProd_popup-header-icon'></wmgPlayerJSProd_></wmgPlayerJSProd_>" +
-        "   </wmgPlayerJSProd_>" +
-        " <wmgPlayerJSProd_ class='mgPlayerJSProd_popup-content-wrapper'>" + msg + "</wmgPlayerJSProd_>" +
-        " <wmgPlayerJSProd_ class='mgPlayerJSProd_popup-btn-wrapper'>" +
-        "   <button title='" + ok + "' aria-label='" + ok + "' class='mgPlayerJSProd_popup-ok-btn mgPlayerJSProd_btn-default mgPlayerJSProd_ok-btn mgPlayerJSProd_text-overflow-ellipsis mgPlayerJSProd_inline-block-vt mgPlayerJSProd_lbl-btn'>" + ok + "</button>" +
-        "   <button title='" + cancel + "' aria-label='" + cancel + "' class='mgPlayerJSProd_popup-cancel-btn mgPlayerJSProd_btn-default mgPlayerJSProd_text-overflow-ellipsis mgPlayerJSProd_inline-block-vt mgPlayerJSProd_lbl-btn'>" + cancel + "</button>" +
-        " </wmgPlayerJSProd_>" +
-        "</wmgPlayerJSProd_>";
-    return html;
-};
-
-GmCXt.getKeyShortPopupHtml = function(tourList) {
-    let tourListStr = "";
-    if (tourList && tourList.length) {
-        for (let i = 0; i < tourList.length; i++) {
-            tourListStr = tourListStr + "<wmgPlayerJSProd_ class='mgPlayerJSProd_popup-row-content-wrapper'><wmgPlayerJSProd_ class='mgPlayerJSProd_popup-colmn-content-wrapper mgPlayerJSProd_col-lt' > " + tourList[i].tour_settings.keyboardKeyInput + " : </wmgPlayerJSProd_>" +
-                "<wmgPlayerJSProd_ class='mgPlayerJSProd_popup-colmn-content-wrapper mgPlayerJSProd_col-rt' > " + tourList[i].tour_title + " </wmgPlayerJSProd_></wmgPlayerJSProd_>";
-        }
+    if (mg$(el).css("display") === "none" || mg$(el).css("visibility") === "hidden" || !mg$(el).is(":visible")) {
+        return false;
     } else {
-        tourListStr = "<wmgPlayerJSProd_ class='mgPlayerJSProd_popup-row-content-wrapper'><wmgPlayerJSProd_ class='mgPlayerJSProd_popup-colmn-content-wrapper' > No shortcuts available </wmgPlayerJSProd_> " +
-            "</wmgPlayerJSProd_>";
-    }
-
-
-    let html = "<wmgPlayerJSProd_ class='mgPlayerJSProd_popup mgPlayerJSProd_popup-info mgPlayerJSProd_popup-keyshort' id='mgPlayerJSProd_popup-reload'>" +
-        "   <wmgPlayerJSProd_ class='mgPlayerJSProd_popup-header-wrapper'>" +
-        "	   <wmgPlayerJSProd_ class='mgPlayerJSProd_popup-keyshort-header-title'>Keyboard shortcuts</wmgPlayerJSProd_>" +
-        "	   <wmgPlayerJSProd_ class='mgPlayerJSProd_popup-keyshort-close'>" + GmCXt.label.close + "</wmgPlayerJSProd_>" +
-        "   </wmgPlayerJSProd_>" +
-        " <wmgPlayerJSProd_ class='mgPlayerJSProd_popup-content-wrapper'> " +
-        " 	<wmgPlayerJSProd_ class='mgPlayerJSProd_popup-main-content-wrapper'>" +
-        tourListStr +
-        " 	</wmgPlayerJSProd_>" +
-        " </wmgPlayerJSProd_>" +
-        "</wmgPlayerJSProd_>";
-    return html;
-};
-
-GmCXt.stopPropagation = function(e) {
-    e.stopImmediatePropagation();
-};
-
-GmCXt.addPopupEvents = function(onOK, onCancel, onClose) {
-
-    mg$(".mgPlayerJSProd_popup").on("mousedown", GmCXt.stopPropagation);
-    mg$(".mgPlayerJSProd_overlay-container").on("mousedown", GmCXt.stopPropagation);
-
-    mg$(".mgPlayerJSProd_popup-ok-btn").on("click", onOK);
-    mg$(".mgPlayerJSProd_popup-cancel-btn").on("click", onCancel);
-    mg$(".mgPlayerJSProd_popup-close-button").on("click", onClose);
-    mg$(".mgPlayerJSProd_popup-keyshort-close").on("click", onOK);
-};
-
-GmCXt.closePopup = function() {
-    mg$(".mgPlayerJSProd_popup").remove();
-    mg$(".mgPlayerJSProd_overlay-container").remove();
-};
-
-GmCXt.showExitSurvey = function(opts) {
-
-    let pi = GmCXt.playerI;
-    GmCXt.unlockScroll();
-    mg$(".mgPlayerJSProd_popup").remove();
-    GmCXt.getSurveyScreen(pi, true);
-};
-
-GmCXt.zoomImage = function(text, popClass) {
-
-    if (text && text.indexOf("<img ") !== -1 && text.indexOf('src=""') === -1) {
-        if (window.self === window.top) {
-            GmCXt.setPopUpForImage(text, popClass);
-        } else {
-            GmCXt.setZoomImageFromIframe(text, popClass);
-        }
+        return true;
     }
 };
 
-GmCXt.redirectLinkToBrowser = function(e) {
-    let url = e.target.href;
-    let shell = require('electron').shell;
-    shell.openExternal(url);
+GmCXt.getScrollParent = function(node) {
+
+    if (node == null || node.nodeType !== 1) return null;
+
+    let tag = node.tagName;
+    if (tag) tag = tag.toLowerCase();
+
+    if (tag == 'body' || tag == 'html') return null;
+
+    let overflowY = getComputedStyle(node).overflowY;
+
+    let isScrollable = (overflowY === 'auto' || overflowY === 'scroll');
+
+    if (isScrollable && node.scrollHeight > (node.clientHeight + 5)) {
+        return node;
+    } else {
+        return GmCXt.getScrollParent(node.parentNode);
+    }
 };
 
-GmCXt.setLinkGuidePlay = function(text, popClass) {
-    mg$(popClass + ' a').each(function() {
-        let t = mg$(this).attr('target');
-        if (t === 'gssPlayGuide') {
-            mg$(this).on("click", function(e) {
-                let url = mg$(this).attr('href');
-                url = url.split('?')[1];
-                let tourId = GmCXt.getParameterValue('guideMe-tourId', url);
-                let automation = GmCXt.getParameterValue('automation', url);
+GmCXt.filterParentNodes = function(nodes, text) {
 
-                if (tourId) {
-                    e.preventDefault();
-                    e.stopPropagation();
-                    e.stopImmediatePropagation();
-                    automation = automation === "true" ? true : false;
-                    let initiator = 'urlTour';
-                    if (automation) {
-                        initiator = 'doitforme';
-                    }
+    // filter parent nodes retured by "text contains" query.
+    var text = text.trim().toLowerCase();
 
-                    if (GmCXt.tourPlayerI) {
-                        GmCXt.tourPlayerI.stop();
-                    }
-                    if (window.self === window.top) {
-                        GmCXt.getTourAndPlay(tourId, initiator);
-                    } else {
-                        let data = {
-                            tourId: tourId,
-                            initiator: initiator
-                        };
-                        GmCXt.sendMessageToParentWindow('mgPlayerJSProd_action:play_guide_from_link', data);
-                    }
-                }
-            });
+    nodes = nodes.filter(function(index, node) {
+        if (node.innerText && node.innerText.trim().toLowerCase() === text) {
+            mg$(node).parents().addClass('mgPlayerJSProd_dummy-class');
+            return true;
         }
+        return false;
     });
-};
 
-GmCXt.saveAppPresence = function(m) {
+    let childNodes = nodes.filter(function(index, node) {
+        return !mg$(node).hasClass('mgPlayerJSProd_dummy-class');
+    });
 
-    m = GmCXt.convertMgdata(m);
+    mg$('.mgPlayerJSProd_dummy-class').removeClass('mgPlayerJSProd_dummy-class');
 
-    if (!GmCXt.isClientJs()) {
-        GmCXt.storage().get(['login_state']).then(function(o) {
-            if (o.login_state) {
-                saveAndAcknowledge();
-            }
-        });
-    } else {
-        saveAndAcknowledge();
+    if (childNodes.length === 1) {
+        GmCXt.l.add('All nodes resulting from the query are hierachichally linked (parent-child)');
+        return nodes;
     }
 
-    function saveAndAcknowledge() {
-
-        GmCXt.myGuideApps[m.data] = true;
-
-        // Send acknowledgement
-        if (m.action === 'MyGuideReporting') {
-            let message = {
-                action: 'MyGuideReporting:Ack',
-                data: GmCXt.getAppName()
-            };
-
-            GmCXt.log(63, 'Send acknowledgement of: ' + message.data);
-
-            GmCXt.sendToParentWindow(message);
+    if (childNodes.length === 2 && GmCXt.compareAttributes(nodes[0], nodes[1])) {
+        // LXP header has two identical elements placed on top of each other
+        if (GmCXt.getElVisibility(nodes[0]) === 'visible') {
+            return nodes.slice(0, 1);
+        } else if (GmCXt.getElVisibility(nodes[1]) === 'visible') {
+            return nodes.slice(1);
         }
-
-        GmCXt.log(63, 'MyGuide apps found: ', GmCXt.myGuideApps);
     }
+
+    GmCXt.l.add('Text is present at multiple places on the screen');
+    return [];
 };
 
-GmCXt.isLessThan = function(d, val) {
-    if (d === undefined || d === null || d < val)
-        return true;
-    else
-        return false;
-};
+GmCXt.getAbsoluteRectFromIframe = function(he) {
 
-GmCXt.isGreaterThan = function(d, val) {
-    if (d === undefined || d === null || d > val)
-        return true;
-    else
-        return false;
-};
+    let iframeEl = he.ownerDocument.defaultView.frameElement;
+    if (!iframeEl || window.self !== window.top) {
+        return null;
+    }
 
-GmCXt.updNotifDataSidePanel = function(toursClosed, tourIdArray) {
-    let data = {
-        toursClosed: toursClosed,
-        tourIdArray: ''
+    let rect = he.getBoundingClientRect();
+    let iframeRect = iframeEl.getBoundingClientRect();
+
+    return {
+        top: rect.top + iframeRect.top,
+        left: rect.left + iframeRect.left,
+        width: rect.width,
+        height: rect.height
     };
-    if (GmCXt.isAnonymousUser()) {
-        data.tourIdArray = tourIdArray;
-    }
-    GmCXt.storage().set({
-        'toursClosed': data.toursClosed,
-        'tourIdArray': data.tourIdArray
-    }).then(function() {
-        GmRootScope.setNotifTours();
-    });
 };
 
-GmCXt.updateNotification = function(tours) {
-    GmCXt.storage().get(['toursClosed']).then(function(st) {
-        let userSettings = GmCXt.user.settings || {};
-        userSettings.viewed_guide_notifications = tours;
-        GmCXt.user.settings = userSettings;
+// This function returns custom selector parts, if it matches "IFRAME#id BODY#id" get "BODY#id"
+GmCXt.getIframeQueryParts = function(selector) {
+    if (/iframe/i.test(selector) && selector.indexOf(' ') !== -1) {
+        let queryParts = selector.trim().split(/\s+/, 2);
+        if (queryParts.length === 2 && queryParts[1].length > 0) {
+            return queryParts;
+        }
+    }
+    return [];
+};
 
-        if (GmCXt.isAnonymousUser()) {
-            GmCXt.storage().set({
-                'tourIdArray': tours
-            });
-        } else {
-            let data = {
-                settings : {
-                    viewed_guide_notifications : tours
-                }
-            };
-            GmCXt.updateUserSettings(data, GmCXt.user);
+// This function returns query part of iframe from the custom selector
+// eg. From this "IFRAME#id BODY#id" get "BODY#id"
+GmCXt.getIframeQuery = function(selector) {
+    let queryParts = GmCXt.getIframeQueryParts(selector);
+    if (queryParts.length) {
+        return queryParts[1];
+    } else {
+        return selector;
+    }
+};
+
+// This function returns node from the custom selector jquery for elements inside iframe
+GmCXt.getNodeFromIframeQuery = function(selector) {
+
+    let iframeElem = '';
+    let nodes = null;
+    let shadowRoot = null;
+
+    let queryParts = GmCXt.getIframeQueryParts(selector);
+    if (queryParts.length) {
+        iframeElem = mg$(queryParts[0]);
+    }
+
+    if(iframeElem.length) {
+        const iframeDoc = iframeElem[0].contentDocument || iframeElem[0].contentWindow.document;
+        nodes = mg$(queryParts[1], iframeDoc);
+    } else {
+        nodes = mg$(selector);
+    }  
+
+    if(!nodes.length) {
+        
+        let [hostSelector, innerSelector] = selector.split(/ (.+)/);
+        let shadowDom;
+        try {
+            shadowDom = mg$(hostSelector);
+        } catch (e) {
+            shadowDom = '';
+        }
+        let shadowHost = shadowDom.length && shadowDom[0] || null;
+        shadowRoot = shadowHost && shadowHost.shadowRoot;  
+
+        if(shadowRoot && innerSelector) {
+
+            let containsMatch = innerSelector.match(/(.*):contains\(["']?(.*?)["']?\)$/);
+            if (containsMatch) {
+                let tagSelector = containsMatch[1] || '*';   
+                let textToFind = containsMatch[2];          
+
+                let matched = mg$(shadowRoot.querySelectorAll(tagSelector)).filter(function() {
+                    return mg$(this).text().toLowerCase().includes(textToFind.toLowerCase());
+                });
+
+                // returns the last matched element
+                nodes = matched.length ? mg$(matched[matched.length - 1]) : null;
+            } else {
+                nodes = mg$(shadowRoot.querySelectorAll(innerSelector));
+            }
         }
 
-        GmCXt.updNotifDataSidePanel(GmCXt.parseJSON(st.toursClosed), tours);
-    });
+    }
+
+    return nodes;
 };
 
-GmCXt.setDefaultStepSetting = function(data, prop, val) {
-    if (!data.step_settings[prop] || data.step_settings[prop] === 'keepNext') {
-        data.step_settings[prop] = val;
+GmCXt.getContainerOffSet = function(container) {
+    let d;
+
+    if (container.length > 0) {
+
+        d = container.offset();
+
+        if (d !== undefined) {
+
+            if (d.top < 0) d.top = 0;
+
+            if (d.left < 0) d.left = 0;
+        }
+
+        d.width = parseInt(container.width());
+        d.height = parseInt(container.height());
+    } else {
+        d = {
+            top: 0,
+            left: 0,
+            width: mg$(document).width(),
+            height: mg$(document).height()
+        };
     }
+
+    return d;
+};
+
+GmCXt.getAttributeValues = function(el, attributes) {
+
+    if (el.nodeType !== 1) {
+        return {};
+    }
+
+    let attrList = attributes || el.getAttributeNames();
+
+    let attrObj = {
+        tagName: el.tagName
+    };
+
+    attrList.forEach(function(attr) {
+        let value = el.getAttribute(attr);
+
+        if (!GmCXt.isEmpty(value)) {
+            attrObj[attr] = value;
+        }
+    });
+
+    if (attrObj.class) {
+        attrObj.class = GmCXt.filterMyguideClassValue(attrObj.class);
+        if (GmCXt.isEmpty(attrObj.class)) {
+            delete attrObj.class;
+        }
+    }
+
+    if (el.textContent && el.textContent.length > 500) {
+        delete attrObj.text;
+    } else if (!GmCXt.isEmpty(el.textContent)) {
+        attrObj.text = el.textContent.trim();
+    }
+
+    return attrObj;
+};
+
+// Extracts Tag name from GuideMe JS Selector
+GmCXt.getTagName = function(selector) {
+    let tag = selector.match(/^(.*?)\[/g);
+    if (tag === null) {
+        tag = selector.match(/^(.*?)(:visible|:eq)/g);
+        tag = tag[0].replace(/:visible|:eq/g, '');
+        return tag;
+    } else {
+        tag = tag[0].replace(/\[/g, '');
+        return tag;
+    }
+};
+GmCXt.getElementText = function(el) {
+
+    let elValue = GmCXt.getRuleText(el);
+
+    if (!elValue) {
+
+        let value = el.getAttribute('value');
+        let placeholder = el.getAttribute('placeholder');
+        let name = el.getAttribute('name');
+
+        if ((el.tagName === 'INPUT' || el.tagName === 'BUTTON') &&
+            (el.type === 'submit' || el.type === 'button') &&
+            value
+        ) {
+            elValue = value;
+        }
+
+        if (!elValue && el.tagName === 'INPUT' && placeholder) {
+            elValue = placeholder;
+        }
+        if (!elValue && el.tagName === 'INPUT' && name) {
+            elValue = name;
+        }
+    }
+
+    return elValue.trim();
+};
+
+GmCXt.getRuleText = function(el) {
+    let elValue = '';
+    let elTagName = el.tagName.toLowerCase();
+
+    if (elTagName === 'select') {
+        elValue = el.options[el.selectedIndex].textContent;
+    } else if (elTagName === 'input' && el.value) {
+        elValue = el.value;
+    } else {
+        elValue = el.textContent.trim();
+    }
+    return elValue;
+};
+
+GmCXt.getAttributesFromSelector = function(sel) {
+    let matchedAttr = {};
+    for (let key in sel) {
+        matchedAttr[key] = [];
+
+        let selectorAttr = GmCXt.dom.getMatchAttributes(key);
+        let jsSelector = sel[key];
+
+        for (let i = 0; i < selectorAttr.length; i++) {
+            let attr = selectorAttr[i];
+
+            for (let j = 0; j < jsSelector.length; j++) {
+
+                let present = false;
+                if (jsSelector[j].includes("[" + attr + "=")) {
+                    present = true;
+                } else if (attr === 'text') {
+                    if (jsSelector[j].includes("[placeholder=") || jsSelector[j].includes("[value="))
+                        present = true;
+                }
+
+                if (present) {
+                    matchedAttr[key].push(attr);
+                    break;
+                }
+            }
+        }
+    }
+    return matchedAttr;
+};
+
+GmCXt.getSelectorExecutionPriority = function(selectorAttributes) {
+    let priority = Object.keys(selectorAttributes);
+    priority.push('text');
+
+    function getNumberOfAttrs(s) {
+        if (s === 'text')
+            return 3; // Prioritize text selector above jsSelectors with attribute length < 3
+        else if (s === 'custom')
+            return 0;
+        else
+            return selectorAttributes[s].length;
+    }
+
+    priority = priority.sort(function(a, b) {
+        l1 = getNumberOfAttrs(a);
+        l2 = getNumberOfAttrs(b);
+
+        // Sort in desc order of length
+        if (l2 > l1) return 1;
+        if (l2 < l1) return -1;
+
+        return 0;
+    });
+
+    return priority;
+};
+
+GmCXt.getAttributePriority = function(attr, el) {
+    switch (attr) {
+    case 'id':
+        return 1;
+    case 'class':
+        return 2;
+    case 'text':
+    case 'name':
+    case 'title':
+    case 'placeholder':
+        return 3;
+    default: {
+        if (attr === 'value' && el.tagName !== 'INPUT')
+            return 3;
+
+        if (attr.includes('Id') || attr.toLowerCase().indexOf('id') === 0 ||
+                attr.toLowerCase().includes('_id') || attr.toLowerCase().includes('-id')) {
+            return 1;
+        }
+
+        if (attr.indexOf('aria') === 0)
+            return 4;
+
+        if (typeof el.getAttribute(attr) === 'boolean')
+            return 5;
+
+        return 6;
+    }
+    }
+};
+
+GmCXt.skipMyGuideAttributes = function(attr) {
+    attr = attr.filter(function(attr) {
+        return (attr.indexOf('gm') !== 0);
+    });
+    return attr;
+};
+
+GmCXt.skipSpecialCharValues = function(attrList, he) {
+
+    let textAttr = ['text', 'placeholder', 'value', 'title', 'name'];
+
+    attrList = attrList.filter(function(attr) {
+        if (attr === 'text') return true;
+
+        value = he.getAttribute(attr);
+        if (!GmCXt.isEmpty(value)) {
+            if (textAttr.includes(attr)) return true;
+
+            if (!value.match(/[[\]{}():*+?.,\\^$|#]/g)) return true;
+        }
+
+        return false;
+    });
+
+    return attrList;
+};
+
+GmCXt.skipMyGuideClasses = function(attrList, meta) {
+    if (meta && meta.elAttributes && !meta.elAttributes.class) {
+        let index = attrList.indexOf('class');
+        if (index > -1) {
+            attrList.splice(index, 1);
+        }
+    }
+    return attrList;
+};
+
+GmCXt.getCustomMatchAttributes = function(he, meta) {
+    let attrList = he.getAttributeNames();
+
+    if (!GmCXt.isEmpty(meta.textPropertyValue) && meta.textPropertyName === 'textContent')
+        attrList.push('text');
+
+    attrList = GmCXt.skipMyGuideAttributes(attrList);
+
+    attrList = GmCXt.skipSpecialCharValues(attrList, he);
+
+    attrList = GmCXt.skipMyGuideClasses(attrList, meta);
+
+    return attrList;
+};
+
+GmCXt.migrateMatchAlgoSetting = function(de) {
+
+    let c = mg$.extend(true, {}, de.criteria);
+    let m = mg$.extend(true, {}, de.meta);
+    let tempde = mg$.extend(true, {}, de);
+
+    if ((c.precision_type === GmCXt.DOM_CRITERIA_JQUERY && c.jquery_selector_builder) ||
+        (c.precision_type === GmCXt.DOM_CRITERIA_CUSTOM && !c.jquery_selector)) {
+        // Old jQuery selector builder (later renamed as custom selector)
+        c.jquery_selector = null;
+        delete c.jquery_selector_builder;
+        c.precision_type = GmCXt.DOM_CRITERIA_DEFAULT;
+    }
+
+    if (c.precision_level === "High" && (GmCXt.decodeVersion(tempde.version) < 2020041502)) {
+        c.precision_level = "Medium";
+    }
+
+    if (c.precision_type === GmCXt.DOM_CRITERIA_JQUERY) {
+        c.precision_type = GmCXt.DOM_CRITERIA_CUSTOM;
+        let selectorArray = [c.jquery_selector];
+        c.matchAttributes = Object.keys(GmCXt.dom.getAttributes(selectorArray)[0]);
+        c.matchAttributes.splice(c.matchAttributes.indexOf('tagName'), 1);
+    }
+
+    if (c.precision_type === GmCXt.DOM_CRITERIA_TEXT)
+        c.precision_type = GmCXt.DOM_CRITERIA_DEFAULT;
+
+    if (!GmCXt.isEmpty(tempde.selector)) {
+        for (var key in tempde.selector) {
+            if (GmCXt.isEmpty(tempde.selector[key]))
+                delete tempde.selector[key];
+        }
+
+        if (tempde.selector.hasOwnProperty('css')) {
+            delete tempde.selector.css;
+        }
+
+        if (m.attributes && m.attributes.hasOwnProperty('js')) {
+            m.selectorAttributes = mg$.extend(true, {}, m.attributes);
+            for (key in tempde.selector) {
+                if (!m.selectorAttributes.hasOwnProperty(key)) {
+                    m.selectorAttributes[key] = [];
+                }
+            }
+            delete m.attributes;
+        }
+
+        if (!m.hasOwnProperty('executionPriority')) {
+            if (GmCXt.isEmpty(m.selectorAttributes)) {
+                m.selectorAttributes = GmCXt.getAttributesFromSelector(tempde.selector);
+            }
+            m.executionPriority = GmCXt.getSelectorExecutionPriority(m.selectorAttributes);
+        }
+    } else {
+        m.executionPriority = ['text'];
+    }
+
+    tempde.criteria = c;
+    tempde.meta = m;
+
+    return tempde;
+};
+
+GmCXt.checkWorkdayTextfield = function(el, identifier) {
+    let customSettings = el.customSettings;
+    if (customSettings && customSettings.workday && !customSettings.workday.isTableHeader) {
+        let workday = customSettings.workday;
+        if (!workday.isWDCustomSelect || identifier !== 'rules-engine-request') {
+            return Object.keys(workday).some(function(k) {
+                return workday[k];
+            });
+        }
+    }
+
+    return false;
+};
+
+GmCXt.getPosition = function(cssPos) {
+    if (cssPos) {
+        return 'mgPlayerJSProd_fixed-position';
+    } else {
+        return 'mgPlayerJSProd_absolute-position';
+    }
+};
+
+GmCXt.compareAttributes = function(el, topEl) {
+
+    let topElAttrs = GmCXt.getAttributeValues(topEl);
+    let elAttrs = GmCXt.getAttributeValues(el);
+    let attrsMatch = GmCXt.compareObjectsByPercentMatch(topElAttrs, elAttrs, 100);
+
+    return attrsMatch;
+};
+
+GmCXt.filterMyguideClassValue = function(classVal) {
+    let classes = [];
+    classes = classVal.split(/\s+/);
+    classes = classes.filter(function(className) {
+        if (className.indexOf("doitforme-") === -1 && className.indexOf("mg-smarttip") === -1) {
+            return true;
+        }
+    });
+
+    classVal = classes.join(' ');
+    return classVal.trim();
+};
+
+GmCXt.addScrollOffset = function(position, cssPosition) {
+    if (!cssPosition) {
+        let top = mg$(window).scrollTop();
+        let left = mg$(window).scrollLeft();
+
+        position.left += left;
+        position.origTop = position.top;
+        position.top += top;
+    }
+
+    return position;
+};
+
+GmCXt.getRectObject = function(rect) {
+    let obj = {
+        top: rect.top,
+        left: rect.left,
+        bottom: rect.bottom,
+        right: rect.right,
+        width: rect.width,
+        height: rect.height,
+        x: rect.x,
+        y: rect.y
+    };
+    return obj;
+};
+
+GmCXt.getDiableEleDefaultVal = function() {
+    return {
+        opacity: '0.5',
+        color: '#C0C0C0'
+    };
+};
+
+GmCXt.workdayAutoClick = function(index) {
+    if (GmCXt.playerI) {
+        let editIcon = "[data-automation-id='actionImage']";
+        let el = mg$(editIcon)[index];
+        mg$(el).trigger("click");
+    }
+};
+
+GmCXt.concatHTMLStringWithSpace = function(str) {
+    if (GmCXt.isEmpty(str)) return str;
+    str = str.split('</p>').join(' ');
+    str = str.split('</div>').join(' ');
+    str = str.split('</li>').join(' ');
+    str = mg$('<span />').html(str).text().trim();
+    return str;
+};
+
+GmCXt.clearScreen = function() {
+    mg$('.mgPlayerJSProd_inline-step-capture-screen').remove();
+};
+
+GmCXt.isParentElementId = function(elem, id) {
+
+    let el = mg$(elem);
+    let all = el.add(el.parents());
+
+    let retVal = all.filter(function() {
+        return mg$(this).attr("id") === id;
+    }).length > 0;
+
+    return retVal;
+};
+
+GmCXt.isWestpacOneUI = function() {
+    if (window &&
+		window.location &&
+		window.location.href.indexOf('about:blank') !== -1 &&
+		parent.window &&
+		parent.window.location &&
+		parent.window.location.href.indexOf('ui.westpac.com.au') !== -1) {
+        return true;
+    } else {
+        return false;
+    }
+};
+
+GmCXt.clearStepReqObj = function() {
+    mg$("[gm_visited='true']").removeAttr('gm_visited');
+    delete GmCXt.currentHe;
+    delete GmCXt.stepReq;
+    GmCXt.captureStepCounter = 0;
+    GmCXt.storage().remove(['stepReq','captureStepCounter']);
+};
+/**
+ * Element Visibility Module
+ * 
+ * Functions for determining element visibility within viewport.
+ */
+
+GmCXt.visibleInViewport = function(pos, winHeight, winWidth) {
+
+    let elHeight = Math.abs(pos.height);
+    let elWidth = Math.abs(pos.width);
+
+    let elTop = pos.top;
+    let elBottom = pos.top + elHeight;
+    let elLeft = pos.left;
+    let elRight = pos.left + elWidth;
+
+    let bufferH = Math.round(winHeight * 12 / 100);
+    let bufferW = Math.round(winWidth * 12 / 100); // 12% buffer
+
+    bufferH = bufferH > elHeight ? 0 : bufferH;
+    bufferW = bufferW > elWidth ? 0 : bufferW; // Do not use buffer for elements smaller than buffer
+
+    if (elTop > (winHeight - bufferH) || elBottom < bufferH ||
+        elLeft > (winWidth - bufferW) || elRight < bufferW) { // Completely outside window
+        return false;
+    }
+
+    if (elHeight > winHeight || elWidth > winWidth) { // Do not check partially-in-viewport for el bigger than viewport
+        return true;
+    }
+
+    return !(elTop < 0 || elBottom > winHeight ||
+        elLeft < 0 || elRight > winWidth); //partially in viewport
+};
+
+
+GmCXt.visibleWindow = function(data) {
+    if (data.checkIframe) {
+        if (!GmCXt.isEmpty(data.frame.attributes) &&
+            !data.frame.attributes.isVisible) {
+            return false;
+        }
+    }
+    return true;
+};
+
+// Elements might have classes like 'mgPlayerJSProd_select-outline' or 'mgPlayerJSProd_dummy-class'
+GmCXt.checkMyGuideClass = function(className) {
+
+    let mgClass = false;
+    if (className && typeof className === 'string') {
+        let arrClass = className.split(/\s+/).filter(Boolean);
+        mgClass = arrClass.filter(function(cls) {
+            return cls.indexOf('mgPlayerJSProd_') === 0;
+        })[0];
+    }
+    return mgClass;
+};
+
+GmCXt.hasMyGuideEl = function(nodes) {
+    if (nodes) {
+        for (let i = 0; i < nodes.length; i++) {
+            if (GmCXt.checkMyGuideClass(nodes[i].className)) {
+                return true;
+            }
+        }
+    }
+    return false;
+};
+
+//Error Handler Module
+
+GmCXt.handleError = function(apiName) {
+    console.dir("There is error in API response: " + apiName);
+};
+
+GmCXt.getErrObj = function(msg, data, isAnalytics) {
+    let code = isAnalytics ? data.code : parseInt(data.code);
+
+    if (msg[0] && msg[0].message) {
+        msg = msg[0].message;
+    }
+
+    if (typeof data.info === "string") {
+        msg += " : " + data.info;
+    }
+
+    let eObj = {
+        build: GmCXt.conf.appName,
+        version: GmCXt.conf.version,
+        type: 'CODE ERROR',
+        code: code,
+        message: msg,
+        browser: GmCXt.browserApp
+    };
+
+    if (!GmCXt.isBackgroundPage) {
+        eObj.current_url = GmCXt.urlParts.fullUrl;
+    } else {
+        eObj.current_url = '';
+    }
+
+    if (data.info.apiUrl) {
+        eObj.type = "Insights";
+        eObj.message += " , api: " + data.info.apiUrl;
+
+        if (data.apiData)
+            eObj.apiData = JSON.stringify(data.apiData);
+    }
+
+    if (GmCXt.user && GmCXt.organization && !GmCXt.isEmpty(GmCXt.organization)) {
+        eObj.organization_id = GmCXt.organization.organization_id;
+        eObj.organization_name = GmCXt.organization.name;
+        eObj.application_id = GmCXt.activeAppId;
+        eObj.user_id = GmCXt.user.user_id;
+        eObj.user_email = GmCXt.user.user_email;
+    }
+    return eObj;
+};
+
+GmCXt.onImageLoadError = function(obj) {
+    let src = obj.attr('src');
+    let altImg = obj.attr('alt');
+
+    let isCDNCheck = obj.hasClass('mgPlayerJSProd_cdnChecked');
+    let cn, isMyGuideImage, isSrcEmpty;
+
+    let updateSign = function() {
+        if (isMyGuideImage && !isSrcEmpty) {
+
+            if (altImg && altImg.length) {
+                obj.attr('src', altImg);
+            }
+            obj.attr('originalSrc', src);
+            GmCXt.failedImages.push(obj);
+
+            if (window.self === window.top) {
+                GmCXt.getCdnSignature(true);
+            } else {
+                let m = {
+                    action: 'mgPlayerJSProd_action:get_cdn_signature',
+                };
+                GmCXt.sendToParentWindow(m);
+            }
+        } else if (obj.hasClass('mgPlayerJSProd_dap-card-image')) {
+            obj.attr('src', GmCXt.conf.staticContentPath + 'technology.jpg');
+        }
+    };
+
+    if (obj && obj.length && (obj[0].tagName === 'IMG' || GmCXt.isGmElement(obj)) && !isCDNCheck) {
+
+        cn = 'mgPlayerJSProd_custom-image'; // Never do this 'gss'
+        isMyGuideImage = obj.hasClass(cn);
+        if (GmCXt.isGmElement(obj) && obj[0].tagName === 'SOURCE') {
+            isMyGuideImage = true;
+        }
+
+        isSrcEmpty = (obj.attr('src') && obj.attr('src').length) ? false : true;
+
+        obj.addClass('mgPlayerJSProd_cdnChecked');
+        updateSign();
+    } else if (isCDNCheck && altImg && altImg.length && GmCXt.isUrlValid(altImg) && altImg !== src) {
+        obj.attr('src', altImg);
+    }
+};
+
+GmCXt.getDefaultError = function() {
+    return {
+        code: 403,
+        message: [GmCXt.unknownError]
+    };
+};
+
+GmCXt.getCodeError = function() {
+    return {
+        code: 405,
+        message: [GmCXt.unknownError]
+    };
 };
 
 GmCXt.getHostErrorId = function() {
@@ -9630,204 +4665,109 @@ GmCXt.checkForErrorOnScreen = function() {
 
     return err;
 };
+// Event handling and tracking functions
 
-GmCXt.isParentElementId = function(elem, id) {
+GmCXt.registerClickListner = function(e) {
+    let target = GmCXt.checkForSVGInstance(e.target);
+    if (target && GmCXt.checkMyGuideClass(target.className)) {
+        GmCXt.checkAndCallClick(target, e);
+        if (GmCXt.playerI && GmCXt.playerI.automate) {
+            GmCXt.checkSkipStepForTracking();
+        }
+    }
+};
 
-    let el = mg$(elem);
-    let all = el.add(el.parents());
+GmCXt.checkAndCallClick = function(target, ev) {
+    if (GmCXt.isIDinGuidePlayList(target.id)) {
+        if (GmCXt.playerI) {
+            GmCXt.playerI.targetElement = target;
+        }
+        if (ev.type === "mousedown") {
+            GmCXt.tourPlayerI.triggerMyGuideClickMouseDown(ev);
+        }
+        GmCXt.tourPlayerI.triggerMyGuideClick(target.id, ev);
+    } else if (GmCXt.isIDinOtherList(target.id)) {
+        GmCXt.triggerForOtherFunctions(target.id, ev);
+    } else if (GmCXt.checkMyGuideClass(target.className)) {
+        GmCXt.checkAndCallClick(target.parentElement, ev);
+    }
+};
 
-    let retVal = all.filter(function() {
-        return mg$(this).attr("id") === id;
-    }).length > 0;
+GmCXt.triggerForOtherFunctions = function(id, ev) {
+    switch (id) {
+    case "mgPlayerJSProd_play_step_popup_drag":
+    case "mgPlayerJSProd_play-step-popup-drag-icon":
+
+        break;
+    case "mgPlayerJSProd_play-step-audio-off":
+        if (GmCXt.previewStepPopupInstance) {
+            GmCXt.previewStepPopupInstance.setOnAudioMode();
+        }
+        break;
+    case "mgPlayerJSProd_play-step-audio-on":
+        if (GmCXt.previewStepPopupInstance) {
+            GmCXt.previewStepPopupInstance.setOffAudioMode();
+        }
+        break;
+    }
+};
+
+GmCXt.isIDinGuidePlayList = function(id) {
+    let retVal = false;
+    let idList = ["mgPlayerJSProd_play_step_pause_classic", "mgPlayerJSProd_play_step_next", "mgPlayerJSProd_play_step_next_classic",
+        "mgPlayerJSProd_play_step_prev", "mgPlayerJSProd_play_step_prev_classic", "mgPlayerJSProd_play_step_popup_close",
+        "mgPlayerJSProd_play_step_pause", "mgPlayerJSProd_play_step_next_done", "mgPlayerJSProd_play_step_next_done_classic",
+        "mgPlayerJSProd_play_step_popup_edit",
+        "mgPlayerJSProd_play-step-popup-close-svg", "mgPlayerJSProd_play-step-popup-edit-icon",
+        "mgPlayerJSProd_play-step-pause-svg"
+    ];
+
+    if (GmCXt.inArrayString(id, idList)) {
+        retVal = true;
+    }
 
     return retVal;
 };
 
-GmCXt.setZoomImageFromIframe = function(desc, parentClassName) {
-    GmCXt.initialiseImagePopUp();
-    mg$(parentClassName + ' img').each(function() {
-        mg$(parentClassName + ' img').on("click", function(e) {
-            GmCXt.stopPropagation(e);
-            GmCXt.openModalFromTopWindow(this.src);
-        });
-    });
-};
+GmCXt.isIDinOtherList = function(id) {
+    let retVal = false;
+    let idList = ["mgPlayerJSProd_play_step_popup_drag", "mgPlayerJSProd_play-step-popup-drag-icon", "mgPlayerJSProd_play-step-audio-off",
+        "mgPlayerJSProd_play-step-audio-on"
+    ];
 
-GmCXt.initialiseImagePopUp = function() {
-    GmCXt.sendMessageToParentWindow('mgPlayerJSProd_action:initialize_image_iframe_popup', {});
-};
-
-GmCXt.openModalFromTopWindow = function(src) {
-    let data = {};
-    data.imageSrc = src;
-    GmCXt.sendMessageToParentWindow('mgPlayerJSProd_action:open_image_iframe_popup', data);
-};
-
-GmCXt.setImagePopUp = function() {
-    mg$('#mgPlayerJSProd_image_popup').remove();
-    GmCXt.addImagePopHtml();
-    let modal = document.getElementById('mgPlayerJSProd_image_popup');
-
-    if (modal) {
-        modal.style.display = "none";
-        modal.onclick = function(e) {
-            GmCXt.stopPropagation(e);
-        };
-    }
-    let closeBtn = document.getElementsByClassName("mgPlayerJSProd_close-img-popup")[0];
-    if (closeBtn) {
-        closeBtn.onclick = function(e) {
-            GmCXt.stopPropagation(e);
-            modal.style.display = "none";
-            mg$('.mgPlayerJSProd_preview-step-popup-container').css({
-                'z-index': '2147483647'
-            });
-        };
-    }
-};
-
-GmCXt.openImagePopup = function(data) {
-    let modal = document.getElementById('mgPlayerJSProd_image_popup');
-    let modalImg = document.getElementById("mgPlayerJSProd_img_desc");
-    modal.style.display = "block";
-    modalImg.src = data.imageSrc;
-};
-
-GmCXt.addEventOnTooltip = function(req) {
-
-    clearTimeout(GmCXt.tooltipTimeout);
-
-    GmCXt.tooltipTimeout = GmCXt.timeout(function() {
-        let el = mg$('#mgPlayerJSProd_smarttip-' + req.step.step_id);
-
-        el.off("click").on('click', function(e) {
-            if (!req.isPreview) {
-                GmCXt.tooltipAction(e, req.settings.smartTip, req.step);
-            }
-        });
-
-    }, GmCXt.t.addTooltipEvent);
-};
-
-GmCXt.isEventToolTip = function(event, stepId) {
-    let targetId = event.target.id;
-    let cTargetId = event.currentTarget.id;
-    let isSmartipEvent = false;
-
-    switch (targetId) {
-    case 'mgPlayerJSProd_smarttip-icon-' + stepId:
-        isSmartipEvent = true;
-        break;
-    case 'mgPlayerJSProd_smarttip-' + stepId:
-        isSmartipEvent = true;
-        break;
-    default:
+    if (GmCXt.inArrayString(id, idList)) {
+        retVal = true;
     }
 
-    switch (cTargetId) {
-    case 'mgPlayerJSProd_smarttip-icon-' + stepId:
-        isSmartipEvent = true;
-        break;
-    case 'mgPlayerJSProd_smarttip-' + stepId:
-        isSmartipEvent = true;
-        break;
-    default:
-        break;
-    }
-
-    if (mg$(event.currentTarget).hasClass("mgPlayerJSProd_smarttip-icon-wrapper-" + stepId)) {
-        isSmartipEvent = true;
-    } else if (mg$(event.target).hasClass("mgPlayerJSProd_smarttip-icon-wrapper-" + stepId)) {
-        isSmartipEvent = true;
-    }
-
-    return isSmartipEvent;
+    return retVal;
 };
 
-GmCXt.tooltipAction = function(event, tooltip, step) {
-    GmCXt.updateTooltipActionInfo(step.tour_id, step.step_id, tooltip, "click");
-
-    if (!GmCXt.isEventToolTip(event, step.step_id)) {
-        return;
+GmCXt.checkForSVGInstance = function(target) {
+    let retTarget = target;
+    if (target instanceof SVGElement) {
+        retTarget = GmCXt.checkForSVGInstance(target.parentNode);
     }
+    return retTarget;
+};
 
-    if (tooltip.clickAction === 'openCurrentPage') {
-        event.preventDefault();
-        event.stopImmediatePropagation();
-        if (window.self === window.top) {
-            GmCXt.openAppPanel('currentPage');
-        } else {
-            GmCXt.sendMessageToParentWindow("mgPlayerJSProd_action:open_app_panel");
-        }
+GmCXt.isClickInStepPopup = function(e) {
+    if (mg$(e.target).parents('.mgPlayerJSProd_preview-step-popup-container').length !== 0 ||
+        mg$(e.target).hasClass('mgPlayerJSProd_image-popup') ||
+        mg$(e.target).parents('.mgPlayerJSProd_image-popup').length !== 0 ||
+        mg$(e.target).hasClass('mgPlayerJSProd_icon-image-prev-button') ||
+        mg$(e.target).parents('.mgPlayerJSProd_icon-image-prev-button').length !== 0 ||
+        mg$(e.target).hasClass('mgPlayerJSProd_image-step-prev') ||
+        mg$(e.target).parents('.mgPlayerJSProd_play-pause-toolbar').length !== 0 ||
+        mg$(e.target).hasClass('mgPlayerJSProd_popup') ||
+        mg$(e.target).parents('.mgPlayerJSProd_popup').length !== 0 ||
+        mg$(e.target).hasClass('mgPlayerJSProd_overlay-container') ||
+        mg$(e.target).hasClass('mgPlayerJSProd_slideshow-panel') ||
+        mg$(e.target).parents('mgPlayerJSProd_slideshow-panel').length !== 0) {
 
-    } else if (tooltip.clickAction === 'openUrl') {
-        event.preventDefault();
-        event.stopImmediatePropagation();
-
-        let url = tooltip.openUrlText;
-
-        if (url.indexOf('http') !== 0) {
-            url = 'https://' + url;
-        }
-
-        window.open(url, '_blank');
-    } else if (tooltip.clickAction === 'sentiment') {
-        event.preventDefault();
-        event.stopImmediatePropagation();
-        let data = {
-            sentiment_code: tooltip.sentimentCode,
-            tourId: step.tour_id,
-            stepId: step.step_id
-        };
-        if (window.self === window.top) {
-            GmCXt.getSurveyDetailsAndPlay(data);
-        } else {
-            GmCXt.sendMessageToParentWindow("mgPlayerJSProd_action:get_survey_data", data);
-        }
-
+        return true;
+    } else {
+        return false;
     }
-};
-
-GmCXt.clearStepReqObj = function() {
-    mg$("[gm_visited='true']").removeAttr('gm_visited');
-    delete GmCXt.currentHe;
-    delete GmCXt.stepReq;
-    GmCXt.captureStepCounter = 0;
-    GmCXt.storage().remove(['stepReq','captureStepCounter']);
-};
-
-GmCXt.isLastStepPlayed = function() {
-    let flag = false;
-
-    if (GmCXt.playerI && (GmCXt.playerI.currentStepId === GmCXt.playerI.lastPlayedStepId))
-        flag = true;
-
-    return flag;
-};
-
-GmCXt.getNextBtnElem = function() {
-    let nxtBtn = document.getElementById("mgPlayerJSProd_play_step_next");
-    let doneBtn = document.getElementById("mgPlayerJSProd_play_step_next_done");
-    let nxtClassic = document.getElementById("mgPlayerJSProd_play_step_next_classic");
-    let doneClassic = document.getElementById("mgPlayerJSProd_play_step_next_done_classic");
-    let pauseBtn = document.getElementById("mgPlayerJSProd_play_step_pause");
-    let pauseClassic = document.getElementById("mgPlayerJSProd_play_step_pause_classic");
-    let btn;
-
-    if (mg$(nxtBtn).is(':visible'))
-        btn = nxtBtn;
-    else if (mg$(doneBtn).is(':visible'))
-        btn = doneBtn;
-    else if (mg$(nxtClassic).is(':visible'))
-        btn = nxtClassic;
-    else if (mg$(doneClassic).is(':visible'))
-        btn = doneClassic;
-    else if (mg$(pauseBtn).is(':visible'))
-        btn = nxtBtn;
-    else if (mg$(pauseClassic).is(':visible'))
-        btn = nxtBtn;
-
-    return btn;
 };
 
 GmCXt.triggerClick = function(he, req) {
@@ -9864,10 +4804,2274 @@ GmCXt.triggerClick = function(he, req) {
     he.dispatchEvent(new MouseEvent('click', d));
 };
 
-GmCXt.markAutoLaunchTourDoNotShow = function(tour) {
-    if (!tour.tour_settings.displayFrequency && GmCXt.firstStepAutoLaunch()) {
-        GmCXt.setDoNotShowTours(tour);
+GmCXt.handleLinkClickEvent = function(e) {
+    let url = e.currentTarget.href;
+    let mediaType = GmCXt.getURLMediaType(url);
+
+    if (url && url.toLowerCase().indexOf("mailto:") === 0) {
+        GmCXt.mailToClicked = true;
     }
+
+    function isSmarttipLink(linkElem) {
+        while (linkElem) {
+            if (linkElem.classList.value.indexOf('smarttip') !== -1) return true;
+            linkElem = linkElem.parentElement;
+        }
+        return false;
+    }
+
+    if (!GmCXt.isEmpty(e.target.tid) && !GmCXt.isEmpty(e.target.sid) &&
+        !GmCXt.isEmpty(e.target.opt) && isSmarttipLink(e.target)) {
+        let linkData = GmCXt.parseJSON(e.target.opt);
+        linkData.tooltipURL = e.target.href;
+        GmCXt.updateTooltipActionInfo(e.target.tid, e.target.sid, linkData, "url_click");
+    }
+
+    if (mediaType) {
+        e.preventDefault();
+        e.stopPropagation();
+        e.stopImmediatePropagation();
+        if (mediaType === "pdf") {
+            GmCXt.openPdf(e.target.href);;
+        } else {
+            GmCXt.openVideoPlayer(e.target.href);
+        }
+    } else if (GmCXt.isElectron()) {
+        e.preventDefault();
+        e.stopPropagation();
+        e.stopImmediatePropagation();
+        GmCXt.redirectLinkToBrowser(e);
+    }
+
+    GmCXt.storage().set({
+        'linkClickOnStep': url
+    });
+};
+
+GmCXt.setLinkClickhandler = function(description, parentClassName) {
+    if (description && description.indexOf("<a ") !== -1) {
+        mg$(parentClassName + ' a').each(function() {
+            let anchorTag = this;
+            if (anchorTag.querySelector('img[class$="_custom-image"]')) {
+                anchorTag.style.position = 'relative';
+            }
+            mg$(parentClassName + ' a').on("click", function(e) {
+                GmCXt.handleLinkClickEvent(e);
+            });
+        });
+    }
+};
+
+GmCXt.setTooltipLinkClickhandler = function(description, parentClassName, linkData) {
+    if (description && description.indexOf("<a ") !== -1) {
+        mg$(parentClassName + ' a').each(function(linkIndex, linkElement) {
+            var linkId = "mgPlayerJSProd_tlink" + linkIndex + "-sid" + linkData.sid;
+            if (GmCXt.isEmpty(linkElement.id)) {
+                linkElement.id = linkId;
+                linkElement.sid = linkData.sid;
+                linkElement.tid = linkData.tid;
+                linkElement.opt = JSON.stringify(linkData.opt);
+            }
+            linkElement.style.position = 'relative';
+
+            mg$('#' + linkId).off().on("click", function(e) {
+                GmCXt.handleLinkClickEvent(e);
+            });
+        });
+    }
+};
+
+GmCXt.setLinkGuidePlay = function(text, popClass) {
+    mg$(popClass + ' a').each(function() {
+        let t = mg$(this).attr('target');
+        if (t === 'gssPlayGuide') {
+            mg$(this).on("click", function(e) {
+                let url = mg$(this).attr('href');
+                url = url.split('?')[1];
+                let tourId = GmCXt.getParameterValue('guideMe-tourId', url);
+                let automation = GmCXt.getParameterValue('automation', url);
+
+                if (tourId) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    e.stopImmediatePropagation();
+                    automation = automation === "true" ? true : false;
+                    let initiator = 'urlTour';
+                    if (automation) {
+                        initiator = 'doitforme';
+                    }
+
+                    if (GmCXt.tourPlayerI) {
+                        GmCXt.tourPlayerI.stop();
+                    }
+                    if (window.self === window.top) {
+                        GmCXt.getTourAndPlay(tourId, initiator);
+                    } else {
+                        let data = {
+                            tourId: tourId,
+                            initiator: initiator
+                        };
+                        GmCXt.sendMessageToParentWindow('mgPlayerJSProd_action:play_guide_from_link', data);
+                    }
+                }
+            });
+        }
+    });
+};
+
+GmCXt.redirectLinkToBrowser = function(e) {
+    let url = e.target.href;
+    let shell = require('electron').shell;
+    shell.openExternal(url);
+};
+GmCXt.saveAppPresence = function(m) {
+
+    m = GmCXt.convertMgdata(m);
+
+    if (!GmCXt.isClientJs()) {
+        GmCXt.storage().get(['login_state']).then(function(o) {
+            if (o.login_state) {
+                saveAndAcknowledge();
+            }
+        });
+    } else {
+        saveAndAcknowledge();
+    }
+
+    function saveAndAcknowledge() {
+
+        GmCXt.myGuideApps[m.data] = true;
+
+        // Send acknowledgement
+        if (m.action === 'MyGuideReporting') {
+            let message = {
+                action: 'MyGuideReporting:Ack',
+                data: GmCXt.getAppName()
+            };
+
+            GmCXt.log(63, 'Send acknowledgement of: ' + message.data);
+
+            GmCXt.sendToParentWindow(message);
+        }
+
+        GmCXt.log(63, 'MyGuide apps found: ', GmCXt.myGuideApps);
+    }
+};
+
+GmCXt.reportPresence = function() {
+    let message = {
+        action: 'MyGuideReporting',
+        data: GmCXt.getAppName()
+    };
+
+    GmCXt.log(63, "Broadcast presence of: " + GmCXt.getAppName());
+    GmCXt.sendToParentWindow(message);
+};
+
+GmCXt.recordGuideEvents = function() {
+    let PI = GmCXt.playerI;
+
+    if (!PI || PI.length === 0) return;
+
+    if (GmCXt.isFirstNonAutomationStep()) PI.firstStepPlayed = true;
+
+    let tour = PI.tour;
+
+    if (!GmCXt.guidePlayTracker["tour:" + tour.tour_id]) {
+        GmCXt.setGuidePlayTracker(tour.tour_id);
+    }
+
+    if (PI.completeEventTracked !== true &&
+        PI.firstStepPlayed === true &&
+        GmCXt.isLastStep(PI.currentStepId, PI.playStructure)
+    ) {
+        PI.completeEventTracked = true;
+
+        //Update Guide tracker
+        let completionEventType = 'guide_complete';
+
+        GmCXt.guidePlayTracker["tour:" + tour.tour_id][completionEventType] = 1;
+
+        if (PI.linkedGuides) {
+            PI.linkedGuides.forEach(function(tourId) {
+                if (!GmCXt.guidePlayTracker["tour:" + tourId]) GmCXt.setGuidePlayTracker(tourId);
+
+                if (GmCXt.guidePlayTracker["tour:" + tourId]) {
+                    GmCXt.guidePlayTracker["tour:" + tourId][completionEventType] = 1;
+                    GmCXt.guidePlayTracker["tour:" + tourId].play_instance_id = GmCXt.guidePlayTracker["tour:" + tour.tour_id].play_instance_id;
+                }
+            });
+        }
+    }
+
+    if (PI.linkedGuides) {
+        PI.linkedGuides.forEach(function(tourId) {
+            if (GmCXt.guidePlayTracker["tour:" + tourId]) {
+                GmCXt.guidePlayTracker["tour:" + tourId].play_instance_id = GmCXt.guidePlayTracker["tour:" + tour.tour_id].play_instance_id;
+            }
+        });
+    }
+
+    if (GmCXt.isLastStep(PI.currentStepId, PI.playStructure) && GmCXt.tourActivity['t:' + PI.tour.tour_id]) {
+        delete GmCXt.tourActivity['t:' + PI.tour.tour_id];
+    }
+};
+//External Open Function Calls
+
+GmCXt.externalApiCall = function(url) {
+    let params = {
+        url: url,
+        method: 'GET',
+        data: '',
+    };
+    let promise = GmCXt.xhr(params, true, true);
+
+    return promise;
+};
+
+GmCXt.checkFileExist = function(url) {
+
+    let params = {
+        url: url,
+        method: 'GET',
+    };
+    let promise = GmCXt.xhr(params, true);
+
+    return promise;
+};
+
+GmCXt.getMd5 = function(val) {
+    return md5(val);
+};
+//FeedBack Related Functions
+
+GmCXt.showFeedBackToolbar = function() {
+    mg$("#mg-feedback-container-wrapper").show();
+    GmCXt.showFeedBackPopup();
+};
+
+GmCXt.showFeedBackPopup = function() {
+    mg$('wmgPlayerJSProd_#mg-feedback-selector-toolbar').hide();
+    mg$('wmgPlayerJSProd_#mg-feedback-popup').show();
+};
+
+GmCXt.showFeedBackSelectorToolbar = function() {
+    mg$('wmgPlayerJSProd_#mg-feedback-popup').hide();
+    mg$('wmgPlayerJSProd_#mg-feedback-selector-toolbar').show();
+};
+
+
+GmCXt.onEditScreenshotClick = function() {
+    GmCXt.showFeedBackSelectorToolbar();
+};
+
+GmCXt.onClickFeedbackHighlightArea = function() {
+    let div = document.getElementById('mgPlayerJSProd_highlight');
+    GmCXt.feedbackMarkArea(div);
+};
+
+GmCXt.onClickFeedbackHideArea = function() {
+    let div = document.getElementById('mgPlayerJSProd_blackout');
+    GmCXt.feedbackMarkArea(div, true);
+};
+
+GmCXt.onClickFeedbackEditDone = function() {
+    mg$('wmgPlayerJSProd_#mg-feedback-selector-toolbar').hide();
+    GmCXt.captureScreenForFeedback();
+};
+
+GmCXt.feedbackMarkArea = function(div, hide) {
+    let toolbar = mg$('wmgPlayerJSProd_#mg-feedback-selector-toolbar');
+    toolbar.hide();
+
+    let wrapper = document.getElementById("mg-feedback-flex-container");
+    wrapper.style.cursor = 'crosshair';
+    wrapper.style.background = 'transparent';
+
+    let x1 = 0,
+        y1 = 0,
+        x2 = 0,
+        y2 = 0;
+
+    function reCalc() {
+        let x3 = Math.min(x1, x2);
+        let x4 = Math.max(x1, x2);
+        let y3 = Math.min(y1, y2);
+        let y4 = Math.max(y1, y2);
+        div.style.left = x3 + 'px';
+        div.style.top = y3 + 'px';
+        div.style.width = x4 - x3 + 'px';
+        div.style.height = y4 - y3 + 'px';
+    }
+
+    let onmousedown = function(e) {
+        e.preventDefault();
+        div.style.display = 'block';
+        x1 = e.clientX;
+        y1 = e.clientY;
+        reCalc();
+    };
+
+    let onmousemove = function(e) {
+        x2 = e.clientX;
+        y2 = e.clientY;
+        reCalc();
+    };
+
+    let onmouseup = function(e) {
+        let el = {
+            id: 'r_' + Math.floor(Math.random() * 1000),
+            element: {
+                position: {
+                    top: y1,
+                    left: x1,
+                    height: y2 - y1,
+                    width: x2 - x1
+                }
+            }
+        };
+        div.style.display = 'none';
+        wrapper.style.cursor = 'default';
+
+        if (hide) {
+            if (!GmCXt.sfHideElements) {
+                GmCXt.sfHideElements = [];
+            }
+            GmCXt.sfHideElements.push(el);
+            GmCXt.drawArea(GmCXt.sfHideElements, 'blackout-feedback');
+        } else {
+            if (!GmCXt.sfMarkElements) {
+                GmCXt.sfMarkElements = [];
+            }
+            GmCXt.sfMarkElements.push(el);
+            GmCXt.drawArea(GmCXt.sfMarkElements, 'highlight');
+        }
+
+        wrapper.style.background = '#26273b33';
+        toolbar.show();
+
+        wrapper.removeEventListener('mousedown', onmousedown);
+        wrapper.removeEventListener('mouseup', onmouseup);
+        wrapper.removeEventListener('mousemove', onmousemove);
+    };
+
+    wrapper.addEventListener('mousedown', onmousedown);
+    wrapper.addEventListener('mouseup', onmouseup);
+    wrapper.addEventListener('mousemove', onmousemove);
+    div.onmouseup = onmouseup;
+};
+
+GmCXt.drawArea = function(arr, className) {
+    let elems = arr;
+    mg$('wmgPlayerJSProd_.mgPlayerJSProd_selector-' + className).remove();
+
+    for (let i = 0; i < elems.length && elems[i].id; i++) {
+        let el = elems[i].element.position;
+
+        let closeBtn = '<wmgPlayerJSProd_ class="mgPlayerJSProd_close-area mgPlayerJSProd_' + className + '-close" id=' + elems[i].id + '><wmgPlayerJSProd_ class="mgPlayerJSProd_close-text">&times;</wmgPlayerJSProd_></wmgPlayerJSProd_>';
+        let blackoutEl = mg$('<wmgPlayerJSProd_ class="mgPlayerJSProd_selector-' + className + '" id="mgPlayerJSProd_selector-' + className + '-' + elems[i].id + '">' +
+                closeBtn +
+                '</wmgPlayerJSProd_>')
+            .appendTo('#mg-feedback-flex-container')
+            .css({
+                'width': el.width,
+                'height': el.height,
+                'left': el.left,
+                'top': el.top
+            });
+    }
+
+    mg$("wmgPlayerJSProd_.mgPlayerJSProd_" + className + "-close").on('click', function(e) {
+        let oArr = [];
+        arr.forEach(function(el, i) {
+            if (el.id !== e.currentTarget.id) oArr.push(el);
+        });
+        arr = oArr;
+        mg$("#mgPlayerJSProd_selector-" + className + "-" + e.currentTarget.id).remove();
+    });
+};
+
+GmCXt.sendFeedback = function() {
+    let feedbackText = document.getElementById("mg-feedback").value;
+    let emailBody = {};
+
+    if (GmCXt.isEmpty(feedbackText)) {
+        let option = {
+            description: GmCXt.label.feedbackRequired,
+            button1: GmCXt.label.ok
+        };
+        GmCXt.alertV2(option).show();
+        return;
+    }
+
+    emailBody.feedbackText = feedbackText;
+
+    if (GmCXt.mailTo) {
+        emailBody.mailTo = GmCXt.mailTo;
+    }
+
+    if (GmCXt.user) {
+        let userInfo = {
+            email: GmCXt.user.user_email,
+            firstName: GmCXt.user.first_name,
+            lastName: GmCXt.user.last_name
+        };
+        emailBody.userInfo = JSON.stringify(userInfo);
+    }
+
+    if (mg$('#mg-feedback-screenshot-check')[0].checked) {
+        emailBody.imgSrc = GmCXt.feedbackImgSrc;
+    }
+
+    GmCXt.clearFeedBackView();
+
+    GmCXt.api.sendFeedbackEmail(emailBody);
+};
+
+GmCXt.clearFeedBackView = function() {
+    mg$("#mg-feedback-container-wrapper").remove();
+    mg$('.mgPlayerJSProd_selector-highlight').remove();
+    GmCXt.sfMarkElements = [];
+    mg$('.mgPlayerJSProd_selector-blackout-feedback').remove();
+    GmCXt.sfHideElements = [];
+    GmCXt.mailTo = '';
+    GmCXt.openAppPanel();
+};
+
+/**
+ * IFrame Communication Module
+ * 
+ * Handles messaging between iframes and the parent window.
+ */
+
+//Iframes and Message Channel Initialisation
+GmCXt.iframePorts = GmCXt.iframePorts ?? {};
+GmCXt.iframeEls = {};
+GmCXt.msgChannel = new MessageChannel();
+
+GmCXt.startMsgChannel = function(initiator) {
+    window.top.postMessage(initiator, '*', [GmCXt.msgChannel.port2]);
+};
+
+GmCXt.getMatchingFrame = function(frames, event, match) {
+    for (let i = 0, len = frames.length; i < len; i++) {
+        frame = frames[i];
+        // check if frame window matches to the sender window
+        if (frame.contentWindow == event.source) {
+            match.found = true;
+            match.frame = frame;
+            break;
+        }
+    }
+    return match;
+};
+
+GmCXt.getIframeAttributes = function(node) {
+    let attrs = {};
+    mg$.each(node[0].attributes, function(index, attribute) {
+        attrs[attribute.name] = attribute.value;
+    });
+
+    attrs.isVisible = GmCXt.getElVisibility(node[0], true) === 'visible';
+
+    return attrs;
+};
+
+
+GmCXt.validateTargetFrame = function(stepFrame, currentFrame) {
+    if (!GmCXt.isEmpty(stepFrame) && !GmCXt.isEmpty(currentFrame)) {
+
+        if (!GmCXt.isEmpty(currentFrame.isVisible) && !currentFrame.isVisible) {
+            return false; // Current frame not visible
+        }
+
+        return GmCXt.compareObjectsByPercentMatch(stepFrame, currentFrame);
+
+    }
+    return false;
+};
+
+//File for all init functions which are declared to type check or convert or merge or identify type
+
+GmCXt.isNotNull = function(val) {
+    if (val != null) return true;
+    else return false;
+};
+
+GmCXt.isNumeric = function(val) {
+    if (val !== undefined && mg$.isNumeric(val)) return true;
+    else return false;
+};
+
+GmCXt.isGmElement = function(el) {
+    let isGmElement = false;
+
+    isGmElement = (
+        el &&
+        (
+            el.parent('wmgPlayerJSProd_').length ||
+            el.parent('.mgPlayerJSProd_beacon-icon').length ||
+            el.parent('.mgPlayerJSProd_smarttip-icon').length ||
+            el.parents('wmgPlayerJSProd_').length
+        )
+    );
+
+    if (!isGmElement && el) {
+        let className = el.attr('class');
+        let parentClassName = el.parent().attr('class');
+
+        if ((className && className.indexOf('mgPlayerJSProd_') !== -1) || (parentClassName && parentClassName.indexOf('mgPlayerJSProd_') !== -1))
+            isGmElement = true;
+    }
+
+    return isGmElement;
+};
+
+GmCXt.isAutomationStep = function(step) {
+    return step && (step.step_type !== GmCXt.STEP_TYPE_TAG && (step.step_type === GmCXt.STEP_TYPE_AUTOMATION ||
+        (step.step_settings.creation_type && step.step_settings.creation_type === GmCXt.STEP_TYPE_AUTOMATION)));
+};
+
+
+GmCXt.decodeVersion = function(v) {
+
+    if (!v) return 0;
+
+    let num = [0, 0, 0];
+    v = v.split('.');
+    num[0] = v[0];
+    num[1] = doubleDigit(v[1]);
+    num[2] = doubleDigit(v[2]);
+    if (v[3]) {
+        num.push(doubleDigit(v[3]));
+    } else {
+        num.push("00");
+    }
+
+    return parseInt(num.join(''));
+
+    function doubleDigit(num) {
+        if (num && num <= 9 && num.length === 1) {
+            num = "0" + num.slice(-2);
+        }
+        return num;
+    }
+};
+
+GmCXt.arrayMerge = function(array1, array2) {
+    return array1.concat(array2.filter(function(item) {
+        return array1.indexOf(item) < 0;
+    }));
+};
+
+GmCXt.currentTimeStamp = function() {
+    return Math.floor((new Date()).getTime() / 1000);
+};
+
+GmCXt.inArray = function(id, array) {
+    if (mg$.inArray(parseInt(id), array) !== -1) return true;
+    else return false;
+};
+
+GmCXt.convertToInt = function(arr) {
+    return arr.map(function(v) {
+        return parseInt(v, 10);
+    });
+};
+
+GmCXt.convertType = function(value) {
+    let v = Number(value);
+    return !isNaN(v) ? v :
+        value === "undefined" ? undefined :
+            value === "null" ? null :
+                value === "true" ? true :
+                    value === "false" ? false :
+                        value;
+};
+
+GmCXt.isOne = function(val) {
+    if (val && val.length === 1) return true;
+    else return false;
+};
+
+GmCXt.isZero = function(val) {
+    if (val && val.length === 0) return true;
+    else return false;
+};
+
+GmCXt.isMoreThanOne = function(val) {
+    if (val && val.length > 1) return true;
+    else return false;
+};
+
+GmCXt.isMany = function(val) {
+    if (val && val.length > 0) return true;
+    else return false;
+};
+
+GmCXt.reverse = function(s) {
+    return mg$.extend([], s).reverse();
+};
+
+GmCXt.isFalse = function(val) {
+    if (val === 0 || val === 'false' || val === false || val === '0' || val === '' || val === "undefined" || val === undefined)
+        return true;
+    else
+        return false;
+};
+
+GmCXt.validateText = function(str) {
+    str = str.trim();
+    return str != '' && str.length > 0 && str.length < 100;
+};
+
+GmCXt.isFalseObj = function(o) {
+    if (!o || typeof o !== "object") return true;
+
+    let r = true;
+    for (let i in o) {
+        if (o[i] === true) {
+            r = false;
+            break;
+        }
+    }
+    return r;
+};
+
+GmCXt.isOnboarding = function(t) {
+    if (t && t.tour_type && t.tour_type.indexOf('onboarding') !== -1) return true;
+    else return false;
+};
+
+GmCXt.isAnnouncement = function(t) {
+    if (t && t.tour_settings && GmCXt.isOnboarding(t) && t.tour_settings.tutorial_tour_type &&
+        t.tour_settings.tutorial_tour_type === "announcement") {
+        return true;
+    } else {
+        return false;
+    }
+};
+
+GmCXt.isBotGuide = function(t) {
+    if (t && t.tour_type === 'bot') return true;
+    else return false;
+};
+
+GmCXt.isChatEnable = function() {
+    let flag = false;
+    if (!GmCXt.isEmpty(GmCXt.appList)) {
+        let activeApp = GmCXt.appList['app:' + GmCXt.activeAppId];
+        if (activeApp && activeApp.settings.enable_chatbot) {
+            flag = true;
+        }
+    }
+    return flag;
+};
+
+GmCXt.isHowToGuide = function(t) {
+    if (!GmCXt.isEmpty(t) && t.tour_type.indexOf('howto_tour') !== -1) return true;
+    else return false;
+};
+
+GmCXt.isGuide = function(t) {
+
+    if (GmCXt.isOnboarding(t))
+        return false;
+    if (t && (
+        t.tour_type.indexOf('walkthrough_tour') !== -1 ||
+        t.tour_type.indexOf('videoScreencast') !== -1 ||
+        t.tour_type.indexOf('videoCapture') !== -1 ||
+        t.tour_type.indexOf('howto_tour') !== -1
+    )) {
+        return true;
+    } else
+        return false;
+};
+
+GmCXt.capitalizeFirstLetter = function(str) {
+    str = str || "";
+    return str.charAt(0).toUpperCase() + str.slice(1);
+};
+
+GmCXt.isLessThan = function(d, val) {
+    if (d === undefined || d === null || d < val)
+        return true;
+    else
+        return false;
+};
+
+GmCXt.isGreaterThan = function(d, val) {
+    if (d === undefined || d === null || d > val)
+        return true;
+    else
+        return false;
+};
+
+GmCXt.isAnonymousUser = function() {
+    if (GmCXt.user && !GmCXt.isEmpty(GmCXt.organization)) {
+        let anonymous = 'anonymous-' + GmCXt.organization.organization_id;
+        let userEmail = GmCXt.user.user_email;
+
+        if ((userEmail.indexOf(anonymous) !== -1 || userEmail === 'End+user@edcast.com') && !GmCXt.user.signin_user_email)
+            return true;
+        else
+            return false;
+    } else
+        return false;
+};
+
+GmCXt.isInspectToolON = function() {
+
+    if ((GmCXt.selectorTool && GmCXt.selectorTool.status !== 'inactive') ||
+        (GmCXt.selectorToolFill && GmCXt.selectorToolFill.status !== 'inactive') ||
+        (GmCXt.selectorToolRules && GmCXt.selectorToolRules.status !== 'inactive')
+    ) {
+        return true;
+    }
+
+    return false;
+};
+
+GmCXt.arrayToObjectNot = function(tours) {
+    let tempObj = {};
+    for (let key in tours) {
+        if (tours[key]) tempObj[tours[key]] = 1;
+    }
+    return tempObj;
+};
+
+GmCXt.getObjectSize = function(obj) {
+    let size = 0,
+        key;
+    for (key in obj) {
+        if (obj.hasOwnProperty(key))
+            size++;
+    }
+    return size;
+};
+
+GmCXt.updateNumericKeys = function(key) {
+    let lastKey = key.slice(-1);
+    let numKey = parseInt(lastKey);
+
+    let specialCharArr = [")", "!", "@", "#", "$", "%", "^", "&", "*", "("];
+
+    if (!isNaN(numKey)) {
+        return key.slice(0, -1) + specialCharArr[numKey];
+    } else {
+        return key;
+    }
+};
+
+GmCXt.returnNavigator = function() {
+    return navigator.getUserMedia || navigator.webkitGetUserMedia ||
+        navigator.mozGetUserMedia || navigator.msGetUserMedia;
+};
+
+
+GmCXt.removeDuplicates = function(iArr) {
+    let oArr = [];
+    mg$.each(iArr, function(i, el) {
+        if (mg$.inArray(el, oArr) === -1) oArr.push(el);
+    });
+    return oArr;
+};
+
+GmCXt.encode = function(args) {
+    let data = '';
+    if (args) {
+        let argcount = 0;
+        for (let key in args) {
+            if (args.hasOwnProperty(key)) {
+                if (argcount++) data += '&';
+                data += encodeURIComponent(key) + '=' + encodeURIComponent(args[key]);
+            }
+        }
+    }
+    return data;
+};
+
+GmCXt.compareArraysByPercentMatch = function(arr1, arr2, val) {
+    let similar = arr1.filter(function(n) {
+        return this.has(n);
+    }, new Set(arr2));
+
+    let pc = 100 * (similar.length * 2) / (arr1.length + arr2.length);
+
+    val = val || 75;
+    return pc >= val;
+};
+
+GmCXt.compareObjectsByPercentMatch = function(o1, o2, val, keys) {
+
+    if (!GmCXt.isEmpty(o1) && !GmCXt.isEmpty(o2)) {
+
+        let textKeys = ['aria-label'];
+        let matched = 0;
+        let compared = 0;
+        keys = keys || Object.keys(o1);
+        let len = keys.length;
+
+        for (let i = 0; i < len; i++) {
+            let key = keys[i];
+            if (o1.hasOwnProperty(key) && o2.hasOwnProperty(key)) {
+                compared++;
+                if (typeof o1[key] === 'object') {
+                    if (Array.isArray(o1[key])) {
+                        if (GmCXt.compareArraysByPercentMatch(o1[key], o2[key], 50)) matched++;
+                    } else if (GmCXt.compareObjectsByPercentMatch(o1[key], o2[key], 50)) matched++;
+                } else {
+                    if (textKeys.includes(key) && o1[key] !== o2[key]) return false;
+                    if (o1[key] === o2[key]) matched++;
+                }
+            }
+        }
+
+        if (!compared) return false;
+
+        let currentPc = 100 * matched / compared;
+        let pc = val || 75;
+
+        if (currentPc >= pc) {
+            return true;
+        }
+    }
+
+    return false;
+};
+
+GmCXt.stringUsesVariable = function(str) {
+    return (str.includes('{{') && str.includes('}}'));
+};
+
+GmCXt.replaceVariableInText = function(str) {
+    let regex = new RegExp('\{\{(?:\\s+)?(.+?)(?:\\s+)?\}\}', "g");
+    let isValid = false;
+    isValid = regex.test(str);
+    if (isValid) {
+        str = str.replace(regex, '').replace(/\s\s+/g, ' ');
+    }
+    return str;
+};
+
+GmCXt.truncate = function(text, maxlength) {
+    if (!text) return '';
+    return text.length > maxlength ? text.substring(0, maxlength) + '...' : text;
+};
+
+GmCXt.htmlToPlaintext = function(html) {
+    return new DOMParser().parseFromString(html, 'text/html').body.textContent;
+};
+
+GmCXt.getText = function(s) {
+    if (s) {
+        s = mg$('<gssdummy />').html(s).text();
+    }
+    return s;
+};
+
+GmCXt.singleLineTitle = function(t) {
+    let c = '';
+    if (t && t.length < 28) c = 'mgPlayerJSProd_nowrap-div';
+    return c;
+};
+
+GmCXt.isValueInArray = function(array, keyToFind, valueToFind) {
+    return array.some(function(obj) {
+        return obj[keyToFind] === valueToFind;
+    });
+};
+//Insights Specific Functions
+
+GmCXt.checkInsightEnabled = function() {
+    let org = GmCXt.organization;
+    if (org && org.admin_settings.insights.enabled && org.admin_settings.insights.guide) {
+        return true;
+    }
+    return false;
+};
+
+GmCXt.getInsightPageRulesFromAPI = function() {
+    return new Promise(function(resolve, reject) {
+        let appCode = "";
+        if (GmCXt.externalAppId) {
+            appCode = GmCXt.externalAppId;
+        } else if (GmCXt.appList && GmCXt.activeAppId) {
+            appCode = GmCXt.appList['app:' + GmCXt.activeAppId].external_id;
+        }
+
+        if (GmCXt.isEmpty(appCode)) resolve([]);
+
+        GmCXt.api.getInsightPagesRules(appCode).then(function(result) {
+            let insightPageRulesData = {
+                sync_time: new Date().getTime()
+            };
+            if (result?.data?.tags && !GmCXt.isEmpty(result.data.tags)) {
+
+                const filterEnableTags = result.data.tags.filter(tag => tag.is_tracking_enabled === true);
+
+                insightPageRulesData = {
+                    data: filterEnableTags,
+                    sync_time: new Date().getTime()
+                };
+                GmCXt.insightPageRulesData = filterEnableTags;
+            }
+
+            GmCXt.storage().set({
+                insightPageRulesData: JSON.stringify(insightPageRulesData)
+            }).then(function() {
+                resolve(GmCXt.insightPageRulesData);
+            });
+        }).catch(function(error) {
+            resolve([]);
+        });
+
+    });
+};
+
+GmCXt.getInsightPageRules = function() {
+    return new Promise(function(resolve, reject) {
+        GmCXt.storage().get(['insightPageRulesData']).then(function(res) {
+            if (res?.insightPageRulesData && !GmCXt.isEmpty(res.insightPageRulesData)) {
+                let insightPageRulesData = GmCXt.parseJSON(res.insightPageRulesData);
+                let syncTime = insightPageRulesData?.sync_time ? parseInt(insightPageRulesData.sync_time) : 0;
+                let currentTime = new Date().getTime();
+                if (currentTime - syncTime > GmCXt.t_.hr8) {
+                    GmCXt.storage().remove(['insightPageRulesData']);
+                    GmCXt.getInsightPageRulesFromAPI().then(function() {
+                        resolve();
+                    });
+                } else {
+                    GmCXt.insightPageRulesData = insightPageRulesData.data;
+                    resolve();
+                }
+
+            } else {
+                GmCXt.getInsightPageRulesFromAPI().then(function() {
+                    resolve();
+                });
+            }
+
+        }).catch(function(error) {
+            reject();
+        });
+    });
+};
+//Language Related Functions
+
+GmCXt.getProcessedLang = function(l) {
+    let langList = {
+        'ar': 'ar-SA',
+        'ar-EG': 'ar-EG',
+        'ar-SA': 'ar-SA',
+        'zh': 'zh-CN',
+        'zh-HK': 'zh-HK',
+        'zh-CN': 'zh-CN',
+        'zh-TW': 'zh-TW',
+        'zh-Hant': 'zh-TW',
+        'cs': 'cs-CZ',
+        'cs-CZ': 'cs-CZ',
+        'da': 'da-DK',
+        'da-DK': 'da-DK',
+        'nl': 'nl-NL',
+        'nl-NL': 'nl-NL',
+        'en': '',
+        'fi': 'fi-FI',
+        'fi-FI': 'fi-FI',
+        'fr': 'fr-FR',
+        'fr-FR': 'fr-FR',
+        'fr-CH': 'fr-CH',
+        'fr-CA': 'fr-CA',
+        'de': 'de-DE',
+        'de-AT': 'de-AT',
+        'de-DE': 'de-DE',
+        'de-CH': 'de-CH',
+        'el': 'el-GR',
+        'el-GR': 'el-GR',
+        'he': 'he-IL',
+        'he-IL': 'he-IL',
+        'hi': 'hi-IN',
+        'hi-IN': 'hi-IN',
+        'hu': 'hu-HU',
+        'hu-HU': 'hu-HU',
+        'id': 'id-ID',
+        'id-ID': 'id-ID',
+        'it': 'it-IT',
+        'it-IT': 'it-IT',
+        'ja': 'ja-JP',
+        'ja-JP': 'ja-JP',
+        'ko': 'ko-KR',
+        'ko-KR': 'ko-KR',
+        'pl': 'pl-PL',
+        'pl-PL': 'pl-PL',
+        'pt': 'pt-PT',
+        'pt-PT': 'pt-PT',
+        'pt-BR': 'pt-BR',
+        'ro': 'ro-RO',
+        'ro-RO': 'ro-RO',
+        'ru': 'ru-RU',
+        'ru-RU': 'ru-RU',
+        'sk': 'sk-SK',
+        'sk-SK': 'sk-SK',
+        'es': 'es-ES',
+        'es-ES': 'es-ES',
+        'es-MX': 'es-MX',
+        'sv': 'sv-SE',
+        'sv-SE': 'sv-SE',
+        'ta': 'ta-IN',
+        'ta-IN': 'ta-IN',
+        'te': 'te-IN',
+        'te-IN': 'te-IN',
+        'th': 'th-TH',
+        'th-TH': 'th-TH',
+        'tr': 'tr-TR',
+        'tr-TR': 'tr-TR',
+        'vi': 'vi-VN',
+        'vi-VN': 'vi-VN'
+    };
+
+    let lang = langList[l];
+
+    if (lang)
+        return lang;
+    else
+        return 'en-US';
+};
+
+GmCXt.browserLang = GmCXt.getProcessedLang(window.navigator.language);
+
+GmCXt.checkLangExist = function(lArr, lang) {
+    let retVal = false;
+
+    if (lArr && !GmCXt.isFalse(lang)) {
+
+        for (let i = 0; i < lArr.length; i++) {
+            if (lArr[i].language === lang) {
+                retVal = true;
+                break;
+            }
+        }
+    }
+
+    return retVal;
+};
+// Functions for handling media, images, and assets
+
+GmCXt.getBasePath = function(i) {
+    let url = "";
+    if (GmCXt.isExtension()) {
+        url = GmCXt.getBrowserUrl(i);
+    } else {
+        if (GmCXt.isDefined(GmCXt.conf.baseUrl)) {
+            url = GmCXt.conf.baseUrl + i;
+        } else {
+            url = GmCXt.conf.clientJsBaseUrl + i;
+        }
+    }
+
+    return url;
+};
+
+GmCXt.getExtUrl = function(localUrl) {
+    let url = GmCXt.getBrowserUrl(localUrl);
+
+    return url;
+};
+
+GmCXt.getBaseUrl = function(f) {
+
+    if (GmCXt.isExtension()) {
+        return GmCXt.getExtUrl(f);
+    } else {
+        if (GmCXt.isClientJs() && !GmCXt.conf.baseUrl && GmCXt.conf.clientJsBaseUrl) {
+            GmCXt.conf.baseUrl = GmCXt.conf.clientJsBaseUrl;
+        }
+        return GmCXt.conf.baseUrl + f;
+    }
+};
+
+GmCXt.getDefaultIcon = function() {
+    return GmCXt.conf.staticContentPath + "myguide.png";
+};
+
+GmCXt.getChatDefaultIcon = function() {
+    return GmCXt.conf.staticContentPath + "chat_bot_icon.png";
+};
+
+GmCXt.getDefaultGuideIcon = function() {
+    return GmCXt.conf.staticContentPath + 'default_guide.png';
+};
+
+GmCXt.getCdnSign = function() {
+    let sign = '';
+
+    if (GmCXt.user && !GmCXt.isEmpty(GmCXt.user)) {
+        sign = GmCXt.user.cdn_signature;
+    }
+
+    return sign;
+};
+
+GmCXt.getFontFile = function() {
+    let i = 'common/lib/fonts/';
+    if (GmCXt.isExtension()) {
+        i = GmCXt.getBrowserUrl(i);
+    } else {
+        i = GmCXt.conf.baseUrl + i;
+    }
+
+    return i;
+};
+
+GmCXt.getCustomFontStyle = function() {
+    let styleElem = document.getElementById('mgPlayerJSProd_nunito-font-style');
+    if (!GmCXt.isEmpty(styleElem)) styleElem.remove();
+
+    let newStyle = document.createElement('style');
+    newStyle.id = "mgPlayerJSProd_nunito-font-style";
+    var FontName = "Nunito";
+    var FontUrl = GmCXt.getFontFile() + "Nunito-Regular.woff";
+    newStyle.appendChild(document.createTextNode("@font-face { font-family: '" + FontName + "'; src: url('" + FontUrl + "') format('woff');}"));
+
+    var FontName = "Calibri";
+    var FontUrl = GmCXt.getFontFile() + "Calibri-Regular.woff";
+    newStyle.appendChild(document.createTextNode("@font-face { font-family: '" + FontName + "'; src: url('" + FontUrl + "') format('woff');}"));
+
+    var FontName = "Frutiger";
+    var FontUrl = GmCXt.getFontFile() + "Frutiger.woff";
+    newStyle.appendChild(document.createTextNode("@font-face { font-family: '" + FontName + "'; src: url('" + FontUrl + "') format('woff');}"));
+
+    return newStyle;
+};
+
+GmCXt.containsMedia = function(str) {
+    if (str.indexOf('.png') >= 0 ||
+        str.indexOf('.gif') >= 0 ||
+        str.indexOf('.mp4') >= 0 ||
+        str.indexOf('.html') >= 0 ||
+        str.indexOf('.txt') >= 0 ||
+        str.indexOf('.pdf') >= 0)
+        return true;
+    else
+        return false;
+};
+
+GmCXt.restoreAssetSrc = function(inputString, prefix = "", suffix = "") {
+    
+    if(GmCXt.isEmpty(inputString)) return "";
+    
+    // Check if the input contains HTML tags
+    let isHtml = /<\/?[a-z][\s\S]*>/i.test(inputString);
+
+    if (isHtml) {
+        return GmCXt.handleHtmlAssets(inputString, prefix, suffix);
+    } else {
+        return GmCXt.handlePlainTextAssets(inputString, GmCXt.conf.cdn, "");
+    }
+};
+
+GmCXt.isDefaultIcon = function(str) {
+    if (str &&
+        (str.indexOf('edcast.png') >= 0 ||
+            str.indexOf('guidemeg.png') >= 0 ||
+            str.indexOf('widget_icon.png') >= 0 ||
+            str.indexOf('chat_bot_icon.png') >= 0 ||
+            str.indexOf('default') >= 0 ||
+            str.indexOf('myguide.png') >= 0
+        )) {
+        return true;
+    } else {
+        return false;
+    }
+};
+
+GmCXt.reloadFailedImages = function() {
+    if (GmCXt.failedImages && GmCXt.failedImages.length) {
+        for (let i = 0; i < GmCXt.failedImages.length; i++) {
+            let obj = GmCXt.failedImages[i];
+            if (obj.length) {
+                let src = obj.attr('originalSrc');
+                if (src) {
+                    src = src.split("?");
+                    if (src[0] && src.length > 1) {
+                        let newSrc = src[0] + GmCXt.getCdnSign();
+                        obj.attr('src', newSrc);
+                    }
+                }
+            }
+        }
+
+        GmCXt.failedImages = [];
+    }
+
+    GmCXt.waitForCdnSignature = false;
+};
+
+GmCXt.takeScreenshot = function(xpath) {
+    let promise = new Promise(function(resolve, reject) {
+        if (GmCXt.isElectron()) {
+            let _electron = require('electron').remote;
+            _electron.getCurrentWindow().capturePage().then(function(img) {
+                resolve(img.toDataURL());
+            });
+        } else if (GmCXt.isExtension()) {
+            let m = {
+                action: "mgPlayerJSProd_action:capture_browser_screen",
+
+            };
+            if(xpath){
+                m.xpath = xpath;
+            }
+            GmCXt.sendMessageToBackgroundService(m, function(resp) {
+                resolve(resp.imgSrc);
+            });
+        } else {
+            resolve(0);
+        }
+    });
+    return promise;
+};
+
+GmCXt.captureScreenForFeedback = function(mailTo) {
+    if (mailTo) {
+        GmCXt.mailTo = mailTo;
+    }
+
+    GmCXt.takeScreenshot().then(function(imageSrc) {
+
+        if (GmCXt.isEmpty(imageSrc)) {
+            mg$(".mgPlayerJSProd_feedback-overlay-svg-error").show();
+            mg$(".mgPlayerJSProd_feedback-re-edit-btn").hide();
+            mg$("#mg-feedback-screenshot-check").removeAttr("checked");
+        } else {
+            mg$(".mgPlayerJSProd_feedback-overlay-svg-error").hide();
+            mg$(".mgPlayerJSProd_feedback-re-edit-btn").show();
+        }
+
+        let img = mg$("#mg-feedback-screenshot-image");
+        img.attr('src', imageSrc);
+        GmCXt.feedbackImgSrc = imageSrc;
+        GmCXt.showFeedBackToolbar();
+    });
+};
+
+GmCXt.setImagePopUp = function() {
+    mg$('#mgPlayerJSProd_image_popup').remove();
+    GmCXt.addImagePopHtml();
+    let modal = document.getElementById('mgPlayerJSProd_image_popup');
+
+    if (modal) {
+        modal.style.display = "none";
+        modal.onclick = function(e) {
+            GmCXt.stopPropagation(e);
+        };
+    }
+    let closeBtn = document.getElementsByClassName("mgPlayerJSProd_close-img-popup")[0];
+    if (closeBtn) {
+        closeBtn.onclick = function(e) {
+            GmCXt.stopPropagation(e);
+            modal.style.display = "none";
+            mg$('.mgPlayerJSProd_preview-step-popup-container').css({
+                'z-index': '2147483647'
+            });
+        };
+    }
+};
+
+GmCXt.openImagePopup = function(data) {
+    let modal = document.getElementById('mgPlayerJSProd_image_popup');
+    let modalImg = document.getElementById("mgPlayerJSProd_img_desc");
+    modal.style.display = "block";
+    modalImg.src = data.imageSrc;
+};
+
+GmCXt.zoomImage = function(text, popClass) {
+
+    if (text && text.indexOf("<img ") !== -1 && text.indexOf('src=""') === -1) {
+        if (window.self === window.top) {
+            GmCXt.setPopUpForImage(text, popClass);
+        } else {
+            GmCXt.setZoomImageFromIframe(text, popClass);
+        }
+    }
+};
+
+GmCXt.setZoomImageFromIframe = function(desc, parentClassName) {
+    GmCXt.initialiseImagePopUp();
+    mg$(parentClassName + ' img').each(function() {
+        mg$(parentClassName + ' img').on("click", function(e) {
+            GmCXt.stopPropagation(e);
+            GmCXt.openModalFromTopWindow(this.src);
+        });
+    });
+};
+
+GmCXt.openModalFromTopWindow = function(src) {
+    let data = {};
+    data.imageSrc = src;
+    GmCXt.sendMessageToParentWindow('mgPlayerJSProd_action:open_image_iframe_popup', data);
+};
+
+GmCXt.initialiseImagePopUp = function() {
+    GmCXt.sendMessageToParentWindow('mgPlayerJSProd_action:initialize_image_iframe_popup', {});
+};
+
+GmCXt.setPopUpForImage = function(description, parentClassName) {
+    // Check for image exist if yes then add popup js
+    let imgSrc = '';
+    GmCXt.setImagePopUp();
+    let fsBtn = "<wmgPlayerJSProd_ class='mgPlayerJSProd_full-screen-icon-cont'><button class='mgPlayerJSProd_full-screen-icon'>&#x26F6;</button></wmgPlayerJSProd_>";
+
+    mg$(parentClassName).addClass('mgPlayerJSProd_play-step-popup-loader');
+
+    let stepPopupImgList = mg$(parentClassName + ' img');
+
+    let finalStepPopupContent = "";
+
+    stepPopupImgList.each(function(index, imgEl) {
+        let img = mg$(imgEl);
+        if (img.parent().hasClass('mgPlayerJSProd_step-img-popup-cont')) return; // Avoid double wrapping
+
+        let imgWidth = img[0].width;
+        let imgHeight = img[0].height;
+
+        let showFullScreen = imgWidth >= 90 && imgHeight >= 90; // Only show if image is at least 90x90
+
+        let stepImgOverlay = "<div class='mgPlayerJSProd_step-img-popup-overlay'></div>";
+        let newStepImgWrapper = mg$("<div class='mgPlayerJSProd_display-inline-block mgPlayerJSProd_position-relative mgPlayerJSProd_step-img-popup-cont'></div>");
+        newStepImgWrapper.append(stepImgOverlay);
+        if(showFullScreen) newStepImgWrapper.append(fsBtn);
+        img.before(newStepImgWrapper);
+        newStepImgWrapper.append(img);
+    });
+
+    mg$(parentClassName + ' img').addClass('mgPlayerJSProd_custom-image');
+
+    mg$(".mgPlayerJSProd_full-screen-icon").html(GmCXt.svgs.fullscreen);
+
+    mg$('.mgPlayerJSProd_full-screen-icon').on("click", function(e) {
+        e.stopPropagation();
+        e.preventDefault();
+        var modalImg = document.getElementById("mgPlayerJSProd_img_desc");
+        var container = this.closest('.mgPlayerJSProd_step-img-popup-cont');
+        var imgElem = container.getElementsByTagName('img')[0];
+        imgSrc = imgElem.src;
+        var imgWrp = document.getElementsByClassName('mgPlayerJSProd_image-popup')[0];
+        GmCXt.stopPropagation(e);
+        imgWrp.style.display = "block";
+        modalImg.src = imgSrc;
+        mg$('.mgPlayerJSProd_preview-step-popup-container').css({
+            'z-index': '2147483646'
+        });
+    });
+
+
+
+    mg$(parentClassName + ' img').on("load", function() {
+        if (GmCXt.alignPopupI) GmCXt.alignPopupI.redo();
+        mg$(parentClassName).removeClass('mgPlayerJSProd_play-step-popup-loader');
+    });
+};
+
+GmCXt.imageSizeStyle = function(selector) {
+    let len = mg$(selector).length;
+
+    if (len) {
+        for (let i = 0; i < len; i++) {
+            let imgW = mg$(selector)[i].getAttribute('width');
+            let imgH = mg$(selector)[i].getAttribute('height');
+
+            mg$(selector)[i].style.setProperty('width', imgW + 'px', 'important');
+            mg$(selector)[i].style.setProperty('height', imgH + 'px', 'important');
+        }
+    }
+};
+// Functions for inter-frame, background, and message communication
+
+
+GmCXt.sendMessageToBackgroundService = function(m, cb) {
+    if (m.data) {
+        m.mgdata = m.data;
+        delete m.data;
+    }
+    if (m && GmCXt.isExtension()) {
+        if (GmCXt.browserApp === 'chrome') {
+            chrome.runtime.sendMessage(m, cb);
+        } else if (GmCXt.browserApp === 'Safari') {
+            safari.extension.dispatchMessage(m.action, m.mgdata);
+            if (cb) {
+                cb(1);
+            }
+        } else if (typeof browser !== 'undefined') {
+            browser.runtime.sendMessage(m, cb);
+        }
+    } else if (cb) {
+        cb(1);
+    }
+};
+
+GmCXt.sendToParentWindow = function(m) {
+    if (m.data && typeof m.data === 'object') {
+        if (GmCXt.isDefined(GmCXt.isSidePanelApp)) {
+            m.data.fromSidePanel = GmCXt.isSidePanelApp;
+        }
+
+        if (m.action !== "mgPlayerJSProd_action:payload_event_call"
+        ) {
+            m.data.user = GmCXt.user;
+        }
+
+        if (m.action === "mgPlayerJSProd_action:payload_event_call") {
+            delete m.data.fromSidePanel;
+        }
+    }
+    GmCXt.msgChannel.port1.postMessage(GmCXt.formatMsg(m));
+};
+
+GmCXt.sendMessageToSyncPlayerI = function() {
+    let msg = "mgPlayerJSProd_action:sync_playerinstance_for_automation";
+    let data = {};
+    data.playerInstance = GmCXt.playerI;
+    GmCXt.sendMessageToAllWindows(msg, data);
+};
+
+GmCXt.sendMessageToDesktopApp = function(msg, d) {
+    GmCXt.log(38, "Send message to Desktop App - ", msg, d);
+    let url = '';
+    let eventList = {
+        "clickNext": 'click',
+        "onRightClickNext": 'right-click',
+        "onKeyupNext": 'keyup',
+        "onChangeNext": 'change',
+        "hoverNext": 'hover'
+    };
+
+    GmCXt.log(33, "Sending message to CAD");
+    GmCXt.log(33, msg);
+
+    switch (msg) {
+    case 'step_complete':
+        url = "event/step_complete" +
+                "?step_id=" + d.step_id + "&step_order" + d.step_order;
+        break;
+
+    case 'step_failed':
+        url = "event/step_failed" +
+                "?step_id=" + d.step_id + "&tour_id=" + GmCXt.deskReq.testCaseId + "&jobId=" + GmCXt.deskReq.jobId;
+        break;
+
+    case 'trigger_event':
+        var event = d.step_settings.completionEvent;
+        var as = d.step_settings.automation;
+        var query = '';
+
+        if (as.enableDefaultData) {
+            query += 'value=' + escape(as.defaultData);
+        }
+        query += '&human_interaction=' + escape(as.hasHumanInteraction);
+
+        if (as.element && as.element.dataOptionsType) {
+            query += '&type=' + escape(as.element.dataOptionsType);
+        }
+
+        if (as.file) {
+            query += '&filePath=' + escape(as.file);
+        }
+
+        var cname = 'doitforme-' + d.step_id;
+
+        url = "action/" + eventList[event] + "/" + cname + "?" + query;
+
+        break;
+
+    case 'image_comparison':
+        var msg = 'Finding image match';
+        if (!GmCXt.isEmpty(d.step_title)) {
+            msg += (" for step '<b>" + d.step_title + "</b>' ");
+        }
+        GmCXt.toastMsg(msg).show();
+
+        url = 'image_comparison/doitforme-' + d.step_id + '?';
+        break;
+
+    case 'task_complete':
+        var query = '';
+
+        if (GmCXt.deskReq) {
+            if (GmCXt.deskReq.testCaseId) {
+                query += 'tour_id=' + GmCXt.deskReq.testCaseId;
+            }
+            if (GmCXt.deskReq.jobId) {
+                query += '&jobId=' + GmCXt.deskReq.jobId;
+            }
+
+            if (GmCXt.deskReq.jobRunId) {
+                query += '&jobRunId=' + GmCXt.deskReq.jobRunId;
+            }
+            if (d && d.isError) {
+                query += '&isError=true&errorMessage=' + d.errorMessage;
+            }
+        }
+        if (d && d.entity_code) {
+            query += '&entityCode=' + d.entity_code;
+        }
+        url = "event/task_complete?" + query;
+        break;
+    }
+
+    if (GmCXt.deskReq && GmCXt.deskReq.driverId) {
+        url += "&driver=" + GmCXt.deskReq.driverId;
+    }
+
+    GmCXt.log(33, url);
+
+    function cb(tabId) {
+
+        url += '&tabid=' + tabId;
+
+        GmCXt.timeout(function() {
+            let params = {
+                url: url,
+                stepType: (d && d.step_settings) ? d.step_settings.stepType : '',
+            };
+
+            if (d && d.step_type === GmCXt.STEP_TYPE_IMAGE) {
+                params.info = d;
+            }
+
+            GmCXt.api.sendMsgToMyBot(params);
+        }, 3000);
+    }
+    GmCXt.log(37, "msg send to desktop", url);
+    if (GmCXt.isBackgroundPage) {
+        cb(GmCXt.trackerUtil.tabId);
+    } else {
+        GmCXt.sendMessageToBackgroundService({
+            action: "mgPlayerJSProd_action:get_current_tab_id"
+        }, cb);
+    }
+};
+
+GmCXt.verifyMsg = function(event) {
+    if (mg$(window).width() <= 1 || mg$(window).height() <= 1) {
+        return false;
+    }
+
+    event.data = GmCXt.parseJSON(event.data);
+    event.data = GmCXt.convertMgdata(event.data);
+
+    let message = event.data;
+    let action = message ? message.action : '';
+
+    GmCXt.log(3, "VERIFY MESSAGE " + action);
+    if (!message || !action) return false;
+
+    if (action && action.indexOf('MyGuideReporting:Ack') !== -1 &&
+        message.data === GmCXt.getAppName()) {
+        return; //Reject acknowledgement from self
+    }
+
+    if (action && action.indexOf('MyGuideReporting') !== -1) {
+        GmCXt.saveAppPresence(message);
+    }
+
+    let valid = false;
+    let data = message.data;
+
+    let fromSelf = (action.indexOf('mgPlayerJSProd_action:') !== -1);
+
+    // for salesforce and service now app backword compatibility
+    if (action === "gmPlayerXt_action:init_snow" ||
+        action === "myguide_action:find_element_request_from_insight" ||
+        action === "myguide_action:paste_tour_from_myguide_library" ||
+        action === "gmPlayerXt_action:snow_panel_open") {
+        fromSelf = true;
+    }
+
+    if (fromSelf) {
+        if (message && message.data && message.data.sender === "other") {
+            delete message.data.organization;
+            delete message.data.user;
+        }
+        GmCXt.initGlobalUser(message);
+        GmCXt.initGlobals(action, data);
+        valid = true;
+    }
+
+    return valid;
+};
+
+GmCXt.parseMsg = function(e) {
+
+    e = mg$.extend({}, e);
+    e.data = GmCXt.parseJSON(e.data);
+    GmCXt.log(3, "PARSE MESSAGE " + e.data.action);
+    return e.data;
+};
+
+GmCXt.syncPlayerInst = function(m) {
+    if (m === "mgPlayerJSProd_action:started;task:select_existing_dom_element" ||
+        m === "mgPlayerJSProd_action:started;task:select_existing_dom_element:target_frame_only" ||
+        m === "mgPlayerJSProd_action:started;task:select_dom_element_tooltips" ||
+        m === "mgPlayerJSProd_action:task:init_new_iframe" ||
+        m === "mgPlayerJSProd_action:update_player_instance" ||
+        m === "mgPlayerJSProd_action:update_player_instance_app" ||
+        m === "mgPlayerJSProd_action:set_audio_mode_off" ||
+        m === "mgPlayerJSProd_action:set_audio_mode_on" ||
+        m === "mgPlayerJSProd_action:close_guide" ||
+        m === "mgPlayerJSProd_action:set_style_audio_icon_response") {
+        return true;
+    } else {
+        return false;
+    }
+};
+
+GmCXt.syncCreateInst = function(m) {
+    if (m === "mgPlayerJSProd_action:started;task:highlight_element" ||
+        m === "mgPlayerJSProd_action:started;task:edit_step_select_existing_dom_element" ||
+        m === "mgPlayerJSProd_action:completed;task:edit_step_select_existing_dom_element" ||
+        m === "mgPlayerJSProd_action:started;task:edit_step_select_existing_dom_element:target_frame_only" ||
+        m === "mgPlayerJSProd_action:started;task:select_new_dom_element" ||
+        m === "mgPlayerJSProd_action:started;task:select_new_dom_element_for_edit_step" ||
+        m === "mgPlayerJSProd_action:started;task:narrow_element_selection" ||
+        m === "mgPlayerJSProd_action:started;task:expand_element_selection" ||
+        m === "mgPlayerJSProd_action:started;task:select_element_for_message_step" ||
+        m === "mgPlayerJSProd_action:started;task:select_element_for_branching_step" ||
+        m === "mgPlayerJSProd_action:started;task:select_new_element_for_dom_select_rule" ||
+        m === "mgPlayerJSProd_action:started;task:select_new_table_for_dom_select_rule" ||
+        m === "mgPlayerJSProd_action:started;task:delete_element_for_message_step" ||
+        m === "mgPlayerJSProd_action:started;task:select_dom_element_for_beacon" ||
+        m === "mgPlayerJSProd_action:started;task:blackout_dom_element" ||
+        m === "mgPlayerJSProd_action:started;task:edit_message_step_select_existing_dom_element" ||
+        m === "mgPlayerJSProd_action:started;task:step_blackout_area_existing_dom_element" ||
+        m === "mgPlayerJSProd_action:started;task:edit_beacon_select_existing_dom_element" ||
+        m === "mgPlayerJSProd_action:started;task:edit_beacon_select_existing_dom_element:target_frame_only" ||
+        m === "mgPlayerJSProd_action:started:select_new_dom_element_for_smart_tip" ||
+        m === "mgPlayerJSProd_action:find_element_to_get_precision" ||
+        m === "mgPlayerJSProd_action:find_element_to_get_precision_for_rules" ||
+        m === "mgPlayerJSProd_action:started;task:select_dom_element_for_matching_in_rules" ||
+        m === "mgPlayerJSProd_action:do;task:enable_jQuery_selector" ||
+        m === "mgPlayerJSProd_action:started;task:edit_tag_select_existing_dom_element") {
+        return true;
+    } else {
+        return false;
+    }
+};
+
+GmCXt.initGlobals = function(action, data) {
+
+    if (data) {
+
+        if (data.debugMode) GmCXt.debugMode = data.debugMode;
+
+        if (data.urlParts) GmCXt.urlParts = data.urlParts;
+
+        if (GmCXt.syncCreateInst(action)) {
+            if (window.self !== window.top) {
+                if (data.stepReq || data.stepReq === null) {
+                    GmCXt.stepReq = data.stepReq;
+                }
+            } else {
+                if (GmCXt.stepReq && data.syncStepReq) {
+                    GmCXt.stepReq = data.stepReq;
+                }
+            }
+        }
+        if (GmCXt.syncPlayerInst(action)) {
+            if (window.self !== window.top) {
+                if (data.playerInstance || data.playerInstance === null) {
+                    GmCXt.playerI = data.playerInstance;
+                }
+            } else if (data.playerInstance && data.fromSidePanel) {
+                GmCXt.playerI = data.playerInstance;
+            }
+        }
+    }
+};
+
+GmCXt.initGlobalUser = function(m) {
+    if (m.data && (window.self !== window.top || m.data.fromSidePanel)) {
+        if (m.data.user && !GmCXt.isEmpty(m.data.user)) {
+            GmCXt.updateGlobalUser(m.data.user);
+        }
+    }
+};
+
+GmCXt.msgToThisWin = function(m) {
+    GmCXt.msgChannel.port1.postMessage(GmCXt.formatMsg(m));
+};
+
+GmCXt.addFrameOffset = function(event, pos) {
+    let match = {
+        found: false,
+        frame: null
+    };
+
+    let frames = document.getElementsByTagName('iframe');
+    match = GmCXt.getMatchingFrame(frames, event, match);
+
+    if (!match.found) {
+        frames = document.getElementsByTagName('frame');
+        match = GmCXt.getMatchingFrame(frames, event, match);
+    }
+
+    if (!match.found) {
+        frames = GmCXt.getIframesFromShadowDom();
+        match = GmCXt.getMatchingFrame(frames, event, match);
+    }
+
+    if (match.found) {
+
+        const iframe = match.frame;
+        const rect = iframe.getBoundingClientRect();
+        let nestedRect = { left: 0, top: 0 };
+
+        const querySelector = event?.data?.data?.data?.querySelector;
+        const iframeDoc = iframe?.contentDocument;
+
+        if (querySelector && iframeDoc && !iframeDoc.querySelector(querySelector)) {
+            let nestedIframes = iframeDoc.querySelectorAll("iframe");
+            for (const nestedIframe of nestedIframes) {
+                const nestedDoc = nestedIframe?.contentDocument;
+                const elementInsideNestedIframe = nestedDoc?.querySelector(querySelector);
+
+                if (elementInsideNestedIframe) {
+                    nestedRect = nestedIframe.getBoundingClientRect();
+                    break;
+                }
+            }
+        }
+
+        pos.left += rect.left + nestedRect.left;
+        pos.top += rect.top + nestedRect.top;
+    }
+
+    pos.windowWidth = mg$(window).width();
+    pos.windowHeight = mg$(window).height();
+
+    return pos;
+};
+//Notification specific file
+
+GmCXt.stopNotification = function(isPreview) {
+    let flag = false;
+    let reason = '';
+
+    if (!GmCXt.isPlayer() && !isPreview) {
+        reason = "app is not a player";
+        flag = true;
+    } else if (mg$('.mgPlayerJSProd_image-step-screen').is(':visible') || mg$('.mgPlayerJSProd_preview-step-popup-container').is(':visible')) {
+        reason = "step is playing";
+        flag = true;
+    } else if (mg$('.mgPlayerJSProd_user-guide-container').is(':visible')) {
+        reason = "survey is open";
+        flag = true;
+    } else if (mg$('.mgPlayerJSProd_notifcation-popup').is(':visible')) {
+        reason = "org notification";
+        flag = true;
+    } else if (mg$('.mgPlayerJSProd_slideshow-panel').is(':visible')) {
+        reason = "slideshow playing";
+        flag = true;
+    } else if (mg$('.mgPlayerJSProd_play-pause-toolbar').is(':visible')) {
+        reason = "pause guide";
+        flag = true;
+    } else if (GmCXt.APP_PANEL_OPEN && !isPreview && !GmCXt.getAppSetting('keep_player_panel_open')) {
+        reason = "side panel open";
+        flag = true;
+    } else if (GmCXt.playerI) {
+        reason = "tour is active";
+        flag = true;
+    } else if (!GmCXt.isEmpty(GmCXt.testMe)) {
+        reason = "test me active";
+        flag = true;
+    }
+
+    if (flag) {
+        GmCXt.log(10, "STOP notification because " + reason);
+    }
+    return flag;
+};
+
+GmCXt.updateNotification = function(tours) {
+    GmCXt.storage().get(['toursClosed']).then(function(st) {
+        let userSettings = GmCXt.user.settings || {};
+        userSettings.viewed_guide_notifications = tours;
+        GmCXt.user.settings = userSettings;
+
+        if (GmCXt.isAnonymousUser()) {
+            GmCXt.storage().set({
+                'tourIdArray': tours
+            });
+        } else {
+            let data = {
+                settings : {
+                    viewed_guide_notifications : tours
+                }
+            };
+            GmCXt.updateUserSettings(data, GmCXt.user);
+        }
+
+        GmCXt.updNotifDataSidePanel(GmCXt.parseJSON(st.toursClosed), tours);
+    });
+};
+
+GmCXt.updNotifDataSidePanel = function(toursClosed, tourIdArray) {
+    let data = {
+        toursClosed: toursClosed,
+        tourIdArray: ''
+    };
+    if (GmCXt.isAnonymousUser()) {
+        data.tourIdArray = tourIdArray;
+    }
+    GmCXt.storage().set({
+        'toursClosed': data.toursClosed,
+        'tourIdArray': data.tourIdArray
+    }).then(function() {
+        GmRootScope.setNotifTours();
+    });
+};
+
+GmCXt.getSleepTime = function(lbls) {
+    let t = 24;
+
+    let nt = GmCXt.getAppSetting('notificationsTime');
+
+    if (nt) {
+        t = parseFloat(nt);
+        if (t < 1) t = 1;
+    }
+
+    let hourString = t > 1 ? lbls.hours : lbls.hour;
+    t = t + ' ' + hourString;
+
+    if ((nt && typeof nt !== 'number') && (nt.includes("week") || nt.includes("hour"))) {
+        t = nt;
+    }
+
+    return t;
+};
+
+GmCXt.removeNotif = function() {
+    mg$(".mgPlayerJSProd_overlay-tours-popup").remove();
+    mg$(".mgPlayerJSProd_overlay-container").remove();
+};
+
+
+GmCXt.updateGuideDisplayFrequency = function(tours) {
+
+    GmCXt.user.settings.display_frequency_guides = tours;
+    let data = {
+        settings : {
+            display_frequency_guides : tours
+        }
+    };
+    GmCXt.updateUserSettings(data, GmCXt.user);
+};
+
+GmCXt.getDoNotShowTours = function(isNotif) {
+
+    return GmCXt.storage().get(['tourIdArray', 'tourIdOnBoardingArray'])
+        .then(function(st) {
+            return GmCXt.processDoNotShowGuides(st, isNotif);
+        });
+};
+
+GmCXt.processDoNotShowGuides = function(st, isNotif) {
+
+    let obj = {};
+    let tours = [];
+    let userSettings = GmCXt.user.settings || {};
+
+    if (GmCXt.isAnonymousUser()) {
+        tours = st.tourIdArray || {};
+        if (mg$.isArray(st.tourIdOnBoardingArray)) {
+            tours = mg$.extend({}, tours, GmCXt.arrayToObjectNot(st.tourIdOnBoardingArray));
+            GmCXt.storage().set({
+                'tourIdArray': tours
+            });
+            GmCXt.storage().remove(['tourIdOnBoardingArray']);
+        }
+    } else {
+        tours = userSettings.viewed_guide_notifications || {};
+        if (mg$.isArray(userSettings.viewed_onboarding_guide_notifications)) {
+            tours = mg$.extend({}, tours, GmCXt.arrayToObjectNot(userSettings.viewed_onboarding_guide_notifications));
+            delete userSettings.viewed_onboarding_guide_notifications;
+            GmCXt.saveSeenToursInDb(tours, userSettings);
+        }
+    }
+
+    if (Array.isArray(tours)) {
+        obj = GmCXt.arrayToObjectNot(tours);
+        if (!GmCXt.isAnonymousUser()) GmCXt.saveSeenToursInDb(obj, userSettings);
+    } else {
+        obj = tours;
+    }
+
+    return obj;
+};
+
+GmCXt.saveSeenToursInDb = function(tour, userSettings) {
+
+    if (!GmCXt.isEmpty(tour)) {
+
+        userSettings.viewed_guide_notifications = tour;
+
+        GmCXt.user.settings = userSettings;
+
+        let data = {
+            settings : {
+                viewed_guide_notifications : tour
+            }
+        };
+        GmCXt.updateUserSettings(data, GmCXt.user);
+
+        GmCXt.storage().remove(['tourIdArray']);
+    }
+};
+//Organization Specific All Frame Function File
+
+GmCXt.updateOrgAndAddSignature = function(str) {
+
+    if (str && GmCXt.containsMedia(str)) {
+
+        if (GmCXt.organization && !GmCXt.isEmpty(GmCXt.organization)) {
+            let orgId = GmCXt.organization.organization_id;
+            str = str.replace(/[-][0-9]*[/]/g, '-' + orgId + '/');
+        }
+
+        str = str.replace(/.mp4(.*?)\"/g, '.mp4' + GmCXt.getCdnSign() + '"');
+        str = str.replace(/.gif(.*?)\"/g, '.gif' + GmCXt.getCdnSign() + '"');
+
+        str = str.replace(/.png(.*?)\"/g, '.png' + GmCXt.getCdnSign() + '"');
+        str = str.replace(/.html(.*?)\"/g, '.html' + GmCXt.getCdnSign() + '"');
+        str = str.replace(/.txt(.*?)\"/g, '.txt' + GmCXt.getCdnSign() + '"');
+        str = str.replace(/\.pdf(.*?)\"/g, '.pdf' + GmCXt.getCdnSign() + '"');
+    }
+
+    return str;
+};
+
+GmCXt.getOrgSettings = function() {
+
+    let os = false;
+
+    if (GmCXt.organization && !GmCXt.isEmpty(GmCXt.organization)) {
+        os = GmCXt.organization.settings;
+    }
+
+    return os;
+};
+//Panel Specific Functions
+
+GmCXt.openAppPanel = function(action, source) {
+
+    if (GmCXt.APP_PANEL_OPEN) return;
+
+    if (!GmCXt.isEmpty(GmCXt.tourActivity) && Object.keys(GmCXt.tourActivity)) GmRootScope.refreshCurrentPage();
+
+    GmCXt.removeChatIcon();
+
+    if (GmCXt.initialization && GmCXt.initialization.sidePanel && GmCXt.playerDomainCheck()) {
+
+        GmCXt.hideWidgetIcon();
+
+        if (GmCXt.editStepTout) {
+            clearTimeout(GmCXt.editStepTout);
+            mg$('.mgPlayerJSProd_edit-step-loader').hide();
+        }
+
+        let byPassRoute = (action === "byPassRoute" || action === "playSlideShow") ? true : false;
+        if (!byPassRoute) {
+            GmCXt.isSidePanelOpen = true;
+            if (action === "chatbot") {
+                GmRootScope.setActivePage("chatbot");
+            } else if (!GmCXt.user || GmCXt.isEmpty(GmCXt.user)) {
+                GmRootScope.clearSession();
+            }
+        }
+
+        if (GmCXt.tourPlayerI && (action !== "playSlideShow")) {
+            GmCXt.tourPlayerI.stop(true);
+            GmCXt.closePopup();
+        } else if (GmCXt.isAutomationRunning()) {
+            GmCXt.auto.stop(true);
+        }
+
+        if (GmCXt.user && GmCXt.user.user_key && source && !GmCXt.APP_PANEL_OPEN) {
+            GmCXt.trackerV1.trackPanelOpen(source, action);
+        }
+
+        GmCXt.timeout(function() {
+            let alignment = GmCXt.getWidgetAlignment();
+            mg$(".mgPlayerJSProd_panel .mgPlayerJSProd_app").css(alignment, "0px");
+            mg$(".mgPlayerJSProd_panel").css(alignment, "0px");
+            mg$(".mgPlayerJSProd_panel").css("display", "block");
+            mg$(".mgPlayerJSProd_ege-panel").css("display", "block");
+
+            if (GmCXt.isMicroPlayer()) {
+                mg$(".mgPlayerJSProd_panel .mgPlayerJSProd_app").css("right", "50px");
+                mg$(".mgPlayerJSProd_panel").css("right", "50px");
+                GmCXt.taskListOpen = false;
+            } else {
+                mg$(".mgPlayerJSProd_panel").removeClass('mgPlayerJSProd_theme-mplayer');
+                mg$(".mgPlayerJSProd_panel").css("top", "0");
+                GmCXt.showPanelCloseBtn();
+            }
+
+            GmCXt.removePreviewTop();
+            mg$(".mgPlayerJSProd_panel").attr({
+                'aria-hidden': false,
+                'tabindex': 0
+            });
+            mg$("#mgPlayerJSProd_app").attr({
+                'aria-hidden': false,
+                'tabindex': 0
+            });
+            mg$("#mgPlayerJSProd_app")
+                .attr({
+                    "role": "dialog",
+                    "aria-modal": "true",
+                    "aria-label": "Extension Panel",
+                    "tabindex": "0"
+                })
+                .focus();
+        }, GmCXt.t.appPanel);
+
+        GmCXt.smartTipPreviewOn = false;
+        GmCXt.closeNotificationPopupSidePanel(true);
+        GmCXt.APP_PANEL_OPEN = true;
+    } else {
+        GmCXt.showPanelDisabledPopup();
+    }
+
+    GmRootScope.setContainerHeight(GmRootScope.containerView);
+    GmCXt.unlockScroll();
+};
+
+GmCXt.closeAppPanel = function() {
+    GmCXt.APP_PANEL_OPEN = false;
+    GmCXt.displayWidget();
+    GmCXt.displayChatIcon();
+    let alignment = GmCXt.getWidgetAlignment();
+    mg$(".mgPlayerJSProd_panel .mgPlayerJSProd_app").css(alignment, "-9550px");
+    mg$(".mgPlayerJSProd_panel").css(alignment, "-9550px");
+    mg$(".mgPlayerJSProd_panel").css("display", "none");
+    mg$(".mgPlayerJSProd_ege-panel").css("display", "none");
+
+    if (alignment === 'right') {
+        mg$(".mgPlayerJSProd_panel").css('left', "initial");
+    }
+
+    if (GmCXt.isMicroPlayer()) {
+        mg$(".mgPlayerJSProd_panel").css("left", "initial");
+        mg$(".mgPlayerJSProd_panel").css("top", "50%");
+    }
+
+    mg$(".mgPlayerJSProd_panel").attr({
+        'aria-hidden': true,
+        'tabindex': -1
+    });
+    mg$("#mgPlayerJSProd_app").attr({
+        'aria-hidden': true,
+        'tabindex': -1
+    });
+    mg$(".mgPlayerJSProd_panel").focus();
+    GmRootScope.displayChatIcon();
+};
+
+GmCXt.showPanelDisabledPopup = function() {
+    if (GmCXt.isExtension()) {
+        let m = {
+            action: 'mgPlayerJSProd_action:to_background;task:show_panel_disabled_popup'
+        };
+        GmCXt.sendMessageToBackgroundService(m);
+    }
+};
+
+GmCXt.resetMplayerPos = function() {
+    mg$('.mgPlayerJSProd_panel').removeAttr("style");
+    mg$('.mgPlayerJSProd_panel').css({
+        'left': 'initial',
+        'top': '50%',
+        'right': '50px'
+    });
+};
+//PlayerMode Specific File
+
+GmCXt.initPlayerModeFeatures = function(showPlayer, isMiniPlayer, isPlayerMode) {
+    GmCXt.showPlayer = showPlayer;
+    GmCXt.isMiniPlayer = isMiniPlayer;
+    GmCXt.playerMode = isPlayerMode;
+    if (GmCXt.isPlayer()) {
+        GmCXt.FT = GmCXt.getPlayerFeatures();
+    } else {
+        GmCXt.FT = GmCXt.getCreatorAppFeatures();
+    }
+
+    if (GmCXt.isMicroPlayer()) {
+        mg$(".mgPlayerJSProd_panel").addClass('mgPlayerJSProd_theme-mplayer');
+    } else {
+        mg$(".mgPlayerJSProd_panel").removeClass('mgPlayerJSProd_theme-mplayer');
+    }
+};
+//PopUp Related functions
+
+GmCXt.onPopupRerender = function() {
+    if (mg$('#mgPlayerJSProd_popup-reload').length > 0) {
+        let forceClose = !GmCXt.playerI.testAutomation;
+        GmCXt.confirmTourClose(forceClose);
+    }
+};
+
+GmCXt.getPopupHtml = function(msg, ok, cancel) {
+    let popupType = 'mgPlayerJSProd_popup-info';
+    let html = " <wmgPlayerJSProd_ class='mgPlayerJSProd_overlay-container'></wmgPlayerJSProd_>" +
+        "<wmgPlayerJSProd_ class='mgPlayerJSProd_popup " + popupType + "' id='mgPlayerJSProd_popup-reload'>" +
+        "   <wmgPlayerJSProd_ class='mgPlayerJSProd_popup-header-wrapper'>" +
+        "	   <wmgPlayerJSProd_ class='mgPlayerJSProd_popup-header-icon-wrapper'><wmgPlayerJSProd_ class='mgPlayerJSProd_popup-header-icon'></wmgPlayerJSProd_></wmgPlayerJSProd_>" +
+        "   </wmgPlayerJSProd_>" +
+        " <wmgPlayerJSProd_ class='mgPlayerJSProd_popup-content-wrapper'>" + msg + "</wmgPlayerJSProd_>" +
+        " <wmgPlayerJSProd_ class='mgPlayerJSProd_popup-btn-wrapper'>" +
+        "   <button title='" + ok + "' aria-label='" + ok + "' class='mgPlayerJSProd_popup-ok-btn mgPlayerJSProd_btn-default mgPlayerJSProd_ok-btn mgPlayerJSProd_text-overflow-ellipsis mgPlayerJSProd_inline-block-vt mgPlayerJSProd_lbl-btn'>" + ok + "</button>" +
+        "   <button title='" + cancel + "' aria-label='" + cancel + "' class='mgPlayerJSProd_popup-cancel-btn mgPlayerJSProd_btn-default mgPlayerJSProd_text-overflow-ellipsis mgPlayerJSProd_inline-block-vt mgPlayerJSProd_lbl-btn'>" + cancel + "</button>" +
+        " </wmgPlayerJSProd_>" +
+        "</wmgPlayerJSProd_>";
+    return html;
+};
+
+GmCXt.getKeyShortPopupHtml = function(tourList) {
+    let tourListStr = "";
+    if (tourList && tourList.length) {
+        for (let i = 0; i < tourList.length; i++) {
+            tourListStr = tourListStr + "<wmgPlayerJSProd_ class='mgPlayerJSProd_popup-row-content-wrapper'><wmgPlayerJSProd_ class='mgPlayerJSProd_popup-colmn-content-wrapper mgPlayerJSProd_col-lt' > " + tourList[i].tour_settings.keyboardKeyInput + " : </wmgPlayerJSProd_>" +
+                "<wmgPlayerJSProd_ class='mgPlayerJSProd_popup-colmn-content-wrapper mgPlayerJSProd_col-rt' > " + tourList[i].tour_title + " </wmgPlayerJSProd_></wmgPlayerJSProd_>";
+        }
+    } else {
+        tourListStr = "<wmgPlayerJSProd_ class='mgPlayerJSProd_popup-row-content-wrapper'><wmgPlayerJSProd_ class='mgPlayerJSProd_popup-colmn-content-wrapper' > No shortcuts available </wmgPlayerJSProd_> " +
+            "</wmgPlayerJSProd_>";
+    }
+
+
+    let html = "<wmgPlayerJSProd_ class='mgPlayerJSProd_popup mgPlayerJSProd_popup-info mgPlayerJSProd_popup-keyshort' id='mgPlayerJSProd_popup-reload'>" +
+        "   <wmgPlayerJSProd_ class='mgPlayerJSProd_popup-header-wrapper'>" +
+        "	   <wmgPlayerJSProd_ class='mgPlayerJSProd_popup-keyshort-header-title'>Keyboard shortcuts</wmgPlayerJSProd_>" +
+        "	   <wmgPlayerJSProd_ class='mgPlayerJSProd_popup-keyshort-close'>" + GmCXt.label.close + "</wmgPlayerJSProd_>" +
+        "   </wmgPlayerJSProd_>" +
+        " <wmgPlayerJSProd_ class='mgPlayerJSProd_popup-content-wrapper'> " +
+        " 	<wmgPlayerJSProd_ class='mgPlayerJSProd_popup-main-content-wrapper'>" +
+        tourListStr +
+        " 	</wmgPlayerJSProd_>" +
+        " </wmgPlayerJSProd_>" +
+        "</wmgPlayerJSProd_>";
+    return html;
+};
+
+GmCXt.addPopupEvents = function(onOK, onCancel, onClose) {
+
+    mg$(".mgPlayerJSProd_popup").on("mousedown", GmCXt.stopPropagation);
+    mg$(".mgPlayerJSProd_overlay-container").on("mousedown", GmCXt.stopPropagation);
+
+    mg$(".mgPlayerJSProd_popup-ok-btn").on("click", onOK);
+    mg$(".mgPlayerJSProd_popup-cancel-btn").on("click", onCancel);
+    mg$(".mgPlayerJSProd_popup-close-button").on("click", onClose);
+    mg$(".mgPlayerJSProd_popup-keyshort-close").on("click", onOK);
+};
+
+GmCXt.clearPreviewPopupAlignment = function($popup) {
+    $popup
+        .removeClass('top-left')
+        .removeClass('top-middle')
+        .removeClass('top-right')
+        .removeClass('right-top')
+        .removeClass('right-middle')
+        .removeClass('right-bottom')
+        .removeClass('bottom-left')
+        .removeClass('bottom-middle')
+        .removeClass('bottom-right')
+        .removeClass('left-top')
+        .removeClass('left-middle')
+        .removeClass('left-bottom');
+};
+// Precedence management Functions
+
+GmCXt.checkPrecedence = function() {
+
+    let app = "";
+    let r = GmCXt.getAppsArray(GmCXt.myGuideApps);
+
+    if (r.length === 0 && GmCXt.user) {
+        // First time, after user logins
+        return true;
+    }
+
+    r = GmCXt.getByPrecedence(r, GmCXt.appPrecedence);
+
+    if (r.length > 1) r = GmCXt.getByPrecedence(r, GmCXt.envPrecedence);
+
+    if (r.length === 1) app = r[0];
+
+    if (GmCXt.getAppName() === app) return true;
+    else return false;
+};
+
+GmCXt.getByPrecedence = function(apps, p) {
+    let r = [];
+
+    for (let i = 0; i < p.length; i++) {
+        if (!r.length && p[i])
+            r = GmCXt.filterApps(apps, p[i]);
+        else
+            break;
+    }
+
+    return r;
+};
+/**
+ * Rules Engine Module
+ * 
+ * Functions for processing, manipulating and calculating rules.
+ */
+
+GmCXt.seggregateRules = function(ruleGroup) {
+    let rules = {
+        dom: [],
+        url: [],
+        api: []
+    };
+    for (let i = 0; i < ruleGroup.length; i++) {
+        let rule = ruleGroup[i];
+        if (rule.type.includes('Select ') || rule.type === "Variables") {
+            rule.domRule = true;
+            rules.dom.push(rule);
+            ruleGroup.checkDom = true;
+        } else if (rule.condition === 'Get Validity') {
+            rule.apiRule = true;
+            rules.api.push(rule);
+            ruleGroup.checkApi = true;
+        } else {
+            rules.url.push(rule);
+        }
+    }
+    return rules;
+};
+
+GmCXt.numberOfDomRules = function(rules) {
+    let count = 0;
+    for (let i = 0; i < rules.length; i++) {
+        if (rules[i].type === 'Select Element' || rules[i].type === 'Select Table' || rules[i].type === 'Variables') {
+            count++;
+        }
+    }
+    return count;
+};
+
+GmCXt.variableRuleExistInGuide = function(rules) {
+    for (let k = 0, l = rules.length; k < l; k++) {
+        if (rules[k].type === 'Variables') {
+            return true;
+        }
+    }
+    return false;
 };
 
 GmCXt.checkProceedToPlay = function(step, tour) {
@@ -10028,134 +7232,466 @@ GmCXt.checkProceedToPlay = function(step, tour) {
     });
 };
 
-GmCXt.reloadElectronApp = function() {
-    require('electron').remote.getCurrentWindow().reload();
+GmCXt.legacyWildChar = function(v) {
+    return GmCXt.decodeVersion(v) <= 2020063002;
+};
+//Segment related functions
+
+GmCXt.getSegmentSetting = function(segmentId) {
+    let segment = GmCXt.getSegmentById(segmentId);
+
+    let segmentSettings, segmentSetting;
+    if (!GmCXt.isEmpty(segment) && segment.settings) {
+        segmentSettings = GmCXt.parseJSON(segment.settings);
+        for (let key in segmentSettings) {
+            if (segmentSettings.hasOwnProperty(key)) {
+                if (segmentSettings[key] === 1) {
+                    segmentSetting = key;
+                    break;
+                }
+            }
+        }
+    }
+
+    return segmentSetting;
 };
 
-GmCXt.getContainerOffSet = function(container) {
-    let d;
+GmCXt.getSegmentById = function(id) {
+    if (GmRootScope.allSegments) {
+        return GmRootScope.allSegments.filter(function(g) {
+            return parseInt(g.group_id) === parseInt(id);
+        })[0];
+    } else return {};
+};
 
-    if (container.length > 0) {
+GmCXt.areUserSegmentsValid = function(segments, segmentId) {
+    let userProfileData = GmCXt.user.profile ? JSON.parse(GmCXt.user.profile) : "";
+    let isValid = false;
 
-        d = container.offset();
+    let userData = [];
+    if (userProfileData && Object.prototype.toString.call(userProfileData) !== '[object Array]') {
+        for (var i = 0; i < Object.keys(userProfileData).length; i++) {
+            key = Object.keys(userProfileData)[i];
+            value = userProfileData[key];
+            userData.push({
+                data: value
+            });
+        }
+    } else {
+        userData = userProfileData;
+    }
 
-        if (d !== undefined) {
+    if (!userData) return isValid;
 
-            if (d.top < 0) d.top = 0;
+    if (!segments || !segments.length) return true;
 
-            if (d.left < 0) d.left = 0;
+    if (GmCXt.user.role !== "user") return true;
+
+    for (var i = 0; i < segments.length; i++) { // For each segment in the segmentation
+        if (!GmCXt.isEmpty(segments[i].data)) {
+            isValid = false;
+            for (let j = 0; j < userData.length; j++) {
+                if (userData[j].id && !GmCXt.isEmpty(userData[j].data) && parseInt(segments[i].id) === parseInt(userData[j].id)) {
+                    for (var k = 0; k < segments[i].data.length; k++) {
+                        if (userData[j].data.includes(segments[i].data[k])) {
+                            isValid = true;
+                            break;
+                        }
+                    }
+                } else if (!GmCXt.isDefined(userData[j].id) && !GmCXt.isEmpty(userData[j].data)) {
+                    for (var k = 0; k < segments[i].data.length; k++) {
+                        if (userData[j].data.includes(segments[i].data[k])) {
+                            isValid = true;
+                            break;
+                        }
+                    }
+                }
+            }
+            if (!isValid) break;
+        }
+    }
+
+    GmCXt.log(68, "Valid User Segments: ", isValid);
+    return isValid;
+};
+
+GmCXt.getTourSegmentDetail = function(tour) {
+    let segmentDetails = [];
+    let tour_segs = tour.tour_settings.segment_groups;
+    tour_segs.forEach(function(s) {
+        let sg = GmCXt.getSegmentById(s);
+        if (!GmCXt.isEmpty(sg)) {
+            segmentDetails.push(sg);
+        }
+    });
+    return segmentDetails;
+};
+
+GmCXt.checkGuidesBasedOnSegment = function(tours, cb, from) {
+
+    if (!tours || !tours.length) {
+        cb({});
+        return;
+    }
+
+    let allSegment = [];
+    let totalSegment = 0;
+    let toursProcessed = 0;
+    let segmentProcessed = 0;
+    let validatedTours = [];
+
+    let totalTours = tours.length;
+
+    function checkTourSegment(s_id) {
+        tours.forEach(function(tour) {
+
+            GmCXt.log(68, "Check Segments in Tour: " + GmCXt.tourLog(tour));
+
+            let isSegmentValid = false;
+            let segments = tour.tour_settings.segment_groups;
+            if (GmCXt.inArray(segments, s_id)) {
+                for (let i = 0; i < segments.length; i++) { // For each segmentation added
+                    if (GmCXt.validatedSegments[segments[i]]) {
+                        isSegmentValid = true;
+                        break;
+                    }
+                }
+                if (isSegmentValid && !GmCXt.inArray(tour.tour_id, validatedTours)) {
+
+                    validatedTours.push(parseInt(tour.tour_id));
+
+                    toursProcessed++;
+
+                    GmCXt.log(68, "VALID Tour segments: " + GmCXt.tourLog(tour));
+
+                }
+
+                if (segments.length > 0) {
+
+                    let segmentSetting = GmCXt.getSegmentSetting(segments[0]);
+
+                    switch (segmentSetting) {
+                    case 'show_guides_user_in_segment':
+                        if (isSegmentValid) cb(tour); // Show the guide if user is part of the segment and `activeSegmentSetting` is "show_guides_user_in_segment"
+                        break;
+                    case 'hide_guides_user_in_segment':
+                        if (!isSegmentValid) cb(tour); // Hide the guide if user is part of the segment and `activeSegmentSetting` is "hide_guides_user_in_segment"
+                        break;
+                    case 'show_guides_user_not_in_segment':
+                        if (!isSegmentValid) cb(tour); // Show the guide if user is not part of the segment and `activeSegmentSetting` is "show_guides_user_not_in_segment"
+                        break;
+                    default:
+                        if (isSegmentValid) cb(tour); // Default case
+                        break;
+                    }
+                }
+            }
+        });
+    }
+
+    // segment rules call back
+    function segmentRuleCallBack(r) {
+
+        segmentProcessed++;
+
+        if (GmCXt.isTrue(r.valid)) {
+            GmCXt.validatedSegments[r.segmentId] = true;
+            GmCXt.log(68, "Validat Segment ", r);
         }
 
-        d.width = parseInt(container.width());
-        d.height = parseInt(container.height());
+        if (toursProcessed !== totalTours) {
+            checkTourSegment(r.segmentId);
+        }
+
+        // if all segment is validated and no tour is processed
+        if (segmentProcessed === totalSegment && toursProcessed === 0) {
+            cb({});
+        }
+
+    }
+
+    // get all segments from the tour
+    tours.forEach(function(tour, i) {
+        if (tour.tour_settings.segment_groups.length > 0) {
+            allSegment.push(tour.tour_settings.segment_groups);
+        } else {
+            validatedTours.push(parseInt(tour.tour_id));
+            toursProcessed++;
+            cb(tour);
+        }
+    });
+
+    GmCXt.storage().get(['gmSelectedSegment']).then(function(st){
+        if(!GmCXt.isEmpty(st) && !GmCXt.isEmpty(st.gmSelectedSegment)){
+            let selectedSeg = GmCXt.parseJSON(st.gmSelectedSegment);
+            if(!GmCXt.isEmpty(selectedSeg)) {
+                allSegment = selectedSeg.map(seg => seg.group_id);
+            }
+        }
+
+        let flattenAllsegment = allSegment.reduce(function(seg, val) {
+            return seg.concat(val);
+        }, []);
+
+        allSegment = GmCXt.removeDuplicates(flattenAllsegment);
+        totalSegment = allSegment.length;
+
+        allSegment.forEach(function(segmentId, i) {
+
+            GmCXt.log(68, "Validating Segment: ", segmentId);
+            let segment = GmCXt.getSegmentById(segmentId);
+
+            //if role based segments inside a segment group are not in user.profile, Invalidate those segment groups
+            if (segment && !GmCXt.areUserSegmentsValid(segment.segments, segmentId)) {
+
+                GmCXt.log(68, "Invalid User Segments: ", segmentId);
+                segmentRuleCallBack({
+                    valid: false,
+                    segmentId: segmentId
+                });
+            } else if (GmCXt.validatedSegments[segmentId] && (segment && !segment.rule_check)) {
+                //re-eval seg rules only if On page click option is selected
+                segmentRuleCallBack({
+                    valid: true,
+                    segmentId: segmentId
+                });
+            } else {
+                let rules = (segment && segment.rules && segment.rules.length) ? GmCXt.parseJSON(segment.rules) : [];
+                let title = segment ? segment.title : "Segment not found";
+
+                if (GmCXt.validatedSegments[segmentId]) {
+                    delete GmCXt.validatedSegments[segmentId];
+                }
+
+                let data = {
+                    rules: rules,
+                    tour: {
+                        tour_id: segmentId,
+                        tour_settings: {},
+                        tour_title: title
+                    },
+                    timeoutVal: GmCXt.t.ruleTimeOut10s,
+                    timeout: GmCXt.t.ruleTimeOut10s,
+                    cb: segmentRuleCallBack,
+                    isTour: true,
+                    initiator: from,
+                    segmentId: segmentId
+                };
+
+                GmCXt.ruleEngine.queue(data);
+            }
+
+        });
+    });
+};
+
+GmCXt.getStepSettings = function() {
+
+    let appSettings = false;
+
+    if (!GmCXt.isEmpty(GmCXt.appList)) {
+        let activeApp = GmCXt.appList['app:' + GmCXt.activeAppId];
+
+        if (activeApp && activeApp.settings) {
+            appSettings = activeApp.settings;
+        }
+    } else if (window.self !== window.top && !GmCXt.isEmpty(GmCXt.activeAppSettings)) {
+        appSettings = GmCXt.activeAppSettings;
+    }
+
+    if (GmCXt.isDesktop()) {
+        appSettings = (!GmCXt.isEmpty(GmCXt.playerI.tour.steps[0].orgSettings)) ? GmCXt.playerI.tour.steps[0].orgSettings : GmCXt.playerI.tour.steps[0].appSettings;
+        appSettings = GmCXt.validateDataModel(appSettings, GmCXt.model.organization.settings._obj);
+    }
+
+    return appSettings;
+};
+
+GmCXt.setDefaultStepSetting = function(data, prop, val) {
+    if (!data.step_settings[prop] || data.step_settings[prop] === 'keepNext') {
+        data.step_settings[prop] = val;
+    }
+};
+
+GmCXt.getOpacityFromStepSettings = function(step) {
+
+    let opacity = 0;
+    let setting = step.step_settings;
+
+    if (setting && GmCXt.isNumeric(setting.overlayOpacity)) {
+        opacity = parseInt(setting.overlayOpacity);
+    }
+    return opacity;
+};
+
+GmCXt.checkIfSurveySubmitted = function(playerInstance, data, isExitSurvey, cb) {
+    let flag = false;
+    GmCXt.storage().get(['surveyCompleted'])
+        .then(function(st) {
+            function checkSurveySubmited(version, surveyObj) {
+                if (surveyObj[data.tourId]) {
+                    if (version > surveyObj[data.tourId]) {
+                        return true;
+                    } else {
+                        return false;
+                    }
+                } else {
+                    return true;
+                }
+            }
+
+            data.instance = {
+                tour: {
+                    tour_settings: playerInstance.tour.tour_settings
+                }
+            };
+
+            if (GmCXt.isAnonymousUser()) {
+                if (GmCXt.getObjectSize(st) === 0) st.surveyCompleted = {};
+                flag = checkSurveySubmited(parseInt(data.version), st.surveyCompleted);
+            } else {
+                let userSettings = GmCXt.user.settings || {};
+                userSettings.surveyCompleted = userSettings.surveyCompleted || {};
+                flag = checkSurveySubmited(parseInt(data.version), userSettings.surveyCompleted);
+            }
+
+        }).then(function() {
+            if (cb) {
+                cb(flag);
+            }
+        });
+};
+
+GmCXt.showSurveyScreen = function(data, isExitSurvey) {
+    return new Promise(function(resolve, reject) {
+        GmCXt.isSurveyVisible = false;
+
+        if (isExitSurvey) {
+            GmCXt.isSurveyVisible = true;
+            GmCXt.sendMessageToParentWindow('mgPlayerJSProd_action:exit_survey_start;task:show_survey', data);
+            resolve(GmCXt.isSurveyVisible);
+
+        } else if (data.type === "stepPlay") {
+            GmCXt.isSurveyVisible = true;
+            GmCXt.sendMessageToParentWindow('mgPlayerJSProd_action:survey_start;task:show_survey', data);
+            resolve(GmCXt.isSurveyVisible);
+
+        } else {
+            let playerInstance = mg$.extend({}, data.playerInstance);
+
+            if (GmCXt.isEmpty(playerInstance)) return;
+
+            GmCXt.checkIfSurveySubmitted(playerInstance, data, isExitSurvey, function(f) {
+                if (f) {
+                    GmCXt.isSurveyVisible = true;
+                    GmCXt.sendMessageToParentWindow('mgPlayerJSProd_action:survey_start;task:show_survey', data);
+                }
+                resolve(GmCXt.isSurveyVisible);
+            });
+        }
+
+        if (!GmCXt.isSidePanelApp) GmCXt.closeAppPanel();
+    });
+};
+
+GmCXt.checkCurrentStepSurvey = function(pi) {
+
+    let currentStep = GmCXt.getCurrentStep(pi.currentStepId);
+    if (currentStep.step_type === "survey") {
+        return true;
     } else {
-        d = {
-            top: 0,
-            left: 0,
-            width: mg$(document).width(),
-            height: mg$(document).height()
-        };
-    }
-
-    return d;
-};
-
-GmCXt.removeScreenOverlay = function() {
-    GmCXt.screenOverlayI = undefined;
-    mg$('.mgPlayerJSProd_screen-blackout').hide();
-    mg$('.mgPlayerJSProd_screen-blackout').html('');
-};
-
-GmCXt.getWidgetInstance = function() {
-    return mg$('.mgPlayerJSProd_start-button');
-};
-
-GmCXt.getChatIconInstance = function() {
-    return mg$('#mgPlayerJSProd_btn-chat-button');
-};
-
-GmCXt.hideWidgetIcon = function() {
-    GmCXt.log(8, "HIDE WIDGET");
-
-    let widget = GmCXt.getWidgetInstance();
-    if (widget.length) {
-        widget.hide();
-    }
-};
-
-GmCXt.getTaskListVisibility = function() {
-    if (GmCXt.isTrue(GmCXt.APP_PANEL_OPEN) || !GmCXt.checkPrecedence()) {
         return false;
     }
+};
 
-    if (GmCXt.user && GmCXt.isPlayer() && GmCXt.taskListCount > 0) {
+GmCXt.getSurveyScreen = function(PI, guideNotCompleted) {
+    return new Promise(function(resolve, reject) {
+        let f = false;
+
+        if (GmCXt.playerI && GmCXt.isLooping()) {
+            resolve(f);
+
+        } else if (PI && PI.tour) {
+
+            let tour = PI.tour;
+
+            let data = {
+                tourId: tour.tour_id,
+                version: tour.version,
+                playerInstance: PI
+            };
+
+            if (guideNotCompleted) {
+                f = true;
+
+                if (PI && GmCXt.checkCurrentStepSurvey(PI)) {
+
+                    let currentStep = GmCXt.getCurrentStep(PI.currentStepId);
+                    let sentiment = currentStep.step_settings.sentiment;
+                    data.data = {};
+                    data.data.sentimentCode = sentiment.sentiment_code;
+                    data.step = currentStep;
+                    data.type = 'stepPlay';
+                    GmCXt.showSurveyScreen(data, false, guideNotCompleted).then(function() {
+                        resolve(f);
+                    });
+
+                } else if (GmCXt.isExitSurvey()) {
+
+                    if (GmCXt.isPlayer()) {
+                        GmCXt.showSurveyScreen(data, true).then(function() {
+                            resolve(f);
+                        });
+
+                    } else {
+                        let ti = GmCXt.tourPlayerI;
+                        if (ti) {
+                            ti.closeGuide();
+                        }
+                        resolve(f);
+                    }
+                }
+
+            } else if (GmCXt.showSurvey(PI) && GmCXt.isPlayer()) {
+                data.type = 'guide';
+                GmCXt.showSurveyScreen(data).then(function(f) {
+                    resolve(f);
+                });
+            }
+        }
+    });
+};
+
+GmCXt.showSurvey = function(PI) {
+
+    let tour = PI.tour;
+
+    if (tour.is_published &&
+        tour.tour_settings.enableSentiment &&
+        PI.completeEventTracked &&
+        GmCXt.isLastStep(PI.currentStepId, PI.playStructure))
         return true;
-    }
-    return false;
+    else if (!GmCXt.playerI && tour && tour.is_published && tour.tour_settings.enableSentiment) {
+        return true;
+    } else
+        return false;
 };
 
-GmCXt.imageSizeStyle = function(selector) {
-    let len = mg$(selector).length;
 
-    if (len) {
-        for (let i = 0; i < len; i++) {
-            let imgW = mg$(selector)[i].getAttribute('width');
-            let imgH = mg$(selector)[i].getAttribute('height');
-
-            mg$(selector)[i].style.setProperty('width', imgW + 'px', 'important');
-            mg$(selector)[i].style.setProperty('height', imgH + 'px', 'important');
-        }
+GmCXt.isClickInSurveyPopup = function(e) {
+    if (mg$(e.target).parents('.mgPlayerJSProd_survey-popup-wrapper').length) {
+        return true;
+    } else {
+        return false;
     }
 };
 
-GmCXt.updateGuideDisplayFrequency = function(tours) {
-    GmCXt.user.settings.display_frequency_guides = tours;
-    let data = {
-        settings : {
-            display_frequency_guides : tours
-        }
-    };
-    GmCXt.updateUserSettings(data, GmCXt.user);
-};
+GmCXt.showExitSurvey = function(opts) {
 
-GmCXt.markBeaconDisplayFrequency = function (tour) {
-
-    if (tour) {
-        let beaconGuides = {};
-        if (GmCXt.isDefined(GmCXt.user.settings.display_frequency_beacons)) {
-            beaconGuides = GmCXt.createDeepCopy(GmCXt.user.settings.display_frequency_beacons);
-        }
-
-        if (beaconGuides[tour.tour_id] && parseInt(tour.version) === parseInt(beaconGuides[tour.tour_id].version)) {
-            beaconGuides[tour.tour_id].playedCount++;
-        } else {
-            beaconGuides[tour.tour_id] = {};
-            beaconGuides[tour.tour_id].version = parseInt(tour.version);
-            beaconGuides[tour.tour_id].playedCount = 1;
-        }
-
-        GmCXt.user.settings.display_frequency_beacons = beaconGuides;
-
-        let data = {
-            settings : {
-                display_frequency_beacons : beaconGuides
-            }
-        };
-
-        GmCXt.updateUserSettings(data, GmCXt.user);
-    }
-};
-
-GmCXt.setBeaconsDisplayFrequency = function(tourId) {
-    for (let i = 0; i < GmCXt.beaconTours.length; i++) {
-        if (parseInt(GmCXt.beaconTours[i].tour_id) === parseInt(tourId)) {
-            let beacSett = GmCXt.beaconTours[i].tour_settings.beacon;
-            if (beacSett.displayFrequency) {
-                GmCXt.markBeaconDisplayFrequency(GmCXt.beaconTours[i]);
-            }
-            break;
-        }
-    }
+    let pi = GmCXt.playerI;
+    GmCXt.unlockScroll();
+    mg$(".mgPlayerJSProd_popup").remove();
+    GmCXt.getSurveyScreen(pi, true);
 };
 
 GmCXt.updateSurveyCompletedData = function(data) {
@@ -10179,99 +7715,2545 @@ GmCXt.updateSurveyCompletedData = function(data) {
         }
     });
 };
+GmCXt.isTagged = function(el) {
+    let val = false;
+    if (el) {
+        let className = el.attr('class');
+        let parentClassName = el.parent().attr('class');
 
-GmCXt.resetMplayerPos = function() {
-    mg$('.mgPlayerJSProd_panel').removeAttr("style");
-    mg$('.mgPlayerJSProd_panel').css({
-        'left': 'initial',
-        'top': '50%',
-        'right': '50px'
+        if (className && className.indexOf('mg-ft-tag') !== -1)
+            val = className;
+        else if (parentClassName && parentClassName.indexOf('mg-ft-tag') !== -1)
+            val = parentClassName;
+    }
+
+    if (val) GmCXt.log(16, "The clicked element has a feature tag attached to it.");
+
+    return val;
+};
+
+GmCXt.getTagStepAndTourId = function(classStr) {
+    let classes = classStr.split(' ');
+    for (let i = 0; i < classes.length; i++) {
+        if (classes[i].indexOf('mgftag') !== -1) {
+            let ids = classes[i].split('-');
+            return {
+                step_id: ids[1],
+                tour_id: ids[2],
+                group_id: ids[3].replaceAll(':', "-"),
+                is_tracking_enabled: ids[4]
+            };
+        }
+    }
+};
+
+GmCXt.tagClassName = function(step,tagTour) {
+    let tagClassName = 'mgftag-' + step.step_id + '-' + step.tour_id + '-' + step.step_settings.groupId.replaceAll('-', ":");
+    let trackingEnable = tagTour.tour_settings.is_tracking_enabled ? 1 : 0;
+    tagClassName = tagClassName + '-' + trackingEnable;
+    return tagClassName;
+};
+
+
+GmCXt.isFeatureTags = function(t) {
+    if (t && t.tour_type.indexOf('insights') >= 0) return true;
+    else return false;
+};
+
+GmCXt.skipTags = function(he) {
+    if (GmCXt.isSvgTag(he.tagName)) {
+
+        he = he.parentNode;
+
+        while (he && he.parentNode && GmCXt.isSvgTag(he.tagName)) {
+            he = he.parentNode;
+        }
+    }
+
+    if (GmCXt.checkSalesForceSite()) {
+        if (he.tagName === 'LIGHTNING-PRIMITIVE-ICON') {
+            he = he.parentNode;
+        }
+
+        let parent = he.parentNode;
+        if (parent && he.tagName === 'BUTTON' &&
+            (parent.tagName === 'LIGHTNING-BUTTON-ICON' || parent.tagName === 'LIGHTNING-BUTTON')) {
+            he = parent;
+        }
+    }
+    return he;
+};
+//Alert and Toast Specific Functions
+
+/** @function Alert function to show message to a user
+  * @param {object} options - having properties
+  *  title: Popup title.
+  *  message: Popup description.
+  *  callback: Callback function to call on 'Ok' button click event.
+  *  type: Popup type. For 'Confirm' type, 'Cancel' button is shown.
+*/
+GmCXt.alert = function(options) {
+    options = options || {};
+
+    let pub = {};
+
+    let self = {
+        title: options.title,
+        description: options.description,
+        callback: options.callback,
+        type: options.type
+    };
+
+    pub.show = function() {
+        let popupType = 'mgPlayerJSProd_popup-info';
+        let popupDescription = "";
+
+        if (self.description) {
+            popupDescription = "<wmgPlayerJSProd_ class='mgPlayerJSProd_popup-content-info'>" + self.description + "</wmgPlayerJSProd_>";
+        }
+
+        let cancelButton = "";
+        let okButton = "<wmgPlayerJSProd_ class='mgPlayerJSProd_panel-popup-ok mgPlayerJSProd_btn-default mgPlayerJSProd_ok-btn mgPlayerJSProd_inline-block-vt'>" + GmCXt.label.ok + "</wmgPlayerJSProd_>";
+
+        if (self.type === "confirm") {
+            cancelButton = "<wmgPlayerJSProd_ class='mgPlayerJSProd_panel-popup-cancel mgPlayerJSProd_btn-default mgPlayerJSProd_btn-neutral mgPlayerJSProd_inline-block-vt'>" + GmCXt.label.btnCancel + "</wmgPlayerJSProd_>";
+
+        } else if (self.type === "onboarding") {
+            okButton = "<wmgPlayerJSProd_ class='mgPlayerJSProd_panel-popup-ok mgPlayerJSProd_btn-default mgPlayerJSProd_inline-block-vt'>" + GmCXt.label.btnGuideMe + "</wmgPlayerJSProd_>";
+            cancelButton = "<wmgPlayerJSProd_ class='mgPlayerJSProd_panel-popup-cancel mgPlayerJSProd_btn-default mgPlayerJSProd_inline-block-vt'>" + GmCXt.label.btnSkip + "</wmgPlayerJSProd_>";
+        }
+
+        let html = " <wmgPlayerJSProd_ class='mgPlayerJSProd_panel-popup-outer'></wmgPlayerJSProd_>" +
+            " <wmgPlayerJSProd_ class='mgPlayerJSProd_popup " + popupType + "'>" +
+            "    <wmgPlayerJSProd_ class='mgPlayerJSProd_popup-header-wrapper'>" +
+            "	    <wmgPlayerJSProd_ class='mgPlayerJSProd_popup-header-icon-wrapper'><wmgPlayerJSProd_ class='mgPlayerJSProd_popup-header-icon'></wmgPlayerJSProd_></wmgPlayerJSProd_>" +
+            "     </wmgPlayerJSProd_>" +
+            " 	  <wmgPlayerJSProd_ class='mgPlayerJSProd_popup-content-wrapper'>" + self.title + "</wmgPlayerJSProd_>" +
+            popupDescription +
+            "     <wmgPlayerJSProd_ class='mgPlayerJSProd_popup-btn-wrapper'>" +
+            okButton +
+            cancelButton +
+            "    </wmgPlayerJSProd_>" +
+            " </wmgPlayerJSProd_>";
+
+        mg$("body").append(html);
+
+        mg$(".mgPlayerJSProd_popup-header-icon").html(GmCXt.svgs.popup_info);
+
+        mg$(".mgPlayerJSProd_panel-popup-outer").css('height', mg$(document).height());
+
+        mg$(".mgPlayerJSProd_panel-popup-ok").on("click", function() {
+            if (mg$.isFunction(self.callback))
+                self.callback();
+            pub.close();
+        });
+
+        mg$(".mgPlayerJSProd_panel-popup-cancel").on("click", function() {
+            pub.close();
+        });
+    };
+
+    pub.close = function() {
+        mg$(".mgPlayerJSProd_popup").remove();
+        mg$(".mgPlayerJSProd_panel-popup-outer").remove();
+    };
+
+    return pub;
+};
+
+GmCXt.alertV2 = function(options) {
+    options = options || {};
+
+    let pub = {};
+
+    let self = {
+        description: GmCXt.escapeHtml(options.description),
+        button1: options.button1,
+        button1Callback: options.button1Callback,
+        button2: options.button2,
+        button2Callback: options.button2Callback,
+        button3: options.button3,
+        button3Callback: options.button3Callback,
+        keepScrollLock: options.keepScrollLock || false,
+        closeTour: options.closeTour ? options.closeTour : false,
+        showInputField: options.showInputField || false
+    };
+
+    let popupInputField = 'none';
+    if (self.showInputField) {
+        popupInputField = 'block';
+    }
+    pub.show = function() {
+        let alt = GmCXt.getAutoLaunchTourId();
+        let pi = GmCXt.playerI;
+        let popupType = 'mgPlayerJSProd_popup-info';
+
+        let html = " <wmgPlayerJSProd_ class='mgPlayerJSProd_overlay-container'></wmgPlayerJSProd_>" +
+            "<wmgPlayerJSProd_ class='mgPlayerJSProd_popup " + popupType + "'>" +
+            "   <wmgPlayerJSProd_ class='mgPlayerJSProd_popup-header-wrapper'>" +
+            "	   <wmgPlayerJSProd_ class='mgPlayerJSProd_popup-header-icon-wrapper'><wmgPlayerJSProd_ class='mgPlayerJSProd_popup-header-icon'></wmgPlayerJSProd_></wmgPlayerJSProd_>" +
+            "   </wmgPlayerJSProd_>" +
+            "<wmgPlayerJSProd_ style='display:" + popupInputField + "'><input type='text' class='mgPlayerJSProd_popup-input-field' maxlength='1000' /></wmgPlayerJSProd_>" +
+            "<wmgPlayerJSProd_ class='mgPlayerJSProd_popup-content-wrapper'>" + self.description + "</wmgPlayerJSProd_>" +
+            "<wmgPlayerJSProd_ class='mgPlayerJSProd_popup-btn-wrapper'>";
+
+        if (self.button1) {
+            html += "<wmgPlayerJSProd_ title='" + self.button1 + "' aria-label='" + self.button1 + "' class='mgPlayerJSProd_popup-ok-btn mgPlayerJSProd_btn-default mgPlayerJSProd_ok-btn mgPlayerJSProd_text-overflow-ellipsis mgPlayerJSProd_inline-block-vt'>" + self.button1 + "</wmgPlayerJSProd_>";
+        }
+
+        if (self.button3) {
+            html += "<wmgPlayerJSProd_ class='mgPlayerJSProd_popup-play-inapp mgPlayerJSProd_btn-default mgPlayerJSProd_ok-btn mgPlayerJSProd_inline-block-vt' aria-label='" + self.button3 + "'>" + self.button3 + "</wmgPlayerJSProd_>";
+        }
+
+        if (self.button2) {
+            html += "<wmgPlayerJSProd_ title='" + self.button2 + "' aria-label='" + self.button2 + "' class='mgPlayerJSProd_popup-cancel-btn mgPlayerJSProd_btn-default mgPlayerJSProd_text-overflow-ellipsis mgPlayerJSProd_inline-block-vt'>" + self.button2 + "</wmgPlayerJSProd_>";
+        }
+
+        html += "</wmgPlayerJSProd_>";
+
+        if (pi && alt && alt === pi.tour.tour_id)
+            html += "<wmgPlayerJSProd_><input type='checkbox' class='mgPlayerJSProd_popup-checkbox mgPlayerJSProd_input-checkbox-custom'>" + GmCXt.label.doNotShowAgain + "</wmgPlayerJSProd_>" +
+            "</wmgPlayerJSProd_>";
+
+        mg$("html").append(html);
+
+        mg$(".mgPlayerJSProd_popup-header-icon").html(GmCXt.svgs.popup_info);
+        mg$(".mgPlayerJSProd_popup").on("mousedown", function(e) {
+            GmCXt.stopPropagation(e);
+        });
+
+        mg$(".mgPlayerJSProd_overlay-container").on("mousedown", function(e) {
+            GmCXt.stopPropagation(e);
+        });
+
+        mg$(".mgPlayerJSProd_popup-ok-btn").on("click", function(e) {
+            GmCXt.stopPropagation(e);
+            let popupInputFieldValue = mg$('.mgPlayerJSProd_popup-input-field').val();
+            if (pi && alt && alt === pi.tour.tour_id) {
+
+                let checked = mg$('.mgPlayerJSProd_popup-checkbox:checkbox:checked').length > 0;
+
+                if (checked)
+                    GmCXt.setDoNotShowTours(pi.tour);
+                else
+                    GmCXt.setSnoozedTour(pi.tour);
+            }
+            self.closeTour = false;
+            pub.close();
+            if (mg$.isFunction(self.button1Callback))
+                self.button1Callback(popupInputFieldValue);
+        });
+
+        mg$(".mgPlayerJSProd_popup-play-inapp").on("click", function(e) {
+            GmCXt.stopPropagation(e);
+            pub.close();
+            if (mg$.isFunction(self.button3Callback))
+                self.button3Callback();
+        });
+
+        mg$(".mgPlayerJSProd_popup-cancel-btn").on("click", function(e) {
+            GmCXt.stopPropagation(e);
+            pub.close(self.keepScrollLock);
+            if (mg$.isFunction(self.button2Callback))
+                self.button2Callback();
+        });
+
+        mg$(".mgPlayerJSProd_popup-close-button").on("click", function(e) {
+            GmCXt.stopPropagation(e);
+            pub.close(self.keepScrollLock);
+        });
+    };
+
+    pub.close = function(keepScrollLock) {
+
+        if (!keepScrollLock)
+            GmCXt.unlockScroll();
+
+        if (self.closeTour) GmCXt.cleanPlayer();
+
+        GmCXt.closePopup();
+    };
+
+    return pub;
+};
+
+GmCXt.toastMsg = function(message) {
+
+    let self = {
+        message: message || 'Default message'
+    };
+
+    return {
+        show: function() {
+            mg$("#mgPlayerJSProd_toast_msg").remove();
+
+            let html = "<wmgPlayerJSProd_ class='mgPlayerJSProd_toast-msg' id='mgPlayerJSProd_toast_msg'></wmgPlayerJSProd_>";
+            if (GmCXt.browserApp === 'ie') {
+                mg$("body").append(html);
+            } else {
+                mg$("html").append(html);
+            }
+
+            mg$("#mgPlayerJSProd_toast_msg").html(self.message);
+            mg$("#mgPlayerJSProd_toast_msg").fadeIn();
+            GmCXt.timeout(function() {
+                mg$('#mgPlayerJSProd_toast_msg').fadeOut(500);
+            }, GmCXt.t.toastMsg);
+        }
+    };
+};
+
+GmCXt.showToastMsg = function(message) {
+    mg$("#mgPlayerJSProd_toast_msg").html(message);
+    mg$("#mgPlayerJSProd_toast_msg").fadeIn();
+};
+
+GmCXt.hideToastMsg = function() {
+    mg$('#mgPlayerJSProd_toast_msg').fadeOut(100);
+};
+
+GmCXt.toastMsgPersistent = function(message) {
+    return {
+        show: function() {
+            let htmlstr = "<wmgPlayerJSProd_ class='mgPlayerJSProd_toast-msg-wrapper'><wmgPlayerJSProd_ class='mgPlayerJSProd_toast-msg-close' id='mgPlayerJSProd_toast_msg_close' >x</wmgPlayerJSProd_>";
+            htmlstr += "<wmgPlayerJSProd_ id='mgPlayerJSProd_toast_msg_text' class='mgPlayerJSProd_toast-msg-text' >" + message + "</wmgPlayerJSProd_></wmgPlayerJSProd_>";
+            mg$("#mgPlayerJSProd_toast_msg").html(htmlstr);
+            mg$("#mgPlayerJSProd_toast_msg").fadeIn();
+
+            mg$("#mgPlayerJSProd_toast_msg_close").click(function() {
+                GmCXt.toastMsgPersistent().hide();
+            });
+        },
+        hide: function() {
+            mg$('#mgPlayerJSProd_toast_msg').fadeOut(500);
+        }
+    };
+};
+/**
+ * 
+ * Functions for managing tooltips and its UI components.
+ */
+
+
+GmCXt.tooltipTitle = function(os, pEle) {
+    let tTitleCss = "<wmgPlayerJSProd_ class='mgPlayerJSProd_tooltip-title-css'><style type='text/css'>" +
+        "." + pEle + " p:first-child {" + "color: " + os.popupDesign.current.stepTitleColor + " !important; " +
+        "font-family: " + os.popupDesign.current.stepTitleFontFamily + " !important; " +
+        "font-size: " + os.popupDesign.current.stepTitleFontSize + " !important; " +
+        "font-weight: " + os.popupDesign.current.stepTitleFontWeight + " !important; " +
+        "padding-bottom: 10px !important;" +
+        "}" +
+        "</style></wmgPlayerJSProd_>";
+
+    return mg$("html").append(tTitleCss);
+};
+
+GmCXt.tooltipPopupCss = function(os, customEle, isPreviewMode) {
+    let previewPrefix = isPreviewMode || '';
+
+    const popupPositions = [
+        "left", "left-middle", "left-top", "left-bottom",
+        "right", "right-middle", "right-top", "right-bottom",
+        "top", "top-middle", "top-left", "top-right",
+        "bottom", "bottom-middle", "bottom-left", "bottom-right",
+        "center"
+    ];
+
+    // Map position to border side
+    const positionToSide = {
+        "left": "left",
+        "left-middle": "left",
+        "left-top": "left",
+        "left-bottom": "left",
+        "right": "right",
+        "right-middle": "right",
+        "right-top": "right",
+        "right-bottom": "right",
+        "top": "top",
+        "top-middle": "top",
+        "top-left": "top",
+        "top-right": "top",
+        "bottom": "bottom",
+        "bottom-middle": "bottom",
+        "bottom-left": "bottom",
+        "bottom-right": "bottom",
+    };
+
+    let popUpCSS = "<wmgPlayerJSProd_ class='mgPlayerJSProd_tooltip-popup-css'><style type='text/css'>";
+
+    popupPositions.forEach(function(position) {
+        var borderSide = positionToSide[position];
+        // Type 1 selector: full class with prefix
+        var type1SelectorBefore = customEle + ".mgPlayerJSProd_" + previewPrefix + "smarttip-guidance-msg-" + position + ":before";
+        var type1SelectorAfter  = customEle + ".mgPlayerJSProd_" + previewPrefix + "smarttip-guidance-msg-" + position + ":after";
+        
+        // Type 2 selector: position-only class
+        var type2SelectorBefore = customEle + ".mgPlayerJSProd_smarttip-guidance-msg." + position + ":before";
+        var type2SelectorAfter  = customEle + ".mgPlayerJSProd_smarttip-guidance-msg." + position + ":after";
+
+        // Combine both in each rule
+        popUpCSS += `${type1SelectorBefore},${type2SelectorBefore} {border-${borderSide}-color:${os.popupDesign.current.bgColor} !important;}`;
+        popUpCSS += `${type1SelectorAfter},${type2SelectorAfter} {border-${borderSide}-color:${os.popupDesign.current.borderColor} !important;}`;
+    });
+
+    popUpCSS += "</style></wmgPlayerJSProd_>";
+
+    return mg$("html").append(popUpCSS);
+};
+
+GmCXt.tooltipTheme = function(os, customEle, options, isPreviewMode) {
+    let isTooltipTheme = os.tooltipTheme;
+    let popupWidth = options && options.popupSize && options.popupSize.popupWidth ? options.popupSize.popupWidth : os.stepPopupWidth;
+
+    let tObj = {
+        'tooltipBgColor': '',
+        'tooltipDescColor': '',
+        'tooltipDescFfamily': '',
+        'tooltipDescFsize': '',
+        'tooltipBorderC': '',
+        'tooltipBorderW': '',
+        'tooltipBorderRadius': '',
+        'tooltipMwidth': '',
+        'tooltipWidth': '',
+        'tooltipPaddingTop': '',
+        'tooltipPaddingBottom': '',
+        'tooltipPaddingLeft': '',
+        'tooltipPaddingRight': ''
+    };
+
+    if (isTooltipTheme) {
+        tObj.tooltipBgColor = "background:" + os.popupDesign.current.bgColor + " !important; box-shadow: rgb(0 0 0 / 50%) 0 0 10px -2px !important;";
+        tObj.tooltipDescColor = "color:" + os.popupDesign.current.stepDescColor + " !important; ";
+        tObj.tooltipDescFfamily = ("font-family:" + os.popupDesign.current.stepDesFontFamily + " !important; ").replace(/'/g, "\"");
+        tObj.tooltipDescFsize = "font-size:" + os.popupDesign.current.stepDesFontSize + " !important; ";
+        tObj.tooltipBorderC = "border-color:" + os.popupDesign.current.borderColor + " !important; ";
+        tObj.tooltipBorderW = "border-width:" + os.popupDesign.current.borderWidth + "px !important; ";
+        tObj.tooltipBorderRadius = "border-radius:" + os.popupDesign.current.borderRadius + "px !important; ";
+        tObj.tooltipMwidth = "max-width:" + os.stepPopupWidth + "px !important; ";
+        tObj.tooltipWidth = "width:" + popupWidth + "px !important; padding: 15px 15px 5px 15px !important; white-space: normal !important; line-height: initial !important;";
+        tObj.tooltipPaddingTop = "padding-top:" + os.popupDesign.current.padding.top + "px !important; ";
+        tObj.tooltipPaddingBottom = "padding-bottom:" + os.popupDesign.current.padding.bottom + "px !important; ";
+        tObj.tooltipPaddingLeft = "padding-left:" + os.popupDesign.current.padding.left + "px !important; ";
+        tObj.tooltipPaddingRight = "padding-right:" + os.popupDesign.current.padding.right + "px !important; ";
+
+        GmCXt.tooltipPopupCss(os, customEle, isPreviewMode);
+        GmCXt.tooltipTitle(os, 'mgPlayerJSProd_smarttip-msg-inner');
+        GmCXt.tooltipTitle(os, 'mgPlayerJSProd_preview-smarttip-msg-inner');
+    } else {
+        tObj.tooltipBorderC = "border-color:" + os.tooltipColor + " !important; ";
+
+        mg$(".mgPlayerJSProd_tooltip-popup-css").remove();
+        mg$(".mgPlayerJSProd_tooltip-title-css").remove();
+    }
+
+    return tObj;
+};
+
+GmCXt.hideTooltipDelay = function(step, options) {
+
+    if (window.self === window.top) {
+        GmCXt.hideTooltipTimeout = GmCXt.timeout(function() {
+            GmCXt.hideTooltip(step, options);
+        }, GmCXt.t.hiteTooltip);
+    } else {
+        let data = {
+            stepId: step.step_id,
+            options: options
+        };
+        GmCXt.sendMessageToTheTopWindow('mgPlayerJSProd_action:hide_smarttip_delay', data);
+    }
+};
+
+GmCXt.clearTooltipTimeout = function() {
+
+    if (window.self === window.top) {
+        clearTimeout(GmCXt.hideTooltipTimeout);
+    } else {
+        GmCXt.sendMessageToTheTopWindow('mgPlayerJSProd_action:clear_smarttip_delay_timeout');
+    }
+};
+
+GmCXt.hideValidationTooltip = function(step) {
+    let data = {
+        stepId: step.step_id
+    };
+    if (window.self === window.top) {
+        GmCXt.requestHandler.hideValidationSmarttip(data);
+    } else {
+        GmCXt.sendMessageToTheTopWindow('mgPlayerJSProd_action:hide_validation_smarttip', data);
+    }
+
+    mg$("#mgPlayerJSProd_smarttip-valid-" + step.step_id).hide();
+};
+
+GmCXt.hideTooltip = function(step, options) {
+    let data = {
+        stepId: step.step_id
+    };
+
+    if (window.self === window.top) {
+        GmCXt.requestHandler.hideSmartTip(data, options);
+    } else {
+        GmCXt.sendMessageToTheTopWindow('mgPlayerJSProd_action:hide_smarttip', data);
+    }
+};
+
+
+GmCXt.removeTooltips = function(t) {
+
+    GmCXt.log(43, "REMOVE Tooltip" + GmCXt.tourLog(t));
+
+    for (let j = 0; j < t.steps.length; j++) {
+        let step = t.steps[j];
+        let data = {
+            step_id: step.step_id,
+            tour_id: t.tour_id
+        };
+
+        if (GmCXt.inTopWindow(step.step_settings)) {
+            GmCXt.requestHandler.removeToolip(data);
+        } else {
+            GmCXt.sendMessageToAllWindows("mgPlayerJSProd_action:remove_tooltip", data);
+        }
+
+        if (t.steps[j].step_settings.smartTip.type === 'injector') {
+            GmCXt.removePowerForm();
+        }
+
+    }
+};
+
+GmCXt.getTooltipName = function(type) {
+    let name = '';
+    switch (type) {
+    case 'disableElement':
+        name = "digital_duct_tape";
+        break;
+
+    case 'injector':
+        name = "power_html";
+        break;
+
+    case 'formSubmit':
+        name = "form_submit";
+        break;
+
+    case 'both':
+        name = "guidance_validation";
+        break;
+
+    default:
+        name = type;
+        break;
+    }
+    return name;
+};
+
+GmCXt.hideSmartTipsIfOptionON = function() {
+    let org = GmCXt.organization;
+    if (org && org.admin_settings.show_tooltips_during_workflow_guide) {
+        return;
+    }
+    GmCXt.hideSmartTips();
+};
+
+GmCXt.hideSmartTips = function() {
+    mg$('.mgPlayerJSProd_smarttip-icon').addClass('tooltip-hidden');
+    mg$('.mgPlayerJSProd_smarttip').addClass('tooltip-hidden');
+    mg$('.mgPlayerJSProd_smarttip-valid').addClass('tooltip-hidden');
+    GmCXt.smarttipAreHidden = true;
+    GmCXt.sendMessageToAllWindows("mgPlayerJSProd_action:hide_all_smarttip");
+};
+
+GmCXt.showSmartTips = function(forceShow) {
+
+    if ((GmCXt.tourPlayerI && !forceShow) || GmCXt.isSurveyVisible) return;
+
+    mg$('.mgPlayerJSProd_smarttip-icon').removeClass('tooltip-hidden');
+    mg$('.mgPlayerJSProd_smarttip').removeClass('tooltip-hidden');
+    mg$('.mgPlayerJSProd_smarttip-valid').removeClass('tooltip-hidden');
+    GmCXt.smarttipAreHidden = false;
+    GmCXt.sendMessageToAllWindows("mgPlayerJSProd_action:show_all_smarttip");
+};
+
+GmCXt.previewSmartTips = function(id) {
+    mg$('.mgPlayerJSProd_smarttip-icon-wrapper-' + id).removeClass('tooltip-hidden');
+    mg$('.mgPlayerJSProd_smarttip-icon-wrapper-' + id).show();
+    GmCXt.sendMessageToAllWindows("mgPlayerJSProd_action:show_preview_smarttip", {
+        id: id
     });
 };
 
-GmCXt.isMyGuideEl = function(el) {
+GmCXt.hideBeacons = function() {
+    mg$('.mgPlayerJSProd_beacon-icon').addClass('mgPlayerJSProd_hidden');
+    mg$('#mgPlayerJSProd_beacon-icon-pos-select').show();
+    GmCXt.beaconsAreHidden = true;
+    GmCXt.sendMessageToAllWindows("mgPlayerJSProd_action:hide_beacons");
+};
 
-    if (el.nodeName.toLowerCase() === 'wmgPlayerJSProd_over' ||
-        mg$(el).closest('wmgPlayerJSProd_').length > 0 ||
-        (el.name && el.name.includes('guideme-iframe')) ||
-        (typeof el.className === 'string' && (el.className.indexOf("mgPlayerJSProd_") === 0 || el.className.indexOf(" mgPlayerJSProd_") > 0)) ||
-        (el.id && el.id.indexOf("mgPlayerJSProd_beacon-icon-") === 0)
-    ) {
+GmCXt.showBeacons = function(forceShow) {
+
+    if ((GmCXt.tourPlayerI && !forceShow) || GmCXt.isSurveyVisible) {
+        GmCXt.log(48, "STOP showing beacons. player instance || survey on screen");
+        return;
+    }
+
+    mg$('.mgPlayerJSProd_beacon-icon').removeClass('mgPlayerJSProd_hidden');
+    mg$('#mgPlayerJSProd_beacon-icon-pos-select').hide();
+    GmCXt.beaconsAreHidden = false;
+    GmCXt.sendMessageToAllWindows("mgPlayerJSProd_action:show_beacons");
+};
+
+GmCXt.previewBeacons = function(id) {
+    mg$('.mgPlayerJSProd_beacon-icon-tour-' + id).removeClass('mgPlayerJSProd_hidden');
+    GmCXt.sendMessageToAllWindows("mgPlayerJSProd_action:show_preview_beacons", {
+        id: id
+    });
+};
+
+GmCXt.openPowerForm = function(data) {
+
+    if (window.self === window.top) {
+        GmCXt.showPowerForm(data);
+    } else {
+        GmCXt.sendMessageToTheTopWindow('mgPlayerJSProd_action:open_power_form', data);
+    }
+};
+
+GmCXt.showTooltipsDuringWorkflowGuide = function() {
+    let org = GmCXt.organization;
+    if (org && org.admin_settings.show_tooltips_during_workflow_guide) {
         return true;
     }
     return false;
 };
 
-GmCXt.playerDomainCheck = function() {
-    if (GmCXt.isPlayer()) {
-        if (GmCXt.isDomainInActiveApp() || GmCXt.user.signedInWithSso) {
+GmCXt.clearBeaconsAndTooltips = function(isLogout, idList) {
+
+    if (idList) {
+        // Clear specific (if parameter is passed)
+        if (idList.length) {
+            for (let i = 0; i < idList.length; i++) {
+                GmCXt.log(43, 'Clearing tooltips for tour: ' + idList[i]);
+                mg$('.mgPlayerJSProd_smarttip-tour-' + idList[i]).remove();
+                mg$('.mgPlayerJSProd_duct-tape-smarttip-tour-' + idList[i]).removeClass('mgPlayerJSProd_duct-tape-invisible');
+                delete GmCXt.onScreenTooltipGuideInfo['tour_' + idList[i]];
+            }
+
+            GmCXt.onScreenTooltipGuideIds = GmCXt.onScreenTooltipGuideIds.filter(function(id) {
+                return idList.indexOf(id) === -1;
+            });
+
+            GmCXt.partialVisibleTooltipsIds = GmCXt.partialVisibleTooltipsIds.filter(function(id) {
+                return idList.indexOf(id) === -1;
+            });
+        }
+    } else {
+        // Clear all
+        mg$('.mgPlayerJSProd_smarttip-icon').remove();
+        mg$('.mgPlayerJSProd_smarttip-guidance-msg').remove();
+        mg$('.mgPlayerJSProd_smarttip').remove();
+        mg$('.mgPlayerJSProd_smarttip-valid').remove();
+        mg$('.mgPlayerJSProd_duct-tape').remove();
+        mg$('.mgPlayerJSProd_duct-tape-invisible').removeClass('mgPlayerJSProd_duct-tape-invisible');
+    }
+
+    mg$(".mgPlayerJSProd_beacon-icon").remove();
+    GmCXt.beaconsOnScreen = [];
+
+    if (!isLogout) {
+        GmCXt.closePowerForm();
+    }
+
+    GmCXt.sendMessageToAllWindows('mgPlayerJSProd_action:forward;remove_active_smarttip_beacon', {
+        idList: idList
+    });
+};
+
+GmCXt.addEventOnTooltip = function(req) {
+
+    clearTimeout(GmCXt.tooltipTimeout);
+
+    GmCXt.tooltipTimeout = GmCXt.timeout(function() {
+        let el = mg$('#mgPlayerJSProd_smarttip-' + req.step.step_id);
+
+        el.off("click").on('click', function(e) {
+            if (!req.isPreview) {
+                GmCXt.tooltipAction(e, req.settings.smartTip, req.step);
+            }
+        });
+
+    }, GmCXt.t.addTooltipEvent);
+};
+
+GmCXt.isEventToolTip = function(event, stepId) {
+    let targetId = event.target.id;
+    let cTargetId = event.currentTarget.id;
+    let isSmartipEvent = false;
+
+    switch (targetId) {
+    case 'mgPlayerJSProd_smarttip-icon-' + stepId:
+        isSmartipEvent = true;
+        break;
+    case 'mgPlayerJSProd_smarttip-' + stepId:
+        isSmartipEvent = true;
+        break;
+    default:
+    }
+
+    switch (cTargetId) {
+    case 'mgPlayerJSProd_smarttip-icon-' + stepId:
+        isSmartipEvent = true;
+        break;
+    case 'mgPlayerJSProd_smarttip-' + stepId:
+        isSmartipEvent = true;
+        break;
+    default:
+        break;
+    }
+
+    if (mg$(event.currentTarget).hasClass("mgPlayerJSProd_smarttip-icon-wrapper-" + stepId)) {
+        isSmartipEvent = true;
+    } else if (mg$(event.target).hasClass("mgPlayerJSProd_smarttip-icon-wrapper-" + stepId)) {
+        isSmartipEvent = true;
+    }
+
+    return isSmartipEvent;
+};
+
+GmCXt.tooltipAction = function(event, tooltip, step) {
+    GmCXt.updateTooltipActionInfo(step.tour_id, step.step_id, tooltip, "click");
+
+    if (!GmCXt.isEventToolTip(event, step.step_id)) {
+        return;
+    }
+
+    if (tooltip.clickAction === 'openCurrentPage') {
+        event.preventDefault();
+        event.stopImmediatePropagation();
+        if (window.self === window.top) {
+            GmCXt.openAppPanel('currentPage');
+        } else {
+            GmCXt.sendMessageToParentWindow("mgPlayerJSProd_action:open_app_panel");
+        }
+
+    } else if (tooltip.clickAction === 'openUrl') {
+        event.preventDefault();
+        event.stopImmediatePropagation();
+
+        let url = tooltip.openUrlText;
+
+        if (url.indexOf('http') !== 0) {
+            url = 'https://' + url;
+        }
+
+        window.open(url, '_blank');
+    } else if (tooltip.clickAction === 'sentiment') {
+        event.preventDefault();
+        event.stopImmediatePropagation();
+        let data = {
+            sentiment_code: tooltip.sentimentCode,
+            tourId: step.tour_id,
+            stepId: step.step_id
+        };
+        if (window.self === window.top) {
+            GmCXt.getSurveyDetailsAndPlay(data);
+        } else {
+            GmCXt.sendMessageToParentWindow("mgPlayerJSProd_action:get_survey_data", data);
+        }
+
+    }
+};
+
+GmCXt.removePreviewFrame = function() {
+
+    mg$('.mgPlayerJSProd_preview-beacon').remove();
+    mg$('.mgPlayerJSProd_preview-smarttip').remove();
+    mg$('.gssSmarttip-form-submit').removeClass('mgPlayerJSProd_form-submit-preview gssSmarttip-form-submit');
+    mg$('.mgPlayerJSProd_duct-tape-invisible-preview').removeClass('mgPlayerJSProd_duct-tape-invisible-preview');
+
+    if (mg$('.mgPlayerJSProd_preview-smarttip-pwr-html').length)
+        mg$('.mgPlayerJSProd_preview-smarttip-pwr-html').val('');
+};
+
+GmCXt.removePreviewTop = function() {
+    GmCXt.removePreviewFrame();
+    GmCXt.sendMessageToAllWindows("mgPlayerJSProd_action:remove_preview");
+};
+
+GmCXt.hideTips = function() {
+    GmCXt.hideBeacons();
+    GmCXt.hideSmartTips();
+    GmCXt.removePreviewTop();
+};
+
+GmCXt.setOnScreenTooltipGuideInfo = function(tour) {
+
+    GmCXt.log(43, "INFO SET: " + GmCXt.tourLog(tour));
+
+    let tid = "tour_" + tour.tour_id;
+    let t = GmCXt.onScreenTooltipGuideInfo[tid];
+
+    if (t) {
+        GmCXt.onScreenTooltipGuideInfo[tid].total = tour.steps.length;
+    } else {
+        GmCXt.onScreenTooltipGuideInfo[tid] = {
+            total: tour.steps.length,
+            visible: [],
+            watchRules: tour.tour_settings.ruleCheckOnClick
+        };
+    }
+    GmCXt.onScreenTooltipGuideInfo[tid].rules = tour.tour_settings.rules.map(function(rule) {
+        return rule.type;
+    });
+
+    if (GmCXt.isAutomationRunning()) {
+        GmCXt.tooltipInfoForAutomation = Object.assign({}, GmCXt.onScreenTooltipGuideInfo);
+    }
+};
+
+GmCXt.updateOnScreenTooltipGuideIds = function(t, tid) {
+    let i = GmCXt.onScreenTooltipGuideIds.indexOf(tid);
+
+    let pid = GmCXt.partialVisibleTooltipsIds.indexOf(tid);
+
+    if (t.total === t.visible.length) {
+        // All tooltips visible
+
+        if (i < 0) {
+            // Entry not present in 'onScreenTooltipGuideIds'
+            GmCXt.onScreenTooltipGuideIds.push(tid);
+            GmCXt.log(43, "ADDED on screen: " + tid);
+
+            if (pid >= 0) {
+                GmCXt.partialVisibleTooltipsIds.splice(pid, 1);
+            }
+        }
+    } else {
+        // One or more tooltips in the guide are hidden
+
+        if (i >= 0) {
+            // Entry present in 'onScreenTooltipGuideIds'
+            GmCXt.onScreenTooltipGuideIds.splice(i, 1);
+            GmCXt.log(43, "REMOVED from screen: " + tid);
+        }
+
+        if (t.visible.length === 0) {
+            // All tooltips in the guide are hidden
+            if (pid >= 0) {
+                GmCXt.partialVisibleTooltipsIds.splice(pid, 1);
+                GmCXt.log(43, "REMOVED from screen (ALL HIDDEN): " + tid);
+            }
+        } else {
+            if (pid < 0) {
+                // Update partially loaded tooltip list
+                GmCXt.partialVisibleTooltipsIds.push(tid);
+                GmCXt.log(43, "ADDED on screen (PARTIALLY): " + tid);
+            }
+        }
+    }
+};
+
+GmCXt.updateOnScreenTooltipGuideInfo = function(tour, tourId, stepId, isValid, smartTip, url) {
+    if (window.self === window.top) {
+        let t = GmCXt.onScreenTooltipGuideInfo["tour_" + tourId];
+
+        //FOR: tooltip tracking
+        //if valid => tooltip rendered
+        if (isValid) {
+            GmCXt.setTooltipRenderInfo(tour, tourId, stepId, smartTip, url);
+        }
+
+        //FOR: on screen tooltip rendering
+        if (t) {
+            let stepIndex = t.visible.indexOf(stepId);
+
+            if (isValid) {
+                if (stepIndex < 0) {
+                    t.visible.push(stepId);
+
+                    GmCXt.log(43, "VISIBLE: " + GmCXt.stepLog(stepId, tourId));
+
+                    if (GmCXt.isAutomationRunning()) {
+                        GmCXt.tooltipInfoForAutomation["tour_" + tourId].visible.push(stepId);
+                    }
+                }
+            } else {
+                if (stepIndex >= 0) {
+                    t.visible.splice(stepIndex, 1);
+
+                    GmCXt.log(43, "HIDDEN: " + GmCXt.stepLog(stepId, tourId));
+                }
+            }
+
+            GmCXt.updateOnScreenTooltipGuideIds(t, tourId);
+            GmCXt.auto.setTooltipAutoDataToStorage(GmCXt.tooltipInfoForAutomation);
+        }
+
+    } else {
+        let data = {
+            tour: tour,
+            tourId: tourId,
+            stepId: stepId,
+            isValid: isValid,
+            smartTip: smartTip,
+            url: url
+        };
+        GmCXt.sendMessageToTheTopWindow("mgPlayerJSProd_action:update_smarttip_on_screen", data);
+    }
+};
+// Functions related to tours/guides and steps
+
+
+GmCXt.buildGuidePlayStructure = function(tour) {
+    let steps = tour.steps;
+    let playStructure = [];
+    for (let i = 0, j = steps.length; i < j; i++) {
+        let item = {
+            id: steps[i].step_id
+        };
+        if (steps[i + 1]) item.tail = steps[i + 1].step_id;
+        else item.tail = null;
+
+        playStructure.push(item);
+    }
+
+    return playStructure;
+};
+
+GmCXt.getGuidePlayStructure = function(tour, type) {
+
+    let playStructure = tour.tour_settings.play_structure;
+    tour.steps = GmCXt.getStepsForPS(tour.steps, type);
+
+    if (!GmCXt.containBranchStep(tour)) {
+        return GmCXt.buildGuidePlayStructure(tour);
+
+    } else if (mg$.isArray(playStructure) && playStructure.length) {
+        playStructure = GmCXt.repairPlayStructure(playStructure, tour.steps);
+        return playStructure;
+    }
+};
+
+GmCXt.getTail = function(id, playStructure, e, t) {
+    if (!id || !playStructure) return false;
+
+    let tail = null;
+
+    for (let i = 0; i < playStructure.length; i++) {
+
+        if (!GmCXt.isEmpty(playStructure[i]) && parseInt(playStructure[i].id) === parseInt(id)) {
+
+            if (playStructure[i].branch) {
+                tail = GmCXt.getTailFromBranchStep(playStructure[i].branch, e, id, t);
+            } else {
+                tail = playStructure[i].tail;
+            }
+
+        }
+    }
+    let sameTail = GmCXt.numberOfSameTail(tail, playStructure);
+    if (sameTail > 1) {
+        GmCXt.playerI.mergingFromId = id;
+    }
+    return tail;
+};
+
+GmCXt.getCurrentStepIndex = function(t, step_id) {
+    let index = -1;
+    if (t && step_id) {
+        t.steps.forEach(function(step, i) {
+            if (step.step_id === step_id) {
+                index = i;
+            }
+        });
+    } else {
+        GmCXt.playerI.tour.steps.forEach(function(step, i) {
+            if (step.step_id == GmCXt.playerI.currentStepId) {
+                index = i;
+            }
+        });
+    }
+    return index;
+};
+//Always extract/extend data returned by this function before use.
+GmCXt.getStepFromPlayerI = function(step_id) {
+    let step = false;
+    var steps = [];
+
+    var steps = GmCXt.playerI.tour.steps;
+
+    for (let i = 0; i < steps.length; i++) {
+        if (parseInt(steps[i].step_id) === parseInt(step_id)) {
+            step = steps[i];
+            break;
+        }
+    }
+    return step;
+};
+
+GmCXt.getStepFromTourData = function(step_id, tour) {
+    let step = false;
+    var steps = [];
+
+    var steps = tour.steps;
+
+    for (let i = 0; i < steps.length; i++) {
+        if (parseInt(steps[i].step_id) === parseInt(step_id)) {
+            step = steps[i];
+            break;
+        }
+    }
+    return step;
+};
+
+GmCXt.getNextBotStepFromTour = function(step_id, tour) {
+    let step = false;
+    let steps = tour.steps;
+
+    for (let i = 0; i < steps.length; i++) {
+        if (parseInt(steps[i].step_id) === parseInt(step_id)) {
+            if ((steps[i].step_settings.automation.enableBot &&
+                    steps[i].step_settings.automation.botQuestion) ||
+                (steps[i].step_type === GmCXt.STEP_TYPE_GUIDE ||
+                    steps[i].step_type === GmCXt.STEP_TYPE_BRANCH ||
+                    steps[i].step_type === "textSlide")) {
+                step = steps[i];
+                break;
+            } else {
+                step_id = GmCXt.getTail(steps[i].step_id, tour.tour_settings.play_structure, null, tour);
+                GmCXt.getNextBotStepFromTour(step_id, tour);
+            }
+        }
+    }
+    return step;
+};
+
+GmCXt.isFirstStep = function(sid) {
+
+    if (!GmCXt.playerI) return false;
+
+    let stepId = sid || GmCXt.playerI.currentStepId;
+
+    // TODO, need to check behaviour when first step of tour in branch step
+    if (stepId && GmCXt.playerI.tour) {
+        let PS = GmCXt.getGuidePlayStructure(GmCXt.playerI.tour);
+
+        if (PS && PS[0]) {
+            let first = PS[0];
+
+            if (first.id === stepId) {
+                return true;
+            }
+        }
+    }
+
+    return false;
+};
+
+GmCXt.isLastStep = function(stepId, playStructure) {
+
+    let flag = false;
+
+    if (GmCXt.getTail(stepId, playStructure) === null) {
+        flag = true;
+    }
+    return flag;
+};
+
+GmCXt.isFirstNonAutomationStep = function() {
+    if (!GmCXt.playerI) return false;
+
+    if (GmCXt.playerI.currentStepId && GmCXt.playerI.tour) {
+        let s = GmCXt.getFirstNonAutomationStep();
+        if (s && (s.step_id === GmCXt.playerI.currentStepId)) {
             return true;
+        }
+    }
+    return false;
+};
+
+GmCXt.getFirstNonAutomationStep = function() {
+    let id = null;
+    let playStructure = GmCXt.getGuidePlayStructure(GmCXt.playerI.tour);
+    if (playStructure) {
+        for (let i = 0; i < playStructure.length; i++) {
+            let stepObj = playStructure[i];
+            if (stepObj && stepObj.id) {
+                id = stepObj.id;
+            }
+            let step = GmCXt.getStepFromPlayerI(id);
+            if (!GmCXt.isAutomationStep(step)) {
+                return step;
+            }
+        }
+    }
+};
+
+GmCXt.getFirstStepId = function() {
+    let id = null;
+    let playStructure = GmCXt.playerI.playStructure;
+
+    if (playStructure && playStructure.length) {
+        let firstStepObj = playStructure[0];
+        if (firstStepObj && firstStepObj.id) {
+            id = firstStepObj.id;
+        }
+    }
+    return id;
+};
+
+GmCXt.getPreviousStep = function() {
+    if (GmCXt.playerI) {
+        let previousStepId = GmCXt.getPreviousStepId(GmCXt.playerI.currentStepId);
+        if (previousStepId) {
+            let step = GmCXt.createDeepCopy(GmCXt.getStepFromPlayerI(previousStepId));
+            return step;
+        } else {
+            return null;
+        }
+    } else {
+        return null;
+    }
+};
+
+GmCXt.getPreviousStepId = function(id, mode) {
+    let previousStepId = null;
+    let PS = GmCXt.playerI.playStructure;
+    let sameTail = GmCXt.numberOfSameTail(id, PS);
+    if (sameTail > 1) {
+        previousStepId = GmCXt.playerI.mergingFromId;
+    } else {
+        if (PS && PS.length) {
+            for (let i = 0; i < PS.length; i++) {
+                if (PS[i] && parseInt(PS[i].tail) === parseInt(id)) {
+                    previousStepId = PS[i].id;
+                    break;
+                } else if (PS[i] && PS[i].branch) {
+                    for (let j = 0; j < PS[i].branch.length; j++) {
+                        if (parseInt(PS[i].branch[j].tail) === id) {
+
+                            if (mode === 'slideshow') previousStepId = PS[i].id;
+                            else previousStepId = GmCXt.getPreviousStepId(PS[i].id);
+
+                            break;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    return previousStepId;
+};
+
+GmCXt.getPreviousStepsList = function(id) {
+    let previousSteps = [];
+    let PS = GmCXt.playerI.tour.tour_settings.play_structure;
+
+    if (PS && PS.length) {
+        for (let i = 0; i < PS.length; i++) {
+            if (PS[i] && parseInt(PS[i].tail) === parseInt(id)) {
+                previousSteps.push(PS[i].id);
+            } else if (PS[i] && PS[i].branch) {
+                for (let j = 0; j < PS[i].branch.length; j++) {
+                    if (parseInt(PS[i].branch[j].tail) === id) {
+                        previousSteps.push(PS[i].id);
+                    }
+                }
+            }
+        }
+    }
+    return previousSteps;
+};
+
+GmCXt.isLastStepPlayed = function() {
+    let flag = false;
+
+    if (GmCXt.playerI && (GmCXt.playerI.currentStepId === GmCXt.playerI.lastPlayedStepId))
+        flag = true;
+
+    return flag;
+};
+
+GmCXt.updatePlayedSteps = function(step) {
+    GmRootScope.setPlayedStepsInfo(step);
+};
+
+GmCXt.getStepSortedByPS = function(PS, stepId) {
+
+    let steps = [];
+
+    let firstStep;
+    if (stepId) {
+        firstStep = GmCXt.getStepFromPlayerI(stepId);
+    } else {
+        firstStep = GmCXt.getStepFromPlayerI(PS[0].id);
+    }
+
+    steps.push(firstStep);
+
+    let seedStepID = firstStep.step_id;
+    if (firstStep.step_type !== GmCXt.STEP_TYPE_BRANCH || !stepId) {
+        for (let i = 0; i < PS.length; i++) {
+            let nextStepId = GmCXt.getTail(seedStepID, PS);
+            if (nextStepId) {
+                stepToPush = GmCXt.getStepFromPlayerI(nextStepId);
+                if (stepToPush) {
+                    seedStepID = stepToPush.step_id;
+                    steps.push(stepToPush);
+                    if (stepToPush.step_type === GmCXt.STEP_TYPE_BRANCH &&
+                        stepToPush.step_id !== GmCXt.playerI.currentStepId) {
+                        break;
+                    }
+                } else {
+                    break;
+                }
+
+            } else {
+                break;
+            }
+        }
+    }
+    return steps;
+};
+
+GmCXt.getNextStep = function() {
+    if (GmCXt.playerI) {
+        let step = GmCXt.getCurrentStep(GmCXt.playerI.currentStepId);
+        let nextStepId = GmCXt.getTail(step.step_id, GmCXt.playerI.playStructure);
+
+        if (nextStepId) {
+            return GmCXt.getStepFromPlayerI(nextStepId);
+        } else {
+            return null;
+        }
+    } else {
+        return null;
+    }
+};
+
+GmCXt.getCurrentStep = function(stepId) {
+
+    let step = mg$.extend({}, GmCXt.getStepFromPlayerI(stepId));
+
+    if (!step.step_description) step.step_description = " ";
+
+    // Map properties
+    step.image_url = step.image_url + GmCXt.getCdnSign();
+    step.screen_url = step.screen_url + GmCXt.getCdnSign();
+
+    return step;
+};
+
+GmCXt.concatLinkGuideSteps = function(newSteps, tour, step_id, cb) {
+
+    let guideStepIndex;
+    if (tour && step_id) {
+        guideStepIndex = GmCXt.getCurrentStepIndex(tour, step_id);
+    } else {
+        guideStepIndex = GmCXt.getCurrentStepIndex();
+    }
+
+    let steps = [];
+    if (tour) {
+        steps = mg$.extend([], tour.steps);
+    } else {
+        steps = mg$.extend([], GmCXt.playerI.tour.steps);
+    }
+
+    if (tour && step_id) {
+        steps = steps.filter(function(step, i) {
+            return step.step_id !== step_id;
+        });
+    } else {
+        steps = steps.filter(function(step, i) {
+            return step.step_id !== GmCXt.playerI.currentStepId;
+        });
+    }
+
+    steps.splice.apply(steps, [guideStepIndex, 0].concat(newSteps));
+    if (GmCXt.playerI) {
+        if (GmCXt.playerI.type === GmCXt.TOUR_PLAYER_SLIDESHOW) {
+            GmCXt.playerI.tour.steps = steps;
+        } else {
+            GmCXt.sendMessageToParentWindow("mgPlayerJSProd_action:update_PI_steps", steps);
+        }
+        GmCXt.playerI.totalStepCount = steps.length;
+        GmCXt.playerI.tour.step_count = steps.length;
+    } else {
+        if (cb) cb(steps);
+    }
+};
+
+GmCXt.updatePlayStructureLinkGuide = function(tour, playerInstance, cb) {
+
+    let linkPS = GmCXt.getGuidePlayStructure(tour);
+
+    let pi;
+    if (GmCXt.playerI) {
+        pi = GmCXt.playerI;
+    } else if (playerInstance) {
+        pi = playerInstance;
+    }
+
+    let tailCurrent = linkPS[0].id;
+    let PS = pi.playStructure;
+    let isFirstStepLink = false;
+
+    for (let i = 0; i < PS.length; i++) {
+        if (PS[i].tail === pi.currentStepId) {
+            PS[i].tail = tailCurrent;
+        } else if (PS[i].branch) {
+            for (let j = 0; j < PS[i].branch.length; j++) {
+                if (PS[i].branch[j].tail === pi.currentStepId) {
+                    PS[i].branch[j].tail = tailCurrent;
+                }
+            }
+        }
+        if (PS[i].id === pi.currentStepId) {
+            linkPS = GmCXt.updatePSLastTail(linkPS, PS[i].tail);
+            PS[i].tail = null;
+            if (i === 0) {
+                isFirstStepLink = true;
+            }
+        }
+    }
+
+    pi.linkGuideFS = linkPS[0].id;
+
+    if (isFirstStepLink) {
+        PS[0] = linkPS[0];
+        linkPS.splice(0, 1);
+        pi.startStepId = PS[0].id;
+    }
+
+    let finalPS = mg$.extend([], PS.concat(linkPS));
+    if (pi.type === GmCXt.TOUR_PLAYER_SLIDESHOW) {
+        GmCXt.playerI = pi;
+        GmCXt.playerI.playStructure = finalPS;
+    } else if (playerInstance && !GmCXt.playerI) {
+        if (cb) cb(finalPS);
+    } else {
+        GmCXt.globalMsgData['mgPlayerJSProd_action:update_PI_PS_done'].cb(finalPS);
+    }
+};
+
+GmCXt.cleanPlayerI = function() {
+    GmCXt.tourPlayerI = null;
+    GmCXt.playerI = null;
+};
+
+GmCXt.cleanPlayer = function() {
+
+    GmCXt.log(33, 'Player instance cleared.');
+
+    if (GmCXt.playerI) {
+        GmCXt.trackGuide();
+        window.removeEventListener("mouseup", GmCXt.registerClickListner, true);
+        window.removeEventListener("mousedown", GmCXt.registerClickListner, true);
+        window.removeEventListener("keyup", GmCXt.registerClickListner, true);
+        window.removeEventListener("keydown", GmCXt.registerClickListner, true);
+    }
+
+    GmCXt.cleanPlayerI();
+
+    GmCXt.storage().set({
+        'mgPlayerJSProd_mgPlayerJSProd_GM_PLAYER_STORAGE_KEY': null
+    });
+
+    GmCXt.storage().remove(['mgPlayerJSProd_mgPlayerJSProd_GM_PLAYER_STORAGE_KEY']);
+};
+
+GmCXt.sortToursByModifcationDate = function(tours) {
+    return tours.sort(function(a, b) {
+        return parseInt(b.modification_date) - parseInt(a.modification_date);
+    });
+};
+
+GmCXt.filterOutAutomationSteps = function(steps) {
+    return steps.filter(function(s) {
+        return (!GmCXt.isAutomationStep(s));
+    });
+};
+
+GmCXt.markAutoLaunchTourDoNotShow = function(tour) {
+    if (!tour.tour_settings.displayFrequency && GmCXt.firstStepAutoLaunch()) {
+        GmCXt.setDoNotShowTours(tour);
+    }
+};
+
+GmCXt.setAutoTour = function(id) {
+    if (window.self === window.top) {
+        localStorage.setItem(GmCXt.storagePrefix + 'autoLaunchTour', id);
+    } else {
+        let data = {
+            tourId: id
+        };
+        if (GmCXt.isSidePanelApp) {
+            let m = {
+                action: "mgPlayerJSProd_action:set_auto_tour"
+            };
+            m.data = data;
+            GmCXt.sendToParentWindow(m);
+        } else {
+            GmCXt.sendMessageToParentWindow('mgPlayerJSProd_action:set_auto_tour', data);
+        }
+    }
+};
+
+GmCXt.isAutoTour = function() {
+    let auto = localStorage.getItem(GmCXt.storagePrefix + 'autoLaunchTour');
+    auto = parseInt(auto);
+    if (!isNaN(auto) && auto > 0) {
+        return true;
+    } else {
+        return false;
+    }
+};
+
+GmCXt.getAutoLaunchTourId = function() {
+    return localStorage.getItem(GmCXt.storagePrefix + 'autoLaunchTour');
+};
+
+GmCXt.branchStepExist = function(t) {
+    let isBranch = false;
+
+    if (t && t.tour_settings && t.tour_settings.play_structure) {
+        t.tour_settings.play_structure.forEach(function(s, key) {
+            if (s.branch) {
+                isBranch = true;
+            }
+        });
+    }
+
+    return isBranch;
+};
+
+GmCXt.branchStepExistInPS = function() {
+    let isBranch = false;
+
+    if (GmCXt.playerI.playStructure) {
+        GmCXt.playerI.playStructure.forEach(function(s, key) {
+            if (s.branch) {
+                isBranch = true;
+            }
+        });
+    }
+
+    return isBranch;
+};
+
+GmCXt.containBranchStep = function(tour) {
+    if (!tour || (tour && !GmCXt.isDefined(tour.steps))) return false;
+
+    let steps = mg$.extend({}, tour.steps);
+    for (let ind in steps) {
+        let step = steps[ind];
+        if (GmCXt.checkForBranchVariationSteps(step)) {
+            return true;
+        }
+    }
+    return false;
+};
+
+GmCXt.isStepInlineBranch = function(s) {
+    let retVal = false;
+    if (s && s.step_settings && GmCXt.isTrue(s.step_settings.inlineBranch)) {
+        retVal = true;
+    }
+    return retVal;
+};
+
+GmCXt.filterScheduleTours = function(tours) {
+    var tours = tours.filter(function(tour) {
+        if (GmCXt.checkScheduleTime(tour)) {
+            return tour;
+        }
+    });
+
+    return tours;
+};
+
+GmCXt.checkScheduleTime = function(tour) {
+    if (tour.tour_settings && tour.tour_settings.visibilitySettings && tour.tour_settings.visibilitytimestamp) {
+        let tourTs = tour.tour_settings.visibilitytimestamp;
+        let currentTS = Date.now();
+        if (parseInt(currentTS) < tourTs) {
+            return false;
+        } else {
+            return true;
+        }
+    } else {
+        return true;
+    }
+};
+
+GmCXt.getStepInfoLog = function(step) {
+    let title = step.step_title;
+    if (step.step_type === 'smartTip' && step.step_settings.smartTip) {
+        title = step.step_settings.smartTip.guidanceMessage;
+        title = GmCXt.restoreAssetSrc(title);
+    }
+
+    title = mg$('<span />').html(GmCXt.updateOrgAndAddSignature(title)).text().trim();
+    if (title.length > 50) {
+        title = title.substr(0, 50);
+    }
+    return "[" + step.step_type.toUpperCase() + "] [" + step.step_id + "] " + title;
+};
+
+GmCXt.getStepsForPS = function(steps, type) {
+    if (GmCXt.playerI && (GmCXt.playerI.automate || GmCXt.playerI.isAutomation) || GmCXt.isAutomationRunning() || type === "doitforme") {
+        return steps;
+    } else {
+        return GmCXt.filterOutAutomationSteps(steps);
+    }
+};
+
+GmCXt.getTailFromBranchStep = function(branches, e, sId, tour) {
+    let bInd = 0;
+    let retVal = null;
+    let pi = GmCXt.playerI;
+    let currentStep = null;
+    let getStep = function(stepId, tour) {
+        if (stepId) {
+            for (let i = 0; i < tour.steps.length; i++) {
+                if (parseInt(tour.steps[i].step_id) === parseInt(stepId)) {
+                    return tour.steps[i];
+                }
+            }
         } else {
             return false;
         }
-    }
-    return true;
-};
+    };
 
-GmCXt.getDoNotShowTours = function(isNotif) {
-
-    return GmCXt.storage().get(['tourIdArray', 'tourIdOnBoardingArray'])
-        .then(function(st) {
-            return GmCXt.processDoNotShowGuides(st, isNotif);
-        });
-};
-
-GmCXt.processDoNotShowGuides = function(st, isNotif) {
-
-    let obj = {};
-    let tours = [];
-    let userSettings = GmCXt.user.settings || {};
-
-    if (GmCXt.isAnonymousUser()) {
-        tours = st.tourIdArray || {};
-        if (mg$.isArray(st.tourIdOnBoardingArray)) {
-            tours = mg$.extend({}, tours, GmCXt.arrayToObjectNot(st.tourIdOnBoardingArray));
-            GmCXt.storage().set({
-                'tourIdArray': tours
-            });
-            GmCXt.storage().remove(['tourIdOnBoardingArray']);
-        }
+    if (pi) {
+        currentStep = getStep(pi.currentStepId, pi.tour);
     } else {
-        tours = userSettings.viewed_guide_notifications || {};
-        if (mg$.isArray(userSettings.viewed_onboarding_guide_notifications)) {
-            tours = mg$.extend({}, tours, GmCXt.arrayToObjectNot(userSettings.viewed_onboarding_guide_notifications));
-            delete userSettings.viewed_onboarding_guide_notifications;
-            GmCXt.saveSeenToursInDb(tours, userSettings);
-        }
+        currentStep = getStep(sId, tour);
     }
 
-    if (Array.isArray(tours)) {
-        obj = GmCXt.arrayToObjectNot(tours);
-        if (!GmCXt.isAnonymousUser()) GmCXt.saveSeenToursInDb(obj, userSettings);
-    } else {
-        obj = tours;
-    }
-
-    return obj;
-};
-
-GmCXt.saveSeenToursInDb = function(tour, userSettings) {
-
-    if (!GmCXt.isEmpty(tour)) {
-
-        userSettings.viewed_guide_notifications = tour;
-        GmCXt.user.settings = userSettings;
-
-        let data = {
-            settings : {
-                viewed_guide_notifications : tour
+    for (bInd = 0; bInd < branches.length; bInd++) {
+        if (GmCXt.isStepInlineBranch(currentStep)) {
+            if (e) {
+                if (bInd === 1) {
+                    var b = branches[bInd];
+                    if (b.tail) {
+                        retVal = b.tail;
+                        break;
+                    }
+                }
+            } else {
+                var b = branches[bInd];
+                if (b.tail) {
+                    retVal = b.tail;
+                    break;
+                }
             }
-        };
-        GmCXt.updateUserSettings(data, GmCXt.user);
+        } else {
+            var b = branches[bInd];
+            if (b.tail) {
+                retVal = b.tail;
+                break;
+            }
+        }
+    }
 
-        GmCXt.storage().remove(['tourIdArray']);
+    return retVal;
+};
+
+GmCXt.updatePSLastTail = function(PS, tail) {
+    for (let i = 0; i < PS.length; i++) {
+        if (PS[i].branch) {
+            for (let j = 0; j < PS[i].branch.length; j++) {
+                if (PS[i].branch[j].tail === null) {
+                    PS[i].branch[j].tail = tail;
+                }
+            }
+        } else if (PS[i].tail === null) {
+            PS[i].tail = tail;
+        }
+    }
+    return PS;
+};
+
+GmCXt.isLooping = function() {
+
+    let PI = GmCXt.playerI;
+    let flag = false;
+
+    if (PI.loops - PI.currentLoop > 0) {
+        flag = true;
+        GmCXt.log(33, "Current loop: " + PI.currentLoop);
+    }
+    return flag;
+};
+
+GmCXt.confirmTourClose = function(forceClose) {
+    let pi = GmCXt.playerI;
+    let ti = GmCXt.tourPlayerI;
+    if (pi && ti) {
+        if (pi.currentStepId && pi.playStructure &&
+            GmCXt.getTail(pi.currentStepId, pi.playStructure) !== null &&
+            GmCXt.isExitSurvey() && GmCXt.isPlayer()) {
+            GmCXt.showExitSurvey();
+        }
+        ti.closeGuide(forceClose);
     }
 };
+
+GmCXt.showForceMode = function() {
+    GmCXt.closePopup();
+    let popupType = 'mgPlayerJSProd_popup-info';
+    let html =
+        "<wmgPlayerJSProd_ class='mgPlayerJSProd_overlay-container'></wmgPlayerJSProd_>" +
+        "<wmgPlayerJSProd_ class='mgPlayerJSProd_popup " + popupType + "'>" +
+        "   <wmgPlayerJSProd_ class='mgPlayerJSProd_popup-header-wrapper'>" +
+        "	   <wmgPlayerJSProd_ class='mgPlayerJSProd_popup-header-icon-wrapper'><wmgPlayerJSProd_ class='mgPlayerJSProd_popup-header-icon'></wmgPlayerJSProd_></wmgPlayerJSProd_>" +
+        "   </wmgPlayerJSProd_>" +
+        "<wmgPlayerJSProd_ class='mgPlayerJSProd_popup-content-wrapper'>" + GmCXt.escapeHtml(GmCXt.label.userNotFollowingGuideMessage) + "</wmgPlayerJSProd_>" +
+        "<wmgPlayerJSProd_ class='mgPlayerJSProd_popup-btn-wrapper'>" +
+        "<wmgPlayerJSProd_ class='mgPlayerJSProd_btn-default mgPlayerJSProd_btn-continue-guide mgPlayerJSProd_ok-btn mgPlayerJSProd_inline-block-vt'>" + GmCXt.label.continueGuide + "</wmgPlayerJSProd_>" +
+        "<wmgPlayerJSProd_ class='mgPlayerJSProd_btn-default mgPlayerJSProd_btn-neutral mgPlayerJSProd_btn-exit-guide mgPlayerJSProd_inline-block-vt'>" + GmCXt.label.exitGuide + "</wmgPlayerJSProd_>" +
+        "</wmgPlayerJSProd_>" +
+        "</wmgPlayerJSProd_>";
+
+    mg$("html").append(html);
+
+    GmCXt.stopAudio();
+
+    mg$(".mgPlayerJSProd_popup-header-icon").html(GmCXt.svgs.popup_info);
+    GmCXt.enforceGuideMePopup = true;
+    GmCXt.pauseAutomation();
+
+    let windowHeight = mg$(window).height();
+    let popupTop = (windowHeight - mg$('.mgPlayerJSProd_popup').height()) / 2;
+    mg$('.mgPlayerJSProd_popup').css("top", popupTop);
+
+    function close(e) {
+        GmCXt.stopPropagation(e);
+        GmCXt.closePopup();
+        GmCXt.enforceGuideMePopup = false;
+        if (GmCXt.playerI) GmCXt.resumeAutomation();
+    }
+
+    mg$(".mgPlayerJSProd_btn-continue-guide").on("click", close);
+
+    mg$(".mgPlayerJSProd_btn-exit-guide").on("click", function(e) {
+        if (GmCXt.isExitSurvey()) {
+            GmCXt.showExitSurvey();
+        }
+        if (GmCXt.tourPlayerI) {
+            GmCXt.tourPlayerI.stop();
+        }
+        close(e);
+    });
+
+    mg$(".mgPlayerJSProd_popup-close-button").on("click", close);
+};
+
+GmCXt.numberOfSameTail = function(id, ps) {
+    let counter = 0;
+    if (ps && ps.length) {
+        for (let i = 0; i < ps.length; i++) {
+            if (parseInt(ps[i].tail) === parseInt(id)) {
+                counter++;
+            }
+        }
+    }
+    return counter;
+};
+
+GmCXt.getStepPosFromPs = function(t, sId) {
+    let pos = "";
+    let PS = t.tour_settings.play_structure;
+
+    for (let i = 0; i < PS.length; i++) {
+        if (PS[i].id === sId) {
+            pos = i + 1;
+            break;
+        }
+    }
+
+    return pos;
+};
+
+GmCXt.getSteps = function(data) {
+
+    return new Promise(function(resolve, reject) {
+        GmCXt.api.getDetailTour(data).then(function(_tour) {
+            if (GmCXt.inPlayer && GmRootScope.notDefaultLang() && _tour) {
+                _tour = GmRootScope.getTranslatedTourAndSteps(_tour, GmRootScope.language);
+            }
+            resolve(_tour);
+        });
+    });
+};
+
+// Only applicable after version 2021.01.30.1
+GmCXt.checkTourCreatedBefore = function(tourSettings, version) {
+    return (!tourSettings.hasOwnProperty('created_version') || GmCXt.decodeVersion(tourSettings.created_version) < version);
+};
+
+GmCXt.restartInParent = function(hideLog) {
+    if (!hideLog) {
+        GmCXt.log(33, "BACK to parent window");
+    }
+    GmCXt.storage().set({
+        'restartInParent': true
+    });
+};
+//Tracker Related Functions
+
+GmCXt.trackElNotFound = function(d) {
+
+    GmCXt.log(27, "track Element Not Found");
+
+    return; // Stop "mi_rule_enhancement" events temporary for MG-25171
+
+    // if (window.self === window.top) {
+    //     GmCXt.trackerV1.trackElNotFound(d);
+    // } else {
+    //     GmCXt.sendMessageToTheTopWindow('mgPlayerJSProd_action:track_element_not_found', d);
+    // }
+};
+
+GmCXt.resetElTracker = function() {
+    if (window.self === window.top) {
+        GmCXt.sendMessageToAllWindows('mgPlayerJSProd_action:reset_dom_tracker');
+    }
+};
+
+GmCXt.resetElTrackerVariable = function() {
+    if (!GmCXt.isEmpty(GmCXt.domSelectorTracker) && !GmCXt.isEmpty(GmCXt.domSelectorTracker[GmCXt.id])) {
+        // Reset tracker
+        GmCXt.domSelectorTracker = {};
+    }
+};
+
+GmCXt.logElTracker = function() {
+    if (window.self === window.top) {
+        GmCXt.logTrackerData = false;
+        GmCXt.sendMessageToAllWindows('mgPlayerJSProd_action:request_dom_tracker_info');
+    }
+};
+
+GmCXt.shareDomTrackerInfo = function() {
+    if (window.self !== window.top) {
+        if (GmCXt.isEmpty(GmCXt.domSelectorTracker)) {
+            GmCXt.domSelectorTracker[GmCXt.id] = {};
+        }
+        GmCXt.sendMessageToTheTopWindow('mgPlayerJSProd_action:send_dom_tracker_info', GmCXt.domSelectorTracker);
+    } else {
+        GmCXt.combineDomTrackerData();
+    }
+};
+
+GmCXt.combineDomTrackerData = function(info) {
+    if (window.self === window.top) {
+        let finder = {};
+        let query = {};
+        let totalFinder = 0;
+        let totalQuery = 0;
+        let iFrameTally = 0;
+
+        if (info) {
+            GmCXt.domSelectorTracker = Object.assign(GmCXt.domSelectorTracker, info);
+        }
+
+        GmCXt.timeout(function() {
+            if (!GmCXt.logTrackerData) {
+                for (let i in GmCXt.domSelectorTracker) {
+                    if (!GmCXt.isEmpty(GmCXt.domSelectorTracker[i])) {
+                        iFrameTally++;
+                        let iframeInfo = GmCXt.domSelectorTracker[i];
+                        for (let key in iframeInfo) {
+                            let elInfo = iframeInfo[key];
+
+                            finder[key] = elInfo.finder;
+                            totalFinder += elInfo.finder;
+
+                            query[key] = elInfo.query;
+                            totalQuery += elInfo.query;
+                        }
+                    }
+                }
+                let css = "color:#00a6d9;";
+                console.log("%cNo. of iframes Searched –", css, iFrameTally);
+                console.log("%cTotal calls to dom.finder() –", css, totalFinder);
+                console.log("%cCalls to dom.finder() segregated by element –", css, finder);
+                console.log("%cTotal calls to dom.query() –", css, totalQuery);
+                console.log("%cCalls to dom.query() segregated by element –", css, query);
+
+                GmCXt.logTrackerData = true;
+            }
+        }, 1500);
+    }
+};
+// UI-related functions
+
+
+GmCXt.closePopup = function() {
+    mg$(".mgPlayerJSProd_popup").remove();
+    mg$(".mgPlayerJSProd_overlay-container").remove();
+};
+
+GmCXt.stopEventPropagation = function(e) {
+    e.stopPropagation();
+    e.stopImmediatePropagation();
+};
+
+GmCXt.stopPropagation = function(e) {
+    e.stopImmediatePropagation();
+};
+
+GmCXt.unlockScroll = function() {
+    mg$('html').css('overflow', '');
+};
+
+GmCXt.lockScroll = function() {
+    mg$('html').css('overflow', 'hidden');
+};
+
+GmCXt.attachDragEvents = function(elmnt, dragEl) {
+    let pos1 = 0,
+        pos2 = 0,
+        pos3 = 0,
+        pos4 = 0;
+    dragEl.onmousedown = dragMouseDown;
+    dragEl.onmouseup = dragMouseUp;
+
+    if (window.matchMedia("(max-width: 480px)").matches) {
+        dragEl.ontouchstart = dragMouseDown;
+        dragEl.ontouchend = dragMouseUp;
+    }
+
+    function resetDragEvents() {
+        document.onmouseup = null;
+        document.onmousemove = null;
+        document.onmouseout = null;
+
+        if (window.matchMedia("(max-width: 480px)").matches) {
+            document.ontouchstart = null;
+            document.ontouchmove = null;
+            document.ontouchend = null;
+        }
+    }
+
+    function dragMouseUp(e) {
+        resetDragEvents();
+
+        if (GmCXt.isMicroPlayer()) {
+            mg$("#mgPlayerJSProd_micro_player_drag .mgPlayerJSProd_title-tooltip-wrapper").removeAttr("style");
+        }
+    }
+
+    function dragOutEvent(e) {
+        GmCXt.timeout(function() {
+            mg$('.mgPlayerJSProd_slideshow_drag_over').hide();
+        }, GmCXt.t.drag);
+
+        if (dragEl.id === 'mgPlayerJSProd_mPlayer-drag') {
+            resetDragEvents();
+        }
+    }
+
+    function dragMouseDown(e) {
+        e.preventDefault();
+        e = e || window.event;
+        // get the mouse cursor position at startup:
+        if (window.matchMedia("(max-width: 480px)").matches) {
+            e.clientX = e.targetTouches[0].clientX;
+            e.clientY = e.targetTouches[0].clientY;
+        }
+
+        pos3 = e.clientX;
+        pos4 = e.clientY;
+        document.onmouseup = closeDragElement;
+        document.onmouseout = dragOutEvent;
+        // call a function whenever the cursor moves:
+        document.onmousemove = elementDrag;
+
+        if (window.matchMedia("(max-width: 480px)").matches) {
+            document.ontouchend = closeDragElement;
+            document.ontouchcancel = dragOutEvent;
+            document.ontouchmove = elementDrag;
+        }
+
+        if (GmCXt.isMicroPlayer()) {
+            mg$("#mgPlayerJSProd_micro_player_drag .mgPlayerJSProd_title-tooltip-wrapper").css("display", "none");
+        }
+    }
+
+    function elementDrag(e) {
+        mg$('.mgPlayerJSProd_slideshow_drag_over').show();
+        e = e || window.event;
+        // calculate the new cursor position:
+        let wWdth = mg$(window).width();
+        let wHgth = mg$(window).height();
+        let offset = 50;
+
+        if (window.matchMedia("(max-width: 480px)").matches) {
+            e.clientX = e.targetTouches[0].clientX;
+            e.clientY = e.targetTouches[0].clientY;
+        }
+
+        if (e.clientX > offset && e.clientY > offset && e.clientX < (wWdth - offset) && e.clientY < (wHgth - offset)) {
+            pos1 = pos3 - e.clientX;
+            pos2 = pos4 - e.clientY;
+            pos3 = e.clientX;
+            pos4 = e.clientY;
+            // set the element's new position:
+            elmnt.style.top = (elmnt.offsetTop - pos2) + "px";
+            elmnt.style.left = (elmnt.offsetLeft - pos1) + "px";
+
+            if (GmCXt.isMicroPlayer()) {
+                elmnt.style.right = "initial";
+                elmnt.style.transition = "initial";
+            }
+
+            if (!GmCXt.isMicroPlayer()) {
+                mg$(elmnt)
+                    .removeClass('top-left')
+                    .removeClass('top-middle')
+                    .removeClass('top-right')
+                    .removeClass('right-top')
+                    .removeClass('right-middle')
+                    .removeClass('right-bottom')
+                    .removeClass('bottom-left')
+                    .removeClass('bottom-middle')
+                    .removeClass('bottom-right')
+                    .removeClass('left-top')
+                    .removeClass('left-middle')
+                    .removeClass('left-bottom');
+            }
+        }
+    }
+
+    function closeDragElement() {
+        /* stop moving when mouse button is released:*/
+        resetDragEvents();
+
+        mg$('.mgPlayerJSProd_slideshow_drag_over').hide();
+    }
+};
+
+GmCXt.removeScreenOverlay = function() {
+    GmCXt.screenOverlayI = undefined;
+    mg$('.mgPlayerJSProd_screen-blackout').hide();
+    mg$('.mgPlayerJSProd_screen-blackout').html('');
+};
+
+GmCXt.updateZIndex = function(zIndex, add) {
+    if (zIndex) {
+        let updateBy = add ? 1 : -1;
+        return (parseInt(zIndex) + updateBy).toString();
+    }
+    return "";
+};
+
+GmCXt.rotateGear = function() {
+    let c = 1;
+    let i = null;
+
+    let id = '#mgPlayerJSProd_auto-progress-';
+    let cls = 'mgPlayerJSProd_active-progress';
+
+    i = setInterval(function() {
+        if (c === 1 || mg$(id + (c - 1)).hasClass(cls)) { // check for the previous gear
+            mg$(id + c).addClass(cls);
+        }
+        c++;
+        if (c > 3) clearInterval(i);
+    }, 900);
+};
+
+GmCXt.loader = function() {
+    return GmCXt.getBasePath('common/img/g_new_loader.gif');
+};
+
+GmCXt.getNextBtnElem = function() {
+    let nxtBtn = document.getElementById("mgPlayerJSProd_play_step_next");
+    let doneBtn = document.getElementById("mgPlayerJSProd_play_step_next_done");
+    let nxtClassic = document.getElementById("mgPlayerJSProd_play_step_next_classic");
+    let doneClassic = document.getElementById("mgPlayerJSProd_play_step_next_done_classic");
+    let pauseBtn = document.getElementById("mgPlayerJSProd_play_step_pause");
+    let pauseClassic = document.getElementById("mgPlayerJSProd_play_step_pause_classic");
+    let btn;
+
+    if (mg$(nxtBtn).is(':visible'))
+        btn = nxtBtn;
+    else if (mg$(doneBtn).is(':visible'))
+        btn = doneBtn;
+    else if (mg$(nxtClassic).is(':visible'))
+        btn = nxtClassic;
+    else if (mg$(doneClassic).is(':visible'))
+        btn = doneClassic;
+    else if (mg$(pauseBtn).is(':visible'))
+        btn = nxtBtn;
+    else if (mg$(pauseClassic).is(':visible'))
+        btn = nxtBtn;
+
+    return btn;
+};
+
+// URL and domain related functions
+
+/**
+ * @function
+ * @returns Current webpage url
+ */
+GmCXt.getUrl = function() {
+    let url = GmCXt._location().href;
+    return GmCXt.filterUrlScheme(url);
+};
+
+GmCXt.getPageDomain = function() {
+    let d = (GmCXt._location().host.match(/([^.]+)\.\w{2,3}(?:\.\w{2})?$/) || [])[1];
+    if (d)
+        return d;
+    else
+        return GmCXt._location().host;
+};
+
+GmCXt.getDomain = function(url) {
+    if(!url){
+        return url;
+    }
+    
+    url = url.split("/")[0] || '';
+    let d = (url.match(/([^.]+)\.\w{2,3}(?:\.\w{2})?$/) || [])[1];
+    if (d)
+        return d;
+    else
+        return url;
+};
+
+GmCXt.getURLPartsFromURL = function(url) {
+    var parser = document.createElement('a');
+    parser.href = url;
+
+    var urlParts = {};
+
+    var host = parser.host;
+
+    // Remove port number from host name, In IE port number coming with host
+    if (host && host.indexOf(':') !== -1) {
+        host = host.split(':')[0];
+    }
+    urlParts.host = host;
+
+    urlParts.pathname = parser.pathname;
+    urlParts.search = parser.search;
+    urlParts.href = GmCXt.filterUrlScheme(parser.href);
+    urlParts.fullUrl = parser.href;
+    urlParts.hash = parser.hash;
+    urlParts.scheme = GmCXt.getUrlScheme();
+    urlParts.port = parser.port;
+    urlParts.hostname = parser.hostname.replace("www.","");
+    return urlParts;
+};
+
+GmCXt.getUrlParam = function() {
+    let param = '';
+    let temp = GmCXt.urlParts.href.split("?");
+    if (temp[1]) {
+        param = '?' + temp[1];
+    }
+
+    return param;
+};
+
+GmCXt.getParameterValue = function(sParam, url) {
+    if (sParam && url) {
+        let sURLVariables = url.split('&'),
+            sParameterName,
+            i;
+
+        for (i = 0; i < sURLVariables.length; i++) {
+            sParameterName = sURLVariables[i].split('=');
+
+            if (sParameterName[0] === sParam) {
+                return sParameterName[1] === undefined ? true : sParameterName[1];
+            }
+        }
+    }
+
+    return false;
+};
+
+GmCXt.trimAndLowerCaseURL = function(url) {
+    let newURL = '';
+    url = GmCXt.filterUrlScheme(url);
+    if (url) {
+        newURL = url.toLowerCase();
+        if (newURL.indexOf("www.") === 0) {
+            newURL = newURL.slice(4, newURL.length);
+        }
+    }
+    return newURL;
+};
+
+GmCXt.getUrlParameter = function(sParam) {
+    let pageURL = decodeURIComponent(GmCXt._location().search.substring(1));
+    return GmCXt.getParameterValue(sParam, pageURL);
+};
+
+GmCXt.matchUrlRegEx = function(regExUrl, url2) {
+    let match = false;
+
+    let regexString = '';
+    let splitArr = regExUrl.split("[*.]");
+
+    for (let i = 0; i < splitArr.length; i++) {
+
+        if (i === splitArr.length - 1) {
+            regexString += splitArr[i];
+        } else {
+            regexString += splitArr[i] + "([a-zA-Z0-9:!+@#$&()?\\-_`.%+,=\\/]*)";
+        }
+    }
+    let regexPattern = new RegExp("^" + regexString + '$');
+    match = regexPattern.test(url2);
+
+    return match;
+};
+
+/**
+ * @function filter URL scheme
+ */
+GmCXt.filterUrlScheme = function(url) {
+    if (url.length) {
+        if (url[url.length - 1] === "#") {
+            url = url.substr(0, url.length - 1);
+        }
+        if (url[url.length - 1] === "/") {
+            url = url.substr(0, url.length - 1);
+        }
+    }
+
+    if (url.indexOf('https://') !== -1) {
+        url = url.split('https://')[1];
+    }
+    if (url.indexOf('http://') !== -1) {
+        url = url.split('http://')[1];
+    }
+
+    return url;
+};
+
+GmCXt.validateUrl = function(url) {
+
+    let expression = /^(?:(?:https?|ftp):\/\/)?(?:[\w-]+\.)+[a-z]{2,}(?::\d{2,5})?(?:\/\S*)?$/i;
+    if (expression.test(url)) {
+        return true;
+    } else {
+        return false;
+    }
+};
+
+GmCXt.validateWebUrl = function(str) {
+    let re = /^(http[s]?:\/\/){0,1}(www\.){0,1}[a-zA-Z0-9\.\-]+\.[a-zA-Z]{2,5}[\.]{0,1}/;
+    return re.test(str);
+};
+
+GmCXt.addHttpIfMissing = function(url) {
+    if (!url.trim().startsWith('http://') && !url.trim().startsWith('https://')) {
+        url = 'https://' + url;
+    }
+    return url;
+};
+
+GmCXt.isCurrentHost = function(host) {
+    if (GmCXt.urlParts && (GmCXt.urlParts.host.indexOf(host) !== -1 || location.href.indexOf(host) !== -1))
+        return true;
+    else
+        return false;
+};
+
+GmCXt.getHostnameFromUrl = function(url) {
+    if (url) {
+        if (url.includes('https://')) {
+            url = url.split('https://')[1];
+        }
+        if (url.includes('http://')) {
+            url = url.split('http://')[1];
+        }
+        if (url.includes('/')) {
+            url = url.split('/')[0];
+        }
+    }
+
+    return url;
+};
+
+GmCXt.getPathnameFromUrl = function(url) {
+    if (url.startsWith('http://') || url.startsWith('https://')) {
+        return new URL(url).pathname.replace(/^\/+/, "");
+    }
+    return url;
+};
+
+GmCXt.getURLMediaType = function(url) {
+    if (!GmCXt.isUrlValid(url)) return false;
+
+    if (url.search(/^http[s]?\:\/\//) === -1) {
+        url = 'https://' + url;
+    }
+
+    let ext = url.split('/').pop().match(/^[\w\s-,.]+\.([a-zA-Z0-9]{3,4})/);
+    if (ext) {
+        ext = ext[1];
+    }
+
+    url = new URL(url);
+    let mediaType = "";
+    if (ext && GmCXt.videoFileExtns.indexOf("." + ext) !== -1) {
+        mediaType = "video";
+    } else if (ext === "pdf") {
+        mediaType = "pdf";
+    }
+
+    return mediaType;
+};
+
+GmCXt.isDomainMatch = function(startURLDomain, stepDomain) {
+    return (GmCXt.getDomain(startURLDomain) === GmCXt.getDomain(stepDomain));
+};
+
+GmCXt.getDefaultDomain = function(stepURL, tour) {
+    let defaultURL = stepURL;
+    if (tour.allDomains.length > 0) {
+        let allDomains = tour.allDomains;
+        for (let i = 0; i < allDomains.length; i++) {
+            if (allDomains[i].isDefault) {
+                defaultURL = allDomains[i].url;
+                break;
+            }
+        }
+    }
+    return GmCXt.getHostnameFromUrl(defaultURL);
+};
+
+GmCXt.getRedirectUrlForAuto = function(stepURL, tour, startURLDomain) {
+    let stepDomain = GmCXt.getHostnameFromUrl(stepURL);
+    if (startURLDomain) {
+        if (GmCXt.isDomainMatch(startURLDomain, stepDomain)) {
+            stepURL = stepURL.replace(stepDomain, startURLDomain);
+        }
+    }
+
+    // Change this flag to true when multiple domain support is needed.
+    let redirectToDefaultDomain = false;
+    if (redirectToDefaultDomain) {
+        let appDomain = GmCXt.getDefaultDomain(stepURL, tour);
+        if (appDomain) {
+            stepURL = stepURL.replace(stepDomain, appDomain);
+        }
+    }
+    let completeURL = '';
+    if (!stepURL.startsWith('http')) {
+        completeURL = location.protocol + '//' + stepURL;
+    } else {
+        completeURL = stepURL;
+    }
+    GmCXt.log(33, "REDIRECTING TO URL - ", {
+        URL: completeURL
+    });
+    return completeURL;
+};
+
+GmCXt.changeUrl = function(stepURL, tour, startURLDomain) {
+    let redirectUrl = GmCXt.getRedirectUrlForAuto(stepURL, tour, startURLDomain);
+
+    // When redirected by tour player
+    if (!startURLDomain) {
+        window.location = redirectUrl;
+        return;
+    }
+
+    // When triggered by Automation
+    let source = GmCXt.checkDomainInApps(stepURL);
+    let destination = GmCXt.checkDomainInApps(redirectUrl);
+    let os = GmCXt.getOrgSettings();
+
+    if (os.fqdn && (!source.domainMatch || !destination.domainMatch)) {
+
+        if (GmCXt.isAutomationRunning()) {
+
+            let errorDomains = '';
+            if (!source.domainMatch) {
+                errorDomains += 'Source (' + GmCXt.getHostnameFromUrl(stepURL) + ') domain not configured. ';
+            }
+            if (!destination.domainMatch) {
+                errorDomains += 'Destination (' + GmCXt.getHostnameFromUrl(redirectUrl) + ') domain not configured.';
+            }
+
+            GmCXt.auto.fail(null, {
+                errorMessage: errorDomains
+            });
+        } else {
+            GmCXt.showDomainNotConfiguredPopup(redirectUrl);
+        }
+    } else {
+        window.location = redirectUrl;
+    }
+};
+
+GmCXt.getUrlScheme = function() {
+    let scheme = "http";
+    let url = GmCXt._location().href;
+
+    if (url.indexOf('https://') !== -1) {
+        scheme = "https";
+    }
+
+    return scheme;
+};
+
+GmCXt.getPageHostPathName = function() {
+    let hostname = GmCXt._location().hostname;
+    let pathname = GmCXt._location().pathname;
+    return hostname + pathname;
+};
+
+GmCXt.updateSrcAttribute = function(originalSrc, prefix, suffix) {
+    let hasProtocol = originalSrc.startsWith("http://") || originalSrc.startsWith("https://");
+    return hasProtocol ? originalSrc + suffix : prefix + originalSrc + suffix;
+};
+
+GmCXt.updateInternalSrcAttribute = function(originalSrc) {
+    const originalSrcParts = originalSrc.split(GmCXt.organization.bucket);
+    let originalSrcPath = "";
+    if (originalSrcParts.length < 2 || GmCXt.isEmpty(originalSrcParts[0])) {
+        originalSrcPath = originalSrc; 
+    } else {
+        originalSrcPath = GmCXt.organization.bucket + originalSrcParts[1].split("?")[0];
+    }
+    return GmCXt.updateSrcAttribute(originalSrcPath, GmCXt.conf.cdn, GmCXt.user.cdn_signature);
+};
+
+GmCXt.getStrippedPath = function(elem, type) {
+    let originalSrc = "";
+    if (type === "image") {
+        originalSrc = elem.src;
+    } else if (type === "video") {
+        originalSrc = elem.querySelectorAll('source')[0].src;
+    } else {
+        originalSrc = elem;
+    }
+
+    let hostname = GmCXt.getHostnameFromUrl(originalSrc);
+
+
+    if (GmCXt.isCurrentHost(hostname) && originalSrc.indexOf(GmCXt.organization.bucket) !== -1) {
+        originalSrc = originalSrc.replace(GmCXt.urlParts.fullUrl, "");
+        originalSrc = originalSrc.split("/").map(word => {
+            return location.href.toLowerCase().includes(word.toLowerCase()) ? "" : word;
+        }).filter(Boolean).join("/");
+    }
+
+    let hasProtocol = originalSrc.startsWith("http://") || originalSrc.startsWith("https://");
+
+    if (hasProtocol && GmCXt.getHostnameFromUrl(originalSrc) !== GmCXt.getHostnameFromUrl(GmCXt.conf.cdn) && 
+        originalSrc.indexOf(GmCXt.organization.bucket) === -1) {
+        if (type === "image") {
+            elem.src = originalSrc;
+        } else if (type === "video") {
+            elem.querySelectorAll('source')[0].src = originalSrc;
+        } else {
+            elem = originalSrc;
+        }
+    } else {
+        if (originalSrc) {
+            let newSrc = GmCXt.getPathnameFromUrl(originalSrc) || originalSrc; // Use originalSrc if URL is already relative
+            if (type === "image") {
+                elem.src = newSrc;
+            } else if (type === "video") {
+                elem.querySelectorAll('source')[0].src = newSrc;
+            } else {
+                elem = newSrc;
+            }
+        }
+    }
+
+    return elem;
+};
+
+GmCXt.stripAssetSrcToPathname = function(htmlString) {
+    if (!htmlString) {
+        return '';
+    }
+    let isHtml = /<\/?[a-z][\s\S]*>/i.test(htmlString);
+
+    if (!isHtml) {
+        let originalSrc = GmCXt.getStrippedPath(htmlString);
+        return originalSrc;
+    }
+
+    const parser = new DOMParser();
+    const doc = parser.parseFromString(htmlString, 'text/html');
+
+    let images = doc.querySelectorAll('img');
+    let video = doc.querySelectorAll('video');
+
+    images.forEach(img => {
+        img = GmCXt.getStrippedPath(img, "image");
+    });
+
+    video.forEach(vLink => {
+        vLink = GmCXt.getStrippedPath(vLink, "video");
+    });
+
+    return doc.body.innerHTML;
+};
+
+GmCXt.getRestorePath = function(elem, type) {
+    let originalSrc = "";
+    if (type === "image") {
+        originalSrc = elem.src;
+    } else if (type === "video") {
+        originalSrc = elem.querySelectorAll('source')[0].src;
+    }
+
+    let hostname = GmCXt.getHostnameFromUrl(originalSrc);
+
+
+    if (GmCXt.isCurrentHost(hostname) && originalSrc.indexOf(GmCXt.organization.bucket) !== -1) {
+        originalSrc = originalSrc.replace(GmCXt.urlParts.fullUrl, "");
+        originalSrc = originalSrc.split("/").map(word => {
+            return location.href.toLowerCase().includes(word.toLowerCase()) ? "" : word;
+        }).filter(Boolean).join("/");
+    }
+
+    let hasProtocol = originalSrc.startsWith("http://") || originalSrc.startsWith("https://");
+
+    if (hasProtocol && GmCXt.getHostnameFromUrl(originalSrc) !== GmCXt.getHostnameFromUrl(GmCXt.conf.cdn) && 
+        originalSrc.indexOf(GmCXt.organization.bucket) === -1) {
+        if (type === "image") {
+            elem.src = GmCXt.updateSrcAttribute(originalSrc, "", "");
+        } else if (type === "video") {
+            elem.querySelectorAll('source')[0].src = GmCXt.updateSrcAttribute(originalSrc, "", "");
+        }
+    } else {
+        if (originalSrc) {
+            let newSrc = GmCXt.updateInternalSrcAttribute(originalSrc);
+            if (type === "image") {
+                elem.src = newSrc;
+            } else if (type === "video") {
+                elem.querySelectorAll('source')[0].src = newSrc;
+            }
+        }
+    }
+
+    return elem;
+};
+
+GmCXt.handleHtmlAssets = function(htmlString, prefix, suffix) {
+    const parser = new DOMParser();
+    const doc = parser.parseFromString(htmlString, 'text/html');
+
+    let images = doc.querySelectorAll('img');
+    let video = doc.querySelectorAll('video');
+
+    images.forEach(img => {
+        img = GmCXt.getRestorePath(img, "image");
+    });
+
+    video.forEach(vLink => {
+        vLink = GmCXt.getRestorePath(vLink, "video");
+    });
+
+    return doc.body.innerHTML;
+};
+
+GmCXt.handlePlainTextAssets = function(textString, prefix, suffix) {
+    if (!textString || textString.trim() === "") return textString;
+    let cleanedPath = textString.replace(/^\/+/, ''); // Remove leading slashes
+    let hostname = GmCXt.getHostnameFromUrl(textString);
+
+    let hasProtocol = cleanedPath.startsWith("http://") || cleanedPath.startsWith("https://");
+
+    if (!hasProtocol || hostname === GmCXt.getHostnameFromUrl(GmCXt.conf.cdn) || 
+        cleanedPath.indexOf(GmCXt.organization.bucket) !== -1) {
+        return GmCXt.updateInternalSrcAttribute(cleanedPath);
+    } else {
+        return GmCXt.updateSrcAttribute(cleanedPath, prefix, suffix);
+    }
+};
+
+GmCXt.getOnPremJsonURL = function() {
+    let retUrl = GmCXt.conf.webServiceUrl;
+    return retUrl;
+};
+
+GmCXt.checkSalesForceSite = function() {
+    let url = GmCXt.getUrl();
+    if (url.indexOf('salesforce.com') > 0 || url.indexOf('lightning.force.com') > 0)
+        return true;
+    else
+        return false;
+};
+
+GmCXt.checkWorkdaySite = function() {
+    let url = GmCXt.getUrl();
+    if (url.indexOf('workday.com') > 0)
+        return true;
+    else
+        return false;
+};
+
+GmCXt.checkUBS = function() {
+    let url = GmCXt.getUrl();
+    if (url.indexOf('ubs.net') > -1 || url.indexOf('pwj.com') > -1)
+        return true;
+    else
+        return false;
+};
+
+GmCXt.checkServiceNow = function() {
+    let url = GmCXt.getUrl();
+    if (url.indexOf('service-now.com') > -1)
+        return true;
+    else
+        return false;
+};
+
+GmCXt.checkGmailSite = function() {
+    let url = GmCXt.getUrl();
+    if (url.indexOf('mail.google.com') === 0)
+        return true;
+    else
+        return false;
+};
+
+GmCXt.redirect = function(to) {
+    GmCXt.log(1, "ROUTE to " + to);
+    GmCXt.timeout(function() {
+        location.replace(to);
+    }, 0);
+};
+
+GmCXt.showDomainNotConfiguredPopup = function(redirectUrl) {
+    GmCXt.cleanPlayer();
+    GmCXt.auto.destroyAutomation();
+    let option = {
+        description: GmCXt.label.missingDomainAppConfig,
+        button1: GmCXt.label.ok,
+        closeTour: true
+    };
+    GmCXt.alertV2(option).show();
+};
+
+GmCXt.isUrlValid = function(userInput) {
+    if (GmCXt.isEmpty(userInput)) return true;
+    let res = userInput.match(/(http(s)?:\/\/.)?(www\.)?[-a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_\+.~#?&//=]*)/g);
+    if (res == null)
+        return false;
+    else
+        return true;
+};
+//User Setting specific Functions
 
 GmCXt.updateUserProfileSettings = function(userSettings) {
     GmCXt.user.settings = userSettings;
@@ -10322,108 +10304,372 @@ GmCXt.updateUserSettings = function(data, user, cb) {
     }     
 };
 
-GmCXt.getAbsoluteRectFromIframe = function(he) {
+GmCXt.clearSession = function() {
 
-    let iframeEl = he.ownerDocument.defaultView.frameElement;
-    if (!iframeEl || window.self !== window.top) {
-        return null;
+    if (GmCXt.user) {
+        GmCXt.user = false;
     }
 
-    let rect = he.getBoundingClientRect();
-    let iframeRect = iframeEl.getBoundingClientRect();
+    GmCXt.clearBeaconsAndTooltips(true);
+    GmCXt.highlighter.clear();
 
-    return {
-        top: rect.top + iframeRect.top,
-        left: rect.left + iframeRect.left,
-        width: rect.width,
-        height: rect.height
-    };
-};
+    GmCXt.playedTour = [];
+    GmCXt.storage().remove(['playedTour', 'stepsPlayed', 'insightPageRulesData', 'gmSelectedSegment']);
 
-// This function returns custom selector parts, if it matches "IFRAME#id BODY#id" get "BODY#id"
-GmCXt.getIframeQueryParts = function(selector) {
-    if (/iframe/i.test(selector) && selector.indexOf(' ') !== -1) {
-        let queryParts = selector.trim().split(/\s+/, 2);
-        if (queryParts.length === 2 && queryParts[1].length > 0) {
-            return queryParts;
-        }
-    }
-    return [];
-};
-
-// This function returns query part of iframe from the custom selector
-// eg. From this "IFRAME#id BODY#id" get "BODY#id"
-GmCXt.getIframeQuery = function(selector) {
-    let queryParts = GmCXt.getIframeQueryParts(selector);
-    if (queryParts.length) {
-        return queryParts[1];
-    } else {
-        return selector;
+    if (mg$('.mgPlayerJSProd_task-list-button').length > 0) {
+        mg$('.mgPlayerJSProd_task-list-button').remove();
     }
 };
+// Input validation and formatting functions
 
-// This function returns node from the custom selector jquery for elements inside iframe
-GmCXt.getNodeFromIframeQuery = function(selector) {
-
-    let iframeElem = '';
-    let nodes = null;
-    let shadowRoot = null;
-
-    let queryParts = GmCXt.getIframeQueryParts(selector);
-    if (queryParts.length) {
-        iframeElem = mg$(queryParts[0]);
-    }
-
-    if(iframeElem.length) {
-        const iframeDoc = iframeElem[0].contentDocument || iframeElem[0].contentWindow.document;
-        nodes = mg$(queryParts[1], iframeDoc);
-    }else{
-        nodes = mg$(selector);
-    }
-
-    if(!nodes.length) {
-
-        let [hostSelector, innerSelector] = selector.split(/ (.+)/);
-        let shadowDom;
-        try {
-            shadowDom = mg$(hostSelector);
-        } catch (e) {
-            shadowDom = '';
-        }
-        let shadowHost = shadowDom.length && shadowDom[0] || null;
-        shadowRoot = shadowHost && shadowHost.shadowRoot;
-
-        if(shadowRoot && innerSelector) {
-
-            let containsMatch = innerSelector.match(/(.*):contains\(["']?(.*?)["']?\)$/);
-            if (containsMatch) {
-                let tagSelector = containsMatch[1] || '*';
-                let textToFind = containsMatch[2];
-
-                let matched = mg$(shadowRoot.querySelectorAll(tagSelector)).filter(function() {
-                    return mg$(this).text().toLowerCase().includes(textToFind.toLowerCase());
-                });
-
-                // returns the last matched element
-                nodes = matched.length ? mg$(matched[matched.length - 1]) : null;
-            } else {
-                nodes = mg$(shadowRoot.querySelectorAll(innerSelector));
-            }
-        }
-
-    }
-
-    return nodes;
-};
-
-GmCXt.showTooltipsDuringWorkflowGuide = function() {
-    let org = GmCXt.organization;
-    if (org && org.admin_settings.show_tooltips_during_workflow_guide) {
+GmCXt.validateAlphanumeric = function(str) {
+    if (!str || !str.trim()) {
+        return false;
+    } else if (str.match(".*[a-zA-Z].*")) {
         return true;
+    } else {
+        return false;
     }
+};
+
+GmCXt.validateEmpty = function(str) {
+    if (!str || !str.trim()) {
+        return false;
+    } else if (str.length > 0) {
+        return true;
+    } else {
+        return false;
+    }
+};
+
+GmCXt.validateLength = function(str, limit) {
+
+    if (str && str.length) {
+        str = mg$('<div />').html(str).text().trim();
+        if (str.length <= limit) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
     return false;
 };
 
+GmCXt.validatePhonenumber = function(str) {
+    let isValid = /^[1-9][0-9]{4,14}$/.test(str);
+    return isValid;
+};
+
+GmCXt.validateEmail = function(str) {
+    let re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    return re.test(str);
+};
+
+GmCXt.validateRegex = function(regex, value) {
+    let re = new RegExp(regex);
+    return re.test(value);
+};
+
+GmCXt.validateDateFormat = function(str) {
+    let matches =
+        /^(\d{1,2})[:](\d{1,2})[:](\d{4})$/.exec(str) || // HH:MM:YYYY
+        /^(\d{1,2})[-](\d{1,2})[-](\d{4})$/.exec(str) || // DD-MM-YYYY or MM-DD-YYYY
+        /^(\d{1,2})[/](\d{1,2})[/](\d{4})$/.exec(str) || // DD/MM/YYYY or MM/DD/YYYY
+        /^(\d{4})\/(\d{1,2})\/(\d{1,2})$/.exec(str); // YYYY/MM/DD
+
+
+    if (matches == null) return false;
+
+    if (matches[1].length === 4) {
+        // YYYY/MM/DD
+        y = matches[1];
+        m = matches[2] - 1;
+        d = matches[3];
+    } else {
+        // DD/MM/YYYY, MM-DD-YYYY, etc.
+        d = matches[2];
+        m = matches[1] - 1;
+        y = matches[3];
+    }
+
+    let composedDate = new Date(y, m, d);
+    return composedDate.getDate() == d &&
+        composedDate.getMonth() == m &&
+        composedDate.getFullYear() == y;
+};
+
+GmCXt.validateTimeFormat = function(str) {
+    let isValid = false;
+    if (str.length > 8)
+        isValid = false;
+    else if (str.length < 6) {
+        isValid = /^(0[0-9]|1[0-9]|2[0-3]):[0-5][0-9]$/.test(str);
+    } else {
+        isValid = /(?:[01]\d|2[0123]):(?:[012345]\d):(?:[012345]\d)/.test(str);
+    }
+    return isValid;
+};
+
+GmCXt.validateNumeric = function(str) {
+    //  check for valid numeric strings
+    let strValidChars = "0123456789.-";
+    let strChar;
+    let blnResult = true;
+
+    if (str.length === 0) return false;
+
+    //  test strString consists of valid characters listed above
+    for (i = 0; i < str.length && blnResult === true; i++) {
+        strChar = str.charAt(i);
+        if (strValidChars.indexOf(strChar) == -1) {
+            blnResult = false;
+        }
+    }
+    return blnResult;
+};
+
+GmCXt.getBulletCount = function(value) {
+    return (value.match(/<li/g) || []).length;
+};
+
+GmCXt.escapeHtml = function(str) {
+    if (str) {
+        str = str.replace(/&/g, "&amp;")
+            .replace(/</g, "&lt;")
+            .replace(/>/g, "&gt;")
+            .replace(/"/g, "&quot;")
+            .replace(/'/g, "&#039;");
+    }
+    return str;
+};
+
+GmCXt.getValidationTypes = function(val) {
+    return {
+        required: val,
+        numeric: val,
+        date: val,
+        time: val,
+        email: val,
+        url: val,
+        phone: val,
+        charCount: val,
+        bulletCount: val,
+        regex: val
+    };
+};
+//Variable related file
+
+GmCXt.getVariableData = function() {
+    let varData = false;
+
+    if (!GmCXt.isEmpty(GmCXt.appList) && GmCXt.activeAppId && GmCXt.appList['app:' + GmCXt.activeAppId]) {
+        let appId = GmCXt.getBaseAppId();
+        varData = GmCXt.appList['app:' + appId].settings.variables;
+    }
+
+    return varData;
+};
+
+GmCXt.replaceVariableWithValue = function(str) {
+    let variables = GmCXt.getVariableData();
+    if (GmCXt.stringUsesVariable(str)) {
+        let isValid = false;
+        for (let i = 0; i < variables.length; i++) {
+            let regex = new RegExp('\{\{(?:\\s+)?(' + RegExp.escape(variables[i].name) + ')(?:\\s+)?\}\}', "g");
+            isValid = regex.test(str);
+            if (isValid && variables[i].value) {
+                str = str.replace(regex, variables[i].value);
+            }
+        }
+    }
+    return str;
+};
+//Widget Specific Functions
+GmCXt.displayWidget = function(forceShowWidget) {
+    if (GmCXt.getWidgetVisibility(forceShowWidget)) {
+        let widget = GmCXt.getWidgetInstance();
+        if (widget.length) {
+            GmCXt.getWidgetInstance().show();
+            GmCXt.showCurrentPageGuidesIndicator();
+        } else {
+            GmCXt.showWidget();
+        }
+    } else {
+        GmCXt.hideWidgetIcon();
+    }
+};
+
+GmCXt.getWidgetInstance = function() {
+    return mg$('.mgPlayerJSProd_start-button');
+};
+
+GmCXt.getWidgetVisibility = function(forceShowWidget) {
+
+    if (GmCXt.tourPlayerI && !forceShowWidget) {
+        GmCXt.log(8, "PLAYER INSTANCE EXIST. HIDE WIDGET " + GmCXt.getAppName());
+        return false;
+    }
+
+    if (GmCXt.isAutomationRunning()) {
+        GmCXt.log(8, "AUTOMATION RUNNING. HIDE WIDGET " + GmCXt.getAppName());
+        return false;
+    }
+
+    if (!GmCXt.checkPrecedence() && !GmCXt.conf.showWidget) {
+        GmCXt.log(8, "NO PREFERENCE. HIDE WIDGET " + GmCXt.getAppName());
+        return false;
+    }
+
+    if (GmCXt.snowApp) {
+        GmCXt.log(8, "HIDE WIDGET on LXP || snowApp");
+        return false;
+    }
+
+    if (GmCXt.isMcKessonClientJS()) {
+        GmCXt.log(8, "HIDE WIDGET on McKesson ClientJS");
+        return false;
+    }
+
+    let s = GmCXt.getWidgetSettings();
+
+    if (!GmCXt.isEmpty(s) && s) {
+        if (GmCXt.isFalse(s.showWidgetIcon)) {
+            GmCXt.log(8, "HIDDEN IN ORG SETTINGS");
+            return false;
+        }
+
+        let rules = s.rules || [];
+        let match = true;
+
+        if (rules.length > 0 && rules[0].value !== '') {
+
+            let oldRegEx = true;
+            if (GmCXt.isDefined(s.clientVersion)) {
+                oldRegEx = false;
+            }
+
+            match = GmCXt.ruleEngine.evaluateRules(rules, oldRegEx);
+        }
+
+        if (!match) {
+            GmCXt.log(8, "RULES NOT MATCHED, hide widget");
+            return false;
+        }
+
+        if (s.hide_widget_if_noguide && GmCXt.isPlayer()) {
+            if (!GmCXt.ifGuidesOnCurrentPage) {
+                GmCXt.log(8, "NO GUIDES ON CURRENT PAGE. HIDE WIDGET " + GmCXt.getAppName());
+                return false;
+            }
+        }
+
+    } else if (!GmCXt.conf.showWidget) {
+        return false;
+    }
+
+    return true;
+};
+
+GmCXt.getWidgetIcon = function() {
+
+    return new Promise(function(resolve, reject) {
+
+        let i = 'common/img/widget_icon.png';
+
+        i = GmCXt.getBasePath(i);
+
+        let s = GmCXt.getWidgetSettings();
+
+        if (s && s.widget_icon_path && !GmCXt.isDefaultIcon(s.widget_icon_path)) {
+            i = GmCXt.restoreAssetSrc(s.widget_icon_path);
+        }
+
+        //check if widgetIcon needs to get new signature.
+        let isSignExp = (GmCXt.getCurrentTimeInMilSec() - GmCXt.lastCheckWidgetIcon > GmCXt.t.refreshWidget) ? true : false;
+
+        resolve(i);
+    });
+};
+
+GmCXt.getWidgetAlignment = function() {
+    let alignment = "right";
+    return alignment;
+};
+
+GmCXt.hideWidgetIcon = function() {
+    GmCXt.log(8, "HIDE WIDGET");
+
+    let widget = GmCXt.getWidgetInstance();
+    if (widget.length) {
+        widget.hide();
+    }
+};
+
+GmCXt.showWidget = function() {
+
+    if (GmCXt.APP_PANEL_OPEN) return;
+
+    if (GmCXt.getWidgetVisibility()) {
+
+        let show = function() {
+
+            GmCXt.log(8, "SHOW WIDGET");
+
+            GmCXt.positionWidget();
+            GmCXt.widgetIconCustomize();
+
+            GmCXt.showCurrentPageGuidesIndicator();
+
+            GmCXt.displayWidget();
+        };
+
+        let widget = GmCXt.getWidgetInstance();
+
+        if (widget.length) {
+            GmCXt.getWidgetIcon().then(function(wURl) {
+                mg$(".mgPlayerJSProd_start-button img").attr('src', wURl);
+                show();
+            });
+
+        } else if (!GmCXt.addingWidgetIcon) {
+
+            GmCXt.addingWidgetIcon = true;
+            GmCXt.addWidgetIcon().then(function() {
+
+                GmCXt.addingWidgetIcon = false;
+                GmCXt.addWidgetIconEvents();
+                show();
+            });
+        }
+
+    } else {
+        GmCXt.removeWidget();
+    }
+};
+
+GmCXt.getWidgetSettings = function() {
+
+    let ws = false;
+
+    if (GmCXt.appList && GmCXt.activeAppId) {
+        let activeApp = GmCXt.appList['app:' + GmCXt.activeAppId];
+
+        if (activeApp && activeApp.settings) {
+            ws = activeApp.settings;
+            ws.clientVersion = activeApp.settings.version;
+        }
+    }
+    if (GmCXt.isWestpac()) {
+        ws.guide_count_on_widget = false;
+    }
+
+    return ws;
+};
+
+//All Constants and Variables
+
+// Contains all constants and configuration
 GmCXt.lastUserAction = 0;
 GmCXt.iframeCount = 0;
 GmCXt.prevEnv = [];
@@ -10432,29 +10678,16 @@ GmCXt.ruleOpsUILabels = {};
 GmCXt.inPlayer = GmCXt.conf.appName === GmCXt.conf.playerApp;
 GmCXt.maxInlineStepCreation = 10;
 GmCXt.maxFeatureStepCreation = 100;
+
 GmCXt.captureStepCounter = 0;
 GmCXt.apiCallCount = 0;
 GmCXt.desktopCaptureMode = false;
-GmCXt.activeApiCallCount = 0;
-GmCXt.loadingAutoHideTimer = null;
-GmCXt.creatorRefreshTime = 0;
 
 GmCXt.timeout = function(fn, t) {
     return setTimeout(fn, t);
 };
 
-GmCXt.trackerUtil = {
-    guidePayload: [],
-    trackPI: false,
-    enableTracking: false,
-    ePayload: {},
-    ttPayload: {},
-    page_url: "",
-    featureTracking: false,
-    pageTracking: false
-};
-GmCXt.guidePlayTracker = {};
-
+// Step type constants
 GmCXt.STEP_TYPE_INLINE = 'inline';
 GmCXt.STEP_TYPE_WEB_INLINE = 'web_inline';
 GmCXt.STEP_TYPE_MESSAGE = 'message';
@@ -10485,6 +10718,7 @@ GmCXt.isLogoutTrackApi = false;
 
 GmCXt.STEP_TYPE_TAG = 'tag';
 
+// Time constants
 GmCXt.t_ = {
     hr1: 60 * 60 * 1000,
     hr8: 8 * 60 * 60 * 1000,
@@ -10602,326 +10836,45 @@ GmCXt.t = {
     addTooltipEvent: GmCXt.t_.ms1
 };
 
-GmCXt._location = function() {
-    return window && window.location;
-};
+GmCXt.activeApiCallCount = 0;
+GmCXt.loadingAutoHideTimer = null;
+GmCXt.creatorRefreshTime = 0;
+// Functions for API calls and data retrieval
 
-GmCXt.isWestpacOneUI = function() {
-    if (window &&
-		window.location &&
-		window.location.href.indexOf('about:blank') !== -1 &&
-		parent.window &&
-		parent.window.location &&
-		parent.window.location.href.indexOf('ui.westpac.com.au') !== -1) {
-        return true;
-    } else {
-        return false;
-    }
-};
+GmCXt.trackApiCalls = function (fromBackground, noLoader) {
 
-GmCXt.parseJSON__ = function(str) {
-    try {
-        if (typeof str === 'object') {
-            return str;
-        } else if (str === '' || str === 'AS' ||
-			str === 'na' || str === '[object Object]' ||
-			str === undefined || str === 'undefined'
-        ) {
-            return {};
-        } else {
-            let ob = JSON.parse(str);
-            if (typeof ob === 'string') ob = JSON.parse(ob);
-
-            return ob;
+    if (GmCXt.conf.appConfig.trackNetwork) {
+        if (GmCXt.isBackgroundPage === true) {
+            GmCXt.sendMessageToPanel("mgPlayerJSProd_action:trackApiCalls");
+        } else{
+            GmCXt.apiCallCount++;
+            GmCXt.showApiCallCount();
         }
-
-    } catch (e) {
-        return null;
     }
-};
+    
+    if (typeof GmRootScope === 'undefined') return;
 
-GmCXt.isObject = function(value) {
-    return value !== null && typeof value === 'object';
-};
-
-GmCXt.isEmpty = function(val) {
-    if (typeof val === "boolean" || typeof val === "number") return false; // for 'false' & zero
-
-    if (!val) return true;
-
-    if (typeof val === "object" && val.constructor === Object) return Object.keys(val).length ? false : true;
-
-    if (typeof val === "object" && val.constructor === Array) return val.length ? false : true;
-
-    if (typeof val === 'string' && !val.trim()) return true;
-
-    return false;
-};
-
-GmCXt.isDefined = function(val) {
-    if (val === undefined || val === "undefined")
-        return false;
-    else
-        return true;
-};
-
-GmCXt.updateGlobalUser = function(user) {
-    if (!user) {
-        return;
-    }
-
-    if (!GmCXt.isBackgroundPage) {
-        GmCXt.user = GmCXt.validateDataModel(user, GmCXt.model.user);
-    } else {
-        GmCXt.user = user;
-    }
-    if (user.organization) {
-        GmCXt.updateGlobalOrg(user.organization);
-    }
-};
-
-GmCXt.checkTimeStampUpdate = function() {
-
-    let apiUrl = GmCXt.conf.publicTimestampUrl + GmCXt.organization.organization_id + ".json?mg_t=" + new Date().getTime();
-    GmCXt.trackApiCalls();
-
-    fetch(apiUrl).then(function(response) {
-        if (response.status === 200) {
-            response.json()
-                .then(function(r) {
-                    GmCXt.activeApiCallCount--;
-                    if(!GmCXt.isBackgroundPage)  GmRootScope.hideLoading();
-                    let lastRefresh = r.last_updated_time;
-                    if (lastRefresh != GmCXt.refreshTime) {
-                        GmCXt.playerIntervalValidator();
-                    }
-                    GmCXt.lastTimeStampSync = GmCXt.getCurrentTimeInSec();
-                    GmCXt.msgToApp('mgPlayerJSProd_action:update_timestamp_sync_time', r, typeof senderTabId !== 'undefined' ? senderTabId : undefined);
-
-                }).catch(function(error) {
-                    GmCXt.log(1, "ERROR: Public Timestamp fetch failed", error);
-                    GmCXt.activeApiCallCount--;
-                    if(!GmCXt.isBackgroundPage)  GmRootScope.hideLoading();
-                });
-
-        } else {
-            GmCXt.log(1, "ERROR: Public Timestamp fetch failed" + response.status);
-            GmCXt.activeApiCallCount--;
-            if(!GmCXt.isBackgroundPage)  GmRootScope.hideLoading();
-        }
-    });
-};
-
-GmCXt.updateGlobalOrg = function(org) {
-    if (!org) {
-        return;
-    }
-
-    if (!GmCXt.isBackgroundPage) {
-        GmCXt.organization = GmCXt.validateDataModel(org, GmCXt.model.organization);
-    } else {
-        GmCXt.organization = org;
-    }
-    delete GmCXt.organization.applications;
-};
-
-GmCXt.playerIntervalValidator = function() {
-
-    GmCXt.log(70, "GET TIMESTAMP at " + new Date());
-
-    GmCXt.getJsonTimeStamp().then(function(r) {
-        let lastRefresh = r.last_updated_time;
-
-        GmCXt.log(70, "LAST REFRESH from server " + lastRefresh);
-
-        if (lastRefresh != GmCXt.refreshTime) {
-            GmCXt.log(70, "START PLAYER DATA REFRESH");
-            GmCXt.msgToApp('mgPlayerJSProd_action:refresh_player', r, typeof senderTabId !== 'undefined' ? senderTabId : undefined);
-        } else {
-            GmCXt.log(70, "NO UPDATE FOUND " + new Date());
-        }
-
-        GmCXt.refreshTime = r.last_updated_time;
-    });
-};
-GmCXt.creatorIntervalValidator = function() {
-
-    GmCXt.log(70, "GET TIMESTAMP at " + new Date());
-
-    GmCXt.getModifiedObjects().then(function(updates) {
-        if (updates === 'Renewed Access Token') {
-            GmCXt.creatorIntervalValidator();
-        } else if (updates.length) {
-            GmCXt.msgToApp('mgPlayerJSProd_action:creator_updates', {
-                updates: updates,
-                refreshTime: GmCXt.creatorRefreshTime
-            }, typeof senderTabId !== 'undefined' ? senderTabId : undefined);
-        }
-    }).catch(function(err) {
-        GmCXt.log(1, "ERROR: Creator sync failed", err);
-    });
-};
-
-GmCXt.processLastActionTime = function() {
-
-    let cTime = GmCXt.getCurrentTimeInSec();
-
-    if (GmCXt.inPlayer && (cTime - GmCXt.lastTimeStampSync) > GmCXt.t.playerSync) {
-        GmCXt.log(70, "TRIGGER PLAYER UPDATE " + new Date());
-        GmCXt.checkTimeStampUpdate();
-    }
-
-    if (GmCXt.isCreatorExt() && (cTime - GmCXt.creatorRefreshTime) > GmCXt.t.creatorSync) {
-        GmCXt.log(70, "TRIGGER CREATOR UPDATE " + new Date());
-        GmCXt.creatorIntervalValidator();
-    }
-
-    GmCXt.log(45, "SEND Traker event " + new Date());
-    GmCXt.trackerV1.sendEvents();
-
-    GmCXt.log(70, "LAST USER ACTION TIME: " + new Date());
-};
-
-GmCXt.startCreatorUpdateInterval = function() {
-
-    let callSync = function() {
-        GmCXt.getModifiedObjects().then(function(updates) {
-            if (updates === 'Renewed Access Token') {
-                GmCXt.startCreatorUpdateInterval();
-            } else if (updates.length) {
-                GmCXt.msgToApp('mgPlayerJSProd_action:creator_updates', {
-                    updates: updates,
-                    refreshTime: GmCXt.creatorRefreshTime
-                }, typeof senderTabId !== 'undefined' ? senderTabId : undefined);
+    if (!GmCXt.isBackgroundPage && !fromBackground) {
+        GmCXt.activeApiCallCount++;
+        if (GmCXt.activeApiCallCount === 1) {
+            // Do not show loader for traking events api calls
+            if (!noLoader) GmRootScope.showLoading();
+            if (GmCXt.loadingAutoHideTimer) {
+                clearTimeout(GmCXt.loadingAutoHideTimer);
             }
-        }).catch(function(err) {
-            GmCXt.log(1, "ERROR: Creator sync failed", err);
-        });
-    };
-
-    GmCXt.creatorRefreshTime = GmCXt.refreshTime || GmCXt.getCurrentTimeInSec();
-
-    if (GmCXt.creatorInterval) {
-        return;
-    }
-
-    GmCXt.creatorInterval = setInterval(callSync, GmCXt.t.creatorSync);
-};
-
-GmCXt.sendMsgToAudioFrame = function(type, data) {
-    data = data || {};
-    data.config = GmCXt.conf;
-    data.user = GmCXt.user;
-
-    if (GmCXt.playerI || GmCXt.playerI === null) {
-        data.playerInstance = GmCXt.playerI;
-    }
-    let w = mg$(".mgPlayerJSProd_play-step-audio-iframe");
-    if (w.length) {
-        let message = {
-            action: type,
-            data: data
-        };
-        message = GmCXt.formatMsg(message);
-        w.get(0).contentWindow.postMessage(message, "*");
-    }
-};
-
-GmCXt.msgToApp = function(action, data, tabId) {
-    if (GmCXt.isBackgroundPage === true) {
-        GmCXt.sendMessageToPanel(action, data, tabId);
-    }  else if (window.top === window.self) {
-        let m = {
-            action: action,
-            data: data
-        };
-        GmCXt.listenerBackgroud(m);
-    }
-};
-
-GmCXt.sendMessageToPanel = function(action, data, senderTabId) {
-
-    data = (data === undefined || data === null || !data) ? {} : data;
-
-    let ob = {
-        action: action,
-        data: data
-    };
-
-    chrome.tabs.query({
-        active: true,
-        highlighted: true
-    }, function(tabs) {
-        let activeTab = false;
-        for (let i = 0; i < tabs.length; i++) {
-            var tab = tabs[i];
-            if (tab.id === senderTabId) {
-                activeTab = true;
-            }
+            GmCXt.loadingAutoHideTimer = setTimeout(() => {
+                GmCXt.activeApiCallCount = 0;
+                GmRootScope.hideLoading();
+            }, 10000);
         }
-
-        // This below condition to send an message to source tab even it is not highlighted
-        // This will solve image loader issue in case of create/update steps
-        if (!activeTab && senderTabId) {
-            GmCXt.msgToTab(senderTabId, ob);
-        }
-
-        if (GmCXt.FT.creatorApp && tabs.length && !activeTab) {
-            var tab = tabs[0];
-            senderTabId = tab.id;
-            GmCXt.updateVideoUploadStatus(senderTabId, {
-                data: {
-                    operation: "get"
-                }
-            });
-        }
-
-        if (GmCXt.FT.isPlayer && tabs.length && !activeTab) {
-            var tab = tabs[0];
-            senderTabId = tab.id;
-        }
-
-        GmCXt.msgToTab(senderTabId, ob);
-    });
-};
-
-GmCXt.getCdnSignature = function(sendMessage, fromTimeStamp) {
-
-    if (GmCXt.waitForCdnSignature) return true;
-
-    GmCXt.waitForCdnSignature = true;
-
-    if (sendMessage) {
-
-        GmCXt.msgToApp('mgPlayerJSProd_action:get_cdn_signature_from_app');
-
-    } else { //this is used in Background.js for player and cretor sync
-        GmCXt.callGetCdnSignature({
-            organization_id: GmCXt.organization.organization_id
-        }).then(function(response) {
-
-            let r = response.data;
-            if (r && r.cdn_signature && r.cdn_signature_expiry) {
-
-                if (GmCXt.user) {
-                    GmCXt.user.cdn_signature = r.cdn_signature;
-                    GmCXt.user.cdn_signature_expiry = r.cdn_signature_expiry;
-                    GmCXt.updateGlobalUser(GmCXt.user);
-                }
-            }
-            if (fromTimeStamp) {
-                GmCXt.checkTimeStampUpdate();
-            }
-        });
     }
 };
 
-GmCXt.getCurrentTimeInMilSec = function() {
-    return new Date().getTime();
-};
-
-GmCXt.getCurrentTimeInSec = function() {
-    return Math.floor(new Date().getTime() / 1000);
+GmCXt.showApiCallCount = function () {
+    mg$('.mgPlayerJSProd_guide_api_count').remove();
+    var apiCountHtml = "<wmgPlayerJSProd_ class='mgPlayerJSProd_guide_api_count'>" + GmCXt.apiCallCount + '</wmgPlayerJSProd_>';
+    mg$('html').append(apiCountHtml);
+    mg$('.mgPlayerJSProd_guide_api_count').show();
 };
 
 GmCXt.getModifiedObjects = function(boxUrl) {
@@ -11002,7 +10955,6 @@ GmCXt.getJsonTimeStamp = function(boxUrl) {
                 .then(function(response) {
                     GmCXt.activeApiCallCount--;
                     if(!GmCXt.isBackgroundPage)  GmRootScope.hideLoading();
-
                     if (response.status === 200) {
                         response.json()
                             .then(function(d) {
@@ -11036,18 +10988,46 @@ GmCXt.getJsonTimeStamp = function(boxUrl) {
     });
 };
 
-GmCXt.encode = function(args) {
-    let data = '';
-    if (args) {
-        let argcount = 0;
-        for (let key in args) {
-            if (args.hasOwnProperty(key)) {
-                if (argcount++) data += '&';
-                data += encodeURIComponent(key) + '=' + encodeURIComponent(args[key]);
-            }
+GmCXt.getAccessToken = function() {
+    let params = {
+        url: GmCXt.getCustomerSpecificURL("user/token"),
+        headers: {
+            "Content-Type": "application/json",
+            RefreshToken: GmCXt.user.refreshtoken
+        },
+        data: {
+            force_update: true,
+            mg_source_name: GmCXt.conf.appConfig.customer
+        },
+        method: 'GET'
+    };
+    return GmCXt.xhr(params);
+};
+
+GmCXt.saveToken = function(r) {
+
+    if (r && r.accesstoken) {
+
+        GmCXt.user.accesstoken = r.accesstoken;
+        GmCXt.user.refreshtoken = r.refreshtoken;
+
+        if (GmCXt.isDefined(r.app_access)) {
+            GmCXt.user.app_access = r.app_access;
         }
+
+        if (GmCXt.isDefined(r.profile)) {
+            GmCXt.user.profile = r.profile;
+        }
+
+        if (!GmCXt.isBackgroundPage) {
+
+            GmCXt.getWidgetIcon().then(function(wUrl) {
+                mg$(".mgPlayerJSProd_start-button img").attr('src', wUrl);
+            });
+        }
+
+        GmCXt.msgToApp('mgPlayerJSProd_action:update_access_token', r, typeof senderTabId !== 'undefined' ? senderTabId : undefined);
     }
-    return data;
 };
 
 GmCXt.getOrgKeyFromJwToken = function(myGuideOrgKey) {
@@ -11061,6 +11041,191 @@ GmCXt.getOrgKeyFromJwToken = function(myGuideOrgKey) {
     } catch (e) {
         return {};
     }
+};
+
+GmCXt.getLanguageLabelsApi = function(url) {
+    return new Promise(function(resolve, reject) {
+        GmCXt.trackApiCalls();
+
+        fetch(url)
+            .then((response) => {
+                GmCXt.activeApiCallCount--;
+                if(!GmCXt.isBackgroundPage)  GmRootScope.hideLoading();
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                return response.json(); // Parse response body as JSON
+            })
+            .then((jsonData) => {
+                resolve(jsonData);
+            })
+            .catch((error) => {
+                GmCXt.activeApiCallCount--;
+                if(!GmCXt.isBackgroundPage)  GmRootScope.hideLoading();
+                reject(error);
+            });
+    });
+};
+
+GmCXt.getCustomerSpecificURL = function(custUrl) {
+    if (GmCXt.inPlayer) {
+        if (GmCXt.isSumtotal() || GmCXt.isLXP() || GmCXt.isSbx() || GmCXt.isGalaxy()) {
+            custUrl = custUrl + "/" + GmCXt.conf.appConfig.customer;
+        }
+    }
+    return custUrl;
+};
+
+GmCXt.getCdnSignature = function(sendMessage, fromTimeStamp) {
+
+    if (GmCXt.waitForCdnSignature) return true;
+
+    GmCXt.waitForCdnSignature = true;
+
+    if (sendMessage) {
+
+        GmCXt.msgToApp('mgPlayerJSProd_action:get_cdn_signature_from_app');
+
+    } else { //this is used in Background.js for player and cretor sync
+        GmCXt.callGetCdnSignature({
+            organization_id: GmCXt.organization.organization_id
+        }).then(function(response) {
+
+            let r = response.data;
+            if (r && r.cdn_signature && r.cdn_signature_expiry) {
+
+                if (GmCXt.user) {
+                    GmCXt.user.cdn_signature = r.cdn_signature;
+                    GmCXt.user.cdn_signature_expiry = r.cdn_signature_expiry;
+                    GmCXt.updateGlobalUser(GmCXt.user);
+                }
+            }
+            if (fromTimeStamp) {
+                GmCXt.checkTimeStampUpdate();
+            }
+        });
+    }
+};
+
+GmCXt.checkTimeStampUpdate = function() {
+
+    let apiUrl = GmCXt.conf.publicTimestampUrl + GmCXt.organization.organization_id + ".json?mg_t=" + new Date().getTime();
+    GmCXt.trackApiCalls();
+
+    fetch(apiUrl).then(function(response) {
+        if (response.status === 200) {
+            response.json()
+                .then(function(r) {
+                    GmCXt.activeApiCallCount--;
+                    if(!GmCXt.isBackgroundPage) GmRootScope.hideLoading();
+                    let lastRefresh = r.last_updated_time;
+                    if (lastRefresh != GmCXt.refreshTime) {
+                        GmCXt.playerIntervalValidator();
+                    }
+                    GmCXt.lastTimeStampSync = GmCXt.getCurrentTimeInSec();
+                    GmCXt.msgToApp('mgPlayerJSProd_action:update_timestamp_sync_time', r, typeof senderTabId !== 'undefined' ? senderTabId : undefined);
+
+                }).catch(function(error) {
+                    GmCXt.activeApiCallCount--;
+                    if(!GmCXt.isBackgroundPage) GmRootScope.hideLoading();
+                    GmCXt.log(1, "ERROR: Public Timestamp fetch failed", error);
+                });
+
+        } else {
+            GmCXt.log(1, "ERROR: Public Timestamp fetch failed" + response.status);
+            GmCXt.activeApiCallCount--;
+            if(!GmCXt.isBackgroundPage) GmRootScope.hideLoading();
+        }
+    });
+};
+
+GmCXt.playerIntervalValidator = function() {
+
+    GmCXt.log(70, "GET TIMESTAMP at " + new Date());
+
+    GmCXt.getJsonTimeStamp().then(function(r) {
+        let lastRefresh = r.last_updated_time;
+
+        GmCXt.log(70, "LAST REFRESH from server " + lastRefresh);
+
+        if (lastRefresh != GmCXt.refreshTime) {
+            GmCXt.log(70, "START PLAYER DATA REFRESH");
+            GmCXt.msgToApp('mgPlayerJSProd_action:refresh_player', r, typeof senderTabId !== 'undefined' ? senderTabId : undefined);
+        } else {
+            GmCXt.log(70, "NO UPDATE FOUND " + new Date());
+        }
+
+        GmCXt.refreshTime = r.last_updated_time;
+    });
+};
+
+GmCXt.creatorIntervalValidator = function() {
+
+    GmCXt.log(70, "GET TIMESTAMP at " + new Date());
+
+    GmCXt.getModifiedObjects().then(function(updates) {
+        if (updates === 'Renewed Access Token') {
+            GmCXt.creatorIntervalValidator();
+        } else if (updates.length) {
+            GmCXt.msgToApp('mgPlayerJSProd_action:creator_updates', {
+                updates: updates,
+                refreshTime: GmCXt.creatorRefreshTime
+            }, typeof senderTabId !== 'undefined' ? senderTabId : undefined);
+        }
+    }).catch(function(err) {
+        GmCXt.log(1, "ERROR: Creator sync failed", err);
+    });
+};
+//Automation Specific Global Functions
+
+GmCXt.isAutomationRunning = function() {
+    return (GmCXt.auto && GmCXt.auto.isAutomationRunning());
+};
+
+GmCXt.getAutomatedCurrentTour = function() {
+    return (GmCXt.auto && GmCXt.auto.getAutomatedCurrentTour());
+};
+
+GmCXt.isAutomationStepRunning = function() {
+    if (GmCXt.playerI) {
+        let step = GmCXt.getStepFromPlayerI(GmCXt.playerI.currentStepId);
+        return GmCXt.isAutomationStep(step);
+    }
+    return false;
+};
+//Basic Utility Functions
+
+GmCXt.timeout = function(fn, t) {
+    return setTimeout(fn, t);
+};
+
+GmCXt._location = function() {
+    return window && window.location;
+};
+
+GmCXt.isObject = function(value) {
+    return value !== null && typeof value === 'object';
+};
+
+GmCXt.isEmpty = function(val) {
+    if (typeof val === "boolean" || typeof val === "number") return false; // for 'false' & zero
+
+    if (!val) return true;
+
+    if (typeof val === "object" && val.constructor === Object) return Object.keys(val).length ? false : true;
+
+    if (typeof val === "object" && val.constructor === Array) return val.length ? false : true;
+
+    if (typeof val === 'string' && !val.trim()) return true;
+
+    return false;
+};
+
+GmCXt.isDefined = function(val) {
+    if (val === undefined || val === "undefined")
+        return false;
+    else
+        return true;
 };
 
 GmCXt.parseJSON = function(str) {
@@ -11081,30 +11246,213 @@ GmCXt.parseJSON = function(str) {
     }
 };
 
-GmCXt.sendMessageToTabs = function(data) {
-    chrome.tabs.query({}, function(tabs) {
-        tabs.forEach(function(tab) {
-            GmCXt.msgToTab(tab.id, data);
-        });
+GmCXt.parseJSON__ = function(str) {
+    try {
+        if (typeof str === 'object') {
+            return str;
+        } else if (str === '' || str === 'AS' ||
+			str === 'na' || str === '[object Object]' ||
+			str === undefined || str === 'undefined'
+        ) {
+            return {};
+        } else {
+            let ob = JSON.parse(str);
+            if (typeof ob === 'string') ob = JSON.parse(ob);
+
+            return ob;
+        }
+
+    } catch (e) {
+        return null;
+    }
+};
+
+GmCXt.createDeepCopy = function(data) {
+    if (GmCXt.isDefined(data) && !GmCXt.isEmpty(data)) {
+        return JSON.parse(JSON.stringify(data));
+    }
+};
+
+GmCXt.getUUID = function() {
+    let date = new Date().getTime();
+    let uuid = 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
+        let randomNumber = (date + Math.random() * 16) % 16 | 0;
+        date = Math.floor(date / 16);
+        return (c == 'x' ? randomNumber : (randomNumber & 0x3 | 0x8)).toString(16);
+    });
+    return uuid;
+};
+
+GmCXt.encode = function(args) {
+    let data = '';
+    if (args) {
+        let argcount = 0;
+        for (let key in args) {
+            if (args.hasOwnProperty(key)) {
+                if (argcount++) data += '&';
+                data += encodeURIComponent(key) + '=' + encodeURIComponent(args[key]);
+            }
+        }
+    }
+    return data;
+};
+
+GmCXt.getCurrentTimeInMilSec = function() {
+    return new Date().getTime();
+};
+
+GmCXt.getCurrentTimeInSec = function() {
+    return Math.floor(new Date().getTime() / 1000);
+};
+
+GmCXt.isTrue = function(prop) {
+    if (parseInt(prop) === 1 || prop === true) return true;
+    else return false;
+};
+
+GmCXt.convertWeeksToHours = function(w) {
+    let h = parseFloat(w) * 7 * 24;
+    return h;
+};
+
+GmCXt.inArray = function(id, array) {
+    if (array.indexOf(parseInt(id)) !== -1) return true;
+    else return false;
+};
+
+GmCXt.inArrayString = function(str, array) {
+    if (array.indexOf(str) !== -1) return true;
+    else return false;
+};
+
+GmCXt.getBrowserUrl = function(i) {
+
+    let url = '';
+
+    if (GmCXt.browserApp === 'Safari') {
+        url = safari.extension.baseURI + i;
+    } else if (GmCXt.browserApp === 'firefox' || GmCXt.isClientJs()) {
+        url = chrome.extension.getURL(i);
+    } else {
+        url = chrome.runtime.getURL(i);
+    }
+
+    return url;
+};
+
+GmCXt.updateGlobalUser = function(user) {
+    if (!user) {
+        return;
+    }
+
+    if (!GmCXt.isBackgroundPage) {
+        GmCXt.user = GmCXt.validateDataModel(user, GmCXt.model.user);
+    } else {
+        GmCXt.user = user;
+    }
+    if (user.organization) {
+        GmCXt.updateGlobalOrg(user.organization);
+    }
+};
+
+GmCXt.updateGlobalOrg = function(org) {
+    if (!org) {
+        return;
+    }
+
+    if (!GmCXt.isBackgroundPage) {
+        GmCXt.organization = GmCXt.validateDataModel(org, GmCXt.model.organization);
+    } else {
+        GmCXt.organization = org;
+    }
+    delete GmCXt.organization.applications;
+};
+
+GmCXt.processLastActionTime = function() {
+
+    let cTime = GmCXt.getCurrentTimeInSec();
+
+    if (GmCXt.inPlayer && (cTime - GmCXt.lastTimeStampSync) > GmCXt.t.playerSync) {
+        GmCXt.log(70, "TRIGGER PLAYER UPDATE " + new Date());
+        GmCXt.checkTimeStampUpdate();
+    }
+
+    if (GmCXt.isCreatorExt() && (cTime - GmCXt.creatorRefreshTime) > GmCXt.t.creatorSync) {
+        GmCXt.log(70, "TRIGGER CREATOR UPDATE " + new Date());
+        GmCXt.creatorIntervalValidator();
+    }
+
+    GmCXt.log(45, "SEND Tracker event " + new Date());
+    GmCXt.trackerV1.sendEvents();
+
+    GmCXt.log(70, "LAST USER ACTION TIME: " + new Date());
+};
+
+GmCXt.getDocTitle = function() {
+    let title = document.title;
+    let parts = title.split(' '); // Split the string into words
+    let newParts = [];
+    for (let i = 0; i < parts.length; i++) {
+        let part = parts[i];
+        // Check if the part is a potential email address
+        if (part.indexOf('@') !== -1 && part.indexOf('.') !== -1 && part.charAt(0) !== '.') {
+            newParts.push(''); // Replace with an empty string
+        } else {
+            newParts.push(part); // Keep the part as is
+        }
+    }
+    title = newParts.join(' '); // Join the parts back into a string
+    return title;
+};
+
+GmCXt.updateGlobalUser = function(user) {
+    if (!user) {
+        return;
+    }
+
+    if (!GmCXt.isBackgroundPage) {
+        GmCXt.user = GmCXt.validateDataModel(user, GmCXt.model.user);
+    } else {
+        GmCXt.user = user;
+    }
+    if (user.organization) {
+        GmCXt.updateGlobalOrg(user.organization);
+    }
+};
+
+GmCXt.updateGlobalOrg = function(org) {
+    if (!org) {
+        return;
+    }
+
+    if (!GmCXt.isBackgroundPage) {
+        GmCXt.organization = GmCXt.validateDataModel(org, GmCXt.model.organization);
+    } else {
+        GmCXt.organization = org;
+    }
+    delete GmCXt.organization.applications;
+};
+
+//To Be Moved to another File
+GmCXt.setElementStyle = function(selector, styles, isImportant) {
+    if (!selector || !styles || Object.keys(styles).length === 0) {
+        return;
+    }
+
+    const keys = Object.keys(styles);
+
+    mg$(selector).each(function () {
+        if (keys.length === 1) {
+            const property = keys[0];
+            this.style.setProperty(property, styles[property], isImportant ? 'important' : '');
+        } else if (keys.length > 1) {
+            for (const property in styles) {
+                this.style.setProperty(property, styles[property], isImportant ? 'important' : '');
+            }
+        }
     });
 };
-
-GmCXt.msgToTab = function(tabId, m) {
-    chrome.tabs.sendMessage(tabId, GmCXt.formatMsg(m));
-};
-
-GmCXt.formatMsg = function(message) {
-
-    if ((GmCXt.isWestpac() && message.action.indexOf("MyGuideReporting") !== -1)) {
-        return message;
-    }
-
-    if (message.data) {
-        message.mgdata = message.data;
-        delete message.data;
-    }
-    return JSON.stringify(message);
-};
+//Guide Operations Global Functions
 
 GmCXt.getStepFromSteps = function(stepId, steps) {
 
@@ -11158,155 +11506,6 @@ GmCXt.repairPlayStructure = function(PS, steps) {
     }
 
     return PS;
-};
-
-GmCXt.isAutomationRunning = function() {
-    return (GmCXt.auto && GmCXt.auto.isAutomationRunning());
-};
-
-GmCXt.getAutomatedCurrentTour = function() {
-    return (GmCXt.auto && GmCXt.auto.getAutomatedCurrentTour());
-};
-
-GmCXt.isAutomationStepRunning = function() {
-    if (GmCXt.playerI) {
-        let step = GmCXt.getStepFromPlayerI(GmCXt.playerI.currentStepId);
-        return GmCXt.isAutomationStep(step);
-    }
-    return false;
-};
-
-GmCXt.convertMgdata = function(m) {
-    if (m.action && m.action.indexOf("init_sfdc_env") !== -1) {
-        return m;
-    } else if (GmCXt.isWestpac() && m.action && m.action.indexOf("MyGuideReporting") !== -1) {
-        return m;
-    }
-    m.data = m.mgdata;
-    return m;
-};
-
-GmCXt.inArray = function(id, array) {
-    if (array.indexOf(parseInt(id)) !== -1) return true;
-    else return false;
-};
-
-GmCXt.inArrayString = function(str, array) {
-    if (array.indexOf(str) !== -1) return true;
-    else return false;
-};
-
-GmCXt.createDeepCopy = function(data) {
-    if (GmCXt.isDefined(data) && !GmCXt.isEmpty(data)) {
-        return JSON.parse(JSON.stringify(data));
-    }
-};
-
-GmCXt.getBrowserUrl = function(i) {
-
-    let url = '';
-
-    if (GmCXt.browserApp === 'Safari') {
-        url = safari.extension.baseURI + i;
-    } else if (GmCXt.browserApp === 'firefox' || GmCXt.isClientJs()) {
-        url = chrome.extension.getURL(i);
-    } else {
-        url = chrome.runtime.getURL(i);
-    }
-
-    return url;
-};
-
-GmCXt.getCustomerSpecificURL = function(custUrl) {
-    if (GmCXt.inPlayer) {
-        if (GmCXt.isSumtotal() || GmCXt.isLXP() || GmCXt.isSbx() || GmCXt.isGalaxy()) {
-            custUrl = custUrl + "/" + GmCXt.conf.appConfig.customer;
-        }
-    }
-    return custUrl;
-};
-
-
-GmCXt.getAccessToken = function() {
-    let params = {
-        url: GmCXt.getCustomerSpecificURL("user/token"),
-        headers: {
-            "Content-Type": "application/json",
-            RefreshToken: GmCXt.user.refreshtoken
-        },
-        data: {
-            force_update: true,
-            mg_source_name: GmCXt.conf.appConfig.customer
-        },
-        method: 'GET'
-    };
-    return GmCXt.xhr(params);
-};
-
-GmCXt.saveToken = function(r) {
-
-    if (r && r.accesstoken) {
-
-        GmCXt.user.accesstoken = r.accesstoken;
-        GmCXt.user.refreshtoken = r.refreshtoken;
-
-        if (GmCXt.isDefined(r.app_access)) {
-            GmCXt.user.app_access = r.app_access;
-        }
-
-        if (GmCXt.isDefined(r.profile)) {
-            GmCXt.user.profile = r.profile;
-        }
-
-        if (!GmCXt.isBackgroundPage) {
-
-            GmCXt.getWidgetIcon().then(function(wUrl) {
-                mg$(".mgPlayerJSProd_start-button img").attr('src', wUrl);
-            });
-        }
-
-        GmCXt.msgToApp('mgPlayerJSProd_action:update_access_token', r, typeof senderTabId !== 'undefined' ? senderTabId : undefined);
-    }
-};
-
-GmCXt.addStoragePrefix = function(key) {
-    if (key.indexOf(GmCXt.storagePrefix) === -1) {
-        key = GmCXt.storagePrefix + key;
-    }
-    return key;
-};
-
-GmCXt.removeStoragePrefix = function(key) {
-    if (key.indexOf(GmCXt.storagePrefix) !== -1) {
-        key = key.split(GmCXt.storagePrefix)[1];
-    }
-    return key;
-};
-
-GmCXt.getUUID = function() {
-    let date = new Date().getTime();
-    let uuid = 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
-        let randomNumber = (date + Math.random() * 16) % 16 | 0;
-        date = Math.floor(date / 16);
-        return (c == 'x' ? randomNumber : (randomNumber & 0x3 | 0x8)).toString(16);
-    });
-    return uuid;
-};
-
-GmCXt.categoryLog = function(c) {
-    return "APP: " + c.application_id + " : [" + c.category_id + ", " + c.category_title + "] ";
-};
-
-GmCXt.tourLog = function(t) {
-    return " [" + t.tour_id + ", " + t.tour_title + "] ";
-};
-
-GmCXt.stepLog = function(s, t) {
-    return " [ step: " + s + ", tour: " + t + "] ";
-};
-GmCXt.isTrue = function(prop) {
-    if (parseInt(prop) === 1 || prop === true) return true;
-    else return false;
 };
 
 // Returns false if it could not update tour play structure
@@ -11417,6 +11616,66 @@ GmCXt.updateTourPlayStructure = function(data) {
     return false;
 };
 
+GmCXt.checkForBranchVariationSteps = function(step) {
+    if (step && (step.step_type === GmCXt.STEP_TYPE_BRANCH ||
+			step.step_type === GmCXt.STEP_TYPE_ERROR_HANDLER ||
+			GmCXt.isTrue(step.step_settings && step.step_settings.inlineBranch))) {
+        return true;
+    }
+    return false;
+};
+
+GmCXt.checkDefaultLangForTour = function(t, l) {
+    let retVal = false;
+    if (GmCXt.isFalse(l) || l.indexOf('en-') !== -1)
+        retVal = true;
+    else if (t && t.languages && t.languages.length) {
+        let dl = t.languages[t.languages.length - 1];
+        if (dl && dl.language === l) {
+            retVal = true;
+        }
+    }
+
+    return retVal;
+};
+
+GmCXt.isGuideInDefaultLang = function(tour, activeLang) {
+    let narrator = tour?.narrator;
+    let guideLang = "";
+
+    if (!GmCXt.isEmpty(narrator)) {
+        guideLang = GmRootScope.parseTourNarrator(tour);
+    }
+
+    // If active language is not defined or matches guide language, return true
+    if (!activeLang || GmCXt.isEmpty(guideLang)) {
+        return true;
+    }
+    // If active language doesn't match guide language, check if both are English variants
+    if (guideLang !== activeLang) {
+        return guideLang.indexOf("en-") !== -1 &&
+           activeLang.substring(0, 3) === guideLang.substring(0, 3);
+    }
+
+    return true;
+};
+
+
+GmCXt.getTourSegments = function(tour) {
+    //for tours played from side panel
+    if (tour.tour_settings.valid_segments) {
+        return tour.tour_settings.valid_segments;
+    } else {
+        let tourSeg = tour.tour_settings.segment_groups;
+        let validSegments = tourSeg.filter(function(s) {
+            return GmCXt.validatedSegments[s];
+        });
+
+        return validSegments;
+    }
+};
+//Language and Label Global Functions
+
 // These labels are always in english
 GmCXt.engLbls = {
     px: "px",
@@ -11506,57 +11765,6 @@ GmCXt.setRuleOpsUILabels = function() {
     GmCXt.ruleOpsUILabels[GmCXt.NOT_VISIBLE] = GmCXt.label.opNotVisible;
 };
 
-GmCXt.getLanguageLabelsApi = function(url) {
-    return new Promise(function(resolve, reject) {
-        GmCXt.trackApiCalls();
-
-        fetch(url)
-            .then((response) => {
-                GmCXt.activeApiCallCount--;
-                if(!GmCXt.isBackgroundPage)  GmRootScope.hideLoading();
-                if (!response.ok) {
-                    throw new Error('Network response was not ok');
-                }
-                return response.json(); // Parse response body as JSON
-            })
-            .then((jsonData) => {
-                resolve(jsonData);
-            })
-            .catch((error) => {
-                GmCXt.activeApiCallCount--;
-                if(!GmCXt.isBackgroundPage)  GmRootScope.hideLoading();
-                reject(error);
-            });
-    });
-};
-
-GmCXt.addLanguageDataInStorage = async function(url, languageCode, storageLanguageData, isPlayer) {
-
-    if (!GmCXt.isEmpty(storageLanguageData)) {
-        isPlayer ? (GmCXt.playerLbls = storageLanguageData) : (GmCXt.creatorLbls = storageLanguageData);
-    }
-
-    const targetLbls = isPlayer ? GmCXt.playerLbls : GmCXt.creatorLbls;
-    const targetEngLbls = isPlayer ? GmCXt.playerLbls["en_US"] : GmCXt.creatorLbls["en_US"];
-    const storageKey = isPlayer ? 'language_labels_player'+"_"+ GmCXt.conf.version : 'language_labels_creator'+ "_" + GmCXt.conf.version;
-
-    try {
-        const result = await GmCXt.getLanguageLabelsApi(url);
-        const labelsData = GmCXt.parseJSON(result);
-        targetLbls[languageCode] = labelsData;
-        GmCXt.storage().set({
-            [storageKey]: JSON.stringify(targetLbls),
-        });
-        return result;
-    } catch (error) {
-        targetLbls[languageCode] = targetEngLbls;
-        GmCXt.storage().set({
-            [storageKey]: JSON.stringify(targetLbls),
-        });
-        return;
-    }
-};
-
 GmCXt.getLanguageLabels = function(languageCode, isPlayer) {
     if (!languageCode || GmCXt.isEmpty(languageCode)) languageCode = 'en_US';
     let appName = isPlayer ? 'player' : 'creator';
@@ -11622,19 +11830,131 @@ GmCXt.getEngLabels = function() {
 
     return engLabels;
 };
+//Logger Specific Global Functions
 
-GmCXt.checkForBranchVariationSteps = function(step) {
-    if (step && (step.step_type === GmCXt.STEP_TYPE_BRANCH ||
-			step.step_type === GmCXt.STEP_TYPE_ERROR_HANDLER ||
-			GmCXt.isTrue(step.step_settings && step.step_settings.inlineBranch))) {
-        return true;
-    }
-    return false;
+GmCXt.categoryLog = function(c) {
+    return "APP: " + c.application_id + " : [" + c.category_id + ", " + c.category_title + "] ";
 };
 
-GmCXt.convertWeeksToHours = function(w) {
-    let h = parseFloat(w) * 7 * 24;
-    return h;
+GmCXt.tourLog = function(t) {
+    return " [" + t.tour_id + ", " + t.tour_title + "] ";
+};
+
+GmCXt.stepLog = function(s, t) {
+    return " [ step: " + s + ", tour: " + t + "] ";
+};
+// Functions for communication between components
+
+GmCXt.sendMsgToAudioFrame = function(type, data) {
+    data = data || {};
+    data.config = GmCXt.conf;
+    data.user = GmCXt.user;
+
+    if (GmCXt.playerI || GmCXt.playerI === null) {
+        data.playerInstance = GmCXt.playerI;
+    }
+    let w = mg$(".mgPlayerJSProd_play-step-audio-iframe");
+    if (w.length) {
+        let message = {
+            action: type,
+            data: data
+        };
+        message = GmCXt.formatMsg(message);
+        w.get(0).contentWindow.postMessage(message, "*");
+    }
+};
+
+GmCXt.msgToApp = function(action, data, tabId) {
+    if (GmCXt.isBackgroundPage === true) {
+        GmCXt.sendMessageToPanel(action, data, tabId);
+    }  else if (window.top === window.self) {
+        let m = {
+            action: action,
+            data: data
+        };
+        GmCXt.listenerBackgroud(m);
+    }
+};
+
+GmCXt.sendMessageToPanel = function(action, data, senderTabId) {
+
+    data = (data === undefined || data === null || !data) ? {} : data;
+
+    let ob = {
+        action: action,
+        data: data
+    };
+
+    chrome.tabs.query({
+        active: true,
+        highlighted: true
+    }, function(tabs) {
+        let activeTab = false;
+        for (let i = 0; i < tabs.length; i++) {
+            var tab = tabs[i];
+            if (tab.id === senderTabId) {
+                activeTab = true;
+            }
+        }
+
+        // This below condition to send an message to source tab even it is not highlighted
+        // This will solve image loader issue in case of create/update steps
+        if (!activeTab && senderTabId) {
+            GmCXt.msgToTab(senderTabId, ob);
+        }
+
+        if (GmCXt.FT.creatorApp && tabs.length && !activeTab) {
+            var tab = tabs[0];
+            senderTabId = tab.id;
+            GmCXt.updateVideoUploadStatus(senderTabId, {
+                data: {
+                    operation: "get"
+                }
+            });
+        }
+
+        if (GmCXt.FT.isPlayer && tabs.length && !activeTab) {
+            var tab = tabs[0];
+            senderTabId = tab.id;
+        }
+
+        GmCXt.msgToTab(senderTabId, ob);
+    });
+};
+
+GmCXt.sendMessageToTabs = function(data) {
+    chrome.tabs.query({}, function(tabs) {
+        tabs.forEach(function(tab) {
+            GmCXt.msgToTab(tab.id, data);
+        });
+    });
+};
+
+GmCXt.msgToTab = function(tabId, m) {
+    chrome.tabs.sendMessage(tabId, GmCXt.formatMsg(m));
+};
+
+GmCXt.formatMsg = function(message) {
+
+    if ((GmCXt.isWestpac() && message.action.indexOf("MyGuideReporting") !== -1)) {
+        return message;
+    }
+
+    if (message.data) {
+        message.mgdata = message.data;
+        delete message.data;
+    }
+    return JSON.stringify(message);
+};
+
+GmCXt.convertMgdata = function(m) {
+    if (m.action && m.action.indexOf("init_sfdc_env") !== -1) {
+        return m;
+    } else if (GmCXt.isWestpac() && m.action && m.action.indexOf("MyGuideReporting") !== -1) {
+        return m;
+    }
+    m.data = m.mgdata;
+    return m;
 };
 
 GmCXt.getDatafromPanel = function() {
@@ -11666,56 +11986,93 @@ GmCXt.getDatafromPanel = function() {
     });
 };
 
-GmCXt.isEventTimeValid = function(payloadDate) {
-    let isValid = true;
-    let currentDate = new Date();
-    let currentTimestamp = currentDate.getTime();
-    let payloadTimestamp = new Date(payloadDate).getTime();
+GmCXt.startCreatorUpdateInterval = function() {
+//Not getting called anywhere
+    let callSync = function() {
+        GmCXt.getModifiedObjects().then(function(updates) {
+            if (updates === 'Renewed Access Token') {
+                GmCXt.startCreatorUpdateInterval();
+            } else if (updates.length) {
+                GmCXt.msgToApp('mgPlayerJSProd_action:creator_updates', {
+                    updates: updates,
+                    refreshTime: GmCXt.creatorRefreshTime
+                }, typeof senderTabId !== 'undefined' ? senderTabId : undefined);
+            }
+        }).catch(function(err) {
+            GmCXt.log(1, "ERROR: Creator sync failed", err);
+        });
+    };
 
-    let expTimestamp = currentTimestamp - (60 * 60 * 24 * 6 * 1000);
-    if (payloadTimestamp < expTimestamp) {
-        isValid = false;
+    GmCXt.creatorRefreshTime = GmCXt.refreshTime || GmCXt.getCurrentTimeInSec();
+
+    if (GmCXt.creatorInterval) {
+        return;
     }
-    return isValid;
+
+    GmCXt.creatorInterval = setInterval(callSync, GmCXt.t.creatorSync);
+};
+//Storage Specific Global Functions
+
+GmCXt.addStoragePrefix = function(key) {
+    if (key.indexOf(GmCXt.storagePrefix) === -1) {
+        key = GmCXt.storagePrefix + key;
+    }
+    return key;
 };
 
-GmCXt.checkDefaultLangForTour = function(t, l) {
-    let retVal = false;
-    if (GmCXt.isFalse(l) || l.indexOf('en-') !== -1)
-        retVal = true;
-    else if (t && t.languages && t.languages.length) {
-        let dl = t.languages[t.languages.length - 1];
-        if (dl && dl.language === l) {
-            retVal = true;
-        }
+GmCXt.removeStoragePrefix = function(key) {
+    if (key.indexOf(GmCXt.storagePrefix) !== -1) {
+        key = key.split(GmCXt.storagePrefix)[1];
     }
-
-    return retVal;
+    return key;
 };
 
-GmCXt.isGuideInDefaultLang = function(tour, activeLang) {
-    let narrator = tour?.narrator;
-    let guideLang = "";
+GmCXt.addLanguageDataInStorage = async function(url, languageCode, storageLanguageData, isPlayer) {
 
-    if (!GmCXt.isEmpty(narrator)) {
-        guideLang = GmRootScope.parseTourNarrator(tour);
+    if (!GmCXt.isEmpty(storageLanguageData)) {
+        isPlayer ? (GmCXt.playerLbls = storageLanguageData) : (GmCXt.creatorLbls = storageLanguageData);
     }
 
-    // If active language is not defined or matches guide language, return true
-    if (!activeLang || GmCXt.isEmpty(guideLang)) {
-        return true;
-    }
-    // If active language doesn't match guide language, check if both are English variants
-    if (guideLang !== activeLang) {
-        return guideLang.indexOf("en-") !== -1 &&
-           activeLang.substring(0, 3) === guideLang.substring(0, 3);
-    }
+    const targetLbls = isPlayer ? GmCXt.playerLbls : GmCXt.creatorLbls;
+    const targetEngLbls = isPlayer ? GmCXt.playerLbls["en_US"] : GmCXt.creatorLbls["en_US"];
+    const storageKey = isPlayer ? 'language_labels_player'+"_"+ GmCXt.conf.version : 'language_labels_creator'+ "_" + GmCXt.conf.version;
 
-    return true;
+    try {
+        const result = await GmCXt.getLanguageLabelsApi(url);
+        const labelsData = GmCXt.parseJSON(result);
+        targetLbls[languageCode] = labelsData;
+        GmCXt.storage().set({
+            [storageKey]: JSON.stringify(targetLbls),
+        });
+        return result;
+    } catch (error) {
+        targetLbls[languageCode] = targetEngLbls;
+        GmCXt.storage().set({
+            [storageKey]: JSON.stringify(targetLbls),
+        });
+        return;
+    }
 };
+// tracking and analytics util global functions
+
+GmCXt.trackerUtil = {
+    guidePayload: [],
+    trackPI: false,
+    enableTracking: false,
+    ePayload: {},
+    ttPayload: {},
+    page_url: "",
+    featureTracking: false,
+    pageTracking: false
+};
+
+GmCXt.guidePlayTracker = {};
+
 
 //***************************** page tracking ***************************************//
+
 /*global GmCXt,mg$*/
+
 GmCXt.startPageTracker = function() {
 
     if (GmCXt.pageVisit) {
@@ -12036,20 +12393,6 @@ GmCXt.checkSkipStepForTracking = function() {
     }
 };
 
-GmCXt.getTourSegments = function(tour) {
-    //for tours played from side panel
-    if (tour.tour_settings.valid_segments) {
-        return tour.tour_settings.valid_segments;
-    } else {
-        let tourSeg = tour.tour_settings.segment_groups;
-        let validSegments = tourSeg.filter(function(s) {
-            return GmCXt.validatedSegments[s];
-        });
-
-        return validSegments;
-    }
-};
-
 //***************************** workflow tracking ***************************************//
 
 GmCXt.concatLinkGuideStepsForTracking = function(allSteps, stepIndex, currentStepId, newSteps) {
@@ -12101,12 +12444,6 @@ GmCXt.limitStepAttributes = function(steps) {
     }
 
     return steps;
-};
-
-GmCXt.filterInlineSteps = function(steps) {
-    return steps.filter(function(step) {
-        return GmCXt.limitStepAttributes((step.step_type === 'inline') && GmCXt.userActionEvents(step));
-    });
 };
 
 GmCXt.isSvgTag = function(t) {
@@ -12349,59 +12686,17 @@ GmCXt.mutationObserver = function(he) {
 
 //***************************** end click tracking ***************************************//
 
-GmCXt.trackApiCalls = function (fromBackground, noLoader) {
+GmCXt.isEventTimeValid = function(payloadDate) {
+    let isValid = true;
+    let currentDate = new Date();
+    let currentTimestamp = currentDate.getTime();
+    let payloadTimestamp = new Date(payloadDate).getTime();
 
-    if (GmCXt.conf.appConfig.trackNetwork) {
-        if (GmCXt.isBackgroundPage === true) {
-            GmCXt.sendMessageToPanel("mgPlayerJSProd_action:trackApiCalls");
-        } else{
-            GmCXt.apiCallCount++;
-            GmCXt.showApiCallCount();
-        }
+    let expTimestamp = currentTimestamp - (60 * 60 * 24 * 6 * 1000);
+    if (payloadTimestamp < expTimestamp) {
+        isValid = false;
     }
-
-    if (typeof GmRootScope === 'undefined') return;
-
-    if (!GmCXt.isBackgroundPage && !fromBackground) {
-        GmCXt.activeApiCallCount++;
-        if (GmCXt.activeApiCallCount === 1) {
-            // Do not show loader for traking events api calls
-            if (!noLoader) GmRootScope.showLoading();
-            if (GmCXt.loadingAutoHideTimer) {
-                clearTimeout(GmCXt.loadingAutoHideTimer);
-            }
-            GmCXt.loadingAutoHideTimer = setTimeout(() => {
-                GmCXt.activeApiCallCount = 0;
-                GmRootScope.hideLoading();
-            }, 10000);
-        }
-    }
-};
-
-GmCXt.showApiCallCount = function () {
-    mg$('.mgPlayerJSProd_guide_api_count').remove();
-    var apiCountHtml = "<wmgPlayerJSProd_ class='mgPlayerJSProd_guide_api_count'>" + GmCXt.apiCallCount + '</wmgPlayerJSProd_>';
-    mg$('html').append(apiCountHtml);
-    mg$('.mgPlayerJSProd_guide_api_count').show();
-};
-
-GmCXt.setElementStyle = function(selector, styles, isImportant) {
-    if (!selector || !styles || Object.keys(styles).length === 0) {
-        return;
-    }
-
-    const keys = Object.keys(styles);
-
-    mg$(selector).each(function () {
-        if (keys.length === 1) {
-            const property = keys[0];
-            this.style.setProperty(property, styles[property], isImportant ? 'important' : '');
-        } else if (keys.length > 1) {
-            for (const property in styles) {
-                this.style.setProperty(property, styles[property], isImportant ? 'important' : '');
-            }
-        }
-    });
+    return isValid;
 };
 /*!
     localForage -- Offline Storage, Improved
@@ -17864,6 +18159,13 @@ GmCXt.auto = (function() {
             });
         }
 
+        function getTourDetailsCallback(tour, domains) {
+            if (tour && domains) {
+                tour.allDomains = domains;
+            }
+            GmCXt.playLiveTour(tour, 0, 'automation', undefined, 'live');
+        };
+
         pub.setEndTime();
 
         GmCXt.getTourDetails({
@@ -17882,7 +18184,7 @@ GmCXt.auto = (function() {
             if (!(tour.tour_type.includes("smartTip")) && !(tour.tour_type.includes("onboarding_tour"))) {
                 GmCXt.timeout(function() {
                     if (self.automationInProgress) {
-                        GmCXt.getTourDetailsCallback(tour, self.app.settings.domains, 'automation', 'live');
+                        getTourDetailsCallback(tour, self.app.settings.domains);
                     }
                 }, delay);
             } else {
@@ -17891,7 +18193,7 @@ GmCXt.auto = (function() {
                 if (automationSteps.length > 0) {
                     tour.steps = automationSteps;
                     GmCXt.timeout(function() {
-                        GmCXt.getTourDetailsCallback(tour, self.app.settings.domains, 'automation', 'live');
+                        getTourDetailsCallback(tour, self.app.settings.domains);
                     }, ruleMatchDelayTime + delay);
                 } else if (tour.tour_type.includes("smartTip")) {
                     pub.showProgress();
@@ -23316,7 +23618,7 @@ GmCXt.previewStepPopup = function(options) {
 
                     let step_ = GmCXt.getStepFromPlayerI(GmCXt.playerI.currentStepId);
 
-                    let overlayOpacity = GmCXt.getOpacity(step_);
+                    let overlayOpacity = GmCXt.getOpacityFromStepSettings(step_);
 
                     if (step_) {
                         let stepSettings = step_.step_settings;
@@ -26982,7 +27284,7 @@ GmCXt.tourPlayer = function(data) {
                 if (GmCXt.playerI && GmCXt.playerI.tour) {
 
                     let step = GmCXt.getCurrentStep(GmCXt.playerI.currentStepId);
-                    let overlayOpacity = GmCXt.getOpacity(step);
+                    let overlayOpacity = GmCXt.getOpacityFromStepSettings(step);
 
                     if (overlayOpacity) {
                         GmCXt.screenOverlayI = GmCXt.screenOverlay(options);
@@ -27349,7 +27651,6 @@ GmCXt.showTooltip = function(options) {
     setDesign();
     align();
 };
-
 /**
 	* @author Nilesh Pachpande
 	*/
@@ -27849,11 +28150,7 @@ GmCXt.processTopWinPlayer = function(event) {
         break;
 
     case 'mgPlayerJSProd_action:set_audio_mode_on':
-        var d = {
-            user: GmCXt.user
-        };
-
-        GmCXt.sendMsgToAudioFrame('mgPlayerJSProd_action:set_audio_mode_on', d);
+        GmCXt.setOnAudioMode();
         break;
 
     case 'mgPlayerJSProd_action:set_audio_mode_off':
@@ -29080,7 +29377,7 @@ GmCXt.renderBeacon = function(tour, isPreview) {
             tourId: _t.tour_id,
             tourTitle: _t.tour_title,
             isPreview: isPreview,
-            timeout: Date.now() + GmCXt.getOrgStepWaitTime()
+            timeout: Date.now() + GmCXt.orgStepWaitTime
         };
 
         if (data?.stepData && data?.stepData?.meta?.inTopWindow) {
@@ -29102,7 +29399,7 @@ GmCXt.renderBeacon = function(tour, isPreview) {
                 GmCXt.beaconIframe[_t.tour_id].timeout = GmCXt.timeout(function() {
                     if (!GmCXt.beaconIframe[_t.tour_id].frameId) {
                         GmCXt.log(49, "TIMED OUT in Target Frame..\nFINDING BEACON in all frames");
-                        data.timeout = Date.now() + GmCXt.getOrgStepWaitTime() - findInIframe;
+                        data.timeout = Date.now() + GmCXt.orgStepWaitTime - findInIframe;
                         GmCXt.sendMessageToAllWindows('mgPlayerJSProd_action:show_beacon_on_dom_element', data);
                     }
                 }, findInIframe + 500);
@@ -29395,7 +29692,7 @@ GmCXt.startFtTag = function(tour) {
                 step: step,
                 tour: tour,
                 task: 'showTag',
-                timeout: Date.now() + GmCXt.getOrgStepWaitTime(),
+                timeout: Date.now() + GmCXt.orgStepWaitTime,
                 iframeAttrs: step.step_settings.element.iframeAttrs,
                 os: GmCXt.getStepSettings()
             };
@@ -29427,7 +29724,7 @@ GmCXt.startFtTag = function(tour) {
             GmCXt.tagIframe[step.step_id].timeout = GmCXt.timeout(function() {
                 if (!GmCXt.tagIframe[step.step_id].frameId) {
                     GmCXt.log(17, "TIMED OUT in Target Frame..\nFINDING TAG in all frames");
-                    data.timeout = Date.now() + GmCXt.getOrgStepWaitTime() - findInIframe;
+                    data.timeout = Date.now() + GmCXt.orgStepWaitTime - findInIframe;
                     GmCXt.sendMessageToAllWindows('mgPlayerJSProd_action:started;task:find_tag_elm', data);
                 }
             }, findInIframe + 500);
@@ -29460,7 +29757,7 @@ GmCXt.startTooltip = function(tour, isPreview) {
                 tour: tour,
                 isPreview: isPreview,
                 task: 'showSmarttip',
-                timeout: Date.now() + GmCXt.getOrgStepWaitTime(),
+                timeout: Date.now() + GmCXt.orgStepWaitTime,
                 iframeAttrs: step.step_settings.element.iframeAttrs,
                 os: GmCXt.getStepSettings()
             };
@@ -29494,7 +29791,7 @@ GmCXt.startTooltip = function(tour, isPreview) {
                 GmCXt.smartTipIframe[step.step_id].timeout = GmCXt.timeout(function() {
                     if (!GmCXt.smartTipIframe[step.step_id].frameId) {
                         GmCXt.log(43, "TIMED OUT in Target Frame..\nFINDING TOOLTIP in all frames");
-                        data.timeout = Date.now() + GmCXt.getOrgStepWaitTime() - findInIframe;
+                        data.timeout = Date.now() + GmCXt.orgStepWaitTime - findInIframe;
                         GmCXt.sendMessageToAllWindows('mgPlayerJSProd_action:started;task:select_dom_element_to_show_tooltip', data);
                     }
                 }, findInIframe + 500);
@@ -30142,10 +30439,6 @@ GmCXt.removeWidget = function() {
     if (widget.length) widget.remove();
 };
 
-GmCXt.removeChatIcon = function() {
-    let chat = GmCXt.getChatIconInstance();
-    if (chat.length) chat.remove();
-};
 
 // Widget Test Cases
 // 1. Show default widget icon before login
@@ -30155,91 +30448,6 @@ GmCXt.removeChatIcon = function() {
 // 5. Hide widget if its hidden in Org settings
 
 GmCXt.addingWidgetIcon = false;
-
-GmCXt.showWidget = function() {
-
-    if (GmCXt.APP_PANEL_OPEN) return;
-
-    if (GmCXt.getWidgetVisibility()) {
-
-        let show = function() {
-
-            GmCXt.log(8, "SHOW WIDGET");
-
-            GmCXt.positionWidget();
-            GmCXt.widgetIconCustomize();
-
-            GmCXt.showCurrentPageGuidesIndicator();
-
-            GmCXt.displayWidget();
-        };
-
-        let widget = GmCXt.getWidgetInstance();
-
-        if (widget.length) {
-            GmCXt.getWidgetIcon().then(function(wURl) {
-                mg$(".mgPlayerJSProd_start-button img").attr('src', wURl);
-                show();
-            });
-
-        } else if (!GmCXt.addingWidgetIcon) {
-
-            GmCXt.addingWidgetIcon = true;
-            GmCXt.addWidgetIcon().then(function() {
-
-                GmCXt.addingWidgetIcon = false;
-                GmCXt.addWidgetIconEvents();
-                show();
-            });
-        }
-
-    } else {
-        GmCXt.removeWidget();
-    }
-};
-
-GmCXt.showChatIcon = function() {
-
-    if (!GmCXt.checkPrecedence()) return;
-    if (GmCXt.APP_PANEL_OPEN) return;
-    if (!GmCXt.organization && GmCXt.isEmpty(GmCXt.organization)) return;
-
-
-    if (GmCXt.isPlayer() && GmCXt.isChatEnable() && GmCXt.getChatIconVisibility()) {
-
-        let show = function() {
-
-            GmCXt.log(8, "SHOW CHAT ICON");
-
-            GmCXt.positionChatIcon();
-            GmCXt.chatIconCustomize();
-
-            GmCXt.displayChatIcon();
-        };
-
-        let chat = GmCXt.getChatIconInstance();
-
-        if (chat.length) {
-            GmCXt.getChatIcon().then(function(wURl) {
-                mg$("#mgPlayerJSProd_btn-chat-button img").attr('src', wURl);
-                show();
-            });
-
-        } else if (!GmCXt.addingChatIcon) {
-
-            GmCXt.addingChatIcon = true;
-            GmCXt.addChatIcon().then(function() {
-
-                GmCXt.addingChatIcon = false;
-                GmCXt.addChatIconEvents();
-                show();
-            });
-        }
-
-    } else {
-        GmCXt.removeChatIcon();
-    }
-};
 
 GmCXt.resetBeaconsandTooltips = function() {
 
@@ -32451,7 +32659,7 @@ GmCXt.onPageClicked = function() {
     }
 };
 
-window.getMyGuides = async function(url) {
+GmExt.getMyGuides = async function(url) {
     let tours = [];
     let urlTours = GmRootScope.publishedTours.filter((tour) => tour.tour_url.includes(GmCXt.filterUrlScheme(url)));
     let rulesTours = GmRootScope.validateAllRulesExceptSelectEl(GmRootScope.publishedTours, false, url).tours;
@@ -32466,7 +32674,7 @@ window.getMyGuides = async function(url) {
     return tours;
 };
 
-window.playMyGuide = function(id) {
+GmExt.playMyGuide = function(id) {
     GmCXt.getTourDetails({
         'tour_id': id
     }).then(function(tour) {
@@ -32488,13 +32696,6 @@ GmCXt.getTourAndPlay = function(tourId, initiator, origin) {
             GmCXt.playLiveTour(tour, 0, initiator, false, false, origin);
         }
     });
-};
-
-GmCXt.getTourDetailsCallback = function(tour, domains, initiator, type) {
-    if (tour && domains) {
-        tour.allDomains = domains;
-    }
-    GmCXt.playLiveTour(tour, 0, initiator, undefined, type);
 };
 
 GmCXt.invokeLiveTour = function() {
@@ -32525,16 +32726,23 @@ GmCXt.playLiveTour = function(tour, currentStepId, initiator, isAutolaunch, type
     if (initiator === 'automation') {
         testAutomation = true;
     }
-
     if (initiator === 'beaconTour' || initiator === 'overlayTourPopup') {
-
         let ts = tour.tour_settings;
-        mode = ts.defaultPlayAction;
+        
+        // Set initial mode based on initiator
+        if (initiator === 'beaconTour') {
+            let beaconSettings = ts.beacon;
+            mode = beaconSettings.beaconPlayAction ? 'doitforme' : ts.defaultPlayAction;
+            GmCXt.log(33, "Beacon Play Mode Set to: " + mode);
+        } else { // overlayTourPopup
+            mode = ts.defaultPlayAction;
+        }
 
+        // Common logic for both initiators
         if (mode === 'Default') {
             mode = GmCXt.getAppSetting('defaultPlayAction');
         }
-
+        
         if (mode === 'doitforme') {
             isAutomation = true;
         } else if (mode === 'slideshow') {
@@ -33294,122 +33502,6 @@ GmCXt.startReloginInterval = function() {
     }, GmCXt.t.autoRelogin);
 };
 
-GmCXt.alertV2 = function(options) {
-    options = options || {};
-
-    let pub = {};
-
-    let self = {
-        description: GmCXt.escapeHtml(options.description),
-        button1: options.button1,
-        button1Callback: options.button1Callback,
-        button2: options.button2,
-        button2Callback: options.button2Callback,
-        button3: options.button3,
-        button3Callback: options.button3Callback,
-        keepScrollLock: options.keepScrollLock || false,
-        closeTour: options.closeTour ? options.closeTour : false,
-        showInputField: options.showInputField || false
-    };
-
-    let popupInputField = 'none';
-    if (self.showInputField) {
-        popupInputField = 'block';
-    }
-    pub.show = function() {
-        let alt = GmCXt.getAutoLaunchTourId();
-        let pi = GmCXt.playerI;
-        let popupType = 'mgPlayerJSProd_popup-info';
-
-        let html = " <wmgPlayerJSProd_ class='mgPlayerJSProd_overlay-container'></wmgPlayerJSProd_>" +
-            "<wmgPlayerJSProd_ class='mgPlayerJSProd_popup " + popupType + "'>" +
-            "   <wmgPlayerJSProd_ class='mgPlayerJSProd_popup-header-wrapper'>" +
-            "	   <wmgPlayerJSProd_ class='mgPlayerJSProd_popup-header-icon-wrapper'><wmgPlayerJSProd_ class='mgPlayerJSProd_popup-header-icon'></wmgPlayerJSProd_></wmgPlayerJSProd_>" +
-            "   </wmgPlayerJSProd_>" +
-            "<wmgPlayerJSProd_ style='display:" + popupInputField + "'><input type='text' class='mgPlayerJSProd_popup-input-field' maxlength='1000' /></wmgPlayerJSProd_>" +
-            "<wmgPlayerJSProd_ class='mgPlayerJSProd_popup-content-wrapper'>" + self.description + "</wmgPlayerJSProd_>" +
-            "<wmgPlayerJSProd_ class='mgPlayerJSProd_popup-btn-wrapper'>";
-
-        if (self.button1) {
-            html += "<wmgPlayerJSProd_ title='" + self.button1 + "' aria-label='" + self.button1 + "' class='mgPlayerJSProd_popup-ok-btn mgPlayerJSProd_btn-default mgPlayerJSProd_ok-btn mgPlayerJSProd_text-overflow-ellipsis mgPlayerJSProd_inline-block-vt'>" + self.button1 + "</wmgPlayerJSProd_>";
-        }
-
-        if (self.button3) {
-            html += "<wmgPlayerJSProd_ class='mgPlayerJSProd_popup-play-inapp mgPlayerJSProd_btn-default mgPlayerJSProd_ok-btn mgPlayerJSProd_inline-block-vt' aria-label='" + self.button3 + "'>" + self.button3 + "</wmgPlayerJSProd_>";
-        }
-
-        if (self.button2) {
-            html += "<wmgPlayerJSProd_ title='" + self.button2 + "' aria-label='" + self.button2 + "' class='mgPlayerJSProd_popup-cancel-btn mgPlayerJSProd_btn-default mgPlayerJSProd_text-overflow-ellipsis mgPlayerJSProd_inline-block-vt'>" + self.button2 + "</wmgPlayerJSProd_>";
-        }
-
-        html += "</wmgPlayerJSProd_>";
-
-        if (pi && alt && alt === pi.tour.tour_id)
-            html += "<wmgPlayerJSProd_><input type='checkbox' class='mgPlayerJSProd_popup-checkbox mgPlayerJSProd_input-checkbox-custom'>" + GmCXt.label.doNotShowAgain + "</wmgPlayerJSProd_>" +
-            "</wmgPlayerJSProd_>";
-
-        mg$("html").append(html);
-
-        mg$(".mgPlayerJSProd_popup-header-icon").html(GmCXt.svgs.popup_info);
-        mg$(".mgPlayerJSProd_popup").on("mousedown", function(e) {
-            GmCXt.stopPropagation(e);
-        });
-
-        mg$(".mgPlayerJSProd_overlay-container").on("mousedown", function(e) {
-            GmCXt.stopPropagation(e);
-        });
-
-        mg$(".mgPlayerJSProd_popup-ok-btn").on("click", function(e) {
-            GmCXt.stopPropagation(e);
-            let popupInputFieldValue = mg$('.mgPlayerJSProd_popup-input-field').val();
-            if (pi && alt && alt === pi.tour.tour_id) {
-
-                let checked = mg$('.mgPlayerJSProd_popup-checkbox:checkbox:checked').length > 0;
-
-                if (checked)
-                    GmCXt.setDoNotShowTours(pi.tour);
-                else
-                    GmCXt.setSnoozedTour(pi.tour);
-            }
-            self.closeTour = false;
-            pub.close();
-            if (mg$.isFunction(self.button1Callback))
-                self.button1Callback(popupInputFieldValue);
-        });
-
-        mg$(".mgPlayerJSProd_popup-play-inapp").on("click", function(e) {
-            GmCXt.stopPropagation(e);
-            pub.close();
-            if (mg$.isFunction(self.button3Callback))
-                self.button3Callback();
-        });
-
-        mg$(".mgPlayerJSProd_popup-cancel-btn").on("click", function(e) {
-            GmCXt.stopPropagation(e);
-            pub.close(self.keepScrollLock);
-            if (mg$.isFunction(self.button2Callback))
-                self.button2Callback();
-        });
-
-        mg$(".mgPlayerJSProd_popup-close-button").on("click", function(e) {
-            GmCXt.stopPropagation(e);
-            pub.close(self.keepScrollLock);
-        });
-    };
-
-    pub.close = function(keepScrollLock) {
-
-        if (!keepScrollLock)
-            GmCXt.unlockScroll();
-
-        if (self.closeTour) GmCXt.cleanPlayer();
-
-        GmCXt.closePopup();
-    };
-
-    return pub;
-};
-
 GmCXt.alignMessagePreview = function($popup, $container, alignment, stepSettings) {
 
     GmCXt.clearPreviewPopupAlignment($popup);
@@ -33743,6 +33835,10 @@ GmCXt.setPanelTopLeft = function(isClose) {
     }
 };
 
+GmCXt.getElectronAppName = function() {
+    let app = require('electron').remote.app;
+    return app.name || app.getName();
+};
 /*
 	* To change this license header, choose License Headers in Project Properties.
 	* To change this template file, choose Tools | Templates
@@ -36146,6 +36242,8 @@ if (GmCXt.isPlayer()) {
 	* into a webpage.
 	* @author Nilesh Pachpande
 	*/
+
+if (GmExt === undefined) var GmExt = {};
 
 GmCXt.client = {
     'isUrlTour': false
@@ -40735,14 +40833,6 @@ GmCXt.dom1334.executeTextBasedJquery = function(queryString, text) {
     }
 
     return GmCXt.l.return(returnValue);
-};
-
-GmCXt.getPosition = function(cssPos) {
-    if (cssPos) {
-        return 'mgPlayerJSProd_fixed-position';
-    } else {
-        return 'mgPlayerJSProd_absolute-position';
-    }
 };
 /*global GmCXt,mg$*/
 GmCXt.dom = {};
@@ -47834,7 +47924,7 @@ GmCXt.highlighter = (function() {
                 triggerValidation(he, options, requestData, job);
             });
 
-        const durationMs = GmCXt.getOrgStepWaitTime() || 10000;
+        const durationMs = GmCXt.orgStepWaitTime || 10000;
         const intervalMs = 1000;
         let count = 0;
 
@@ -48865,26 +48955,14 @@ GmCXt.bootScript = function() {
                 if (window.parent !== window.top) {
                     try {
                         window.parent.postMessage(msg, '*', [GmCXt.msgChannel.port2]);
-                    } catch (e) {
-                        // Create a new message channel if the port is already neutered
-                        if (e.name === 'DataCloneError') {
-                            GmCXt.msgChannel = new MessageChannel();
-                            window.parent.postMessage(msg, '*', [GmCXt.msgChannel.port2]);
-                        } else {
-                            throw e;
-                        }
+                    } catch (e) { 
+
                     }
                 } else {
                     try {
                         window.top.postMessage(msg, '*', [GmCXt.msgChannel.port2]);
                     } catch (e) {
-                        // Create a new message channel if the port is already neutered
-                        if (e.name === 'DataCloneError') {
-                            GmCXt.msgChannel = new MessageChannel();
-                            window.top.postMessage(msg, '*', [GmCXt.msgChannel.port2]);
-                        } else {
-                            throw e;
-                        }
+                        
                     }
                 }
             }
@@ -48987,7 +49065,11 @@ GmCXt.bootScript = function() {
                 GmCXt.iframePorts[iframeId] = e.ports[0];
                 GmCXt.iframePorts[iframeId].onmessage = GmCXt.FT.isPlayer ? GmCXt.listenIframePlayer : GmCXt.listenIframeCreator;
                 GmCXt.iframeEls[iframeId] = e.source;
-                window.parent.postMessage(e.data, "*", e.ports);
+                try {
+                    window.parent.postMessage(e.data, "*", e.ports);
+                } catch (err) {
+                    
+                }
             }
         });
     }
@@ -50512,7 +50594,7 @@ GmCXt.injectGuideMeInIframes = function(windowInstance) {
         }
     }
 
-    load('guideme-clientframe-css', 'content_script/dom_selector/css/style_1763381438284.css');
+    load('guideme-clientframe-css', 'content_script/dom_selector/css/style_1763391156542.css');
 })();
 /*global GmCXt*/
 (function() {
@@ -50532,13 +50614,13 @@ GmCXt.injectGuideMeInIframes = function(windowInstance) {
     function loadSidePanelClientFiles() {
         var sidePanel = document.createElement('script');
         if (window.self === window.top) {
-            sidePanel.src = GmCXt.conf.baseUrl + 'side_panel/sidepanel_1763381438284.js';
+            sidePanel.src = GmCXt.conf.baseUrl + 'side_panel/sidepanel_1763391156542.js';
         }
         document.head.appendChild(sidePanel);
     }
 
-    load('guideme-clientjs-css', 'content_script/worker/css/style_1763381438284.css');
-    load('guideme-sidepanel-css', 'side_panel/bundle_1763381438284.css');
+    load('guideme-clientjs-css', 'content_script/worker/css/style_1763391156542.css');
+    load('guideme-sidepanel-css', 'side_panel/bundle_1763391156542.css');
     loadSidePanelClientFiles();
 
 

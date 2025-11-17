@@ -1,5 +1,4 @@
 /*global GmCXt,guideMe*/ 
- 
 if (typeof guideMe === 'undefined') {
     guideMe = {};
 }
@@ -7,37 +6,33 @@ if (!guideMe.baseUrl) {
     guideMe.baseUrl = "https://edcastabhishek.github.io/abhishek/player/sumtotal/";
 } 
 
-function getMyGuideScript() {
+guideMe.getConfig = function() {
     var configPath = guideMe.baseUrl + 'config.js';
     if(typeof GmCXt === 'undefined'){
         if (configPath) {
-            console.log("document.readyState...111" + document.readyState);
             if (document.readyState === 'complete') {
-                setTimeout(function() {
-                    console.log("document.readyState...222" + document.readyState);
-                    let el = document.createElement('script');
-                    el.onload = getMyGuideScriptCB;
-                    el.src = configPath;
-                    document.head.appendChild(el);
-                }, 1000 );
+                loadConfigFile();
             } else {
                 window.addEventListener('load', function() {
-                    setTimeout(function() {
-                        console.log("document load event.....");
-                        let el = document.createElement('script');
-                        el.onload = getMyGuideScriptCB;
-                        el.src = configPath;
-                        document.head.appendChild(el);
-                    }, 1000 );
+                    loadConfigFile();
                 });
             }
         } else {
             console.log("Invalid config path");
         }
     }
-}
 
-function getMyGuideScriptCB() {
+    function loadConfigFile(){
+        setTimeout(function() {
+            let el = document.createElement('script');
+            el.onload = guideMe.getConfigCB;
+            el.src = configPath;
+            document.head.appendChild(el);
+        }, 1000 );
+    }
+}; 
+
+guideMe.getConfigCB = function() {
 
     GmCXt.conf.baseUrl = guideMe.baseUrl;
     let a = document.createElement('script');
@@ -60,31 +55,30 @@ function getMyGuideScriptCB() {
 
     function loadGuideMeClientFiles() {
         if (window.self === window.top) {
-            a.src = GmCXt.conf.baseUrl + 'gm_client_1763381438284.js';
+            a.src = GmCXt.conf.baseUrl + 'gm_client_1763391156542.js';
         } else {
-            a.src = GmCXt.conf.baseUrl + 'gm_client_iframe_1763381438284.js';
+            a.src = GmCXt.conf.baseUrl + 'gm_client_iframe_1763391156542.js';
         }
         document.head.appendChild(a);
-    } 
+    }
 };
 
-function detectMyGuideExtension() {
-   // setTimeout(function() {
-        let playerExtImgUrl = "";
-        if(playerExtImgUrl){
-            let img;
-            img = new Image();
-            img.src = playerExtImgUrl;
-            img.onload = function() {
-                console.log("MyGuide player Extension installed, Skiping client JS load.");
-            };
-            img.onerror = function() {
-                getMyGuideScript();
-            };
-        } else{
-            getMyGuideScript();
-        }
-  //  }, 1000 );
-}
+guideMe.detectExtension = function() {
+    let playerExtImgUrl = "";
 
-detectMyGuideExtension();
+    if(playerExtImgUrl) {
+        let img;
+        img = new Image();
+	    img.src = playerExtImgUrl;
+	    img.onload = function() {
+	        console.log("MyGuide player Extension installed, Skiping client JS load.");
+	    };
+	    img.onerror = function() {
+	        guideMe.getConfig();
+	    };
+    } else {
+        guideMe.getConfig();
+    }    
+};
+
+guideMe.detectExtension();
