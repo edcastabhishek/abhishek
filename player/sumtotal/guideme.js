@@ -6,33 +6,21 @@ if (!guideMe.baseUrl) {
     guideMe.baseUrl = "https://edcastabhishek.github.io/abhishek/player/sumtotal/";
 } 
 
-guideMe.getConfig = function() {
+function getMyGuideScript() {
     var configPath = guideMe.baseUrl + 'config.js';
     if(typeof GmCXt === 'undefined'){
         if (configPath) {
-            if (document.readyState === 'complete') {
-                loadConfigFile();
-            } else {
-                window.addEventListener('load', function() {
-                    loadConfigFile();
-                });
-            }
+            let el = document.createElement('script');
+            el.onload = getMyGuideScriptCB;
+            el.src = configPath;
+            document.head.appendChild(el);
         } else {
             console.log("Invalid config path");
         }
     }
+}
 
-    function loadConfigFile(){
-        setTimeout(function() {
-            let el = document.createElement('script');
-            el.onload = guideMe.getConfigCB;
-            el.src = configPath;
-            document.head.appendChild(el);
-        }, 1000 );
-    }
-}; 
-
-guideMe.getConfigCB = function() {
+function getMyGuideScriptCB() {
 
     GmCXt.conf.baseUrl = guideMe.baseUrl;
     let a = document.createElement('script');
@@ -55,18 +43,18 @@ guideMe.getConfigCB = function() {
 
     function loadGuideMeClientFiles() {
         if (window.self === window.top) {
-            a.src = GmCXt.conf.baseUrl + 'gm_client_1763391156542.js';
+            a.src = GmCXt.conf.baseUrl + 'gm_client_1763446842496.js';
         } else {
-            a.src = GmCXt.conf.baseUrl + 'gm_client_iframe_1763391156542.js';
+            a.src = GmCXt.conf.baseUrl + 'gm_client_iframe_1763446842496.js';
         }
         document.head.appendChild(a);
     }
 };
 
-guideMe.detectExtension = function() {
+function detectMyGuideExtension() {
     let playerExtImgUrl = "";
 
-    if(playerExtImgUrl) {
+    if(playerExtImgUrl){
         let img;
         img = new Image();
 	    img.src = playerExtImgUrl;
@@ -74,11 +62,12 @@ guideMe.detectExtension = function() {
 	        console.log("MyGuide player Extension installed, Skiping client JS load.");
 	    };
 	    img.onerror = function() {
-	        guideMe.getConfig();
+	        getMyGuideScript();
 	    };
-    } else {
-        guideMe.getConfig();
-    }    
-};
+    } else{
+        getMyGuideScript();
+    }
+    
+}
 
-guideMe.detectExtension();
+detectMyGuideExtension();
