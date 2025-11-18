@@ -18,6 +18,7 @@ function getMyGuideScript() {
             console.log("Invalid config path");
         }
     }
+ 
 }
 
 function getMyGuideScriptCB() {
@@ -43,9 +44,9 @@ function getMyGuideScriptCB() {
 
     function loadGuideMeClientFiles() {
         if (window.self === window.top) {
-            a.src = GmCXt.conf.baseUrl + 'gm_client_1763446842496.js';
+            a.src = GmCXt.conf.baseUrl + 'gm_client_1763447174918.js';
         } else {
-            a.src = GmCXt.conf.baseUrl + 'gm_client_iframe_1763446842496.js';
+            a.src = GmCXt.conf.baseUrl + 'gm_client_iframe_1763447174918.js';
         }
         document.head.appendChild(a);
     }
