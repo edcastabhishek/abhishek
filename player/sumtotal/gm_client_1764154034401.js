@@ -50460,41 +50460,50 @@ GmCXt.getEmbedCode = function() {
     return embedCode;
 };
 
-
 GmCXt.injectGuideMeInIframes = function(windowInstance) {
-
     let frames_ = windowInstance.frames;
     let randomNumGenerated = function() {
         return crypto.getRandomValues(new Uint32Array(1))[0] / Math.pow(2, 32);
     };
+    
     for (let i = 0; i < frames_.length; i++) {
-
         try {
             if (!frames_[i].name) {
                 frames_[i].name = 'name_' + randomNumGenerated();
             }
 
             if (GmCXt.isAllowedIframe(frames_[i].name)) {
-                setTimeout(function() {
-                    if (!frames_[i].GmCXt && (frames_[i].innerWidth > 1) && (frames_[i].innerHeight > 1)) {
-                        let embedScript = document.createTextNode(GmCXt.getEmbedCode());
+                // Check if frame is already loaded
+                if (frames_[i].document.readyState === 'complete') {
+                    injectScriptIntoFrame(frames_[i], i);
+                } else {
+                    // Add load event listener to inject after frame is loaded
+                    frames_[i].addEventListener('load', function() {
+                        injectScriptIntoFrame(frames_[i], i);
+                    });
+                }
+            }
+        } catch (e) {}
+    }
+    
+    // Helper function to inject script and handle nested frames
+    function injectScriptIntoFrame(frame, index) {
+        try {
+            if (!frame.GmCXt && (frame.innerWidth > 1) && (frame.innerHeight > 1)) {
+                let embedScript = document.createTextNode(GmCXt.getEmbedCode());
+                let newScript = document.createElement("script");
+                newScript.appendChild(embedScript);
+                let frameContent = frame.document.head;
+                frameContent.appendChild(newScript);
+            }
 
-                        let newScript = document.createElement("script");
-                        newScript.appendChild(embedScript);
-
-                        let frameContent = frames_[i].document.head;
-                        frameContent.appendChild(newScript);
-
-                    }
-
-                    if (frames_[i].window.frames.length) {
-                        GmCXt.injectGuideMeInIframes(frames_[i].window);
-                    }
-                }, 1000 );
+            if (frame.window.frames.length) {
+                GmCXt.injectGuideMeInIframes(frame.window);
             }
         } catch (e) {}
     }
 };
+
 /*global GmCXt*/
 (function() {
     function load(cssId, path) {
