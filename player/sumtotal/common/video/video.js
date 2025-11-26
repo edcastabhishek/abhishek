@@ -2,7 +2,7 @@ let videoUrl = window.location.search;
 videoUrl = videoUrl.replace("?videoUrl=", "");
 
 // Set the video source
-const videoPlayer = document.getElementById('mgPlayerJSProd_step-video-container');
+const videoPlayer = document.getElementById('mgPlayerJSqa_step-video-container');
 
 function decodeBase64ToString(str) {
     if (str && str.length > 0) {
@@ -26,6 +26,6 @@ if (videoUrl) {
     };
 
     videoPlayer.onended = function() {
-        window.parent.postMessage({ action: 'mgPlayerJSProd_action:video_ended' }, '*');
+        window.parent.postMessage({ action: 'mgPlayerJSqa_action:video_ended' }, '*');
     };
 }

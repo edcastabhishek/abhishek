@@ -3,8 +3,8 @@ if (GmCXt === undefined) {
 }
 
 GmCXt.conf = {};
-GmCXt.conf.version = "2025.5.3";
-GmCXt.conf.env = "Prod";
+GmCXt.conf.version = "2025.5.3.1";
+GmCXt.conf.env = "qa";
 GmCXt.conf.infra = "aws";
 
 GmCXt.conf.creatorApp = 'mgExt';
@@ -17,7 +17,7 @@ GmCXt.conf.appTypeScript = 'JScript';
 GmCXt.conf.appTypeElectron = 'electron';
 GmCXt.conf.Premise = 'Premise';
 GmCXt.conf.runEnv = "browser";
-GmCXt.conf.msgPrefix = "mgPlayerJSProd_";
+GmCXt.conf.msgPrefix = "mgPlayerJSqa_";
 
 GmCXt.conf.showWidget = false;
 
@@ -55,20 +55,20 @@ GmCXt.conf.allUrls = true;
 GmCXt.setConfig = function() {
     GmCXt.conf.clientJsBaseUrl = "https://edcastabhishek.github.io/abhishek/player/sumtotal/";
     GmCXt.conf.chromeExtensionUrl = "";
-    GmCXt.conf.webServiceUrl = "https://api-v3.guideme.io/v3/";
-    GmCXt.conf.staticContentPath = "https://cdn.guideme.io/guideme-assests/";
-    GmCXt.conf.webPortalUrl = "https://admin.myguide.org/";
-    GmCXt.conf.analyticsPath = "https://v3-analytics.guideme.io/";
-    GmCXt.conf.analyticsPortalUrl = "https://analytics.myguide.org/";
+    GmCXt.conf.webServiceUrl = "https://api-qa.cmnetwork.co/v3/";
+    GmCXt.conf.staticContentPath = "https://cdn-qa.cmnetwork.co/guideme-assests/";
+    GmCXt.conf.webPortalUrl = "https://admin-qa.cmnetwork.co/";
+    GmCXt.conf.analyticsPath = "https://insights-api-qa.cmnetwork.co/";
+    GmCXt.conf.analyticsPortalUrl = "https://insights-qa.cmnetwork.co/";
 
-    GmCXt.conf.cdn = "https://cdn.guideme.io/";
-    GmCXt.conf.jsonStorageUrl = "https://cdn.guideme.io/";
-    GmCXt.conf.ssoApiUrl = "https://sso.myguide.org/saml2/sp/session/";
-    GmCXt.conf.ssoRedirectionUrl = "https://sso.myguide.org/saml2/sp/sso/";
-    GmCXt.conf.ssoApiUrlCreator = "https://sso.myguide.org/saml2/sp/creator_session/";
-    GmCXt.conf.ssoRemoveCookieUrl = "https://sso.myguide.org/saml2/sp/remove_cookie/";
-    GmCXt.conf.ssoConfigUrl = "https://cdn.guideme.io/guideme-auth/objects/";
-    GmCXt.conf.publicTimestampUrl = "https://cdn.guideme.io/guideme-auth/timestamp/";
+    GmCXt.conf.cdn = "https://cdn-qa.cmnetwork.co/";
+    GmCXt.conf.jsonStorageUrl = "https://cdn-qa.cmnetwork.co/";
+    GmCXt.conf.ssoApiUrl = "https://sso-qa.cmnetwork.co/saml2/sp/session/";
+    GmCXt.conf.ssoRedirectionUrl = "https://sso-qa.cmnetwork.co/saml2/sp/sso/";
+    GmCXt.conf.ssoApiUrlCreator = "https://sso-qa.cmnetwork.co/saml2/sp/creator_session/";
+    GmCXt.conf.ssoRemoveCookieUrl = "";
+    GmCXt.conf.ssoConfigUrl = "https://cdn-qa.cmnetwork.co/guideme-auth-qa/objects/";
+    GmCXt.conf.publicTimestampUrl = "https://cdn-qa.cmnetwork.co/guideme-auth-qa/timestamp/";
 };
 
 GmCXt.setConfig();
