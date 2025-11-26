@@ -10,15 +10,26 @@ function getMyGuideScript() {
     var configPath = guideMe.baseUrl + 'config.js';
     if(typeof GmCXt === 'undefined'){
         if (configPath) {
-            let el = document.createElement('script');
-            el.onload = getMyGuideScriptCB;
-            el.src = configPath;
-            document.head.appendChild(el);
+            if (document.readyState === 'complete') {
+                loadConfigFile();
+            } else {
+                window.addEventListener('load', function() {
+                    loadConfigFile();
+                });
+            }
         } else {
             console.log("Invalid config path");
         }
     }
- 
+
+    function loadConfigFile(){
+        setTimeout(function() {
+            let el = document.createElement('script');
+            el.onload = getMyGuideScriptCB;
+            el.src = configPath;
+            document.head.appendChild(el);
+        }, 1000 );
+    }
 }
 
 function getMyGuideScriptCB() {
@@ -44,9 +55,9 @@ function getMyGuideScriptCB() {
 
     function loadGuideMeClientFiles() {
         if (window.self === window.top) {
-            a.src = GmCXt.conf.baseUrl + 'gm_client_1763447174918.js';
+            a.src = GmCXt.conf.baseUrl + 'gm_client_1764153331755.js';
         } else {
-            a.src = GmCXt.conf.baseUrl + 'gm_client_iframe_1763447174918.js';
+            a.src = GmCXt.conf.baseUrl + 'gm_client_iframe_1764153331755.js';
         }
         document.head.appendChild(a);
     }
