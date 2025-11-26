@@ -3,7 +3,7 @@ if (GmCXt === undefined) {
 }
 
 GmCXt.conf = {};
-GmCXt.conf.version = "2025.5.3.1";
+GmCXt.conf.version = "2025.5.3";
 GmCXt.conf.env = "Prod";
 GmCXt.conf.infra = "aws";
 

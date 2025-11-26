@@ -50475,21 +50475,22 @@ GmCXt.injectGuideMeInIframes = function(windowInstance) {
             }
 
             if (GmCXt.isAllowedIframe(frames_[i].name)) {
+                setTimeout(function() {
+                    if (!frames_[i].GmCXt && (frames_[i].innerWidth > 1) && (frames_[i].innerHeight > 1)) {
+                        let embedScript = document.createTextNode(GmCXt.getEmbedCode());
 
-                if (!frames_[i].GmCXt && (frames_[i].innerWidth > 1) && (frames_[i].innerHeight > 1)) {
-                    let embedScript = document.createTextNode(GmCXt.getEmbedCode());
+                        let newScript = document.createElement("script");
+                        newScript.appendChild(embedScript);
 
-                    let newScript = document.createElement("script");
-                    newScript.appendChild(embedScript);
+                        let frameContent = frames_[i].document.head;
+                        frameContent.appendChild(newScript);
 
-                    let frameContent = frames_[i].document.head;
-                    frameContent.appendChild(newScript);
+                    }
 
-                }
-
-                if (frames_[i].window.frames.length) {
-                    GmCXt.injectGuideMeInIframes(frames_[i].window);
-                }
+                    if (frames_[i].window.frames.length) {
+                        GmCXt.injectGuideMeInIframes(frames_[i].window);
+                    }
+                }, 1000 );
             }
         } catch (e) {}
     }
