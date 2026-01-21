@@ -589,5 +589,10 @@ a:focus {
   color: #292929;
 }
 
+input[type='checkbox'] {
+  display: none;
+  visibility: hidden;
+}
+
 /* end footer section*/
 /*# sourceMappingURL=style.css.map */
